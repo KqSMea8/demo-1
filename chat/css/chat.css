@@ -1,0 +1,109 @@
+	.box{
+		width: 340px;
+		height: 513px;
+		background-color: #f1f0f2;
+		margin:0 auto;
+		padding-top: 20px;
+		
+	}
+	.contactList{
+		width: 279px;
+		height: 53px;
+	}
+	.contactList li{
+		width: 93px;
+		height: 33px;
+		text-align: center;
+		background-color: #ffffff;
+		float: left;
+		padding-top: 20px;
+		
+	}
+	.content{
+		width: 279px;
+		height: 477px;
+		background-color: #ffffff;
+		margin:0 auto;
+		
+	}
+	.box img{
+		width: 44px;
+		height: 39px;
+		padding-left: 11px;
+
+	}
+	.list{
+		width: 279px;
+		height: 60px;
+		padding-top: 14px;
+		border-top: 1px solid #eaeef0;
+	}
+	.list a {
+		float: left;
+	}
+	.list:hover{
+		background:#f1f4f6;
+	}
+	.list p{
+		margin-left: 64px;
+		margin-top: 7px;
+	}
+	.info{padding-top: 1px;
+	}
+	
+	.search{
+
+		width: 39px;
+		height: 39px;
+	}
+	.search-img{
+		color: #7F97AC;
+		font-size: 24px;
+		float: left;
+		width: 24px;
+		height: 47px;
+		float: left;
+		padding-top: 19px;
+		background-color: #e3e9ed; 
+		padding-left: 28px;
+		padding-right: 13px;	
+	}
+	.content input{
+		width: 214px;
+		height: 66px;
+		background-color: #e3e9ed;
+		margin-top: 0;
+		border:none;
+		outline:none;
+		font-size: 15px;
+		float: left;
+	}
+	.list .imge{
+		width: 13px;
+		height: 13px;
+		margin-top: -43px;
+		float: right;
+		margin-right: 20px;
+	}
+	.tab{
+		border-bottom: 4px solid #5b9bec;
+	}
+	.boxs{
+		overflow: hidden;
+		float: left;
+		height: 376px;
+		position: relative;	
+		width: 279px;
+	}
+	.box1{
+		float: left;
+	}
+	.inside{
+		width: 837px;
+		background-color: yellow;
+		position: relative;
+	}
+	.contactList ul li img{
+			width: 34px;
+			height: 28px;
+	}
