@@ -1,0 +1,23 @@
+#main{-wibkit-column-widht:202px;
+	-moz-colum-width:202px;
+	-o-column-width:202px;
+	-ms-colum-width:202px;
+	-webkit-column-count:6;
+	-moz-column-count:6;
+	-o-column-count:6;
+	-ms-columncount:6;
+}
+.box{padding:10px 0 0 15px;}
+.pic{
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	/*圆角的属性*/
+	box-shadow: 0 0 5px #ccc;
+	width:165px;
+}
+.pic img{
+	display: block;
+	width: 165px;
+	height: auto; 
+}
