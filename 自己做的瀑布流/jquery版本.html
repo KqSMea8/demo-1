@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery版本</title>
+	<style >
+		#main {
+			position: relative;
+			width: 100%;
+		}
+		.box {
+			float: left;
+			padding: 10px 0 0 10px;
+		}
+		.pic {
+			padding: 10px;
+			box-shadow: 0 0 5px;
+			border-radius: 5px;
+		}
+		img {
+			width: 165px;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	<div class="box">
+		<div class="pic">
+			<img src="images/0.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/1.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/2.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/3.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/4.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/5.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/6.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/7.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/8.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/9.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/10.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/11.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/12.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/13.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/14.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/15.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/16.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/17.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/18.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/19.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/20.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/21.jpg"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+			<img src="images/22.jpg"/>
+		</div>
+	</div>
+</div>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script >
+		$(window).on('load',function(){
+			waterfall();
+			$(window).on('scroll',function(){
+				if(checkHeight()) {
+					var data = {'data':[{'img':'0.jpg'},{'img':'1.jpg'}]};
+						$.each(data.data,function(index,element){
+							$('<div class="box">'+
+								'<div class="pic">'+
+							 	'<img src="images/'+$(element).attr('img')+'"/>'+
+				            	'</div>'+
+						  	'</div>').appendTo($('#main'));
+						})
+				}
+				waterfall();
+			})
+		}) 
+
+		//瀑布流
+		function waterfall() {
+			//获取到所有的box
+			var oBoxs = $('#main>div');
+			//现在要算页面的宽度，那就要先得到有多少列
+			var clientWidth = $(window).width();
+			var imgW = oBoxs.eq(0).outerWidth();
+			var cols = Math.floor(clientWidth/imgW);
+			$('#main').width(imgW*cols).css('margin','0 auto');
+			var arrH = [];
+			oBoxs.each(function(index,element){
+				if(index<cols){
+					arrH.push($(element).innerHeight());
+				}else {
+					var minH = Math.min.apply(null,arrH);
+					var minIndex = $.inArray(minH,arrH);
+					$(element).css({
+									 position:'absolute',
+						       		 left:minIndex*imgW+'px',
+						             top:minH+'px'});
+					arrH[minIndex] += $(element).height();	
+				}
+			})		
+		}
+
+		//检查是否到了尾部，最后最低的那一列的高度加上下一个图片的高度的一半
+		function checkHeight() {
+			var last = $('#main>div:last-child');
+			var height = last.offset().top + Math.floor(last.height()/2);
+			var bodyHeight = $(window).height() + $(window).scrollTop();
+			console.log(height+'::::'+bodyHeight);
+			return (height<bodyHeight)?true:false;
+		}
+	</script>
+</body>
+</html>
