@@ -1,0 +1,57 @@
+html,
+body {
+    color: #f2fa00;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    background: #ffc5c4;
+}
+button {
+    width: 5rem;
+    height: 1.8rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem #7e67af;
+    background: radial-gradient(#9de553, #15780e);
+    outline: none;
+
+}
+.desktop {
+    position: relative;
+    width: 30rem;
+    height: 25rem;
+    margin: 0 auto;
+    background: #004969;
+}
+.inGame {
+    text-align: center;
+}
+.inGame p {
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+.btn {
+    margin-top: 10%;
+    text-align: center;
+}
+.giveCard {
+    position: absolute;
+    top: 45%;
+    left: 42%;  
+}
+
+.play2 {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+.card img {
+    width: 3rem;
+    height: 4rem;
+    margin-right: .5rem;
+}
+.point1,
+.point2 {
+    text-align: center;
+}
