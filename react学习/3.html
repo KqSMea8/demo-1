@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3</title>
+</head>
+<body>
+	<div id="mountnode"></div>
+	<!-- 导入react类库和JSX工具类库 -->
+<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+<script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+
+<script type="text/jsx">
+	var HelloMessage = React.createClass({
+		render: function  () {
+			return <div>Hello {this.props.name}</div>;
+		}
+	});
+
+	var mountnode = document.getElementById('mountnode');
+
+	React.render(<HelloMessage name="sufubo" />, mountnode);
+</script>
+</body>
+</html>
