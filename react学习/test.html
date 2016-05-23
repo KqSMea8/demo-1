@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+<script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+<script type="text/jsx">
+	var StyleComp = React.createClass({
+		getDefaultProps: function  () {
+			return {
+				date: new Date()
+			}
+		},
+
+		render: function  () {
+			var day = this.props.date.getDay();
+			return <div>Day: {day}</div>;
+		}
+	})	
+
+	React.render(<StyleComp />, document.getElementById('container'));
+
+
+</script>
+</body>
+</html>

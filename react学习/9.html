@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件的复合-渲染选择题的组件</title>
+</head>
+<body>
+	<div id="contanier"></div>
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+    <script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+   	<script type="text/jsx">
+   		var AnswerRadionInput = React.createClass({
+   			propTypes: {
+   				id: React.PropType.string,
+   				name: React.PropType.string.isRequired,
+   				lable: React.PropType.string.isRequired,
+   				value: React.PropType.string.isRequired,
+   				checked: React.PropType.bool
+   			},
+
+   			getDefaultProps: function  () {
+   				return {
+   					id: null,
+   					checked: false
+   				}	
+   			},
+
+   			getInitialState: function  () {
+   				var id = this.props.id ? this.props.id : uniqueId("radio-");
+   				return {
+   					checked: !!this.props.checked,
+   					id: id,
+   					name: id
+   				}
+   			}
+
+   			render: function  () {
+	   			return (
+	   				<div className="radio">
+	   					<label htmlFor={this.props.id}>
+	   						<input type="radio" name={this.props.name} id={this.props.id} value={this.props.value} checked={this.state.checked}/>
+	   						Label Text
+	   						{this.props.label}
+	   					</label>
+	   				</div>
+	   			)
+	   		}
+   		});
+
+   		//整合到父组件当中
+   		var AnswerMultipleChoiceQuestion = React.createClass({
+   			propTypes: {
+   				value: React.PropType.string,
+   				choices: React.PropType.array.isRequired,
+   				onCompleted: React.PropType.func.isRequired
+   			},
+
+   			getInitialState: function  () {
+   				return {
+   					id: uniqueId("multiple-choice-"),
+   					value: this.props.value
+   				}
+   			},
+
+   			render: function  () {
+   				return (
+   					<div className="form-group">
+   						<label className="survey-item-label" htmlFor={this.state.id}>{this.props.label}</label>
+   						<div className="surver-item-content">
+   							<AnswerRadionInput />
+   						</div>
+   					</div>
+   				)
+   			}
+   		});
+
+
+
+
+
+   	</script>
+</body>
+</html>
