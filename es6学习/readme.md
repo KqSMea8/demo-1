@@ -1,0 +1,10 @@
+学习es6之前需要学一下gulp，因为需要把es6编译成es5.
+gulp安装然后确定所需功能，安装插件。
+gulp只有五个方法，run，task，watch，src，dest，
+编写任务
+gulp运行
+详细参考此教程https://segmentfault.com/a/1190000000372547
+编译es6教程
+https://segmentfault.com/a/1190000003739419
+遇到的问题
+https://segmentfault.com/q/1010000003972581

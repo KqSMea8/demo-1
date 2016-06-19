@@ -1,0 +1,8 @@
+{
+  "generator-react-webpack": {
+    "appName": "",
+    "style": "scss",
+    "postcss": false,
+    "generatedWithVersion": 3
+  }
+}

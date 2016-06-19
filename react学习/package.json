@@ -1,0 +1,22 @@
+{
+  "name": "browserify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build":"browserify --debug index.js > bundle.js",
+    "build-dist":"NODE_ENV=production browserify index.js | uglifyjs -m > bundle.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "browserify": {
+    "transform": ["reactify"]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^15.1.0",
+    "reactify": "^1.1.1",
+    "uglify-js": "^2.6.2"
+  }
+}

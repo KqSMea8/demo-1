@@ -15,7 +15,16 @@
    				name: React.PropType.string.isRequired,
    				lable: React.PropType.string.isRequired,
    				value: React.PropType.string.isRequired,
-   				checked: React.PropType.bool
+   				checked: React.PropType.bool,
+   				onChanged: React.PropTypes.func.isRequired
+   			},
+
+   			handleChanged: function  (e) {
+   				var checked = e.target.checked;
+   				this.setState({checked: checked});
+   				if (checked) {
+   					this.props.onChanged(this.props.value);
+   				}
    			},
 
    			getDefaultProps: function  () {
@@ -62,17 +71,40 @@
    				}
    			},
 
+   			handleChanged: function  (value) {
+   				this.setState({value: value});
+   				this.props.onCompleted(value);
+   			},
+
+
+   			renderChoices: function  () {
+   				return this.props.choice.map(function  (choice, i) {
+   					return AnswerRadionInput({
+   						id: "choice-" + i,
+   						name: this.state.id,
+   						label: choice,
+   						value: choice,
+   						checked: this.state.value === choice,
+   						onChanged: this.handleChanged
+   					}.bind(this));
+   				})
+   			}
+
    			render: function  () {
    				return (
    					<div className="form-group">
    						<label className="survey-item-label" htmlFor={this.state.id}>{this.props.label}</label>
    						<div className="surver-item-content">
-   							<AnswerRadionInput />
+   							{this.renderChoices()}
    						</div>
    					</div>
    				)
    			}
    		});
+
+   		<AnswerMultipleChoiceQuestion choices={arrayOfChoices} />
+
+
 
 
 

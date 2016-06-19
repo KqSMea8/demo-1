@@ -11,7 +11,7 @@
 <script type="text/jsx">
 	var TestClickComponent = React.createClass({
 		handlerClick: function  (event) {
-			var node = this.getDOMNode(this.refs.tip);
+			var node = this.refs.tip.getDOMNode();
 			
 			if (node.style.display === "none") {
 				node.style.display = "inline";

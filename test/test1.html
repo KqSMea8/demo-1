@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基线对齐</title>
+	<style type="text/css">
+		.cbg {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 250px;
+			height: 250px;
+			background: url(../img/logo.png);
+			background-size: cover;
+		}
+		.cc {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			animation: rotateScale 2s linear infinite;
+			transform: translate(-50%, -50%);
+			width: 180px;
+			height: 180px;
+			background: url(../img/43.png) no-repeat;
+			background-size: cover;
+		}
+		@keyframes rotateScale {
+			0% {
+				transform: translate(-50%, -50%) rotate(0) scale(.5);
+			}
+			50% {
+				transform: translate(-50%, -50%) rotate(180deg) scale(1);
+			}
+			100% {
+				transform: translate(-50%, -50%) rotate(360deg) scale(.5);
+			}
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="cbg">
+         <div class="cc"></div>
+    </div>
+	<h1>sufubo</h1>
+	<p>设计的时候用网格可以很好的控制页面，更好的布局，就想在设计软件inDesign便能调整形状对齐网格的工具，对应到css中只能通过调整line-height，padding，margin，size，这些其中的任何一些变化就会引起元素总高度的变化
+	实现css基线
+	有的人只要使行高和间距遵循一套规范
+	定义基线从所使用的最小文本开始，大多是你的body文本，
+	下面的例子使用的是14px的font-size配以22pxline-height和所有元素的总高(包括边框，内边距和外边距)必须是22px的倍数，
+	使用px并不是最优的，为了可伸缩性我们使用em
+	只需要除以16换算出对应的em
+	给上边框，给所有的元素使得合并之后的总高度仍是基线之间高度的倍数
+	这里并不是什么复杂高深的高科技，但是在复杂的网站，特别是使用相对单位的时候上述数字的相加将会是一个不小的挑战，如果是是sass可以解决一部分的问题，使用sass我们可以将基线之间的高度定义为一个变量（baseline）使用一次方程定义他的倍数，
+	保证我们的行高，内边距，外边距，高度任何属性的相加总是等于基线间的高度的倍数，就可以保证我们整个垂直网格不受影响，这很简单，
+	在开始我推荐你有着最小文本的line-height开始定义你的基线间的高度，就像body的文本，一个固定的22px的最小单元会使得你的固定字体line-height值变得很不合适
+	在手动进行偏移设置会让设计网站中和微型站点中这确实值得
+	虽然和麻烦，但是如果没有人尝试如此劳力和复杂代码的技术，我们就不能有成熟的语法时代了
+	
+	</p>
+
+
+
+	<script type="text/javascript">
+
+
+	</script>
+</body>
+</html>

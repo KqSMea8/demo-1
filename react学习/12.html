@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+</head>
+<body>
+	<div id="contanier"></div>
+
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+    <script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+    <script type="text/jsx">
+    	var MyForm = React.createClass({
+    		submitHandler: function  (event) {
+    			event.preventDefault();
+                
+    			//通过ref访问输入框
+	    		var hello = this.refs.helloTo.getDOMNode().value;
+	    		alert(hello);
+    		},
+
+    		render: function  () {
+    			return (
+    				<form onSubmit={this.submitHandler}>
+    					<input ref="helloTo" type="text" defaultValue="Hello World" />
+    					<button type="submit">Speak</button>
+    					<input type="text" name="given_name" autoFocus="true"/>
+    				</form>
+    			)
+    		}
+    	});
+
+    	React.render(<MyForm />, document.getElementById("contanier"));
+    </script>
+</body>
+</html>

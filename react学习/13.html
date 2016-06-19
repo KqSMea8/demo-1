@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+</head>
+<body>
+	<div id="contanier"></div>
+
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+    <script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+    <script type="text/jsx">
+    	//使用requestAnimationFrame
+    	var Positioner = React.createClass({
+    		getInitialState: function  () {
+    			return {
+    				position: 0
+    			}
+    		},
+
+    		resolveAnimationFrame: function  () {
+    			var timestamp = new Date();
+    			var timeRemaining = Math.max(0, this.props.animationCompleteTimestap - timestamp);
+    			if (timeRemaining > 0) {
+    				this.setState({position: timeRemaining});
+    			}
+
+    		},
+
+    		componentWillUpdate: function  () {
+    			if (this.props.animationCompleteTimestap) {
+    				requestAnimationFrame(this.resolveAnimationFrame);
+    			}
+    		},
+
+    		render: function  () {
+    			var divStyle = {left: this.state.position};
+    			return (
+    				<div style={divStyle}>This will animate</div>
+    			)
+    		}
+    	});
+
+    	React.render(<Positioner/>, document.getElementById('contanier'))
+
+    </script>
+</body>
+</html>
