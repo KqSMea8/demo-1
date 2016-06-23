@@ -27,18 +27,26 @@ spa.shell = (function  () {
 				'<div class="spa-shell-chat"></div>'+
 				'<div class="spa-shell-modal"></div>',
 
-		char_extend_time: 1000, //根据需求1：‘开发人员能够配置
+		char_extend_time: 250, //根据需求1：‘开发人员能够配置
 				                        //滑块的速度和高度’
 				                        //在配置映射中保存起来和展开间的高度
 		char_retract_time: 300,
 		chat_extend_height: 450,
-		chat_retract_height: 15
+		chat_retract_height: 15,
+		chat_extended_title: 'click to retract',  //设置提示信息文字用户操作
+		chat_retracted_title: 'click to extend'
 	},
 
-	stateMap = {$container: null},  //放整个模块中共享的动态信息
+	stateMap = {
+		$container: null,
+		is_chat_retracted: true//列出所有会用到的键，容易查找和查看
+		                      
+	},  //放整个模块中共享的动态信息
+	   
 	jqueryMap = {},  //将jquery集合缓存在jqueryMap中               
 
-	setJqueryMap, toggleChat, initModule; //声明作用域中的变量
+	setJqueryMap, toggleChat, onClickChat, initModule; //声明作用域中的变量
+	                                                  
 	//Begin DOM method 
 	setJqueryMap = function  () {
 		var $container = stateMap.$container;
@@ -67,6 +75,8 @@ spa.shell = (function  () {
 				{
 					height: configMap.chat_extend_height
 				}, configMap.chat_extend_time, function  () {
+					jqueryMap.$chat.attr('title', configMap.chat_extended_title);
+					stateMap.is_chat_retracted = false;
 					if (callback) {
 						callback(jqueryMap.$chat);
 					}
@@ -79,6 +89,10 @@ spa.shell = (function  () {
 				{height: configMap.chat_retract_height},
 				configMap.chat_retract_time,
 				function  () {
+					jqueryMap.$chat.attr(
+						'title', configMap.chat_retract_title
+					);
+					stateMap.is_chat_retracted = true;
 					if (callback) {
 						callback(jqueryMap.$chat);
 					}
@@ -86,25 +100,24 @@ spa.shell = (function  () {
 		    return true;
 	};
 
+	//bengin event handlers
+	onClickChat = function  (event) {
+		toggleChat(stateMap.is_chat_retracted); //添加点击事件处理程序来调用togglechat
+		return false;
+	}
+
+
 	//Begin public method initModule
 	initModule = function  ($container) {  //将公共方法放在“public Methods”
 		stateMap.$container = $container;
 		$container.html(configMap.main_html);
 		setJqueryMap();		
 
-		//创建测试代码，以便确保滑块功能正常，
-		//在页面加载完成5s后展开滑块，过8秒后收起滑块
-		setTimeout(function  () {
-			toggleChat(true, function  () {
-				// alert(1)
-			});
-		}, 3000);
-
-		setTimeout(function  () {
-			toggleChat(false, function  () {
-				// alert(2)
-			});
-		}, 8000);
+		//initialize chat slider and bind click handler
+		stateMap.is_chat_retracted = true;
+		jqueryMap.$chat
+			.attr('title', configMap.chat_retract_title)
+			.click(onClickChat);
 	}
 
 	return {initModule: initModule}
