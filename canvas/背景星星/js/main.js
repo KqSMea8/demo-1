@@ -4,7 +4,9 @@ var can, ctx, w, h,
     num = 60,
     stars = [],
     lastTime,
-    deltaTime;	
+    deltaTime,
+    switchy = false,
+    life = 0;	
 
 
 function drawBackGround () {
@@ -18,18 +20,33 @@ function gameLoop () {
 	drawGirl ();
 
 	deltaTime = Date.now() - lastTime;
-	console.log(deltaTime)
 	drawStars(num, stars);
 
 	lastTime = Date.now();
-
 	
+	showAvailable ();
 
 	window.requestAnimFrame(gameLoop);
 }
 
 function drawGirl () {
 	ctx.drawImage(img, 100, 100, 600, 350);
+}
+
+
+function mousemove (e) {
+	if (e.offsetX || e.layerX) {
+		var px = e.offsetX === undefined ? e.layerX : e.offsetX,
+		    py = e.offsetY === undefined ? e.layerY : e.offsetY;
+
+		if (px > 100 && px < 700 && py > 100 && py < 450) {
+			switchy = true;
+
+		} else {
+			switchy = false;
+		}
+	
+	}
 }
 
 function init () {
@@ -50,4 +67,6 @@ function init () {
 
 	lastTime = Date.now();
 	gameLoop ();
+
+	document.addEventListener("mousemove", mousemove, false);
 }
