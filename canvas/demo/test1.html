@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+
+	
+
+	//画三角形
+	function drawTriangle () {
+		var can = document.getElementById("canvas");
+		if (can.getContext) {
+			ctx = can.getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(100, 100);
+			ctx.lineTo(150, 150);
+			ctx.lineTo(150, 50);
+			ctx.fill();
+		}
+	}	
+
+	function drawSmilingFace () {
+		var can = document.getElementById("canvas");
+		if (can.getContext) {
+			ctx = can.getContext('2d');
+
+			ctx.beginPath();
+			ctx.arc(100, 100, 50, 0, Math.PI*2, true);
+			ctx.moveTo(110, 100);
+			ctx.arc(100, 100, 30, 0, Math.PI, false);
+			ctx.moveTo(75, 75);
+			ctx.arc(75, 75, 10, 0, Math.PI*2, true);
+			ctx.moveTo(125, 75);
+			ctx.arc(125, 75, 10, 0, Math.PI*2, true);
+			ctx.stroke();
+		}
+	}
+
+	function drawStrokeTriangle () {
+		var can = document.getElementById("canvas");
+		if (can.getContext) {
+			ctx = can.getContext('2d');
+
+			ctx.beginPath();
+			ctx.lineTo(100, 100);
+			ctx.lineTo(150, 150);
+			ctx.lineTo(150, 50);
+			ctx.closePath();
+			ctx.stroke();	
+		}
+
+	}
+
+	function init () {
+		draw ()
+	}
+
+	window.onload = function  () {
+		init();
+	}
+
+
+
+		
+
+	</script>
+</body>
+</html>
