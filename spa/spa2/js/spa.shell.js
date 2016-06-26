@@ -102,7 +102,15 @@ spa.shell = (function  () {
 
 	//bengin event handlers
 	onClickChat = function  (event) {
-		toggleChat(stateMap.is_chat_retracted); //添加点击事件处理程序来调用togglechat
+
+		//当点击滑块时，我们会看到url会改变，只在togglechat成功返回
+		//true时
+		if(toggleChat(stateMap.is_chat_retracted)) {
+			$.uriAnchor.setAnchor({
+				chat: (stateMap.is_chat_retracted ? 'open' : 'closed')
+			})
+		}
+
 		return false;
 	}
 
