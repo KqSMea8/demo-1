@@ -12,6 +12,8 @@
 
 /** gloal $, spa */
 spa.shell = (function  () {
+	'use strict';
+
 	//----------------------BEGIN MODULE SCOPE VARIABLES-------
 	var configMap = {
 
@@ -20,10 +22,14 @@ spa.shell = (function  () {
 			chat: {opened: true, closed: true}
 		},
 
+		resize_interval: 200,
+
 		main_html : String()+'<div class="spa-shell-head">'+
-				          '<div class="spa-shell-head-logo"></div>'+
+				          '<div class="spa-shell-head-logo">'+
+				             '<h1>SPA</h1>'+
+				             '<p>javascript end to end</p>'+
+				          '</div>'+
 						'<div class="spa-shell-head-acct"></div>'+
-						'<div class="spa-shell-head-search"></div>'+
 				'</div>'+
 				'<div class="spa-shell-main">'+
 					'<div class="spa-shell-main-nav"></div>'+
@@ -61,7 +67,7 @@ spa.shell = (function  () {
 	   
 	jqueryMap = {},  //将jquery集合缓存在jqueryMap中               
 
-	copyAnchorMap, changeAnchorPart, onHashchange,
+	copyAnchorMap, changeAnchorPart, onHashchange, onTapAcct, onLogin, onLogout,
 	setJqueryMap, onClickChat, onResize, 
 	setChatAnchor, initModule; //声明作用域中的变量
 	                                                   
@@ -84,10 +90,7 @@ spa.shell = (function  () {
 
 		return true;
 	}
-	setJqueryMap = function  () {
-		var $container = stateMap.$container;
-		jqueryMap = {$container: $container};
-	}
+
 	                                                   
 	changeAnchorPart = function  (arg_map) {
 		var anchor_map_revise = copyAnchorMap(),
@@ -189,60 +192,80 @@ spa.shell = (function  () {
 		return changeAnchorPart({chat: position_type});
 	}
 
-
 	//Begin DOM method 
 	setJqueryMap = function  () {
 		var $container = stateMap.$container;
+		
 		jqueryMap = {
-		    $container: $container,
-		    $chat: $container.find('.spa-shell-chat')
-		}; //使用setJquerMap来缓存jquery集合，几乎我们
-		                                      //每个shell和功能
+			$container: $container,
+			$acct: $container.find('.spa-shell-head-acct'),
+			$nav: $container.find('.spa-shell-main-nav')
+		}
 	};
+
+	onTapAcct = function  (event) {
+		var acct_text, user_name, user = spa.model.people.get_user();
+		if (user.get_is_anon()) {
+			user_name = prompt('please sign-in');
+			spa.model.people.login(user_name);
+			jqueryMap.$acct.text('...processing...');
+		}else {
+			spa.model.people.logout();
+		}
+		return false;
+	}
+
+	onLogin = function  (event, login_user) {
+		jqueryMap.$acct.text(login_user.name);
+	}
+
+	onLogout = function  (event, logout_user) {
+		jqueryMap.$acct.text('please sign-in');
+	}
 
 	//begin DOM method /toogleChat
-	toggleChat = function  (do_extend, callback) {
-		var px_chat_ht = jqueryMap.$chat.height(),
-			is_open = px_chat_ht === configMap.chat_extend_height,
-			is_closed = px_chat_ht === configMap.chat_retract_height,
-			is_sliding = ! is_open && ! is_closed;
+	// toggleChat = function  (do_extend, callback) {
+	// 	var px_chat_ht = jqueryMap.$chat.height(),
+	// 		is_open = px_chat_ht === configMap.chat_extend_height,
+	// 		is_closed = px_chat_ht === configMap.chat_retract_height,
+	// 		is_sliding = ! is_open && ! is_closed;
 
 
-			//avoid race condition
-			if (is_sliding) {
-				return false;
-			}
+	// 		//avoid race condition
+	// 		if (is_sliding) {
+	// 			return false;
+	// 		}
 
-			//Begin extend chat slider
-			if(do_extend) {
-				jqueryMap.$chat.animate(
-				{
-					height: configMap.chat_extend_height
-				}, configMap.chat_extend_time, function  () {
-					jqueryMap.$chat.attr('title', configMap.chat_extended_title);
-					stateMap.is_chat_retracted = false;
-					if (callback) {
-						callback(jqueryMap.$chat);
-					}
-				})
-				return true;
-			}
+	// 		//Begin extend chat slider
+	// 		if(do_extend) {
+	// 			jqueryMap.$chat.animate(
+	// 			{
+	// 				height: configMap.chat_extend_height
+	// 			}, configMap.chat_extend_time, function  () {
+	// 				jqueryMap.$chat.attr('title', configMap.chat_extended_title);
+	// 				stateMap.is_chat_retracted = false;
+	// 				if (callback) {
+	// 					callback(jqueryMap.$chat);
+	// 				}
+	// 			})
+	// 			return true;
+	// 		}
 
-			//end extend chat slider
-			jqueryMap.$chat.animate(
-				{height: configMap.chat_retract_height},
-				configMap.chat_retract_time,
-				function  () {
-					jqueryMap.$chat.attr(
-						'title', configMap.chat_retract_title
-					);
-					stateMap.is_chat_retracted = true;
-					if (callback) {
-						callback(jqueryMap.$chat);
-					}
-				})
-		    return true;
-	};
+	// 		//end extend chat slider
+	// 		jqueryMap.$chat.animate(
+	// 			{height: configMap.chat_retract_height},
+	// 			configMap.chat_retract_time,
+	// 			function  () {
+	// 				jqueryMap.$chat.attr(
+	// 					'title', configMap.chat_retract_title
+	// 				);
+	// 				stateMap.is_chat_retracted = true;
+	// 				if (callback) {
+	// 					callback(jqueryMap.$chat);
+	// 				}
+	// 			})
+	// 	    return true;
+	// };
 
 	//bengin event handlers
 	onClickChat = function  (event) {
@@ -289,6 +312,14 @@ spa.shell = (function  () {
 			.bind('resize', onResize)
 			.bind('hashchange', onHashchange)
 			.trigger('hashchange');
+
+
+		$.gevent.subscribe($container, 'spa-login', onLogin);
+		$.gevent.subscribe($container, 'spa-logout', onLogout);
+
+		jqueryMap.$acct
+			.text('please sign-in')
+			.bind('utap', onTapAcct);	
 	}
 
 	return {initModule: initModule}
