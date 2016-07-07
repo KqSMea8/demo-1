@@ -223,7 +223,7 @@ spa.shell = (function  () {
 			.attr('title', configMap.chat_retract_title)
 			.click(onClickChat);
 
-			
+
 		//configure uriAnchor to use our schema
 		$.uriAnchor.configModule({   //配置uriAnchor插件，用于检测模式（schema）
 			schema_map: configMap.anchor_schema_map
@@ -232,7 +232,7 @@ spa.shell = (function  () {
 
 		//绑定hashchange事件处理程序并立即触发它，这样模块在初始加载时就会处理书签
 		$(window) 
-			.bind('hashchange', onHashchange)
+			.bind('hashchange', onHashchange)	
 			.trigger('hashchange');
 	}
 
