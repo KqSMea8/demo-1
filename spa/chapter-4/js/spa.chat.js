@@ -46,8 +46,10 @@ spa.chat = (function  () {  //创建该模块的命名空间spa.chat
 
 		slider_open_time: 250,
 		slider_close_time: 250,
-		slider_opened_em: 16,
+		slider_opened_em: 18,
 		slider_closed_em: 2,
+		slider_opened_min_em: 10,
+		window_height_min_em: 20,
 		slider_opened_title: 'click to close',
 		slider_closed_title: 'click to open',
 
@@ -99,10 +101,15 @@ spa.chat = (function  () {  //创建该模块的命名空间spa.chat
 
 	//begin dom method /setPxSizes
 	setPxSizes = function  () {
-		var px_per_em, opened_height_em;
+		var px_per_em, window_height_em, opened_height_em;
 		px_per_em = getEmSize(jqueryMap.$slider.get(0));
 
-		opened_height_em = configMap.slider_opened_em;
+		window_height_em = Math.floor(
+			($(window).height() / px_per_em) + 0.5
+		);
+
+		opened_height_em = window_height_em > configMap.window_height_min_em
+		? configMap.slider_opened_em : configMap.slider_opened_min_em;
 
 		stateMap.px_per_em = px_per_em;
 		stateMap.slider_closed_px = configMap.slider_closed_em * px_per_em;
@@ -112,7 +119,30 @@ spa.chat = (function  () {  //创建该模块的命名空间spa.chat
 		})
 	}
 
-	setSliderPosition = function  () {
+
+	//begin public method handleResize
+	handleResize = function  () {
+		
+		//don't do anything if we don't have a slider container
+		if (!jqueryMap.$slider) {
+			return false;
+		}
+
+		setPxSizes();
+
+		if (stateMap.position_type === 'opened') {
+			jqueryMap.$slider.css({height: stateMap.slider_opened_px});
+		}
+
+
+		//如果滑块是展开的，在窗口尺寸调整期间，确保把滑块高度设置为
+		//setPxSizes计算得到的值
+		
+		return true;
+	}
+
+
+	setSliderPosition = function  (position_type, callback) {
 		var height_px, animate_time, slider_title, toggle_text;
 
 		//return true if slider already in requested position

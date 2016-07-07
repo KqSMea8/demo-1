@@ -1,10 +1,10 @@
-/*.spa-shell-head, .spa-shell-head-logo, .spa-shell-head-acct,
+.spa-shell-head, .spa-shell-head-logo, .spa-shell-head-acct,
 .spa-shell-head-search, .spa-shell-main, .spa-shell-main-nav,
 .spa-shell-main-content, .spa-shell-foot, .spa-shell-chat,
 .spa-shell-modal {
 	position: absolute;
 }
-*/
+
 .spa-shell-head {
 	top: 0;
 	left: 0;

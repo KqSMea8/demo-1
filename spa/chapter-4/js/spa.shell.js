@@ -21,16 +21,19 @@ spa.shell = (function  () {
 		},
 
 		main_html : String()+'<div class="spa-shell-head">'+
-		          '<div class="spa-shell-head-logo"></div>'+
-				'<div class="spa-shell-head-acct"></div>'+
-				'<div class="spa-shell-head-search"></div>'+
+				          '<div class="spa-shell-head-logo"></div>'+
+						'<div class="spa-shell-head-acct"></div>'+
+						'<div class="spa-shell-head-search"></div>'+
 				'</div>'+
 				'<div class="spa-shell-main">'+
-				'<div class="spa-shell-main-nav"></div>'+
-				'<div class="spa-shell-main-content"></div>'+
+					'<div class="spa-shell-main-nav"></div>'+
+					'<div class="spa-shell-main-content"></div>'+
 				'</div>'+
 				'<div class="spa-shell-foot"></div>'+
 				'<div class="spa-shell-modal"></div>',
+
+
+		resize_interval: 200
 
 		// char_extend_time: 250, //根据需求1：‘开发人员能够配置
 		// 		                        //滑块的速度和高度’
@@ -44,8 +47,14 @@ spa.shell = (function  () {
 
 
 	stateMap = {
+
+		$container: undefined,
+
+
 		// $container: null,
 		anchor_map: {},
+
+		resize_idto: undefined
 		// is_chat_retracted: true//列出所有会用到的键，容易查找和查看
 		                      
 	},  //放整个模块中共享的动态信息
@@ -53,7 +62,7 @@ spa.shell = (function  () {
 	jqueryMap = {},  //将jquery集合缓存在jqueryMap中               
 
 	copyAnchorMap, changeAnchorPart, onHashchange,
-	setJqueryMap, onClickChat, 
+	setJqueryMap, onClickChat, onResize, 
 	setChatAnchor, initModule; //声明作用域中的变量
 	                                                   
 	//returns copy of stored anchor map; minimizes overhead
@@ -61,6 +70,20 @@ spa.shell = (function  () {
 		return $.extend(true, {}, stateMap.anchor_map);
 	}	         
 
+
+	//begin event handler 'onResize'
+	onResize = function  () {
+		if (stateMap.resize_idto) {
+			return true;
+		}
+
+		spa.chat.handleResize();
+		stateMap.resize_idto = setTimeout(function  () {
+			stateMap.resize_idto = undefined;
+		}, configMap.resize_interval);
+
+		return true;
+	}
 	setJqueryMap = function  () {
 		var $container = stateMap.$container;
 		jqueryMap = {$container: $container};
@@ -233,10 +256,10 @@ spa.shell = (function  () {
 
 	//Begin public method initModule
 	initModule = function  ($container) {  //将公共方法放在“public Methods”
-		
+
 		stateMap.$container = $container;
 		$container.html(configMap.main_html);
-		setJqueryMap();		
+		setJqueryMap();
 
 		//initialize chat slider and bind click handler
 		// stateMap.is_chat_retracted = true;
@@ -244,23 +267,26 @@ spa.shell = (function  () {
 		// 	.attr('title', configMap.chat_retract_title)
 		// 	.click(onClickChat);
 
-			
 		//configure uriAnchor to use our schema
 		$.uriAnchor.configModule({   //配置uriAnchor插件，用于检测模式（schema）
+			schema_map: configMap.anchor_schema_map
+		});
+
+		//configure and initialize feature modeles
+		spa.chat.configModule({
 			set_chat_anchor: setChatAnchor,
 			chat_model: spa.model.chat,
 			people_model: spa.model.people
-		});
+		})
 
 		//configure and initialize feature modules
 		// spa.chat.configModule({});
+		
 		spa.chat.initModule(jqueryMap.$container);
-
-
-
 
 		//绑定hashchange事件处理程序并立即触发它，这样模块在初始加载时就会处理书签
 		$(window) 
+			.bind('resize', onResize)
 			.bind('hashchange', onHashchange)
 			.trigger('hashchange');
 	}
