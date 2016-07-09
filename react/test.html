@@ -8,32 +8,45 @@
     <script src="http://cdn.bootcss.com/babel-core/5.8.32/browser.min.js"></script>	
 
     <style type="text/css">
-        .aaa #ddd {
-            color: red;
-        }
-        #ddd {
-            color: blue;
-        }
-
     </style>
   </head>
   <body>
-    <div class="aaa" id="bbb">
-        <div class="ccc" id="ddd">sufubo</div>
-    </div>
-    
     <div id="example"></div>
     <script type="text/babel">
-        var Hello = React.createClass({
-        	render: function  () {
-        		return <div>Hello {this.props.name}</div>
-        	}
+        var Switch = React.createClass({
+            getInitialState: function  () {
+                return {
+                    open: false
+                }
+            },
+
+            render: function  () {
+                console.log(this.state.open);
+                var open = this.state.open;
+                return <div>
+                    <input type="checkbox" checked={open}/>
+                </div>
+            },
+
+            toggleSwitch: function  () {
+                var open = this.state.open;
+                this.setState({
+                    open: !open
+                })
+            }
         })
 
-        function render () {
-        	return <p><CustomComponent/></p>
-        }
-        ReactDOM.render(<Hello name="world"/>, document.getElementById('example'));
+        var TodoItem = React.createClass({
+            render: function  () {
+                var props = this.props;
+                return <div>
+                 <span>{props.children}</span>
+                </div>
+            }
+        })
+
+
+        ReactDOM.render(<div><TodoItem>learn </TodoItem><Switch /></div>, document.getElementById('example'))
     </script>
   </body>
 </html>

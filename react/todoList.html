@@ -100,7 +100,51 @@
     		}]
     	}
 
-    	var ToList = React.createClass({
+    	var App = React.createClass({
+    		render: function  () {
+    			return <div className="box">
+    				<Header />
+    				<TodoList />
+    				<Footer />
+    			</div>
+    		}
+    	})
+
+    	var Header = React.createClass({
+    		render: function  () {
+    			return <div>
+    				<header>todos</header>
+    				<div className="input">
+						<input/>
+					</div>
+    			</div>
+    		}
+    	})
+
+    	var TodoList = React.createClass({
+    		render: function  () {
+    			return <ul>
+    				{todolist.todos.map(function(value, i) {
+    					var className = "";
+			    		if (value.completed){
+			    			className = "completed";
+			    		}
+			    		return <TodoItem className={className} key={i} value={value} />
+    				})}
+    			</ul>
+    		}
+    	})
+
+    	var TodoItem = React.createClass({
+    		render: function  () {
+    			return <li className={this.props.className} >
+							<input className="checkbox" type="checkbox" />
+							<label  className="value">{this.props.value.title}</label>
+						</li>
+    		}
+    	})
+
+    	var Footer = React.createClass({
     		render: function  () {
     			
     			//计算还有多少个未完成的
@@ -108,44 +152,22 @@
     				return todo.completed ? acc : acc + 1;
     			}, 0);
 
-    			return (<div className="box">
-    					    <header>todos</header>
-    					    <div className="content">
-    						   <div className="input">
-								    <input/>
-							    </div>
-							    <div className="list">
-								    <ul>
-								    	{todolist.todos.map(function(currentValue, i) {
-								    		var className = "";
-								    		if (currentValue.completed){
-								    			className = "completed";
-								    		}
-
-											return (<li className={className} key={i}>
-											   <input className="checkbox" type="checkbox" />
-										       <label  className="value">{currentValue.title}</label>
-										    </li>)
-									    })}
-								    </ul>
-							    </div>
+    			return <div className="footer">
+						    <span>{lefted} items left</span>
+						    <div className="filters">
+								<a href="#">All</a>
+								<a href="#">Active</a>
+								<a href="#">Completed</a>
 						    </div>
-						    <div className="footer">
-							    <span>{lefted} items left</span>
-							    <div className="filters">
-									<a href="#">All</a>
-									<a href="#">Active</a>
-									<a href="#">Completed</a>
-							    </div>
-							    <button>Clear completed</button>
-						    </div>
-    				    </div>)
+						    <button>Clear completed</button>
+						</div>
     		}
     	})
+
 	
 
 
-		ReactDOM.render(<ToList />, document.getElementById('AppRoot'));
+		ReactDOM.render(<App />, document.getElementById('AppRoot'));
 
 
 
