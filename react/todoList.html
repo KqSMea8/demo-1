@@ -101,6 +101,12 @@
     	}
 
     	var App = React.createClass({
+    		var style = {
+    			background: 'red',
+    			height: 100,
+    			width: 100
+    		},
+
     		render: function  () {
     			return <div className="box">
     				<Header />
@@ -115,7 +121,7 @@
     			return <div>
     				<header>todos</header>
     				<div className="input">
-						<input/>
+						<input placeholder="what need to be done?"/>
 					</div>
     			</div>
     		}
@@ -163,12 +169,96 @@
 						</div>
     		}
     	})
-
-	
-
-
 		ReactDOM.render(<App />, document.getElementById('AppRoot'));
 
+
+		var MyMixin1 = {
+			componentDidMount: function  () {
+				console.log('auto do something when component did mount');
+			}
+		}
+
+		var MyMixin2 = {
+			someMethod: function  () {
+				console.log('doSomething');
+			}
+		}
+
+		var MyComponnet = React.createClass({
+			mixins: [MyMixin1, MyMixin2],
+			componentDidMount: function  () {
+
+				// 调用mixin1共享的方法
+				this.someMethod();
+			}
+		})
+
+		var MyComponnet = React.createClass({
+			statics: {
+				customMethod: function  (foo) {
+					return foo === 'bar';
+				}
+			}
+		})
+
+		MyComponnet.customMethod('bar');
+
+		var MyComponnet = React.createClass({
+			displayName: 'MyComponent'
+		})
+
+		var myComponent = React.createClass({
+			render: function  () {
+				return <div></div>
+			},
+
+			componentDidMount: function  () {
+				var root = ReactDOM.findDOMNode(this);
+				console.log(root);
+			}
+
+		})
+
+		var MyComponnet = React.createClass({
+			render: function  () {
+				return <div>
+					<button ref="btn"></button>
+					<a href="" ref="link"></a>
+				</div>
+			},
+
+			componentDidMount: function  () {
+				var btn = this.refs.btn;
+				var link = this.refs.link;
+				console.log(btn, link);
+			}
+		})
+
+		var MyComponnet = React.createClass({
+			render: function  () {
+				return <div>
+					<button onClick={this.onClick}>Click me</button>
+				</div>
+			},
+
+			onClick: function  () {
+				console.log('click me');
+			}
+		})
+
+		function onClick (event) {
+			console.log(event);
+			console.log(event.type);
+			var eventType = event.type;
+
+			setTimeout(function  () {
+				console.log(event.type);
+				console.log(eventType);
+			}, 0);
+
+			this.setState({clickEvent: event});
+			this.setState({eventType: event.type})
+		}
 
 
     </script>
