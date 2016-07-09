@@ -7,6 +7,9 @@
     <script src="http://cdn.bootcss.com/react/0.14.1/react-dom.js"></script>
     <script src="http://cdn.bootcss.com/babel-core/5.8.32/browser.min.js"></script>
     <style type="text/css">
+    	input {
+    		outline: none;
+    	}
     	.box {
     		width: 700px;
     		margin: 20px auto;
@@ -35,36 +38,37 @@
 			border: 1px solid #dbebe8;
 		}
 
-
 		.checkbox {
-			display: none;
+			width: 30px;
+			height: 30px;
+			vertical-align: top;
+			-webkit-appearance: none;
+			border-radius: 50%;
+			outline: none;
+			background-color: #fff;	
 		}
-		
-		.checkbox + label {
-			background-color: #FFF; 
-	        border: 1px solid #C1CACA; 
-	        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); 
-	        padding: 9px; 
-	        border-radius: 5px; 
-	        display: inline-block; 
-	        position: relative; 
-	        margin-right: 30px; 
+	
+		.completed label {
+			text-decoration: line-through;
 		}
-		.checkbox:checked + label::after {
+
+		.checkbox:checked::after,
+		.completed .checkbox::after {
 			content: '\2714';
-		    position: absolute; 
-		    top: -7px; 
-		    left: 0px; 
+			margin-left: 5px;
 		    color: #758794; 
 		    width: 100%; 
 		    text-align: center; 
-		    font-size: 1.4em; 
+		    font-size: 2em; 
 		    padding: 1px 0 0 0; 
 		    vertical-align: text-top;
 		}
 		.value {
+			display: inline-block;
 			width: 75%;
 			height: 40px;
+			line-height: 40px;
+			border: 1px solid #fff;
 		}
 
 		.filters {
@@ -74,43 +78,10 @@
 		.footer button {
 			float: right;
 		}
-	
     </style>
   </head>
-
   <body>
-
-	<div class="box">
-		<header>todos</header>
-		<div class="content">
-			<div class="input">
-				<input>
-			</div>
-			<div class="list">
-				<ul>
-					<li>
-						<input class="checkbox" id="checkbox-id" type="checkbox">
-						<label for="checkbox-id"></label>
-						<input class="value">
-					</li>  
-				</ul>
-			</div>
-			<div class="footer">
-				<span>0 items left</span>
-				<div class="filters">
-					<a href="#">All</a>
-					<a href="#">Active</a>
-					<a href="#">Completed</a>
-				</div>
-				<button>Clear completed</button>
-			</div>
-		</div>
-	</div>
-
-	
-
    <section id="AppRoot" class="todoapp"></section>
-
     <script type="text/babel">
     	var todolist = {
     		name: 'todos',
@@ -134,11 +105,47 @@
     			
     			//计算还有多少个未完成的
     			var lefted = todolist.todos.reduce(function  (acc, todo) {
-    				return todo ? acc : acc + 1;
+    				return todo.completed ? acc : acc + 1;
     			}, 0);
+
+    			return (<div className="box">
+    					    <header>todos</header>
+    					    <div className="content">
+    						   <div className="input">
+								    <input/>
+							    </div>
+							    <div className="list">
+								    <ul>
+								    	{todolist.todos.map(function(currentValue, i) {
+								    		var className = "";
+								    		if (currentValue.completed){
+								    			className = "completed";
+								    		}
+
+											return (<li className={className} key={i}>
+											   <input className="checkbox" type="checkbox" />
+										       <label  className="value">{currentValue.title}</label>
+										    </li>)
+									    })}
+								    </ul>
+							    </div>
+						    </div>
+						    <div className="footer">
+							    <span>{lefted} items left</span>
+							    <div className="filters">
+									<a href="#">All</a>
+									<a href="#">Active</a>
+									<a href="#">Completed</a>
+							    </div>
+							    <button>Clear completed</button>
+						    </div>
+    				    </div>)
     		}
     	})
+	
 
+
+		ReactDOM.render(<ToList />, document.getElementById('AppRoot'));
 
 
 
