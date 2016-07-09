@@ -101,27 +101,120 @@
     	}
 
     	var App = React.createClass({
-    		var style = {
-    			background: 'red',
-    			height: 100,
-    			width: 100
+    		getInitialState: function  () {
+    			return {
+    				addTaskTitle: '',
+    				todolist: todolist,
+    				type: 'all'
+    			}
     		},
 
+    		//表单输入域
+    		changeHandel: function  (e) {
+    			this.setState({value: e.target.value});
+    		},
+
+    		/**
+    		 * 添加任务
+    		 *
+    		 * @param      {<type>}   e       { parameter_description }
+    		 * @return     {boolean}  { description_of_the_return_value }
+    		 */
+   			addTaskHandel: function  (e) {
+   				let task = this.refs.addTask;
+   				if (task.value === '') {
+   					console.error('不能添加空的task');
+   					return false;
+   				}
+   				this.setState(function  () {
+   					let todos = this.states.todolist.todos,
+   					    todo = {
+   					    	completed: false,
+   					    	title: task.value
+   					    };
+   					todos.push(todo);
+   					return todos;
+   				})
+   			},
+
+   			/**
+   			 * 删除任务
+   			 *
+   			 * @param      {<type>}  index   The index
+   			 * @return     {<type>}  { description_of_the_return_value }
+   			 */
+   			deleteTaskHandel: function  (index) {
+				return function  () {
+					let todos = this.state.todolist.todos,
+						todolist = {
+							todolist: {
+								name: 'todos',
+								todos: []
+							}
+						};
+					todos.splice(index, 1);
+					todolist.todolist.todos = todos;
+
+					this.setState(todolist);
+
+				}.bind(this)				
+   			},
+
+   			/**
+   			 * 切换任务状态
+   			 */
+   			switchTaskCompletedHandel: function  (index) {
+				return function  () {
+					let todolist = this.state.todolist;
+					todolist['todos'][index]['completed'] = !todolist.['todos'][index]['completed'];
+
+					this.setState(todolist);
+				}.bind(this);
+   			},
+
+   			/**
+   			 * 切换任务类型
+   			 */
+   			switchListTypeHandel: function  () {
+   				
+   			}
+
+
+
+
     		render: function  () {
-    			return <div className="box">
-    				<Header />
-    				<TodoList />
-    				<Footer />
-    			</div>
+    			var style = {
+    			background: 'red',
+    			height: 100,
+    			width: 100	
+    		};
+			return <div className="box">
+				<Header todolist={this.state.todolist}/>
+				<TodoList todolist={this.state.todolist}/>
+				<Footer />
+			</div>
     		}
     	})
 
     	var Header = React.createClass({
+    		onEnter: function  (e) {
+    			var keyCode = e.keyCode ? e.keyCode : e.which;
+    			var todolist = this.props.todolist;
+    			if (keyCode === 13) {
+    				var title = e.target.value;
+    				if (title.length > 0) {
+    					todolist.todos.push({completed: false, title: title});
+    					console.log(todolist)
+    				}		
+    			}
+    			
+    		},
+
     		render: function  () {
     			return <div>
     				<header>todos</header>
     				<div className="input">
-						<input placeholder="what need to be done?"/>
+						<input placeholder="what need to be done?" onKeyUp={this.onEnter}/>
 					</div>
     			</div>
     		}
@@ -129,6 +222,7 @@
 
     	var TodoList = React.createClass({
     		render: function  () {
+    			var todolist = this.props.todolist;
     			return <ul>
     				{todolist.todos.map(function(value, i) {
     					var className = "";
@@ -171,94 +265,6 @@
     	})
 		ReactDOM.render(<App />, document.getElementById('AppRoot'));
 
-
-		var MyMixin1 = {
-			componentDidMount: function  () {
-				console.log('auto do something when component did mount');
-			}
-		}
-
-		var MyMixin2 = {
-			someMethod: function  () {
-				console.log('doSomething');
-			}
-		}
-
-		var MyComponnet = React.createClass({
-			mixins: [MyMixin1, MyMixin2],
-			componentDidMount: function  () {
-
-				// 调用mixin1共享的方法
-				this.someMethod();
-			}
-		})
-
-		var MyComponnet = React.createClass({
-			statics: {
-				customMethod: function  (foo) {
-					return foo === 'bar';
-				}
-			}
-		})
-
-		MyComponnet.customMethod('bar');
-
-		var MyComponnet = React.createClass({
-			displayName: 'MyComponent'
-		})
-
-		var myComponent = React.createClass({
-			render: function  () {
-				return <div></div>
-			},
-
-			componentDidMount: function  () {
-				var root = ReactDOM.findDOMNode(this);
-				console.log(root);
-			}
-
-		})
-
-		var MyComponnet = React.createClass({
-			render: function  () {
-				return <div>
-					<button ref="btn"></button>
-					<a href="" ref="link"></a>
-				</div>
-			},
-
-			componentDidMount: function  () {
-				var btn = this.refs.btn;
-				var link = this.refs.link;
-				console.log(btn, link);
-			}
-		})
-
-		var MyComponnet = React.createClass({
-			render: function  () {
-				return <div>
-					<button onClick={this.onClick}>Click me</button>
-				</div>
-			},
-
-			onClick: function  () {
-				console.log('click me');
-			}
-		})
-
-		function onClick (event) {
-			console.log(event);
-			console.log(event.type);
-			var eventType = event.type;
-
-			setTimeout(function  () {
-				console.log(event.type);
-				console.log(eventType);
-			}, 0);
-
-			this.setState({clickEvent: event});
-			this.setState({eventType: event.type})
-		}
 
 
     </script>
