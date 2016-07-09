@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一个组件的生命周期</title>
+</head>
+<body>
+	<div id="contanier"></div>
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+<script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+<script type="text/jsx">
+	var Hello = React.createClass({
+		getInitialState: function  () {
+			alert("inintial");
+			return {
+				opacity: 1.0,
+				fontSize: "12px"
+			}
+		},
+
+
+		render: function  () {
+			
+			return (
+				<div style={this.state}>Hello {this.props.name}</div>
+			)
+		},
+
+		componentWillMount: function  () {
+			alert("will");
+		},
+
+		componentDidMount: function  () {
+			alert("did");
+
+			window.setTimeout(function  () {
+				this.setState({
+					opacity: 0.5,
+					fontSize: "55px"
+				});
+			}.bind(this), 1000);
+		}
+	})
+
+	React.render(<Hello name="sufubo"/>, document.getElementById("contanier"))
+</script>
+</body>
+</html>

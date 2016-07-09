@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+     <script src="http://cdn.bootcss.com/react/0.14.1/react.js"></script>
+    <script src="http://cdn.bootcss.com/react/0.14.1/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.32/browser.min.js"></script>
+    <style type="text/css">
+    	.box {
+    		width: 700px;
+    		margin: 20px auto;
+    		background-color: #f5f5f5;
+    	}
+		header {
+			text-align: center;
+			font-size: 50px;
+			color: #e9d6d6;
+		}	
+		.input {
+			text-align: center;
+		}
+		.input>input{
+			width: 80%;
+			height: 30px;
+		}
+		
+		ul {
+			list-style: none;
+		}
+		.select {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 1px solid #dbebe8;
+		}
+
+
+		.checkbox {
+			display: none;
+		}
+		
+		.checkbox + label {
+			background-color: #FFF; 
+	        border: 1px solid #C1CACA; 
+	        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); 
+	        padding: 9px; 
+	        border-radius: 5px; 
+	        display: inline-block; 
+	        position: relative; 
+	        margin-right: 30px; 
+		}
+		.checkbox:checked + label::after {
+			content: '\2714';
+		    position: absolute; 
+		    top: -7px; 
+		    left: 0px; 
+		    color: #758794; 
+		    width: 100%; 
+		    text-align: center; 
+		    font-size: 1.4em; 
+		    padding: 1px 0 0 0; 
+		    vertical-align: text-top;
+		}
+		.value {
+			width: 75%;
+			height: 40px;
+		}
+
+		.filters {
+			display: inline-block;
+			margin-left: 150px;
+		}
+		.footer button {
+			float: right;
+		}
+	
+    </style>
+  </head>
+
+  <body>
+
+	<div class="box">
+		<header>todos</header>
+		<div class="content">
+			<div class="input">
+				<input>
+			</div>
+			<div class="list">
+				<ul>
+					<li>
+						<input class="checkbox" id="checkbox-id" type="checkbox">
+						<label for="checkbox-id"></label>
+						<input class="value">
+					</li>  
+				</ul>
+			</div>
+			<div class="footer">
+				<span>0 items left</span>
+				<div class="filters">
+					<a href="#">All</a>
+					<a href="#">Active</a>
+					<a href="#">Completed</a>
+				</div>
+				<button>Clear completed</button>
+			</div>
+		</div>
+	</div>
+
+	
+
+   <section id="AppRoot" class="todoapp"></section>
+
+    <script type="text/babel">
+    	var todolist = {
+    		name: 'todos',
+    		todos: [{
+    			completed: true,
+    			title: 'learn react'
+    		},{
+    			completed: false,
+    			title: 'learn redux'
+    		},{
+    			completed: false,
+    			title: 'learn webpack'
+    		},{
+    			completed: false,
+    			title: 'learn less'
+    		}]
+    	}
+
+    	var ToList = React.createClass({
+    		render: function  () {
+    			
+    			//计算还有多少个未完成的
+    			var lefted = todolist.todos.reduce(function  (acc, todo) {
+    				return todo ? acc : acc + 1;
+    			}, 0);
+    		}
+    	})
+
+
+
+
+    </script>
+  </body>
+</html>

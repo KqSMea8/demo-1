@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom操作</title>
+</head>
+<body>
+	<div id="contanier"></div>
+	<p>使用第三方组件或者库的时候使用react组件的方式封装一下</p>
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+    <script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+    <script type="text/jsx">
+    	var RichText = React.createClass({
+    		getInitialState: function  () {
+    			return {
+    				html: ""
+    			}
+    		},
+
+    		render: function  () {
+    			return (
+    				<div>
+    				    <div ref="editableDiv" contentEditable="true" onKeyDown={this.handleKeyDown}>d</div>
+    				    <span>{this.state.html}</span>
+    				</div>
+    			)
+    		},
+
+    		handleKeyDown: function  () {
+    			var editor = this.refs.editableDiv.getDOMNode();
+    			var html = editor.innerHTML;
+    			this.setState({html: html});
+    		}
+
+    	});
+
+    	React.render(<RichText />, document.getElementById("contanier"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+     <script src="http://cdn.bootcss.com/react/0.14.1/react.js"></script>
+    <script src="http://cdn.bootcss.com/react/0.14.1/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.32/browser.min.js"></script>	
+
+    <style type="text/css">
+    .chk_1 { 
+    display: none; 
+} 
+ 
+    .chk_1 + label { 
+        background-color: #FFF; 
+        border: 1px solid #C1CACA; 
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); 
+        padding: 9px; 
+        border-radius: 5px; 
+        display: inline-block; 
+        position: relative; 
+        margin-right: 30px; 
+    } 
+
+ 
+
+ 
+.chk_1:checked + label:after { 
+    content: '\2714';
+    position: absolute; 
+    top: -7px; 
+    left: 0px; 
+    color: #758794; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 1.4em; 
+    padding: 1px 0 0 0; 
+    vertical-align: text-top; 
+} 
+    </style>
+  </head>
+  <body>
+
+    <input type="checkbox" id="checkbox_a1" class="chk_1" /> 
+<label for="checkbox_a1"></label> 
+    <div id="example"></div>
+    <script type="text/babel">
+        var Hello = React.createClass({
+        	render: function  () {
+        		return <div>Hello {this.props.name}</div>
+        	}
+        })
+
+        function render () {
+        	return <p><CustomComponent/></p>
+        }
+        ReactDOM.render(<Hello name="world"/>, document.getElementById('example'));
+    </script>
+  </body>
+</html>

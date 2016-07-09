@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react,mixin</title>
+</head>
+<body>
+	<div id="contanier"></div>
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+    <script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+    <script type="text/jsx">
+    	var Timer = React.createClass({
+    		getInitialState: function  () {
+    			return {secondsElapsed: 0};
+    		},
+
+    		tick: function  () {
+    			this.setState({secondsElapsed: this.state.secondsElapsed+1});
+    		},
+
+    		componentDidMount: function  () {
+    			this.interval = setInterval(this.tick, 1000);
+    		},
+
+    		componentWillUnmount: function () {
+    			clearInterval(this.interval);
+    		},
+
+    		render: function  () {
+    			return (
+    				<div>secondsElapsed: {this.state.secondsElapsed}</div>
+    			)
+    		}
+
+    	});
+
+    	//定时器组件
+    	var Timer = React.createClass({
+    		mixins: [IntervalMixin(1000)],
+    		getInitialState: function  () {
+    			return {secondsElapsed: 0};
+    		},
+
+    		onTick: function  () {
+    			this.setState({secondsElapsed: this.state.secondsElapsed+1});
+    		},
+
+    		render: function  () {
+    			return (
+    				<div>
+    					secondsElapsed: {this.state.secondsElapsed}
+    				</div>
+    			)
+    		}
+    	});
+
+    	var IntervalMixin = {
+    		setInterval: function  (callback, interval) {
+    			var token = setInterval(callback, interval);
+    			this._intervals.push(token);
+    			return token;
+    		},
+
+    		componentDidMount: function  () {
+    			this._intervals = [];
+    		},
+
+    		componentWillUnmount: function  () {
+    			this._intervals.map(clearInterval);
+    		}
+    	}
+
+    	var Since2014 = React.createClass({
+    		IntervalMixin :function  () {
+	    		setInterval: function (callback, interval) {
+	    			var token = setInterval(callback, interval);
+	    			this._intervals.push(token);
+	    			return token;
+	    		},
+
+	    		componentDidMount: function  () {
+	    			this._intervals = [];
+	    		},
+
+	    		componentWillUnmount: function  () {
+	    			this._intervals.map(clearInterval);
+	    		}
+    		},
+
+    		mixins: [IntervalMixin],
+
+    		componentDidMount: function  () {
+    			this.setInterval(this.forceUpdate.bind(this), 1000);
+    		},
+
+    		render: function  () {
+    			var from = Number(new Date(2014, 0, 1));
+    			var to = Date.now();
+    			return (
+    				<div>{Math.round((to-from)/1000)}</div>
+    			)
+    		}
+    	});
+
+    	React.render(<Since2014 />, document.getElementById('contanier'))
+
+
+    </script>
+</body>
+</html>

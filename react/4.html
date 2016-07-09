@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用状态保存内部数据</title>
+</head>
+<body>
+
+<div id="mountnode"></div>
+
+<!-- 导入react类库和JSX工具类库 -->
+<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+<script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+<script type="text/jsx">
+	var mountNode = document.getElementById('mountnode');
+
+	//创建一个计时器组件
+	var Timer = React.createClass({
+		getInitialState: function  () {
+			return {count:0};
+		},
+
+		tick: function  () {
+			this.setState({count: this.state.count+1});
+		},
+
+		componentDidMount: function  () {
+			this.interval = setInterval(this.tick, 1000);
+		},
+
+		componentWillUnmount: function  () {
+			clearInterval(this.interval);
+		},
+
+		render: function  () {
+			return (<i>计时器{this.state.count}</i>);
+		}
+	});
+
+	React.render(<Timer/>, mountNode);
+</script>
+</body>
+</html>

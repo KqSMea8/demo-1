@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件的事件绑定</title>
+</head>
+<body>
+	<div id="contanier"></div>
+	<script src="http://cdn.gbtags.com/react/0.12.2/react.js"></script>
+<script src="http://cdn.gbtags.com/react/0.12.2/JSXTransformer.js"></script>
+<script type="text/jsx">
+	var TestClickComponent = React.createClass({
+		handlerClick: function  (event) {
+			var node = this.refs.tip.getDOMNode();
+			
+			if (node.style.display === "none") {
+				node.style.display = "inline";
+			} else {
+				node.style.display = "none";
+			}
+
+			event.stopPropagation();
+			event.preventDefault();
+		},
+
+		render: function () {
+			return (
+				<div>
+					<button onClick={this.handlerClick}>显示|隐藏</button>
+					<span ref="tip">测试点击</span>
+				</div>
+			)
+		}
+	});
+
+	var TestInputCommponent = React.createClass({
+		getInitialState: function  () {
+			return {
+				inputContent: ''
+			}	
+		},
+
+		handlerInput: function  (event) {
+			this.setState({inputContent: event.target.value});
+			event.stopPropagation();
+			event.preventDefault();
+		},
+
+		render: function() {
+			return (
+				<div>
+					<input type="text" onChange={this.handlerInput} />
+					<span>{this.state.inputContent}</span>
+				</div>
+			)
+		}
+	});
+
+	React.render(
+		<div>
+			<TestClickComponent />
+			<br/><br/>
+			<TestInputCommponent />
+		</div>,
+		document.getElementById('contanier'));
+</script>
+	
+</body>
+</html>
