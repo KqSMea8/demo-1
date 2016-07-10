@@ -243,10 +243,14 @@
 
     		render: function  () {
           
+          var todolist = this.state.todolist;
+
           //计算还有多少个未完成的
           var lefted = todolist.todos.reduce(function  (acc, todo) {
             return todo.completed ? acc : acc + 1;
           }, 0);
+
+          let footer = todolist.todos.length > 0 ? <Footer lefted={lefted} type={this.state.type} switchType={this.switchListTypeHandel()} /> : '';
 
     			return <div className="box">
     				<Header name={this.state.todolist.name}/>
@@ -254,7 +258,7 @@
               <input placeholder="what need to be done?" onKeyUp={this.onEnter}/>
             </div>
     				<TodoList todos={this.state.todolist.todos} type={this.state.type} delTask={this.deleteTaskHandel} comTask={this.switchTaskCompletedHandel}/>
-    				<Footer lefted={lefted} />
+    				  {footer}
     			</div>
     		}
     	})
@@ -288,7 +292,7 @@
 
               }
     			  	})
-            };
+            }
     			</ul>
     		}
     	})
@@ -297,7 +301,7 @@
     		
         render: function  () {
           let todo = this.props.data;
-          let className = todo.completed ? 'completed' : ''
+          let className = todo.completed ? 'completed' : '';
 
     			return <li className={className} >
 							<input onClick={this.props.comTask} className="checkbox" type="checkbox" />
@@ -309,12 +313,26 @@
 
     	var Footer = React.createClass({
     		render: function  () {
+          let type = ['', '', ''];
+          //类型按钮显示
+          switch (this.props.type) {
+            case 'active':
+                type[1] = 'selected';
+                break;
+            case 'completed':
+                type[2] = 'selected';
+                break;
+            default:
+                type[0] = 'selected';
+                break;
+          }
+
     			return <div className="footer">
 						    <span>{this.props.lefted} items left</span>
 						    <div className="filters">
-  								<a href="#" >All</a>
-  								<a href="#" >Active</a>
-  								<a href="#">Completed</a>
+  								<a href="#" className={type[0]} onClick={this.props.switchType.bind(null, 'all')} >All</a>
+  								<a href="#" className={type[1]} onClick={this.props.switchType.bind(null, 'active')} >Active</a>
+  								<a href="#" className={type[2]} onClick={this.props.switchType.bind(null, 'completed')} >Completed</a>
 						    </div>
 						    <button >Clear completed</button>
 						</div>
