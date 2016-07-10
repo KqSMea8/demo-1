@@ -52,7 +52,6 @@
 			text-decoration: line-through;
 		}
 
-		.checkbox:checked::after,
 		.completed .checkbox::after {
 			content: '\2714';
 			margin-left: 5px;
@@ -268,19 +267,26 @@
 
     	var TodoList = React.createClass({
     		render: function  () {
-          let that = this;
-    			var todos = this.props.todos;
-          var switchTaskCompleted = this.props.switchTaskCompleted;
+          let that = this;  
     			return <ul>
-    				{todos.map(function(value, i) {
+    				{that.props.todos.map(function(todo, i) {
+              switch(that.props.type) {
+                case 'all':
+                  return <TodoItem data={todo} key={i} delTask={that.props.delTask(i)} comTask={that.props.comTask(i)} />
+                case 'active':
+                    if (!todo.completed) {
+                      return <TodoItem data={todo} key={i} delTask={that.props.delTask} comTask={that.props.comTask(i)} />
+                    }
+                    break;  
+                case 'completed':
+                    if (todo.completed) {
+                      return <TodoItem data={todo} key={i} delTask={that.props.delTask(i)} comTask={that.props.comTask(i)} />
+                    }
+                    break;
+                default:
+                    break;
 
-      					var className = "";
-  			    		if (value.completed){
-  			    			className = "completed";
-  			    		}
-
-                console.log(i)
-			    	  	return <TodoItem className={className} key={i} value={value}/>
+              }
     			  	})
             };
     			</ul>
@@ -288,10 +294,15 @@
     	})
 
     	var TodoItem = React.createClass({
-    		render: function  () {
-    			return <li className={this.props.className} >
-							<input className="checkbox" type="checkbox" />
-							<label className="value">{this.props.value.title}</label>
+    		
+        render: function  () {
+          let todo = this.props.data;
+          let className = todo.completed ? 'completed' : ''
+
+    			return <li className={className} >
+							<input onClick={this.props.comTask} className="checkbox" type="checkbox" />
+							<label className="value">{this.props.data.title}</label>
+              <button onClick={this.props.delTask}>X</button>
 						</li>
     		}
     	})
