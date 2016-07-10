@@ -250,7 +250,7 @@
             return todo.completed ? acc : acc + 1;
           }, 0);
 
-          let footer = todolist.todos.length > 0 ? <Footer lefted={lefted} type={this.state.type} switchType={this.switchListTypeHandel()} /> : '';
+          let footer = todolist.todos.length > 0 ? <Footer lefted={lefted} type={this.state.type} switchType={this.switchListTypeHandel()} clearCom={this.clearCompleted()} /> : '';
 
     			return <div className="box">
     				<Header name={this.state.todolist.name}/>
@@ -334,7 +334,7 @@
   								<a href="#" className={type[1]} onClick={this.props.switchType.bind(null, 'active')} >Active</a>
   								<a href="#" className={type[2]} onClick={this.props.switchType.bind(null, 'completed')} >Completed</a>
 						    </div>
-						    <button >Clear completed</button>
+						    <button onClick={this.props.clearCom}>Clear completed</button>
 						</div>
     		}
     	})
