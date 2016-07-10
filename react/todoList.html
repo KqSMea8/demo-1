@@ -78,6 +78,16 @@
 		.footer button {
 			float: right;
 		}
+
+    .filters a {
+      padding: 2px 5px;
+      margin-left: 5px;
+      text-decoration: none;
+      color: red;
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button;
+    }
     </style>
   </head>
   <body>
@@ -109,13 +119,13 @@
     			}
     		},
 
-    		//±íµ¥ÊäÈëÓò
+    		//è¡¨å•è¾“å…¥åŸŸ
     		changeHandel: function  (e) {
     			this.setState({value: e.target.value});
     		},
 
     		/**
-    		 * Ìí¼ÓÈÎÎñ
+    		 * æ·»åŠ ä»»åŠ¡
     		 *
     		 * @param      {<type>}   e       { parameter_description }
     		 * @return     {boolean}  { description_of_the_return_value }
@@ -123,7 +133,7 @@
    			addTaskHandel: function  (e) {
    				let task = this.refs.addTask;
    				if (task.value === '') {
-   					console.error('²»ÄÜÌí¼Ó¿ÕµÄtask');
+   					console.error('ä¸èƒ½æ·»åŠ ç©ºçš„task');
    					return false;
    				}
    				this.setState(function  () {
@@ -138,99 +148,141 @@
    			},
 
    			/**
-   			 * É¾³ıÈÎÎñ
+   			 * åˆ é™¤ä»»åŠ¡
    			 *
    			 * @param      {<type>}  index   The index
    			 * @return     {<type>}  { description_of_the_return_value }
    			 */
    			deleteTaskHandel: function  (index) {
-				return function  () {
-					let todos = this.state.todolist.todos,
-						todolist = {
-							todolist: {
-								name: 'todos',
-								todos: []
-							}
-						};
-					todos.splice(index, 1);
-					todolist.todolist.todos = todos;
+  				return function  () {
+  					let todos = this.state.todolist.todos,
+  						todolist = {
+  							todolist: {
+  								name: 'todos',
+  								todos: []
+  							}
+  						};
+  					todos.splice(index, 1);
+  					todolist.todolist.todos = todos;
 
-					this.setState(todolist);
+  					this.setState(todolist);
 
-				}.bind(this)				
+  				}.bind(this)				
    			},
 
    			/**
-   			 * ÇĞ»»ÈÎÎñ×´Ì¬
+   			 * åˆ‡æ¢ä»»åŠ¡çŠ¶æ€
    			 */
    			switchTaskCompletedHandel: function  (index) {
-				return function  () {
-					let todolist = this.state.todolist;
-					todolist['todos'][index]['completed'] = !todolist.['todos'][index]['completed'];
+  				return function  () {
+  					let todolist = this.state.todolist;
+  					todolist['todos'][index]['completed'] = !todolist['todos'][index]['completed'];
 
-					this.setState(todolist);
-				}.bind(this);
+  					this.setState(todolist);
+  				}.bind(this);
    			},
 
    			/**
-   			 * ÇĞ»»ÈÎÎñÀàĞÍ
+   			 * åˆ‡æ¢ä»»åŠ¡ç±»å‹
    			 */
    			switchListTypeHandel: function  () {
-   				
-   			}
+   				return function  (hash, event) {
+            let type = '';
+            switch (hash) {
+              case 'active':
+                  type = 'active';
+                  break;
+              case 'completed':
+                  type = 'completed';
+                  break;
+              default:
+                  type = 'all';
+                  break;
+            }
+
+            this.setState({type: type});
+          }.bind(this);
+   			},
+
+        /**
+         * åˆ é™¤å·²ç»å®Œæˆçš„ä»»åŠ¡
+         *
+         * @return     {<type>}  { description_of_the_return_value }
+         */
+        clearCompleted: function  () {
+          return function  () {
+            let todolist = this.state.todolist,
+            todos = todolist.todos.filter(function(todo) {
+                return !todo.completed;              
+            });
+
+            todolist.todos = todos;
+
+            this.setState(todolist);
+
+          }.bind(this);
+        },
 
 
-
+        /**
+         * é”®ç›˜å›è½¦äº‹ä»¶æ·»åŠ ä»»åŠ¡
+         *
+         * @param      {<type>}  e       { parameter_description }
+         */
+        onEnter: function  (e) {
+          var keyCode = e.keyCode ? e.keyCode : e.which;
+          var todolist = this.state.todolist;
+          if (keyCode === 13) {
+            var title = e.target.value;
+            if (title.length > 0) {
+              todolist.todos.push({completed: false, title: title});
+              console.log(todolist)
+              this.setState(todolist);
+            }   
+          }
+        },
 
     		render: function  () {
-    			var style = {
-    			background: 'red',
-    			height: 100,
-    			width: 100	
-    		};
-			return <div className="box">
-				<Header todolist={this.state.todolist}/>
-				<TodoList todolist={this.state.todolist}/>
-				<Footer />
-			</div>
+          
+          //è®¡ç®—è¿˜æœ‰å¤šå°‘ä¸ªæœªå®Œæˆçš„
+          var lefted = todolist.todos.reduce(function  (acc, todo) {
+            return todo.completed ? acc : acc + 1;
+          }, 0);
+
+    			return <div className="box">
+    				<Header name={this.state.todolist.name}/>
+            <div className="input">
+              <input placeholder="what need to be done?" onKeyUp={this.onEnter}/>
+            </div>
+    				<TodoList todos={this.state.todolist.todos} type={this.state.type} delTask={this.deleteTaskHandel} comTask={this.switchTaskCompletedHandel}/>
+    				<Footer lefted={lefted} />
+    			</div>
     		}
     	})
 
     	var Header = React.createClass({
-    		onEnter: function  (e) {
-    			var keyCode = e.keyCode ? e.keyCode : e.which;
-    			var todolist = this.props.todolist;
-    			if (keyCode === 13) {
-    				var title = e.target.value;
-    				if (title.length > 0) {
-    					todolist.todos.push({completed: false, title: title});
-    					console.log(todolist)
-    				}		
-    			}
-    			
-    		},
-
     		render: function  () {
-    			return <div>
-    				<header>todos</header>
-    				<div className="input">
-						<input placeholder="what need to be done?" onKeyUp={this.onEnter}/>
-					</div>
-    			</div>
+    			return <header>{this.props.name}</header>
     		}
     	})
 
     	var TodoList = React.createClass({
     		render: function  () {
-    			var todolist = this.props.todolist;
+          let that = this;
+    			var todos = this.props.todos;
+          var switchTaskCompleted = this.props.switchTaskCompleted;
     			return <ul>
-    				{todolist.todos.map(function(value, i) {
-    					var className = "";
-			    		if (value.completed){
-			    			className = "completed";
-			    		}
-			    		return <TodoItem className={className} key={i} value={value} />
-    				})}
+    				{todos.map(function(value, i) {
+
+      					var className = "";
+  			    		if (value.completed){
+  			    			className = "completed";
+  			    		}
+
+                console.log(i)
+			    	  	return <TodoItem className={className} key={i} value={value}/>
+    			  	})
+            };
     			</ul>
     		}
     	})
@@ -239,27 +291,21 @@
     		render: function  () {
     			return <li className={this.props.className} >
 							<input className="checkbox" type="checkbox" />
-							<label  className="value">{this.props.value.title}</label>
+							<label className="value">{this.props.value.title}</label>
 						</li>
     		}
     	})
 
     	var Footer = React.createClass({
     		render: function  () {
-    			
-    			//¼ÆËã»¹ÓĞ¶àÉÙ¸öÎ´Íê³ÉµÄ
-    			var lefted = todolist.todos.reduce(function  (acc, todo) {
-    				return todo.completed ? acc : acc + 1;
-    			}, 0);
-
     			return <div className="footer">
-						    <span>{lefted} items left</span>
+						    <span>{this.props.lefted} items left</span>
 						    <div className="filters">
-								<a href="#">All</a>
-								<a href="#">Active</a>
-								<a href="#">Completed</a>
+  								<a href="#" >All</a>
+  								<a href="#" >Active</a>
+  								<a href="#">Completed</a>
 						    </div>
-						    <button>Clear completed</button>
+						    <button >Clear completed</button>
 						</div>
     		}
     	})
