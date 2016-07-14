@@ -23,11 +23,18 @@ spa.model = (function  () {
 	chat = (function  () {
 		var _publish_listchange, _publish_updatechat,
 		 _update_list, _leave_chat,
-		 get_chatee, join_chat, send_msg, set_chatee, chatee = null;
+		 get_chatee, join_chat, send_msg, set_chatee, update_avatar, chatee = null;
+
+		 update_avatar = function  (avatar_update_map) {
+		 	var sio = isFakeData ? spa.fake.mockSio : spa.data.getSio();
+		 	if (sio) {
+		 		sio.emit('updateavatar', avatar_update_map);
+		 	}
+		 }
 
 		//创建_update_list方法，当接收到新的人员列表时，用来刷新people对象
 		_update_list = function  (arg_list) {
-			var i, person_map, make_person_map,
+			var i, person_map, make_person_map, person,
 			people_list = arg_list[0],
 			is_chatee_online = false;  //添加is_chatee_online
 
@@ -54,8 +61,11 @@ spa.model = (function  () {
 					name: person_map.name
 				}
 
+				person = makePerson(make_person_map);
+
 				if(chatee && chatee.id === make_person_map.id) {
 					is_chatee_online = true;
+					chatee = person; //如果找到了听者，就把它更新为新的person对象
 				}
 
 				makePerson(make_person_map);
@@ -160,7 +170,8 @@ spa.model = (function  () {
 			get_chatee: get_chatee,
 			join: join_chat,
 			sender_msg: send_msg,
-			set_chatee: set_chatee
+			set_chatee: set_chatee,
+			update_avatar: update_avatar
 		}
 	}());
 	
@@ -278,7 +289,7 @@ spa.model = (function  () {
 		}
 
 		logout = function  () {
-			var is_removed, user = stateMap.user;
+			var user = stateMap.user;
 
 			/**
 	
@@ -289,9 +300,9 @@ spa.model = (function  () {
 			//when we add chat, we should leave the chatroom here
 			is_removed = removePerson(user);
 			stateMap.user = stateMap.anon_user;
+			clearPeopleDb();
 
 			$.gevent.publish('spa-logout', [user]);
-			return is_removed;
 		}
 
 		return {

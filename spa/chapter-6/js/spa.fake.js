@@ -59,7 +59,7 @@ spa.fake = (function  () {
 
 		emit_sio = function  (msg_type, data) {
 			
-			var person_map;			
+			var person_map, i;
 			if (msg_type === 'adduser' && callback_map.userupdate) {
 				setTimeout(function  () {
 					person_map = {
@@ -68,7 +68,7 @@ spa.fake = (function  () {
 						css_map: data.css_map
 					};
 					peopleList.push(person_map);
-					callback_map.uperupdate([person_map]);
+					callback_map.userupdate([person_map]);
 				}, 3000);
 			}
 	
@@ -85,6 +85,7 @@ spa.fake = (function  () {
 				}, 2000);
 			}
 
+
 			/**
 			 * 如果接收到leavechat消息，则清楚chat使用的回调函数，这意味着用户已经登出
 			 */
@@ -99,6 +100,17 @@ spa.fake = (function  () {
 
 				send_listchange();
 			}
+
+			//simulate send of 'updateavatar' message and data to server
+			if (msg_type === 'updateavatar' && callback_map.listchange) {
+				for (i = 0; i < peopleList.length; i++) {
+					if (peopleList[i]._id === data.person_id) {
+						peopleList[i].css_map = data.css_map;
+						break;
+					}
+				}
+				callback_map.listchange([peopleList]);
+			}
 		};
 
 		/**
@@ -111,7 +123,7 @@ spa.fake = (function  () {
 				var user = spa.model.people.get_user();
 				if (callback_map.updatechat) {
 					callback_map.updatechat([{
-						dest_id: user_id,
+						dest_id: user.id,
 						dest_name: user.name,
 						sender_id: 'id_04',
 						msg_text: 'Hi there '+ user.name + '!wilma here'
