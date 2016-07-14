@@ -235,19 +235,6 @@ spa.model = (function  () {
 		 })
 
 		 stateMap.user = stateMap.anon_user;
-
-		 if (isFakeData) {
-		 	people_list = spa.fake.getPeopleList();
-		 	for (i = 0; i < people_list.length; i++) {
-		 		person_map = people_list[i];
-		 		makePerson({
-		 			cid: person_map._id,
-		 			css_map: person_map.css_map,
-		 			id: person_map._id,
-		 			name: person_map.name
-		 		});
-		 	}
-		 }
 	}
 
 
