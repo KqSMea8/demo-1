@@ -21,12 +21,15 @@ spa.model = (function  () {
 	makePerson, removePerson, people, chat, initModule;
 
 	chat = (function  () {
-		var _publish_listchange, _update_list, _leave_chat, join_chat;
+		var _publish_listchange, _publish_updatechat,
+		 _update_list, _leave_chat,
+		 get_chatee, join_chat, send_msg, set_chatee, chatee = null;
 
 		//创建_update_list方法，当接收到新的人员列表时，用来刷新people对象
 		_update_list = function  (arg_list) {
 			var i, person_map, make_person_map,
-			people_list = arg_list[0];
+			people_list = arg_list[0],
+			is_chatee_online = false;  //添加is_chatee_online
 
 			clearPeopleDb();
 
@@ -50,9 +53,20 @@ spa.model = (function  () {
 					id: person_map.id,
 					name: person_map.name
 				}
+
+				if(chatee && chatee.id === make_person_map.id) {
+					is_chatee_online = true;
+				}
+
 				makePerson(make_person_map);
 			}
+
 			stateMap.people_db.sort('name');
+
+			//if chatee is no longer online,we unset the chatee
+			if (chatee && !is_chatee_online) {
+				set_chatee('');
+			}
 		}
 
 		//创建_leave_chat方法，它向后端发送leavechat消息，并清理状态变量
@@ -61,12 +75,29 @@ spa.model = (function  () {
 			$.gevent.publish('spa-listchange', [arg_list]);
 		}
 
+		_publish_updatechat = function  (arg_list) {
+			var msg_map = arg_list[0];
+
+			if (!chatee) {
+				set_chatee(msg_map.sender_id);
+			}else if (msg_map.sender_id !== stateMap.user.id && msg_map.sender_id !== chatee.id) {
+				set_chatee(msg_map.sender_id);
+			}
+
+			$.gevent.publish('spa-updatechat', [msg_map]);
+		}
+
 		_leave_chat = function  () {
 			var sio = isFakeData ? spa.fake.mockSio : spa.data.getSio();
+			chatee = null;
 			stateMap.is_connected = false;
 			if (sio) {
 				sio.emit('leavechat');
 			}
+		}
+
+		get_chatee = function  () {
+			return chatee; //返回chatee人员对象
 		}
 
 		join_chat = function  () {
@@ -81,14 +112,55 @@ spa.model = (function  () {
 
 			sio = isFakeData ? spa.fake.mockSio : spa.data.getSio();
 			sio.on('listchange', _publish_listchange);
+			sio.on('updatechat', _publish_updatechat);
 			stateMap.is_connected = true;
+			return true;
+		}
+
+		send_msg = function  (msg_text) {
+			var msg_map, sio = isFakeData ? spa.fake.mockSio : spa.data.getSio();
+
+			if (!sio) {
+				return false;
+			}
+			if (!(stateMap.user && chatee)) {
+				return false;
+			}
+			msg_map = {
+				dest_id: chatee.id,
+				dest_name: chatee.name,
+				sender_id: stateMap.user.id,
+				msg_text: msg_text
+			};
+
+			//we published updatechat so we can shwo our outging message
+			_publish_updatechat([msg_map]);
+			sio.emit('updatechat', msg_map);
+			return true;
+		}
+
+		set_chatee = function  (person_id) {
+			var new_chatee;
+			new_chatee = stateMap.people_cid_map[person_id];
+			if (new_chatee) {
+				if (chatee && chatee.id === new_chatee.id) {
+					return false;
+				}
+			}else {
+				new_chatee = null;
+			}
+			$.gevent.publish('spa-setchatee', {old_chatee: chatee, new_chatee: new_chatee});
+			chatee = new_chatee;
 			return true;
 		}
 
 
 		return {
 			_leave: _leave_chat,
-			join: join_chat
+			get_chatee: get_chatee,
+			join: join_chat,
+			sender_msg: send_msg,
+			set_chatee: set_chatee
 		}
 	}());
 	
@@ -124,6 +196,8 @@ spa.model = (function  () {
 		stateMap.user.id = user_map._id;
 		stateMap.user.css_map = user_map.css_map;
 		stateMap.people_cid_map[user_map._id] = stateMap.user;
+
+		chat.join();
 
 		$.gevent.publish('spa-login', [stateMap.user]);
 	};
@@ -205,6 +279,12 @@ spa.model = (function  () {
 
 		logout = function  () {
 			var is_removed, user = stateMap.user;
+
+			/**
+	
+			 * 让people._logout 方法调用chat._leave(),这样一旦用户完成登出就会自动退出聊天室
+			 */
+			chat._leave();
 
 			//when we add chat, we should leave the chatroom here
 			is_removed = removePerson(user);

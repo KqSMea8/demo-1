@@ -50,7 +50,8 @@ spa.fake = (function  () {
 	};
 
 	mockSio = (function  () {
-		var on_sio, emit_sio, send_listchange, listchange_idto, callback_map = {};
+		var on_sio, emit_sio, emit_mock_msg,
+		 send_listchange, listchange_idto, callback_map = {};
 
 		on_sio = function  (msg_type, callback) {
 			callback_map[msg_type] = callback;
@@ -70,7 +71,57 @@ spa.fake = (function  () {
 					callback_map.uperupdate([person_map]);
 				}, 3000);
 			}
+	
+
+			if (msg_type === 'updatechat' && callback_map.updatechat) {
+				setTimeout(function  () {
+					var user = spa.model.people.get_user();
+					callback_map.updatechat([{
+						dest_id: user.id,
+						dest_name: user.name,
+						sender_id: data.dest_id,
+						msg_text: 'Thanks for the note ,' + user.name
+					}])
+				}, 2000);
+			}
+
+			/**
+			 * 如果接收到leavechat消息，则清楚chat使用的回调函数，这意味着用户已经登出
+			 */
+			if (msg_type === 'leavechat') {
+				delete callback_map.listchange;
+				delete callback_map.updatechat;
+
+				if (listchange_idto) {
+					clearTimeout(listchange_idto);
+					listchange_idto = undefined;
+				}
+
+				send_listchange();
+			}
+		};
+
+		/**
+		 * 每隔8秒钟，给已登入的用户发送模拟消息，当设置了updatechat回调函数时，
+		 * 仅当有用户登入才会成功，
+		 * 成功时，程序就不再调用自身，因此不会再尝试发送模拟消息
+		 */
+		emit_mock_msg = function  () {
+			setTimeout(function  () {
+				var user = spa.model.people.get_user();
+				if (callback_map.updatechat) {
+					callback_map.updatechat([{
+						dest_id: user_id,
+						dest_name: user.name,
+						sender_id: 'id_04',
+						msg_text: 'Hi there '+ user.name + '!wilma here'
+					}])
+				}else {
+					emit_mock_msg();
+				}
+			}, 8000);
 		}
+
 
 		/**
 		 * 添加send_listchange函数，模拟接收来自后端的listchange消息，每隔一秒，该
@@ -81,6 +132,7 @@ spa.fake = (function  () {
 			listchange_idto = setTimeout(function  () {
 				if (callback_map.listchange) {
 					callback_map.listchange([peopleList]);
+					emit_mock_msg(); //在用户登入后，开始发送模拟消息
 					listchange_idto = undefined;
 				}else {
 					send_listchange();
