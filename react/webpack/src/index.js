@@ -1,10 +1,34 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from "react"
+import {render} from "react-dom"
+import {Provider} from "react-redux"	
+import {createStore} from "redux"
+import todoApp from "./reducers"
+import App from "./components/App"
 
-var Hello = React.createClass({
-	render: function  () {
-		return <div>hello {this.props.name}</div>
-	}
-})
 
-ReactDOM.render(<Hello name="world" />, document.getElementById('AppRoot'));
+/**
+ * store数据例子
+{
+	visibilityFilter: "SHOW_ALL",
+	todos: [
+		{
+			text: "Consider using Redux",
+			complete: true,
+		},
+		{
+			text: "Keep all state in a single tree",
+			complete: false,
+		}
+	]
+}
+
+*/
+
+let store = createStore(todoApp);
+
+render(
+	<Provider store={store}>
+		<App/>
+	</Provider>,
+	document.getElementById("root")
+)
