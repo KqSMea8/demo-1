@@ -5,10 +5,10 @@
 	<title>Document</title>
 </head>
 <body>
-	<canvas id="canvas"></canvas>
+	<canvas id="canvas" height="300"></canvas>
 	<script type="text/javascript">
 
-	
+
 
 	//画三角形
 	function drawTriangle () {
@@ -21,7 +21,7 @@
 			ctx.lineTo(150, 50);
 			ctx.fill();
 		}
-	}	
+	}
 
 	function drawSmilingFace () {
 		var can = document.getElementById("canvas");
@@ -50,13 +50,80 @@
 			ctx.lineTo(150, 150);
 			ctx.lineTo(150, 50);
 			ctx.closePath();
-			ctx.stroke();	
+			ctx.stroke();
+		}
+
+	}
+
+	//画圆弧
+	function drawArc () {
+		var canvas = document.getElementById('canvas');
+
+		if (canvas.getContext){
+			var ctx = canvas.getContext('2d');
+			for (var i = 0; i < 4; i++){
+				for (var j = 0; j < 3; j++) {
+					ctx.beginPath();
+					var x = 25 + j * 50;
+					var y = 25 + i * 50;
+					var radius = 20;
+					var startAngle = 0;
+					var endSAngle = Math.PI + (Math.PI * j)/2;
+					var anticlockwise = i%2 ===0 ? true : false;
+
+					ctx.arc(x, y, radius, startAngle, endSAngle, anticlockwise);
+
+					if(i>1){
+						ctx.fill();
+					}else {
+						ctx.stroke();
+					}
+				}
+			}
+		}
+	}
+
+	//画气泡
+	function drawBubble () {
+		var canvas = document.getElementById('canvas');
+
+		if (canvas.getContext){
+			var ctx = canvas.getContext('2d');
+
+			//二次贝塞尔曲线
+			ctx.beginPath();
+			ctx.moveTo(75, 25);
+			ctx.quadraticCurveTo(25,25,25,62.5);
+			ctx.quadraticCurveTo(25,100,50,100);
+			ctx.quadraticCurveTo(50,120,30,125);
+			ctx.quadraticCurveTo(60,120,65,100);
+			ctx.quadraticCurveTo(125,100,125,62.5);
+			ctx.quadraticCurveTo(125,25,75,25);
+			ctx.stroke();
+		}
+	}
+
+	function drawHeart () {
+		var canvas = document.getElementById('canvas');
+		  if (canvas.getContext){
+		    var ctx = canvas.getContext('2d');
+
+		    //三次曲线
+		    ctx.beginPath();
+		    ctx.moveTo(75, 40);
+		    ctx.bezierCurveTo(75,37,70,25,50,25);
+		    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+		    ctx.bezierCurveTo(20,80,40,102,75,120);
+		    ctx.bezierCurveTo(110,102,130,80,130,62.5);
+		    ctx.bezierCurveTo(130,62.5,130,25,100,25);
+		    ctx.bezierCurveTo(85,25,75,37,75,40);
+		    ctx.fill();
 		}
 
 	}
 
 	function init () {
-		draw ()
+		drawHeart ()
 	}
 
 	window.onload = function  () {
@@ -65,7 +132,7 @@
 
 
 
-		
+
 
 	</script>
 </body>
