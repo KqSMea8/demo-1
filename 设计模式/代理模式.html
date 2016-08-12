@@ -10,7 +10,17 @@
 <body>
     <div>🌹🌼</div>
     <script type="text/javascript">
-        var cache = [];
+        //缓存代理
+        var mult = function(){
+            console.log('开始计算乘积');
+            var a = 1;
+            for (var i = 0, l = arguments.length; i < l; i++){
+                a = a * arguments[i];
+            }
+            return a;
+        }
+
+
     </script>
     <script type="text/javascript">
     var synchronousFile = function(id){
@@ -44,14 +54,14 @@
 
     <script type="text/javascript">
         //图片预加载
-        var myImage = (function(){
-            var imgNode = document.createElement('img');
-            document.body.appendChild(imgNode);
+        // var myImage = (function(){
+        //     var imgNode = document.createElement('img');
+        //     document.body.appendChild(imgNode);
 
-            return setSrc: function(src){
-                imgNode.src = src;
-            }
-        })()
+        //     return setSrc: function(src){
+        //         imgNode.src = src
+        //     }
+        // })
 
         var proxyImage = (function(){
             var img = new Image;
@@ -66,8 +76,6 @@
                 }
             }
         })
-
-        proxyImage.setSrc('http://imgcache.qq.com')
     </script>
     <script type="text/javascript">
     //有用的代理模式
