@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">点我绑定事件</div>
+    <script type="text/javascript">
+
+        var addEvent = function(elem, type, handler){
+            if(window.addEventListener){
+                addEvent = function(elem, type, handler){
+                    elem.addEventListener(type, handler, false);
+                }
+            }else if(window.attachEvent){
+                addEvent = function(elem, type, handler){
+                    elem.attachEvent('on' + type, handler);
+                }
+            }
+            addEvent(elem, type, handler);
+        }
+
+        var div = document.getElementById('div1');
+        addEvent(div, 'click', function(){
+            alert(1);
+        });
+
+        addEvent(div, 'click', function(){
+            alert(2);
+        })
+
+    </script>
+    <script type="text/javascript">
+    var timerChunk = function(ary, fn, count){
+        var obj,
+            t;
+
+        var len = ary.length;
+
+        var start = function(){
+            for (var i = 0; i < Math.min(count || 1, ary.length); i++){
+                var obj = ary.shift();
+                fn(obj);
+            }
+        }
+
+        return function(){
+            t = setInterval(function(){
+                if (ary.length === 0){
+                    return clearInterval(t);
+                }
+                start();
+            }, 200);  //分批执行的时间间隔，也可以用参数的形式传入
+        }
+    }
+
+
+
+
+    var ary = [];
+    for (var i = 1; i <= 1000; i++){
+        ary.push(i);
+    }
+    var renderFirendList = timerChunk(ary, function(n){
+            var div = document.createElement('div');
+            div.innerHTML = n;
+            document.body.appendChild(div);
+    }, 8);
+    renderFirendList(ary);
+
+
+        var throttle = function(fn, interval){
+            var _self = fn,  //保存需要被延迟执行的函数引用
+                timer,
+                firstTime = true; //是否第一次调用
+
+            return function(){
+                var args = arguments,
+                    _me = this;
+
+                    if(firstTime){
+                        _self.apply(_me, args);
+                        return firstTime = false;
+                    }
+
+                    if(timer){
+                        return false;
+                    }
+
+                    timer = setTimeout(function(){
+                        clearTimeout(timer);
+                        timer = null;
+                        _self.apply(_me, args);
+                    }, interval || 500);
+            }
+        }
+
+        window.onresize = throttle(function(){
+            console.log(1);
+        }, 500);
+
+
+
+        Function.prototype.uncurrying = function(){
+            var self = this;
+            return function(){
+                var obj = Array.prototype.shift.call(arguments);
+                return self.apply(obj, arguments);
+            }
+        }
+
+        for (var i = 0, fn, ary = ['push', 'shift', 'forEach']; fn = ary[i++]; ) {
+            Array[fn] = Array.prototype[fn].uncurrying();
+        }
+
+        var obj = {
+            'length': 3,
+            '0':1,
+            '1':2,
+            '2':3
+        }
+        Array.push(obj, 4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="loginBtn"></div>
+
+    <script type="text/javascript">
+    //创建对象和管理单例的职责被分布在两个不同的方法中
+        var getSingle = function(fn){
+            var result;
+            return function(){
+                return result || (result = fn.apply(this, arguments));
+            }
+        }
+    </script>
+    <script type="text/javascript">
+    //弹窗单例
+    var createLoginLayer = (function(){
+        var div;
+        return function(){
+            if(!div){
+                div = document.createElement('div');
+                div.innerHTML = '我是登录浮窗';
+                div.style.display = none;
+                document.body.appendChild(div);
+            }
+            return div;
+        }
+    })();
+    document.getElementById('loginBtn').onClick = function(){
+        var loginLayer = createLoginLayer();
+        loginLayer.style.display = 'block';
+    }
+  </script>
+    <script type="text/javascript">
+    //惰性单例
+    Singleton.getInstance = (function(){
+        var instance = null;
+        return function(name){
+            if(!instance){
+                instance = new Singleton(name);
+            }
+            return instance;
+        }
+    })()
+
+    //使用闭包封装私有变量
+    var user = (function(){
+        var _name = 'sven',
+           _age = 29;
+
+        return {
+            getUserInfo: function(){
+                return _name + '-' + _age;
+            }
+        }
+    })()
+    </script>
+    <script type="text/javascript">
+    //动态创建命名空间
+    var MyApp = {};
+    MyApp.namespace = function(name){
+        var parts = name.split('.');
+        var current = MyApp;
+        for (var i in parts){
+            if(!current[parts[i]]){
+                current[parts[i]] = {};
+            }
+            current = current[parts[i]];
+        }
+    }
+    MyApp.namespace('event');
+    MyApp.namespace('dom.style');
+
+    </script>
+    <script type="text/javascript">
+    //用代理实现单例模式
+    var CreateDiv = function(html){
+        this.html = html;
+        this.init();
+    }
+    CreateDiv.prototype.init = function(){
+        var div = document.createElement('div');
+        div.innerHTML = this.html;
+        document.body.appendChild(div);
+    }
+    //接下来引入代理类proxySingletonCreateDiv
+    var ProxySingletonCreateDiv = (function(){
+        var instance;
+        return function(html){
+            if(!instance){
+                instance = new CreateDiv(html);
+            }
+        }
+    })()
+
+    var a = new ProxySingletonCreateDiv('sven1');
+    var b = new ProxySingletonCreateDiv('sven2');
+
+
+    </script>
+    <script type="text/javascript">
+        //透明的单例模式，在使用这个类创建对象和其他普通类一样
+        var CreateDiv = (function(){
+            var instance;
+
+            var CreateDiv = function(html){
+                if(instance){
+                    return instance;
+                }
+                this.html = html;
+                this.init();
+                return instance = this;
+            }
+
+            CreateDiv.prototype.init = function(){
+                var div = document.createElement('div');
+                div.innerHTML = this.html;
+                document.body.appendChild(div);
+            }
+
+            return CreateDiv;
+        })();
+
+        var a = new CreateDiv('sven1');
+        var b = new CreateDiv('sven2');
+
+        alert(a === b);//true
+
+    </script>
+    <script type="text/javascript">
+          //单例
+        var Singleton = function(name){
+            this.name = name;
+            this.instance = null;
+        }
+
+        Singleton.prototype.getName = function(){
+            alert(this.name);
+        }
+
+        Singleton.getInstance = function(name){
+            if(!this.instance){
+                this.instance = new Singleton(name);
+            }
+            return this.instance;
+        }
+
+        var a = Singleton.getInstance('sven1');
+        var b = Singleton.getInstance('sven2');
+
+        alert(a === b)
+
+
+        // 或者
+        Singleton.getInstance = (function(){
+            var instance = null;
+            return function(name){
+                if(!instance){
+                    instance = new Singleton(name);
+                }
+                return instance;
+            }
+        })();
+    </script>
+</body>
+</html>

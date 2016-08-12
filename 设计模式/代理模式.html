@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <div>🌹🌼</div>
+    <script type="text/javascript">
+    var synchronousFile = function(id){
+        console.log('开始同步文件，id为' + id);
+    }
+
+    var proxySychronusFile = (function(){
+        var cache = [],
+            timer;
+
+        return function(id){
+            cache.push(id);
+
+            if(timer){
+                return ;
+            }
+
+            timer = setTimeout(function(){
+                synchronousFile(cache.join(','));
+                clearTimeout(timer);
+                timer = null;
+                cache.length = 0;
+            }, 2000);
+        }
+    })()
+
+    var checkbox = document.getElementsByTagName('input');
+
+
+    </script>
+
+    <script type="text/javascript">
+        //图片预加载
+        var myImage = (function(){
+            var imgNode = document.createElement('img');
+            document.body.appendChild(imgNode);
+
+            return setSrc: function(src){
+                imgNode.src = src;
+            }
+        })()
+
+        var proxyImage = (function(){
+            var img = new Image;
+            img.onload = function(){
+                myImage.setSrc(this.src);
+            }
+
+            return {
+                setSrc: function(src){
+                    imgNode.setSrc('file')
+                    img.src = src;
+                }
+            }
+        })
+
+        proxyImage.setSrc('http://imgcache.qq.com')
+    </script>
+    <script type="text/javascript">
+    //有用的代理模式
+    var Flower = function(){};
+
+    var xiaoming = {
+        sendFlower: function(target){
+            var flower = new Flower();
+            target.receiveFlower(flower);
+        }
+    }
+
+    var B = {
+        receiveFlower: function(flower){
+            A.listenGoodMood(function(){ //监听a的好心情
+                A.receiveFlower(flower);
+            })
+        }
+    }
+
+    var A = {
+        receiveFlower: function(flower){
+            console.log('收到花'+flower);
+        },
+        listenGoodMood: function(fn){
+            setTimeout(function(){  //假设10s之后A的心情变好
+                fn();
+            }, 10000);
+        }
+    }
+
+    xiaoming.sendFlower(B);
+
+
+
+    </script>
+    <script type="text/javascript">
+        var Flower = function(){};
+
+        var xiaoming = {
+            sendFlower: function(target){
+                var flower = new Flower();
+                target.receiveFlower(flower);
+            }
+        }
+
+        var A = {
+            receiveFlower: function(flower){
+                console.log('收到🌹'+ flower);
+            }
+        }
+
+        xiaoming.sendFlower(A);
+
+        //////////////////////////
+
+        var Flower = function(){}
+
+        var xiaoming = {
+            sendFlower: function(target){
+                var flower = new Flower();
+                target.receiveFlower(flower);
+            }
+        }
+
+        var B = {
+            receiveFlower: function(flower){
+                A.receiveFlower(flower);
+            }
+        }
+
+        var A = {
+            receiveFlower: function(flower){
+                console.log('收到花'+ flower);
+            }
+        }
+
+        xiaoming.sendFlower(B);
+
+    </script>
+</body>
+</html>
