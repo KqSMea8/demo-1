@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="count">点我</button>
+    <div id="show"></div>
+    <script type="text/javascript">
+        //模块间通信
+        var a = (function(){
+            var count = 0;
+            var button = document.getElementById('count');
+            button.onClick = function(){
+                Event.trigger('add', count++);
+            }
+        })()
+
+        var b = (function(){
+            var div = document.getElementById('show');
+            Event.listen('add', function(count){
+                div.innerHTML = count;
+            })
+        })()
+    </script>
+
+
+    <script type="text/javascript">
+    //我们将观察者模式单独拿出来，放在一个单独的对象里
+    var event = {
+        clientList: [],
+        listen: function(key, fn){
+            if (!this.clientList[key]){
+                this.clientList[key] = [];
+            }
+            this.clientList[key].push(fn);
+        },
+        trigger: function(){
+            var key = Array.prototype.shift.call(arguments),
+            fns = this.clientList[key];
+
+            if (!fns || fns.length === 0){
+                return false;
+            }
+
+            for (var i = 0, fn; fns[i++]){
+                fn.apply(this, arguments);
+            }
+        },
+        remove: function(key, fn){
+            var fns = this.clientList[key];
+
+            if (!fn){ //如果没有传入具体的回调函数，表示需要取消key对应消息的所有订阅
+                fns && (fns.length = 0);
+            }else {
+                for (var l = fns.length - 1; l >= 0; l--){ //反向遍历订阅的回调函数列表
+                    var _fn = fns[l];
+                    if (_fn === fn){
+                        fns.splice(1, 1); //删除订阅者的回调函数
+                    }
+                }
+            }
+        }
+    }
+    </script>
+    <script type="text/javascript">
+    //发布订阅模式
+    var salesOffices = {};
+    var salesOffices.clientList = [];
+    salesOffices.listen = function(key, fn){
+        if (!this.clientList[key]) {
+            this.clientList[key] = [];
+        }
+        this.clientList[key].push(fn);
+    }
+
+    salesOffices.trigger = function(){
+        var key = Array.prototype.shift.call(arguments),
+        fns = this.clientList[key];
+
+        if (!fns || fns.length === 0){//如果没有订阅此消息，则返回
+            return false;
+        }
+
+        for (var i = 0, fn; fn = fns[i++]){
+            fn.apply(this, arguments);   //arguments是发布消息时附送的参数
+        }
+    }
+
+    salesOffices.listen('squareMeter88', function(price){
+        console.log('价格'+ price);
+    })
+
+    </script>
+    <script type="text/javascript">
+    var salesOffices = {};
+    salesOffices.clientList = [];
+    salesOffices.listen = function(fn){  //增加订阅者
+        this.clientList.push(fn);
+    }
+
+    salesOffices.trigger = function(){
+        for (var i = 0, fn; fn = this.clientList[i++];){
+            fn.apply(this, arguments);  //arguments是发布消息时带的参数
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>

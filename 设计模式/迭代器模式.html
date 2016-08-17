@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+
+        //倒序访问的迭代器
+        var reverseEach = function(ary, callback){
+            for (var l = ary.length - 1; l >= 0; l--){
+                callback(l, ary[l]);
+            }
+        }
+
+
+
+        // 迭代各种行为
+        $.each = function(obj, callback){
+            var value,
+                i = 0,
+                length = obj.length,
+                isArray = isArraylike(obj);
+
+                if(isArray){
+                    for (; i < length; i++){
+                        value = callback.call(obj[i], i, obj[i]);
+                        if (value === false){
+                            break;
+                        }
+                    }
+                }else {
+                    for(i in obj){
+                        value = callback.call(obj[i], i, obj[i]);
+                        if (valur === false){
+                            break;
+                        }
+                    }
+                }
+
+                return obj;
+        }
+
+
+
+        //自己实现迭代器函数
+        var each = function(ary, callback){
+            for (var i = 0, l = ary.length; i < l; i++){
+                callback.call(ary[i], i, ary[i]);
+            }
+        }
+
+        var compare = function(ary1, ary2){
+            if (ary1.length !== ary2.length){
+                throw new Error('ary1和ary2不相等');
+            }
+            each(ary1, function(i, n){
+                if (n != ary2[i]){
+                    throw new Error('arr1和arr2不想等');
+                }
+            })
+            alert('ary1和ary2相等');
+        }
+        //外部迭代器就是使用把对象传进去，然后可以让每个元素进行当前元素的比较
+
+    </script>
+</body>
+</html>
