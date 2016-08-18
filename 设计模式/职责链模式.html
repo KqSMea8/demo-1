@@ -6,8 +6,46 @@
 </head>
 <body>
     <script type="text/javascript">
+        var getActiveUploadObj = function(){
+            try{
+                return new ActiveXObject("TXFTNActiveX.XTNUpload");
+            }catch(e){
+                return 'nextSuccessor';
+            }
+        }
+
+        var getFlashUploadObj = function(){
+            if(supportFlash()){
+                var str = '<object type="application/x-shockwave-flash"></object>';
+                return $(str).appendTo($('body'));
+            }
+            return 'nextSuccessor';
+        }
+
+        var getFormUpladObj = function(){
+            return $('<form><input name="file" type="file" /></form>').appendTo($('body'));
+        }
+
+        var getFlashUploadObj = getActiveUploadObj.after(getFlashUploadObj).after(getFormUpladObj);
+        console.log(getUploadObj());
+    </script>
+    <script type="text/javascript">
         //用aop实现职责链
-        Function
+        Function.prototype.after = function(fn){
+            var self = this;
+            return function(){
+                var ret = self.apply(this, arguments);
+                if(ret === 'nextSuccessor'){
+                    return fn.apply(this, arguments);
+                }
+                return ret;
+            }
+        }
+
+        var order = order500yuan.after(order200yuan).after(orderNormal);
+        order(1, true, 500);
+        order(2, true, 500);
+        order(1, false, 500);
     </script>
     <script type="text/javascript">
         //灵活可拆分到职责链节点

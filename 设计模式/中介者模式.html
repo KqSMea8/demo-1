@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Player(name){
+            this.name = name;
+            this.enemy = null; //敌人
+        }
+
+        Player.prototype.win = function(){
+            console.log(this.name + 'won');
+        }
+
+        Player.prototype.lose = function(){
+            console.log(this.name + 'lost');
+        }
+
+        Player.prototype.die = function(){
+            this.lose();
+            this.enemy.win();
+        }
+
+        var player1 = new Player('皮蛋');
+        var player2 = new Player('小乖');
+
+        player1.enemy = player2;
+        player2.enemy = player1;
+
+        //当玩家player1被泡泡炸死的时候，只需要调用这一句代码便完成了一局游戏
+        player1.die();
+
+
+    </script>
+</body>
+</html>
