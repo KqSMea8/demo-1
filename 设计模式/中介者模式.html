@@ -6,6 +6,215 @@
 </head>
 <body>
     <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript">
+        //中介者模式
+        function Player(name, teamColor){
+            this.name = name;
+            this.teamColor = teamColor;
+            this.state = 'alive';
+        }
+
+        Player.prototype.win = function(){
+            console.log(this.name + 'won');
+        }
+
+        Player.prototype.lose = function(){
+            cosole.log(this.name + 'lost');
+        }
+
+        /********玩家死亡**********/
+        Player.prototype.die = function(){
+            this.state = 'dead';
+            playerDirector.ReceiveMessage('playerDead', this);
+        }
+
+        //移除玩家
+        Player.prototype.remove = function(){
+            playerDirector.ReceiveMessage('removePlayer', this); //给中介者发消息
+        }
+
+        Player.prototype.changeTeam = function(color){
+            PlayerDirector.ReceiveMessage('changeTeam', this, color);
+        }
+
+        var PlayerFactory = function(name, teamColor){
+            var newPlayer = new Player(name, teamColor);
+            playerDirector.ReceiveMessage('addPlayer', newPlayer);
+
+            return newPlayer;
+        }
+
+        var playerDirector = (function(){
+            var players = {}; //保存所有的操作
+            var operations = {}; //中介者可以执行的操作
+
+            /***********新增一个玩家***************/
+            operations.addPlayer = function(player){
+                var teamColor = player.teamColor;
+                players[teamColor] = players[teamColor] || [];
+
+                players[teamColor].push(player); //添加进玩家进队伍
+            }
+
+            /***********移除一个玩家****************/
+            operations.removePlayer = function(player){
+                var teamColor = player.teamColor;
+                var teamPlayers = players[teamColor] || [];
+                for (var i = teamPlayers.length - 1; i >= 0; i--){
+                    if(teamPlayers[i] === player){
+                        teamPlayers.splice(i, 1);
+                    }
+                }
+            }
+
+            /*********玩家换队***************/
+            operations.changeTeam = function(player, newTeamColor){
+                operations.removePlayer(player);
+                player.teamColor = newTeamColor;
+                operations.addPlayer(player);
+            }
+
+            operations.playerDead = function(player){
+                var teamColor = player.teamColor;
+                var teamPlayers = players[teamColor];
+
+                var all_dead = true;
+
+                for (var i = 0, player; player = teamPlayers[i++];){
+                    if(player.state !== 'dead'){
+                        all_dead = false;
+                        break;
+                    }
+                }
+
+                if(all_dead === true){
+                    for (var i = 0, player; player = teamPlayers[i++];){
+                        player.lose();
+                    }
+
+                    for (var color in players){
+                        if(color !== teamColor){
+                            var teamPlayers = players[color];
+                            for (var i = 0, player; player = teamPlayers[i++];){
+                                player.win(); //其他队伍所有玩家win
+                            }
+                        }
+                    }
+                }
+            }
+
+            var ReceiveMessage = function(){
+                var message = Array.prototype.shift.call(arguments);
+                operations[message].apply(this, arguments);
+            }
+
+            return {
+                ReceiveMessage: ReceiveMessage
+            }
+        })();
+
+
+        //红队
+        var player1 = playerFactory('皮蛋', 'red');
+        var player2 = playerFactory('小乖', 'red');
+        var player3 = playerFactory('宝宝', 'red');
+        var player4 = playerFactory('小强', 'red');
+
+        //蓝队
+        var player5 = playerFactory('黑妞', 'blue');
+        var player6 = playerFactory('葱头', 'blue');
+        var player7 = playerFactory('胖墩', 'blue');
+        var player8 = playerFactory('海盗', 'blue');
+
+        player1.die();
+        player2.die();
+        player3.die();
+        player4.die();
+
+        player1.remove();
+        player2.remove();
+        player3.die();
+        player4.die();
+
+        player1.changeTeam('blue');
+        player2.die();
+        player3.die();
+        player4.die();
+
+    </script>
+    <script type="text/javascript">
+        function Player(name, teamColor){
+            this.partners = [];
+            this.enemies = [];
+            this.state = 'live';
+            this.name = name;
+            this.teamColor = teamColor;
+        }
+
+        Player.prototype.win = function(){
+            console.log('winner:'+ this.name);
+        }
+
+        Player.prototype.lose = function(){
+            console.log('loser: ' + this.name);
+        }
+
+        Player.prototype.die = function(){
+            var all_dead = true;
+
+            this.state = 'dead';
+
+            for(var i = 0, partner; partner = this.partners[i++];){
+                if(partner.state !== 'dead'){
+                    all_dead = false;
+                }
+            }
+
+            if(all_dead === true){
+                this.lose();
+                for(var i = 0, partner; partner = this.partners[i++];){
+                    partner.lose();
+                }
+
+                for(var i = 0, enemy; enemy = this.enemies[i++];){
+                    enemy.win();
+                }
+            }
+        }
+
+        //最后定义一个工厂来创建玩家
+        var playerFactory = function(name, teamColor){
+            var newPlayer = new Player(name, teamColor);;
+
+            for (var i = 0, player; player = players[i++];){
+                if (player.teamColor === newPlayer.teamColor){
+                    player.partners.push(newPlayer);
+                    newPlayer.partners.push(player);
+                }else {
+                    player.enemies.push(newPlayer);
+                    newPlayer.enemies.push(player);
+                }
+            }
+            players.push(newPlayer);
+            return newPlayer;
+        }
+
+        //红队
+        var player1 = playerFactory('皮蛋', 'red');
+        var player2 = playerFactory('小乖', 'red');
+        var player3 = playerFactory('宝宝', 'red');
+        var player4 = playerFactory('小强', 'red');
+
+        //蓝队
+        var player5 = playerFactory('黑妞', 'blue');
+        var player6 = playerFactory('葱头', 'blue');
+        var player7 = playerFactory('胖墩', 'blue');
+        var player8 = playerFactory('海盗', 'blue');
+
+    </script>
+    <script type="text/javascript">
         function Player(name){
             this.name = name;
             this.enemy = null; //敌人
@@ -32,7 +241,6 @@
 
         //当玩家player1被泡泡炸死的时候，只需要调用这一句代码便完成了一局游戏
         player1.die();
-
 
     </script>
 </body>
