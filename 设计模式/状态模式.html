@@ -5,6 +5,86 @@
     <title>Document</title>
 </head>
 <body>
+
+    <script type="text/javascript">
+        var plugin = (function(){
+            var plugin = document.createElement('embed');
+            plugin.style.display = 'none';
+
+            plugin.type = 'application/txftn-webkit';
+
+            plugin.sign = function(){
+                console.log('开始文件扫描');
+            }
+
+            plugin.pause = function(){
+                console.log('暂停文件上传');
+            }
+
+            plugin.uploading = function(){
+                console.log('文件开始上传');
+            }
+
+            plugin.del = function(){
+                console.log('删除文件上传');
+            }
+
+            plugin.done = function(){
+                console.log('文件上传成功');
+            }
+
+            document.body.appendChild(plugin);
+
+            return plugin;
+        })();
+
+
+    </script>
+    <script type="text/javascript">
+        var light = function(){
+            this.offLightState = new OffLightState(this);
+            this.weakLightState = new weakLightState(this);
+            this.strongLightState = new WeakLightState(this);
+            this.superStrongLightState = new superStrongLightState(this);
+            this.button = null;
+        }
+
+        Light.prototype.init = function(){
+            var button = document.createElement('button'),
+            self = this;
+
+            this.button = document.body.appendChild(button);
+            this.button.innerHTML = '开关';
+            this.currState = this.offLightState;
+
+            this.button.onClick = function(){
+                self.currState.buttonWasPressed();
+            }
+        }
+
+        var offLightState = function(light){
+            this.light = light;
+        }
+
+        var State = function(){}
+
+        State.prototype.buttonWasPressed = function(){
+            throw new Error('父类的buttonWasPressed方法必须被重写');
+        }
+
+        var SuperStrongLightState = function(light){
+            this.light = light;
+        }
+
+        superStrongLightState.prototype = new State();
+
+        SuperStrongLightState.prototype.buttonWasPressed = function(){
+            console.log('关灯');
+            this.light.setState(this.light.offLightState);
+        }
+
+
+    </script>
     <script type="text/javascript">
         //offLightState
         var OffLightState = function(light){
