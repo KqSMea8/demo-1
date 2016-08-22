@@ -5,8 +5,170 @@
     <title>Document</title>
 </head>
 <body>
-    <script type="text/javascript">
+    选择颜色：<select id="colorSelect">
+        <option value="">请选择</option>
+        <option value="red">红色</option>
+        <option value="blue">蓝色</option>
+    </select>
 
+    输入购买数量: <input type="text" id="numberInput">
+
+    您选择了颜色：<div id="colorInfo"></div>
+    您选择了数量；<div id="numberInput"></div>
+
+    <button id="nextBtn" disabled="true">请选择手机颜色和购买数量</button>
+    <script type="text/javascript">
+        var mediator = (function(){
+            var colorSelect = document.getElementById('colorSelect');
+            var numberSelect = document.getElementById('memorySelect');
+            var colorInfo = document.getElementById('colorInfo');
+            var memoryInfo = document.getElementById('memoryInfo');
+            var numberInfo = document.getElementById('numberInfo');
+            var nextBtn = document.getElementById('nextBtn');
+
+            return {
+                change: function(obj){
+                    var color = colorSelect.value,
+                        memory = memorySelect.value,
+                        number = numberInput.value,
+                        stock = good[color + '|' + memory];
+
+                    if(obj === colorSelect){
+                        colorInfo.innerHTML = color;
+                    }else if(obj === memorySelect){
+                        memoryInfo.innerHTML = memory;
+                    }else if(obj === numberInput){
+                        numberInfo.innerHTML = number;
+                    }
+
+                    if(!color){
+                        nextBtn.disable = true;
+                        nextBtn.innerHTML = '请选择手机颜色';
+                        return ;
+                    }
+
+                    if(!memory){
+                        nextBtn.disable = true;
+                        nextBtn.innerHTML = '请选择内存大小';
+                        return ;
+                    }
+
+                    if(((number - 0) | 0) !== number - 0){
+                        nextBtn.disable = true;
+                        nextBtn.innerHTML = '请输入正确的购买数量';
+                    }
+
+                    nextBtn.disable = false;
+                    nextBtn.innerHTML = '放入购物车';
+                }
+            }
+        })();
+
+        //事件函数
+        colorSelect.onchange = function(){
+            mediator.change(this);
+        }
+
+        memorySelect.onchange = function(){
+            mediator.change(this);
+        }
+
+        numberInput.oninput = function(){
+            mediator.change(this);
+        }
+
+        var goods = {
+            'red|32G|800': 3,
+            'red|16G|801': 0,
+            'blue|32G|800': 1,
+            'blue|16G|801': 6
+        }
+
+        var mediator = (function(){
+            var cpuSelect = document.getElementById('cpuSelect');
+
+            return {
+                change: function(){
+                    var cpu = cupSelect.value,
+                    stock = goods[color + '|' + 'memory' + '|' + cpu];
+
+                    if(obj === cpuSelect){
+                        cpuInfo.innerHTML = cpu;
+                    }
+                }
+            }
+        })();
+
+
+    </script>
+    <script type="text/javascript">
+        //购买商品
+        var goods = {
+            //手机库存
+            'red': 3,
+            'blue': 6
+        }
+
+        var colorSelect = document.getElementById('colorSelect');
+        var numberInput = document.getElementById('numberInput');
+        var colorInfo = document.getElementById('colorInfo');
+        var numberInfo = document.getElementById('numberInfo');
+        var nextBtn = document.getElementById('nextBtn');
+
+        colorSelect.onchange = function(){
+            var color = this.value; //颜色
+            var number = numberInput.value;
+            var stock = goods[color];
+
+            colorInfo.innerHTML = color;
+            if(!color){
+                nextBtn.disable = true;
+                nextBtn.innerHTML = '请选择手机颜色';
+                return ;
+            }
+
+            if(((number - 0) | 0) !== number - 0){
+                nextBtn.disable = true;
+                nextBtn.innerHTML = '请输入正确的购买数量';
+                return ;
+            }
+
+            if(number > stock){
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '库存不足';
+                return ;
+            }
+
+            nextBtn.disable = false;
+            nextBtn.innerHTML = '放入购物车';
+        }
+
+        numberInput.oninput = function(){
+            var color = colorSelect.value;
+            var number = this.value;
+            var stock = goods[color];
+
+            numberInfo.innerHTML = number;
+            if(!color){
+                nextBtn.disable = true;
+                nextBtn.innerHTML = '请选择手机颜色';
+                return ;
+            }
+
+            if(((number - 0) | 0) !== number - 0){
+                nextBtn.disable = true;
+                nextBtn.innerHTML = '请输入正确的购买数量';
+                return ;
+            }
+
+            if(number > stock){
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '库存不足';
+            }
+
+            nextBtn.disabled = false;
+            nextBtn.innerHTML = '放入购物车';
+        }
     </script>
     <script type="text/javascript">
         //中介者模式
