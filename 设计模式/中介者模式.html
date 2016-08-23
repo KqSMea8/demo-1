@@ -77,28 +77,6 @@
             mediator.change(this);
         }
 
-        var goods = {
-            'red|32G|800': 3,
-            'red|16G|801': 0,
-            'blue|32G|800': 1,
-            'blue|16G|801': 6
-        }
-
-        var mediator = (function(){
-            var cpuSelect = document.getElementById('cpuSelect');
-
-            return {
-                change: function(){
-                    var cpu = cupSelect.value,
-                    stock = goods[color + '|' + 'memory' + '|' + cpu];
-
-                    if(obj === cpuSelect){
-                        cpuInfo.innerHTML = cpu;
-                    }
-                }
-            }
-        })();
-
 
     </script>
     <script type="text/javascript">
