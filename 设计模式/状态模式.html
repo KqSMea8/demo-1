@@ -60,7 +60,94 @@
             this.bindEvent();
         }
 
-        uploading.prototype //235
+        uploading.prototype.init = function(){
+            var that = this;
+            this.dom = document.createElement('div');
+            this.dom.innerHTML = '<span>文件名称'+this.fileName+'</span>'+
+                                 '<button data-action="button1">扫描中</button>'+
+                                 '<button data-action="button2">删除</button>';
+
+            document.body.appendChild(this.dom);
+            this.button1 = this.dom.querySelector('[data-action="button1"]');
+            this.button2 = this.dom.querySelector('[data-action="button2"]');
+
+            this.bindEvent();
+        }
+
+
+        Upload.prototype.bindEvent = function(){
+            var self = this;
+            this.button1.onClick = function(){
+                if(self.state === 'sigh'){
+                    console.log('扫描中,点击无效');
+                }else if(self.state === 'uploading'){
+                    self.changeState('pause');
+                }else if(self.state === 'done'){
+                    console.log('文件已完成上传,点击无效');
+                }else if(self.state === 'error'){
+                    console.log('文件上传失败，点击无效');
+                }
+            }
+
+            this.button2.onClick = function(){
+                if(self.state === 'done' || self.state === 'error'
+                   || self.state === 'pause'){
+                    self.changeState('del');
+                }else if(self.state === 'sign'){
+                    console.log('文件正在扫描中，不能删除');
+                }else if(self.state === 'uploading'){
+                    console.log('文件正在上传中，不能删除');
+                }
+            }
+        }
+
+        Upload.prototype.changeState = function(state){
+            switch(state){
+                case 'sign':
+                    this.plugin.sign();
+                    this.button1.innerHTML = '扫描中，任何操作无效';
+                    break;
+                case 'uploading':
+                    this.plugin.uploading();
+                    this.button1.innerHTML = '正在上传，点击暂停';
+                    break;
+                case 'pause':
+                    this.plugin.pause();
+                    this.button1.innerHTML = '已暂停，点击继续上传';
+                    break;
+                case 'done':
+                    this.plugin.done();
+                    this.button1.innerHTML = '上传完成';
+                    break;
+                case 'error':
+                    this.button1.innerHTML = '上传失败';
+                    break;
+                case 'del':
+                    this.plugin.del();
+                    this.dom.parentNode.removeChild(this.dom);
+                    console.log('删除完成');
+                    break;
+            }
+            this.state = state;
+        }
+
+        var uploadObj = new Upload('javascript设计模式与开发实践');
+
+        uploadObj.init();
+
+        window.external.upload = function(state){
+            uploadObj.changeState(state);
+        }
+
+        window.external.upload('sign');
+
+        setTimeout(function(){
+            window.external.upload('done');
+        }, 5000);
+
+
+
+
 
 
 
