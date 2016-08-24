@@ -199,6 +199,14 @@
 
         window.external.upload('sign');
 
+        setTimeout(function(){
+            window.external.upload('uploading');
+        }, 1000);
+
+        setTimeout(function(){
+            window.external.upload('done');
+        }, 5000);
+
 
     </script>
     <script type="text/javascript">
