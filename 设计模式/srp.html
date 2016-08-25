@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var each = function(obj, callback){
+        var value,
+            i = 0,
+            length = obj.length,
+            isArray = isArraylike(obj);
+
+        if(isArray){
+            for(; i < length; i++){
+                callback.call(obj[i], i, obj[i]);
+            }
+        }else {
+            for (i in obj){
+                value = callback.call(obj[i], i, obj[i]);
+            }
+        }
+        return obj;
+    }
+
+
+
+    </script>
+    <script type="text/javascript">
+    var myImage = (function(){
+        var imgNode = document.createElement('img');
+        document.body.appendChild(imgNode);
+        return {
+            setSrc: function(src){
+                imgNode.src = src;
+            }
+        }
+    })();
+
+    var proxyImage = (function(){
+        var img = new Image;
+        img.onload = function(){
+            myImage.setSrc(this.src);
+        }
+        return {
+            setSrc: function(src){
+                myImage.setSrc('gif');
+                img.src = src;
+            }
+        }
+    })();
+
+    // proxyImage.setSrc('http://mat1.gtimg.com/sports/danny/jian.gif');
+
+
+    </script>
+</body>
+</html>
