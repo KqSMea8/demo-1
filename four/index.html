@@ -5,6 +5,7 @@
     <title>Document</title>
     <style type="text/css">
         .box-item {
+            position: relative;
             display: flex;
             min-height: 200px;
             overflow: auto;
@@ -33,9 +34,13 @@
             border-bottom: none;
         }
         .box-two::after {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: block;
             content: "";
-            width: 5px;
-            height: 5px;
+            width: 15px;
+            height: 15px;
             border-top: 2px solid red;
             border-right: 2px solid red;
         }
