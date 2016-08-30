@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易路由实现</title>
+</head>
+<body>
+
+    <div>
+        <a href="#/aaaa/bcd">hash=aaaa/bcd 匹配/aaaa/:id</a>
+    </div>
+    <div>
+        <a href="#/bbbb">hash=bbbb 匹配/bbbb(/:name)</a>
+    </div>
+    <div>
+        <a href="#/bbbb/ddd">hash=bbbb/ddd 匹配/bbbb(/:name)</a>
+    </div>
+    <div>
+        <a href="#/cccc/s/d">hash=cccc/s/d 匹配cccc/*</a>
+    </div>
+    <div class="test">
+    </div>
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script type="text/javascript">
+    /**
+     * 存储hash与对应的回调函数，以key,value的形式存进去，
+     * 监听hashchange事件，监听url的hash变化
+     * 一旦hash变化，则便利cache，将属性key做正则处理，再将其与hasg做正则匹配，匹配到后执行相应的value(回调函数)
+     * 回调函数中执行渲染ui的代码，进而更新页面
+     */
+
+        //router.js
+        function Router () {
+            this.cache = {};
+
+            //key is url value is callback
+            this.on = function(key, value) {
+                var cache = this.cache;
+                cache[key] = value;
+            }
+
+            //匹配hash对应的回调函数并触发
+            this.trigger = function(hash) {
+                var cache = this.cache;
+                for (var r in cache){
+                    var reg = this.initRegexps(r);
+                    if(reg.test(hash)){
+                        var callback = cache[r] || function() {
+                        };
+                        var params = this.getParams(reg, hash);
+                        callback.apply(this, params);
+                    }
+                }
+            }
+
+            this.init = function() {
+                window.addEventListener('hashchange', function() {
+                    var hash = location.hash.slice(1);
+                    router.trigger(hash);
+                });
+                window.addEventListener('load', function() {
+                    var hash = location.hash.slice(1) || 'default';
+                    router.trigger(hash);
+                })
+            }
+
+            this.initRegexps = function  (route) {
+               route = route.replace(/[/,.+\-?$#{}\[\]]/g, '\\$&')
+                        .replace(/\((.*?)\)/g, '(?:$1)?')
+                        .replace(/(\/\w?:\w+)+/g, '\/([^/]+)')
+                        .replace(/\*\w*/g, '([^?]*?)');
+
+                return new RegExp('^' + route + '$');
+            }
+
+            this.getParams = function  (reg, hash) {
+                return reg.exec(hash).slice(1);
+            }
+
+        }
+
+        var router = new Router();
+        var test = $('.test');
+        router.on('/', function () {
+            test.css('background-color', 'green').css('color','white').html('我是绿色');
+        })
+        router.on('/aaaa/:id', function (id) {
+            console.log(id);
+            test.css('background-color', 'red').css('color','white').html('我是红色');
+        })
+        router.on('/bbbb(/:name)', function (name) {
+            console.log(name);
+            test.css('background-color', 'yellow').css('color','red').html('我是黄色');
+        })
+        router.on('/cccc/*', function (x) {
+            console.log(x);
+            test.css('background-color', 'black').css('color','white').html('我是黑色');
+        })
+        router.init();
+    </script>
+</body>
+</html>
