@@ -28031,6 +28031,8 @@
 	
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 172);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28054,8 +28056,9 @@
 	      event.preventDefault();
 	      var userName = event.target.elements[0].value;
 	      var repo = event.target.elements[1].value;
-	      var path = '/inbox/' + userName + '/' + repo;
-	      this.context.push(path);
+	      var path = '/repos/' + userName + '/' + repo;
+	      console.log(path);
+	      _reactRouter.browserHistory.push(path);
 	    }
 	  }, {
 	    key: 'render',
@@ -28093,14 +28096,14 @@
 	            'li',
 	            null,
 	            _react2.default.createElement(
-	              'from',
+	              'form',
 	              { onSubmit: this.handleSubmit },
-	              _react2.default.createElement('input', { placeholder: 'userName' }),
-	              _react2.default.createElement('input', { placeholder: 'repo' }),
+	              _react2.default.createElement('input', { type: 'text', placeholder: 'userName' }),
+	              _react2.default.createElement('input', { type: 'text', placeholder: 'repo' }),
 	              _react2.default.createElement(
 	                'button',
 	                { type: 'submit' },
-	                'go'
+	                'Go'
 	              )
 	            )
 	          )
