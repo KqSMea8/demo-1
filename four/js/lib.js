@@ -24,3 +24,12 @@ var store = {
         this.storage.clear();
     }
 }
+
+
+var $ = function(select){
+    return document.querySelector(select);
+}
+
+var $$ = function(select) {
+    return document.querySelectorAll(select);
+}
