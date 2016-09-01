@@ -1,3 +1,4 @@
+//本地存储方案
 var store = {
     storage: function  () {
         if(window.localStorage){
@@ -25,11 +26,12 @@ var store = {
     }
 }
 
-
+//选择一个元素方法
 var $ = function(select){
     return document.querySelector(select);
 }
 
+//选择多个元素方法
 var $$ = function(select) {
     return document.querySelectorAll(select);
 }
