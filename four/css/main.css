@@ -52,8 +52,15 @@
 .two-content,
 .three-content,
 .four-content {
-    min-height: 100%;
+    flex-wrap: wrap;
+    flex: 1;
     padding: 0 2em;
-    overflow: scroll;
+    border-top: 1px dashed #ff6633;
+}
+
+.wrap-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
