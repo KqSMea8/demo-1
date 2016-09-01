@@ -14,7 +14,6 @@ function init() {
         }
     })
 
-
     window.onload = function  () {
          setText('one', one);
          setText('two', two);
@@ -22,7 +21,6 @@ function init() {
          setText('four', four);
     }
 }
-
 
 
 init();

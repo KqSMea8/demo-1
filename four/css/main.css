@@ -48,6 +48,7 @@
 .three-content,
 .four-content {
     min-height: 100%;
+    padding: 0 2em;
     border: 1px solid #ff6633;
     overflow: scroll;
 }
