@@ -1,0 +1,54 @@
+.box-item {
+    display: flex;
+    min-height: 200px;
+}
+.box-one,
+.box-two,
+.box-three,
+.box-four {
+    position: relative;
+    flex: 1;
+}
+
+/*箭头*/
+.box-one::after {
+    position: absolute;
+    top: 0;
+    right: -8px;
+    content: "紧急";
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #ff6633;
+    border-right: 2px solid #ff6633;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.box-two::after {
+    position: absolute;
+    right: 2px;
+    bottom: -8px;
+    display: block;
+    content: "重要";
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #ff6633;
+    border-right: 2px solid #ff6633;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.one-content,
+.two-content,
+.three-content,
+.four-content {
+    min-height: 100%;
+    border: 1px solid #ff6633;
+    overflow: scroll;
+}
+

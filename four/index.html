@@ -3,66 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style type="text/css">
-        .box-item {
-            position: relative;
-            display: flex;
-            min-height: 200px;
-            overflow: auto;
-        }
-        .box-one,
-        .box-two,
-        .box-three,
-        .box-four {
-            flex: 1;
-            border: 1px solid red;
-        }
-        .box-one {
-            border-top: none;
-            border-left: none;
-        }
-        .box-two {
-            border-top: none;
-            border-right: none;
-        }
-        .box-three {
-            border-left: none;
-            border-bottom: none;
-        }
-        .box-four {
-            border-right: none;
-            border-bottom: none;
-        }
-        .box-two::after {
-            position: absolute;
-            right: 2px;
-            bottom: -8px;
-            display: block;
-            content: " ";
-            width: 15px;
-            height: 15px;
-            border-top: 2px solid red;
-            border-right: 2px solid red;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
     <div class="box">
         <div class="box-item">
-            <div class="box-one" contentEditable=""></div>
-            <div class="box-two" contentEditable=""></div>
+            <div class="box-one">
+                <div class="one-content" contentEditable=""></div>
+            </div>
+            <div class="box-two">
+                <div class="two-content" contentEditable=""></div>
+            </div>
         </div>
         <div class="box-item">
-            <div class="box-three" contentEditable=""></div>
-            <div class="box-four" contentEditable=""></div>
+            <div class="box-three">
+                <div class="three-content" contentEditable=""></div>
+            </div>
+            <div class="box-four">
+                <div class="four-content" contentEditable=""></div>
+            </div>
         </div>
     </div>
-    <script type="text/javascript">
-
-    </script>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
