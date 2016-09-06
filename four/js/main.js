@@ -20,6 +20,10 @@ function init() {
          setText('three', three);
          setText('four', four);
     }
+
+    setInterval(function  () {
+        storeStoage();
+    }, 1000);
 }
 
 init();

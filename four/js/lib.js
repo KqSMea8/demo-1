@@ -1,3 +1,13 @@
+//选择一个元素方法
+var $ = function(select){
+    return document.querySelector(select);
+}
+
+//选择多个元素方法
+var $$ = function(select) {
+    return document.querySelectorAll(select);
+}
+
 //本地存储方案
 var store = {
     storage: function  () {
@@ -26,12 +36,34 @@ var store = {
     }
 }
 
-//选择一个元素方法
-var $ = function(select){
-    return document.querySelector(select);
+
+//创建一个数据对象，localStorage里面的数据放进去
+function storeStoage() {
+    var storage = store.storage;
+    var data = {};
+    var key = '', value = '';
+
+    for (var i = 0, len = storage.length; i < len; i++){
+        key = storage.key(i);
+        value = storage.getItem(key);
+        data[key] = value;
+    }
+
+    return data;
 }
 
-//选择多个元素方法
-var $$ = function(select) {
-    return document.querySelectorAll(select);
+//把数据存到服务器
+function  storeServer() {
+    var xhr = new XMLHttpRequest();
+    var data = storeStoage();
+    xhr.open('GET', '', true);
+    xhr.onload = function(event) {
+        console.log('数据保存成功'+event.target.responseText);
+    }
+    xhr.onerror = function(event) {
+        console.log('数据保存失败'+event.target.responseText);
+    }
+    xhr.send(data);
 }
+
+
