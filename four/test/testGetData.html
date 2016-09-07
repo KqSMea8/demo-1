@@ -6,13 +6,15 @@
 </head>
 <body>
     <div id="app"></div>
-    <button>开始测试</button>
+    <button>开始测试POST</button>
+    <button>开始测试GET</button>
     <script>
         var app = document.getElementById('app');
         var btn = document.getElementsByTagName('button')[0];
+        var btn1 = document.getElementsByTagName('button')[1];
         var xhr = new XMLHttpRequest();
 
-        function test () {
+        function testPost () {
             xhr.open('POST', 'http://localhost:8888/', true);
             xhr.onload = function (event) {
                 app.innerHTML = event.target.responseText;
@@ -22,9 +24,23 @@
             xhr.send(JSON.stringify(obj));
         }
 
+        function testGet () {
+            xhr.open('GET', 'http://localhost:8888/', true);
+            xhr.onload = function (event) {
+                app.innerHTML = event.target.responseText;
+                console.log(event);
+            }
+            xhr.send();
+        }
+
         btn.onclick = function (event) {
            console.log(2)
-           test();
+           testPost();
+       }
+
+       btn1.onclick = function (event) {
+            console.log(1)
+            testGet();
        }
     </script>
 </body>
