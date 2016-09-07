@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <button>开始测试</button>
+    <script>
+        var app = document.getElementById('app');
+        var btn = document.getElementsByTagName('button')[0];
+        var xhr = new XMLHttpRequest();
+
+        function test () {
+            xhr.open('POST', 'http://localhost:8888/', true);
+            xhr.onload = function (event) {
+                app.innerHTML = event.target.responseText;
+                console.log(event);
+            }
+            var obj = {'age': '21'};
+            xhr.send(JSON.stringify(obj));
+        }
+
+        btn.onclick = function (event) {
+           console.log(2)
+           test();
+       }
+    </script>
+</body>
+</html>
