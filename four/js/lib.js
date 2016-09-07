@@ -66,4 +66,11 @@ function  storeServer() {
     xhr.send(data);
 }
 
+//同步服务器的数据到localStoage
+function synchronizeData () {
+    obj = {};
+    for (var i in obj){
+        store.set(i, obj[i]);
+    }
+}
 
