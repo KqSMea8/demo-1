@@ -20,7 +20,7 @@ function saveData (req, res, postData) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});    //将数据保存到文件
 
-    //写文件
+    //写文件,应该是覆盖
     fs.writeFile('../tmp/data.txt', postData);
 
     res.end('接受到请求了');
