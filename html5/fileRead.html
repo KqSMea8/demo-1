@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fileRead</title>
+</head>
+<body>
+
+<input type="file" name="file" id="post_file">
+	<script>
+		document.getElementById('post_file').onchange = function () {
+			var fileList = this.files[0];
+			console.log(fileList);
+			var oFReader = new FileReader();
+			console.log(oFReader);
+			oFReader.readAsDataURL(fileList)
+			console.log(oFReader);
+			oFReader.onload = function(oFREvent){
+				postFile.paintImage(oFREvent.target.result);
+				console.log(oFREvent.target.result);	
+				console.log(1);	
+			}
+		}
+
+		function printImage(url) {
+			var t = this;
+			var createCanvas = t.getImage.getContext('2d');
+			var img = new Image();
+			img.src = url;
+			img.onload = function() {
+				if(img.width < t.regional.offsetWidth && img.height < t.regional.offsetHeight) {
+					t.imgWidth = img.width;
+					t.imgHeight = img.height;
+				}else {
+					t.px = (t.regional.offsetWidth - t.imgWidth) / 2 + 'px';
+					t.py = (t.regional.offsetHeight - t.imgHeight) / 2 + 'px';
+
+					t.getImage.height = t.imgHeight;
+					t.getImage.width = t.imgWidth;
+					t.getImage.style.left = t.px;
+					t.getImage.style.top = t.py;
+
+					createCanvas.drawImage(img, 0, 0, t.imgWidth, t.imgHeight);
+					t.imgUrl = t.getImage.toDataURL();
+					t.cutImage();
+					t.drag();
+				}
+			}
+		}
+	</script>
+</body>
+</html>
