@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .picture {
+            width: 400px;
+            transform: rotate(45deg);
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            transform: rotate(-45deg) scale(1.42);
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%,0 50%);
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            transition: 1s clip-path;
+        }
+        img:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+    </style>
+</head>
+<body>
+   <div class="picture">
+       <img src="http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg">
+   </div>
+</body>
+</html>
