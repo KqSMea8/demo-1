@@ -1,0 +1,9 @@
+.item {
+	background: url('./images/sprite.png');
+	background-position: -0px -102px;
+}
+
+.item1 {
+	background: url('./images/sprite.png');
+	background-position: -0px -0px;
+}
