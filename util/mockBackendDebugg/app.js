@@ -11,7 +11,7 @@ var data = {
 
 app.get('/test', function (req, res) {
     // 返回json数据
-    res.json(data);
+    res.json(data); // 这里就是json数据不用进行转化
 
 
 
