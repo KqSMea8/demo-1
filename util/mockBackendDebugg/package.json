@@ -1,0 +1,14 @@
+{
+  "name": "mockback",
+  "version": "1.0.0",
+  "description": "采用express启动服务器，然后进行路由请求处理，使用charles进行抓包进行代理，将要测试的请求地址代理到本地此进行处理请求返回数据，如此就进行了模拟后端调试。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.2"
+  }
+}
