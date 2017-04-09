@@ -4,32 +4,47 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <link href="http://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
 
     <style>
-        .left {
-            float: left;
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        }
-        .right {
-            float: right;
-            width: 100px;
-            height: 100px;
-            background-color: yellow;
-        }
+
     </style>
 </head>
 <body>
-<div class="test">
-    <div class="left">
+<button class="dia">dialog</button>
+<button class="refresh">refresh</button>
 
-    </div>
-    <div class="right">
-
-    </div>
+<div id="dialog" title="基本的对话框">
+  <p>这是一个默认的对话框，用于显示信息。对话框窗口可以移动，调整尺寸，默认可通过 'x' 图标关闭。</p>
 </div>
+<script>
 
-</div>
+function error(msg, url, line, colno, e){
+   // var REPORT_URL = "xxxx/cgi"; // 收集上报数据的信息
+   var m =[msg, url, line, colno, e, navigator.userAgent, +new Date];// 收集错误信息，发生错误的脚本文件网络地址，用户代理信息，时间
+   // var url = REPORT_URL + m.join('||');// 组装错误上报信息内容URL
+   var img = new Image;
+   img.onload = img.onerror = function(){
+      img = null;
+   };
+   // img.src = url;// 发送数据到后台cgi
+   console.log(m);
+}
+
+window.onerror = function (msg, url, line, colno, e) {
+    error(msg, url, line, colno, e)
+}
+
+$('.dia').on('refresh', function (e) {
+    console.log('自定义事件refresh')
+    console.log(last);
+})
+
+$('.refresh').on('click', function () {
+    $('.dia').trigger('refresh');
+})
+
+</script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>前端页面监控实现代码</title>
+</head>
+<body>
+    只需要用onerror进行监听页面当中的错误，然后将信息返回给后端，进行日志记录就行了，至于你怎么处理报错信息，可以用发邮件，也可以发短信，或者日志记录就可以了。
+   <ul>
+       <li>参考链接</li>
+       <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/ErrorEvent">https://developer.mozilla.org/zh-CN/docs/Web/API/ErrorEvent</a></li>
+        <li><a href="http://www.alloyteam.com/2014/03/front-end-data-monitoring/">http://www.alloyteam.com/2014/03/front-end-data-monitoring/</a></li>
+   </ul>
+    <script>
+        /**
+         * 页面错误记录
+         *
+         * @param  {string} msg  错误消息
+         * @param  {string} url  发生错误的页面的 url,包含了发生错误的脚本文件的文件名。
+         * @param  {number} line 发生错误的代码行
+         * @param  {number} colno 发生错误的代码列
+         * @param  {Object} error 发生错误时所抛出的 Error 对象。发生错误时所抛出的 Error 对象。
+         *
+         * @return {boolean} 如果返回false,则在控制台显示错误消息，反之不会
+         */
+        window.onerror = function (msg, url, line, colno, error) {
+
+        }
+
+        /**
+         * 示例error代码
+         *
+         * @param  {[type]} msg  [description]
+         * @param  {[type]} url  [description]
+         * @param  {[type]} line [description]
+         * @return {[type]}      [description]
+         */
+        function handleErr(msg,url,line){
+           var REPORT_URL = "xxxx/cgi"; // 收集上报数据的信息
+           var m =[msg, url, line, navigator.userAgent, +new Date];// 收集错误信息，发生错误的脚本文件网络地址，用户代理信息，时间
+           var url = REPORT_URL + m.join('||');// 组装错误上报信息内容URL
+           var img = new Image;
+           img.onload = img.onerror = function(){
+              img = null;
+           };
+           img.src = url;// 发送数据到后台cgi
+        }
+    </script>
+</body>
+</html>
