@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>uploadfile</title>
+</head>
+<body>
+    <h1>multer uplpad file</h1>
+    <form action="/profile" method="post" enctype="multipart/form-data">
+        单文件<input type="file" name="avatar"><br>
+        <button>提交</button>
+    </form>
+    <form action="/photos/upload" method="post" enctype="multipart/form-data">
+        多文件<input type="file" multiple name="photos"/>
+        <br>
+        <button>提交</button>
+    </form>
+</body>
+</html>

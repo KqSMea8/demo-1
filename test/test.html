@@ -4,62 +4,19 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-
+    .hello {
+        padding: 10px;
+        background: red;
+    }
     </style>
+
 </head>
 <body>
 
-<div class="test">dgdsagr</div>
+<div class="test">  fdgdsagr </div>
+<span class="hello">hello</span>
+<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
-var list = [
-    {
-        "name":"王芃",
-        "numbers":[
-        {
-            "type":"家庭",
-            "number":"13810411763"
-        },
-        {
-            "type":"手机",
-            "number":"13810411763"
-        },
-        ],
-    },
-    {
-        "name":"火星人",
-        "numbers":[
-        {
-            "type":"手机1",
-            "number":"13810411763"
-        },
-        {
-            "type":"手机2",
-            "number":"13810411763"
-        },
-        ],
-    }
-];
-
-
-list.map(function (val, index, arr) {
-    val.numbers.map(function(val, index, arr) {
-        console.log(val);
-        var number = val.number;
-        console.log(number);
-        var newNumber = number.substring(0, 3) + '-' + number.substring(3, 7) + '-' + number.substring(7, 11);
-        return val.number = newNumber;
-    })
-})
-
-
-console.log(list);
-
-
-
-
-
-
-
 
 </script>
 </body>
