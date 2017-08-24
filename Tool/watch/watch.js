@@ -1,8 +1,10 @@
 let chokidar = require('chokidar');
 let shelljs = require('shelljs');
+let dir = '';
+let command = '';
 
-chokidar.watch('./template').on('change', (event, path) => {
-    console.log('exec sh build.sh start');
-    shelljs.exec("node audiobook.js");
-    console.log('exec sh build.sh end');
+chokidar.watch(dir).on('change', (event, path) => {
+    console.log('exec start');
+    shelljs.exec(command);
+    console.log('exec end');
 });
