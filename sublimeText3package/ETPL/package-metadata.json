@@ -1,0 +1,1 @@
+{"description": "An ETPL syntax definition & snippets specifically for Sublime Text.", "url": "https://github.com/ecomfe/sublime-etpl", "platforms": ["*"], "dependencies": [], "sublime_text": "*", "version": "0.2.3"}

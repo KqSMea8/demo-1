@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        .content {
-            height: 100px;
-            margin-bottom: 20px;
-            background: yellow;
-        }
-        .ency-tex {
-            width: 50px;
-            height: 100px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-        }
-        .test img {
-            fill: red;
+        .test {
+            background: red;
         }
     </style>
 </head>
 <body>
-
-    <div class="test">
-        <img src="晴天.svg">著作权归作者所有。
-    </div>
-    <div class="ency-tex">测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</div>
-    <button class="click-me">点我</button>
-    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<div class="box"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
+    function test() {
+        // $.when($('.box').append($('<div>fdsfds</div>'))).then(function () {
+        //     console.log(2)
+        // }, )
+
+        // $.when($('<div>fdsfds</div>').appendTo($('.box'))).then(function () {
+        //     console.log(2)
+        // }, )
+
+        $('<div>fdsafds</div>').appendTo('.box').each(function(index, el) {
+            console.log(3);
+        });
+    }
+
+    test();
+
+
+
     </script>
 </body>
 </html>

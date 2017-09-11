@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-  <g id="layer1">
-    <rect x="10" y="0" rx="4" ry="4" width="50" height="60" />
-    <rect x="5" y="10"  width="10" height="10" style="-webkit-transform:rotate(45deg);-webkit-transform-origin:left bottom;transform:rotate(45deg);transform-origin:left bottom;" />
-  </g>
-</svg>
