@@ -6,11 +6,15 @@
     <style>
         .test {
             background: red;
+            height: 10000px;
         }
+
     </style>
 </head>
 <body>
+<div id="display"></div>
 <div class="box"></div>
+<div class="test"></div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
     function test() {
@@ -25,9 +29,26 @@
         $('<div>fdsafds</div>').appendTo('.box').each(function(index, el) {
             console.log(3);
         });
+
+        $.when(
+            $('<div>fdsafdsafds</div>')
+            .appendTo('#display'));
+
+        setTimeout(function () {
+            let view_rendering_t = new Date().getTime();
+            console.log(view_rendering_t);
+        }, 0);
+
+        console.log("fds:" + new Date().getTime());
+
     }
 
-    test();
+    window.onload = function () {
+        console.log(1);
+        document.documentElement.scrollTop = document.body.scrollHeight;
+    }
+
+
 
 
 
