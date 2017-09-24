@@ -9,10 +9,10 @@ Page({
    */
   data: {
     time: 0,
-    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-    name: '此时此刻',
-    author: '许巍',
-    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
+    poster: 'http://musicdata.baidu.com/data2/pic/cd8dcc4f40cbb37c7dcf0e6c151fbcc6/275347355/275347355.jpg@s_1,w_180,h_180',
+    name: '成都',
+    author: '赵雷',
+    src: 'http://yinyueshiting.baidu.com/data2/music/82a5d9fa53a8dc3b8961d4375d5bf9f9/540728459/2748413261506258061128.mp3?xcode=e85d89e6292ffc8a6f333bb99c6701d9'
   },
 
   //事件处理函数
