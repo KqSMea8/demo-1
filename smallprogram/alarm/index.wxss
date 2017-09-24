@@ -1,0 +1,14 @@
+.center {
+    text-align: center;
+}
+.rest-time {
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    margin: 0 auto;
+    margin-bottom: 20rpx;
+    font-size: 28px;
+    color: #fff;
+    background-color: #070c12;
+    border-radius: 50%;
+}

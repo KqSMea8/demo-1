@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="item-box">
+    <button bindtap="startTime25">25分钟开始</button>
+    <button bindtap="startTime15">15分钟开始</button>
+    <button bindtap="startTime5">5分钟开始</button>
+  </view>
+  <view class="center rest-time">{{time}}</view>
+  <audio src="{{src}}" poster="{{poster}}" name="{{name}}" author="{{author}}" id="myAudio" controls loop></audio>
+  <button bindtap="audioPause">停止响铃</button>
+</view>
