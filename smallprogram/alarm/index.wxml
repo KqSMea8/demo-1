@@ -7,5 +7,6 @@
   </view>
   <view class="center rest-time">{{time}}</view>
   <audio src="{{src}}" poster="{{poster}}" name="{{name}}" author="{{author}}" id="myAudio" controls loop></audio>
+  <button bindtap="timePause">停止时间</button>
   <button bindtap="audioPause">停止响铃</button>
 </view>

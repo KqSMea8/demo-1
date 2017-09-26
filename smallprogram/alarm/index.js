@@ -41,7 +41,6 @@ Page({
   startTime: function (num) {
 
     if (typeof num == 'number') {
-      console.log(num);
       this.setData({
         time: num * 60
       });
@@ -56,10 +55,10 @@ Page({
   countDownTime: function () {
     var self = this;
 
-    this.interval = setInterval(function() {
+    this.timer = setInterval(function() {
         if (self.data.time <= 0) {
-          clearTimeout(self.interval);
-          self.interval = null;
+          clearInterval(self.timer);
+          self.timer = null;
         }
 
         self.handlerTimeData()
@@ -86,6 +85,11 @@ Page({
         time: --this.data.time
       });
     }
+  },
+
+  timePause: function () {
+    clearInterval(this.timer);
+    this.timer = null;
   },
 
   audioPlay: function() {

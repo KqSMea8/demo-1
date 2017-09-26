@@ -21,7 +21,10 @@ function start(){
     var iconNames = $('.icon-name');
     var len = iconNames.length;
     for (var i = 0; i < len; i++) {
-      iconArr.push(iconNames.eq(i).attr('title'));
+      var title = iconNames.eq(i).attr('title');
+      var iconCode = iconNames.eq(i).next('.icon-code-show').attr('title');
+      iconArr.push(title + ':' + iconCode);
+
     }
 
     console.log('总共有：' + iconArr.length + '种图标');

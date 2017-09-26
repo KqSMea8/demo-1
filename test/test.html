@@ -5,52 +5,23 @@
     <title>Document</title>
     <style>
         .test {
-            background: red;
-            height: 10000px;
+            width: 100px;
+            height: 100%;
+            background-color: red;
         }
 
     </style>
 </head>
 <body>
 <div id="display"></div>
-<div class="box"></div>
-<div class="test"></div>
+<div class="test">hhhhh
+<img src="http://hiphotos.baidu.com/xiaodu/pic/item/3bf33a87e950352a7362b2835b43fbf2b2118b3e.jpg"></div>
+
+<button class="box">
+
+</button>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
-    function test() {
-        // $.when($('.box').append($('<div>fdsfds</div>'))).then(function () {
-        //     console.log(2)
-        // }, )
-
-        // $.when($('<div>fdsfds</div>').appendTo($('.box'))).then(function () {
-        //     console.log(2)
-        // }, )
-
-        $('<div>fdsafds</div>').appendTo('.box').each(function(index, el) {
-            console.log(3);
-        });
-
-        $.when(
-            $('<div>fdsafdsafds</div>')
-            .appendTo('#display'));
-
-        setTimeout(function () {
-            let view_rendering_t = new Date().getTime();
-            console.log(view_rendering_t);
-        }, 0);
-
-        console.log("fds:" + new Date().getTime());
-
-    }
-
-    window.onload = function () {
-        console.log(1);
-        document.documentElement.scrollTop = document.body.scrollHeight;
-    }
-
-
-
-
 
     </script>
 </body>
