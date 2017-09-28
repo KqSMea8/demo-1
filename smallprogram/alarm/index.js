@@ -56,12 +56,15 @@ Page({
     var self = this;
 
     this.timer = setInterval(function() {
+
         if (self.data.time <= 0) {
           clearInterval(self.timer);
           self.timer = null;
+          console.log('清除timer');
+          console.log(self.timer);
         }
 
-        self.handlerTimeData()
+        self.handlerTimeData();
 
       }, 1000);
   },

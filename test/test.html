@@ -9,20 +9,21 @@
             height: 100%;
             background-color: red;
         }
-
     </style>
 </head>
 <body>
 <div id="display"></div>
 <div class="test">hhhhh
-<img src="http://hiphotos.baidu.com/xiaodu/pic/item/3bf33a87e950352a7362b2835b43fbf2b2118b3e.jpg"></div>
+<img src="http://localhos/xiaodu/pic/item/3bf33a87e950352a7362b28353fbf2b2118b3e.jpg"></div>
 
 <button class="box">
 
 </button>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
-
+        $('img').on('error', function () {
+            console.log('img error');
+        })
     </script>
 </body>
 </html>
