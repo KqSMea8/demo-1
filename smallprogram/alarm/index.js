@@ -62,11 +62,16 @@ Page({
           self.timer = null;
           console.log('清除timer');
           console.log(self.timer);
+          self.handlerTimeData();
+          return;
+        }
+        else {
+          self.handlerTimeData();
         }
 
-        self.handlerTimeData();
-
       }, 1000);
+
+    console.log(this.timer);
   },
 
   /**
