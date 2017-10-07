@@ -4,19 +4,211 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        .test {
-            width: 100px;
-            height: 100%;
-            background-color: red;
+        section[data-from=server], section[data-from=user] {
+            margin: .12rem 0 .18rem;
+            position: relative;
+            overflow: auto;
         }
+
+        #display {
+            padding-bottom: .5rem;
+        }
+
+        .c-container, .c-container-tight {
+            padding: .1rem .17rem .15rem;
+            background-color: #fff;
+            width: auto;
+            color: #555;
+            font: 14px/24px Arial,Helvetica,sans-serif;
+            word-break: break-word;
+            word-wrap: break-word;
+            border: 0 none;
+        }
+
+        section[data-from=server] .text-box .item-title {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #000;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        section[data-from=server] .text-box .item-content {
+            padding-top: 10px;
+            padding-bottom: 15px;
+            font-size: 14px;
+            color: #999;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .c-container, .c-container-tight {
+            padding: .1rem .17rem .15rem;
+            background-color: #fff;
+            width: auto;
+            color: #555;
+            font: 14px/24px Arial,Helvetica,sans-serif;
+            word-break: break-word;
+            word-wrap: break-word;
+            border: 0 none;
+        }
+
+        section[data-from=server] .text-box {
+            overflow: auto;
+            background: #fff;
+        }
+
     </style>
 </head>
 <body>
-<div id="display"></div>
-<div class="test">hhhhh
-<img src="http://localhos/xiaodu/pic/item/3bf33a87e950352a7362b28353fbf2b2118b3e.jpg"></div>
+<div id="display">
+<section data-from="server" class="no-head list-card c-container">
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+    <div class="text-box">
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=7279442473032596150" class="list">
+            <div class="item-title text">外交部：因安全考虑暂缓印度香客团赴藏朝圣</div>
+            <div class="item-content text">中国外交部发言人陆慷在今天的例行记者会上介绍，由于印度边防人员非法越过中印边界锡金段进入中国境内，中方已向印方提出交涉，并采取相应措施，由此不得不暂缓印度官方香客团由中印边界锡金段乃堆拉山口入境朝圣。我们希望印度方面迅速采取正确措施，将非法越入中国境内的人员撤回边界线印度一侧。</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9644344479083020228" class="list">
+            <div class="item-title text">南方航空乘客把硬币扔进发动机 致重新检查航班延误</div>
+            <div class="item-content text">突发：浦东机场一乘客将一把硬币扔进发动机，飞机重新检查，航班延误！6月27日，新民晚报新民网接网友报料称，今天中午一班由上海浦东国际机场出港的航班，在登机时一名老年乘客往发动机扔了一把硬币，导致航班延误，所有乘客下飞机，重新检查飞机。南方航空CA380空客A320机型航班一名旅客在上飞机时拿出硬币祈祷平安然后投进发动机造成航班延误！</div>
+        </a>
+        <a href="http://m.baidu.com/feed/data/landingpage?dsp=wise&n_type=-1&p_from=-1&nid=9541510128250821433" class="list">
+            <div class="item-title text">媒体：中国正在建造航母仍为常规动力</div>
+            <div class="item-content text">“列宁”号核动力破冰船，储备了水面舰艇核动力装置技术，为俄罗斯研制“乌里扬诺夫斯克”核动力航母进行技术储备。2017年6月，在中央电视台《开讲啦》栏目中，中国国产航母副总设计师孙光甦介绍了国产航母的研制历程，并回答了关于国产航母的一些问题。正在建造的航母仍为常规动力。</div>
+        </a>
+        <!---->
+    </div>
+</div>
+</section>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
+        $(document).ready(function($) {
+
+            $('img').error(function() {
+                console.log('图片加载失败');
+            });
+
+        });
 
     </script>
 </body>

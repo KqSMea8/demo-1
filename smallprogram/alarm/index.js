@@ -9,10 +9,15 @@ Page({
    */
   data: {
     time: 0,
-    poster: 'http://musicdata.baidu.com/data2/pic/cd8dcc4f40cbb37c7dcf0e6c151fbcc6/275347355/275347355.jpg@s_1,w_180,h_180',
-    name: '成都',
-    author: '赵雷',
-    src: 'http://yinyueshiting.baidu.com/data2/music/82a5d9fa53a8dc3b8961d4375d5bf9f9/540728459/2748413261506258061128.mp3?xcode=e85d89e6292ffc8a6f333bb99c6701d9'
+    timer: null, // 定时器
+    // poster: 'http://p1.music.126.net/BJgUd9aD9gpougZFASRTTw==/18548761162235571.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0',
+    poster: 'http://musicdata.baidu.com/data2/pic/73a3804e1b971cbebc63d99260278136/173971/173971.jpg@s_1,w_300,h_300',
+    // name: '成都',
+    name: '伤心太平洋',
+    // author: '赵雷',
+    author: '任贤齐',
+    src: 'http://zhangmenshiting.baidu.com/data2/music/3f6c88e3bd6ca291ad5ab999c6ae1291/540216554/540216554.mp3?xcode=89f64d0dbe548a0ab50a78e8b32aeef1',
+    // src: 'http://m10.music.126.net/20171001234757/79b9d71eb75367fe52bada6ce0832522/ymusic/3198/cc71/ccb0/0cb79ae167ff29be89846b699b3c4792.mp3'
   },
 
   //事件处理函数
@@ -34,12 +39,12 @@ Page({
   },
 
   startTime5: function (event) {
+
     this.startTime(5);
   },
 
   // 设置倒计时时间
   startTime: function (num) {
-
     if (typeof num == 'number') {
       this.setData({
         time: num * 60
@@ -55,23 +60,21 @@ Page({
   countDownTime: function () {
     var self = this;
 
-    this.timer = setInterval(function() {
+    if (this.data.timer) {
+      clearInterval(this.data.timer);
+    }
 
+    this.data.timer = setInterval(function() {
         if (self.data.time <= 0) {
-          clearInterval(self.timer);
-          self.timer = null;
-          console.log('清除timer');
-          console.log(self.timer);
-          self.handlerTimeData();
-          return;
+          clearInterval(self.data.timer);
+          self.setData({
+            timer: null
+          });
         }
-        else {
-          self.handlerTimeData();
-        }
+
+        self.handlerTimeData();
 
       }, 1000);
-
-    console.log(this.timer);
   },
 
   /**
@@ -96,8 +99,8 @@ Page({
   },
 
   timePause: function () {
-    clearInterval(this.timer);
-    this.timer = null;
+    clearInterval(this.data.timer);
+    this.data.timer = null;
   },
 
   audioPlay: function() {
