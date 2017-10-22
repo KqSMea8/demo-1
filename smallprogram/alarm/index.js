@@ -11,12 +11,12 @@ Page({
     time: 0,
     timer: null, // 定时器
     // poster: 'http://p1.music.126.net/BJgUd9aD9gpougZFASRTTw==/18548761162235571.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0',
-    poster: 'http://musicdata.baidu.com/data2/pic/73a3804e1b971cbebc63d99260278136/173971/173971.jpg@s_1,w_300,h_300',
+    // poster: 'http://musicdata.baidu.com/data2/pic/73a3804e1b971cbebc63d99260278136/173971/173971.jpg@s_1,w_300,h_300',
     // name: '成都',
-    name: '伤心太平洋',
+    // name: '伤心太平洋',
     // author: '赵雷',
-    author: '任贤齐',
-    src: 'http://zhangmenshiting.baidu.com/data2/music/3f6c88e3bd6ca291ad5ab999c6ae1291/540216554/540216554.mp3?xcode=89f64d0dbe548a0ab50a78e8b32aeef1',
+    // author: '任贤齐',
+    src: 'http://yinyueshiting.baidu.com/data2/music/64362772/64362772.mp3?xcode=5644ad4ab28d77dce23725bcf113dbcd',
     // src: 'http://m10.music.126.net/20171001234757/79b9d71eb75367fe52bada6ce0832522/ymusic/3198/cc71/ccb0/0cb79ae167ff29be89846b699b3c4792.mp3'
   },
 
