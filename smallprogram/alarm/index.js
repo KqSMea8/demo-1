@@ -16,7 +16,8 @@ Page({
     // name: '伤心太平洋',
     // author: '赵雷',
     // author: '任贤齐',
-    src: 'http://fs.w.kugou.com/201710282249/7e28139b16b96711a6a804154046b802/G042/M06/01/07/CpQEAFYxisqAf9tLADYiIXrxaBQ386.mp3',
+    // src: 'http://fs.w.kugou.com/201710282249/7e28139b16b96711a6a804154046b802/G042/M06/01/07/CpQEAFYxisqAf9tLADYiIXrxaBQ386.mp3',
+    src: 'http://localhost:3000/zuihou.mp3',
     // src: 'http://m10.music.126.net/20171001234757/79b9d71eb75367fe52bada6ce0832522/ymusic/3198/cc71/ccb0/0cb79ae167ff29be89846b699b3c4792.mp3'
   },
 

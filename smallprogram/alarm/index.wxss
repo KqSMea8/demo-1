@@ -12,3 +12,8 @@
     background-color: #070c12;
     border-radius: 50%;
 }
+.tips {
+    display: block;
+    text-align: center;
+    color: red;
+}

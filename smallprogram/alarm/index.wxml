@@ -4,6 +4,7 @@
     <button bindtap="startTime25">25分钟开始</button>
     <button bindtap="startTime15">15分钟开始</button>
     <button bindtap="startTime5">5分钟开始</button>
+    <text class="tips">开启之前记得先关低声音哦！！！</text>
   </view>
   <view class="center rest-time">{{time}}</view>
   <audio src="{{src}}" poster="{{poster}}" name="{{name}}" author="{{author}}" id="myAudio" controls loop></audio>
