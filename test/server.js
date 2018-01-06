@@ -33,4 +33,6 @@ var server=http.createServer(function(req,res){
         }
     });
 });
-server.listen(8000);
+server.listen(8000, function () {
+    console.log('监听端口 http://localhost:8000');
+});

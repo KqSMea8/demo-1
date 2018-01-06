@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            margin-left: 200px;
+        }
+        .broken-img {
+            position: relative;
+        }
+        .broken-img:before {
+            content: "sorry";
+        }
+        .broken-img:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            content: "\f016";
+        }
+
+    </style>
+</head>
+<body>
+    <img src="https://bdstatic.com/9bA1vGfa2gU2pMbfm9GUKT-w/timg?wisealaddin&size=f255_255&quality=100&sec=1514429019&di=842f98ebd62d6a99e3965aadc30b850d&src=http%3A%2F%2Fimgsrc.baidu.com%2Fbaike%2Fpic%2Fitem%2F2e2eb9389b504fc20103239feedde71191ef6dc8.jpg" class="broken-img">
+</body>
+</html>

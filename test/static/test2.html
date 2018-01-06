@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            val: function () {
+                console.log(1);
+            },
+            test: function () {
+                console.log(this);
+            }
+        }
+
+        obj.test();
+    </script>
+</body>
+</html>
