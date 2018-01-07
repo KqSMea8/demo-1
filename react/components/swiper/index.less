@@ -1,0 +1,23 @@
+.slip-wrap {
+    height: 400px;
+    overflow: hidden;
+    .slip-container {
+        display: flex;
+        height: 100%;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0, 0, 0.25, 1);
+        transition-duration: 350ms;
+    }
+    .left {
+        width: 100%;
+        flex-shrink: 0;
+        height: 100%;
+        background-color: red;
+    }
+    .right {
+        width: 50px;
+        flex-shrink: 0;
+        height: 100%;
+        background-color: yellow;
+    }
+}
