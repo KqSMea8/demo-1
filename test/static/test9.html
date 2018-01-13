@@ -5,9 +5,18 @@
     <title>Document</title>
 </head>
 <body>
+    ua
     <script type="text/javascript">
-        var na = 'ios/11.1.1; duerhome/0.5.1';
-        var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/);
+        var ua = 'ios/11.1.1; duerhome/0.5.1';
+        var android = ua.match(/duerhome/);
+        console.log(android);
+        if (ua) {
+            console.log('小度之家');
+        }
+        else {
+            console.log('sdk');
+
+        }
     </script>
 </body>
 </html>
