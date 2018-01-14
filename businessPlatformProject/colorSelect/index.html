@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取色器</title>
+    <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<div class="select-color-box">
+    <div class="select-canvas">
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+        <div class="circle"></div>
+    </div>
+    <div class="contorl-color">
+        <div class="colorSelect"></div>
+        <div class="colorBar"></div>
+    </div>
+    <ul>
+        <li class="input-group">
+            <div class="color-disk"></div>
+        </li>
+        <li class="input-group">
+            <span class="input-group-addon">R</span>
+            <input class="form-control rgb rgb-r">
+            <div class="select-up"></div>
+            <div class="select-down"></div>
+        </li>
+        <li class="input-group">
+            <span class="input-group-addon">G</span>
+            <input class="form-control rgb rgb-g">
+            <div class="select-up"></div>
+            <div class="select-down"></div>
+        </li>
+        <li class="input-group">
+            <span class="input-group-addon">B</span>
+            <input class="form-control rgb rgb-b">
+            <div class="select-up"></div>
+            <div class="select-down"></div>
+        </li>
+        <li class="input-group">
+            <span class="input-group-addon">H</span>
+            <input class="form-control hsl-h">
+            <div class="select-up"></div>
+            <div class="select-down"></div>
+        </li>
+        <li class="input-group">
+            <span class="input-group-addon">S</span>
+            <input class="form-control hsl-s">
+            <div class="select-up"></div>
+            <div class="select-down"></div>
+        </li>
+        <li class="input-group">
+            <span class="input-group-addon">L</span>
+            <input class="form-control hsl-l">
+            <div class="select-up"></div>
+            <div class="select-down"></div>
+        </li>
+    </ul>
+</div>
+
+
+<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/lib.js"></script>
+<script src="js/main.js"></script>
+<script>
+    function fillColor() {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var grd = ctx.createLinearGradient(0, 0, 0, 400);
+        grd.addColorStop(0, 'rgba(0, 0, 0, 0)');
+        grd.addColorStop(1, 'rgba(0, 0, 0, 1)');
+
+        return {
+            render: function (color) {
+                ctx.clearRect(0, 0, 400, 400);
+
+                var colorGradient = ctx.createLinearGradient(0, 0, 400, 0);
+                colorGradient.addColorStop(0, 'white');
+                colorGradient.addColorStop(1, color);
+
+                ctx.fillStyle = colorGradient;
+                ctx.fillRect(0, 0, 400, 400);
+
+                ctx.fillStyle = grd;
+                ctx.fillRect(0, 0, 400, 400);
+            }
+        }
+    }
+
+    function coordinateToHsv() {
+        var top = parseInt($('.colorSelect').css('top'), 10) + 6;
+        var h = top / parseInt($('.colorBar').height(), 10) * 360;
+        var s = parseInt($('.circle').css('left'), 10) / parseInt($('#myCanvas').width(), 10);
+
+        var v = 1 - parseInt($('.circle').css('top'), 10) / parseInt($('#myCanvas').height(), 10);
+
+        return {
+            h: h,
+            s: s,
+            v: v
+        }
+    }
+
+    function hsvToCoordinate(h, s, v) {
+        var top = h / 360 * parseInt($('.colorBar').height(), 10) - 6;
+        var canvasLeft = s * parseInt($('#myCanvas').width(), 10);
+        var canvasTop = (1 - v) * parseInt($('#myCanvas').height(), 10);
+
+        $('.colorSelect').css('top', top);
+        $('.circle').css('left', canvasLeft);
+        $('.circle').css('top', canvasTop);
+    }
+
+    function mouseMove(e, isDrag, offsetTop, offsetLeft) {
+        if (isDrag) {
+            var nowY = e.clientY;
+            var disY = nowY - offsetTop;
+
+            if (disY <= -6) {
+                disY = -6;
+            } else if (disY >= 394) {
+                disY = 394;
+            }
+
+            $('.colorSelect').css('top', disY);
+        }
+    }
+
+    function mouserDown(e, offsetTop, offsetLeft) {
+        var x = e.clientX - offsetLeft;
+        var y = e.clientY - offsetTop - 5;
+
+        $('.circle').css({
+            top: y,
+            left: x
+        });
+    }
+
+    function fillRgbInput(rgb) {
+        $('.rgb-r').val(rgb[0]);
+        $('.rgb-g').val(rgb[1]);
+        $('.rgb-b').val(rgb[2]);
+    }
+
+    function fillHslInput(hsl) {
+        $('.hsl-h').val(hsl[0]);
+        $('.hsl-s').val(hsl[1]);
+        $('.hsl-l').val(hsl[2]);
+    }
+
+    function drawColor(rgb) {
+        $('.color-disk').css('background',
+            'rgb(' + rgb[0] + ', ' + rgb[1] + ', ' + rgb[2] + ')');
+    }
+
+    function rgbToRender(rgb) {
+        fillColor().render('rgb(' + rgb[0] + ', ' + rgb[1] + ', ' + rgb[2] + ')');
+    }
+
+    function fillColorInput(hsl, rgb) {
+        fillRgbInput(rgb);
+        fillHslInput(hsl);
+        drawColor(rgb);
+    }
+
+    function fillInput() {
+        var hsv = coordinateToHsv();
+        var rgb = hsvToRgb(hsv.h, hsv.s, hsv.v);
+        var hsl = rgbToHsl(rgb[0], rgb[1], rgb[2]);
+        fillColorInput(hsl, rgb);
+        return rgb;
+    }
+
+    function drag() {
+        var offsetTop = $('.colorSelect').offset().top;
+        var offsetLeft = $('.select-canvas').offset().left;
+        var isDrag = false;
+
+        $('.colorSelect').on('mousedown', function (e) {
+            isDrag = true;
+        });
+
+        $(document).on('mousemove', function (e) {
+            mouseMove(e, isDrag, offsetTop, offsetLeft)
+            if (isDrag) {
+                var rgb = fillInput();
+                rgbToRender(rgb);
+            }
+        });
+
+        $(document).on('mouseup', function (e) {
+            isDrag = false;
+        });
+
+        $('#myCanvas').on('mousedown', function (e) {
+            mouserDown(e, offsetTop, offsetLeft);
+            fillInput();
+        });
+    }
+
+    function changeRgbColor() {
+        $('.select-up').on('click', function (e) {
+            var input = $(this).prev('input');
+            var val;
+            if (input.hasClass('rgb')) {
+                val = +input.val() + 1;
+                if (val > 255) {
+                    alert('不能超过255');
+                    val = 255;
+                }
+            } else if (input.hasClass('hsl-h')) {
+                val = +input.val() + 1;
+                if (val > 360) {
+                    alert('不能超过360');
+                    val = 360;
+                }
+            } else {
+                val = +input.val() + 0.01;
+                if (val > 1) {
+                    alert('不能超过1');
+                    val = 1;
+                }
+            }
+
+            input.val(val);
+            input.change();
+        });
+
+        $('.select-down').on('click', function (e) {
+            var input = $(this).prevAll('input');
+            var val;
+            if (input.hasClass('rgb')) {
+                val = +input.val() - 1;
+                if (val < 0) {
+                    alert('不能小于0');
+                    val = 0;
+                }
+            } else if (input.hasClass('hsl-h')) {
+                val = +input.val() - 1;
+                if (val < 0) {
+                    alert('不能小于0');
+                    val = 0;
+                }
+            } else {
+                val = +input.val() - 0.01;
+                if (val < 0) {
+                    alert('不能小于0');
+                    val = 0;
+                }
+            }
+
+            input.val(val);
+            input.change();
+        })
+    }
+
+    function listenInputChange() {
+         $('.form-control').on('change', function (e) {
+            var rgb = null;
+            if ($(this).hasClass('rgb')) {
+                var r = +$('.rgb-r').val();
+                var g = +$('.rgb-g').val();
+                var b = +$('.rgb-b').val();
+
+                rgb = [r, g, b];
+                var hsl = rgbToHsl(r, g, b);
+                fillHslInput(hsl);
+            } else {
+
+                var h = +$('.hsl-h').val();
+                var s = +$('.hsl-s').val();
+                var l = +$('.hsl-l').val();
+
+                rgb = hslToRgb(h, s, l);
+                fillRgbInput(rgb);
+            }
+
+            var hsv = rgbToHsv(rgb[0], rgb[1], rgb[2]);
+            hsvToCoordinate(hsv[0], hsv[1], hsv[2]);
+            drawColor(rgb);
+            rgbToRender(rgb);
+        });
+    }
+
+
+    function init() {
+        fillColor().render('red');
+        drag();
+        changeRgbColor();
+        fillInput();
+        listenInputChange();
+    }
+
+    init();
+
+</script>
+
+</body>
+</html>
