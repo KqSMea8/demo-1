@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            toString: function () {
+                console.log(1);
+            },
+            valueOf: function () {
+                console.log(2);
+            }
+        };
+function init() {
+    if (obj == 1) {
+        console.log(3);
+    }
+}
+
+init();
+    </script>
+</body>
+</html>
