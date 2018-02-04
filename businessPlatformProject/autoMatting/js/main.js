@@ -10,7 +10,7 @@ var htmlR = document.querySelector('.r');
 var htmlG = document.querySelector('.g');
 var htmlB = document.querySelector('.b');
 var htmlA = document.querySelector('.a');
-var tolerance = 20; // 图像容差
+var tolerance = 10; // 图像容差
 
 // 初始化画图
 function drawImage(e) {
@@ -109,7 +109,7 @@ function mattingRegion(e) {
     // 获取周围八个点的色彩，如果符合容差要求就保存下来
 
     // 计算符合位置的点的坐标,周围左右8个点
-    var around = [1, 1, 1, 0, 1, -1, 0, -1, -1, -1, -1, 0, -1, 1, 0, 1];
+    var around = [1, 0, 1, 1, 0, 1, -1, 1, -1, 0, -1, -1, 0, -1, 1, -1];
 
     var seeds = [];
     var marked = [];
@@ -117,10 +117,10 @@ function mattingRegion(e) {
     var curValue = getValue(clientX, clientY);
 
     var mark = Array(height).fill(0);
-
     for (var i = 0; i < height; i++) {
         mark[i] = Array(width).fill(0);
     }
+
 
     // 探索某个点周围8个点
     var getAround = function (x, y) {
@@ -134,19 +134,21 @@ function mattingRegion(e) {
 
             }
             else {
-                var tarValue = getValue(tarValueX, tarValueY);
-
-                var tempTolerance = calcColorDistance(curValue.r, curValue.g, curValue.b, tarValue.r, tarValue.g, tarValue.b);
-
-                console.log(tempTolerance);
-
-                console.log(mark[tarValueX][tarValueY]);
-
                 // 将标记过的点给剔除掉
+                console.log('tarValueX:' + tarValueX);
+                console.log('tarValueY:' + tarValueY);
                 if (mark[tarValueX][tarValueY] === 0) {
+
+                    var tarValue = getValue(tarValueX, tarValueY);
+
+                    var tempTolerance = calcColorDistance(curValue.r, curValue.g, curValue.b, tarValue.r, tarValue.g, tarValue.b);
+
                     if (tempTolerance <= tolerance) {
+                        console.log(seeds);
                         mark[tarValueX][tarValueY] = 2;
+
                         marked.push([tarValueX, tarValueY]);
+
                         seeds.push([tarValueX, tarValueY]);
                     }
                     else {
@@ -162,14 +164,22 @@ function mattingRegion(e) {
 
     // 初始化原点
     seeds.push([clientX, clientY]);
+
     marked.push([clientX, clientY]);
 
     // 现在只是一次，在还要跨越这些点到下一个点，判断是否符合要求
     // 终止条件是这些点周围都没有可以符合容差的点，那么就退出
-    while (seeds.length < 1000) {
-        console.log(seeds);
+    while (300 > seeds.length > 0) {
+        // console.log(seeds);
         var curPos = seeds.pop();
-        getAround(curPos[0], curPos[1]);
+        console.log('curpos');
+        console.log(curPos);
+        if (curPos) {
+            getAround(curPos[0], curPos[1]);
+        }
+        else {
+            break;
+        }
     }
 
     // 将标记的点变为白色
