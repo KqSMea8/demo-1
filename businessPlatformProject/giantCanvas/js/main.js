@@ -10,7 +10,6 @@
  * 我需要算出来这个比例，然后根据比例去移动框就行了
  *
  */
-
 var canvasBig = document.getElementById('canvas-left');
 var canvasSmall = document.getElementById('canvas-right');
 var imgSrc = 'images/timg.jpeg';

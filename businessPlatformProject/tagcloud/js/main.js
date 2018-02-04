@@ -3,6 +3,7 @@
  * @file 标签云
  * @参考链接 http://www.cnblogs.com/axes/p/3501424.html
  * http://ife.baidu.com/course/detail/id/17
+ * http://whxaxes.github.io/canvas-test/src/3D-demo/3Dtag.html
  */
 var RADIUS = 220;
 var tagBall = document.getElementById('tagBall');
