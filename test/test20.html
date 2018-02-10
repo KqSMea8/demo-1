@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>hello</div>
+    <script>
+        function measureCRP() {
+            var t = window.performance.timing;
+            var interactive = t.domInteractive - t.domLoading;
+            var dcl = t.domContentLoadedEventStart - t.domLoading;
+            var complete = t.domComplete - t.domLoading;
+            console.log(interactive);
+        }
+        measureCRP();
+    </script>
+</body>
+</html>
