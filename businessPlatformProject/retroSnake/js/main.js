@@ -1,13 +1,20 @@
 /**
- * 现在蛇可以动起来了，按照方向进行动。现在已经可以让蛇动起来了。下一步就是要让蛇可以转向
- * 转向怎么做呢，方向键按下，然后改变对应的direction
+ * 现在蛇已经动起来了，然后蛇还差吃东西了，这样就快接近成功了。怎么吃东西呢
+ * 先随机生成一个东西，然后检测碰撞，如果头一个的下一个碰到了，就把这个东西的位置增加到已知的
+ * 数组长度就行了。关键是怎么生成这个东西，在数组剩下的空间里面随机找一个，这个算法不好。要记录
+ * 生剩余的空间，我想到另一个就是我每次随机生成一个坐标，然后去看他的状态是否是已经标记的，如果标记的话
+ * 说明这个坐标是蛇的身体，如果不是就把这个东西显示出来。然后蛇每次运动就检测他下一个的状态。先去
+ * 生成食物，然后检测他的状态直到是食物位置，然后改变他的状态，改变位置的颜色
+ * 蛇动的时候检测当前方向上下一个位置的状态，如果是食物就把这个状态的坐标置入蛇的身体，然后改变这个坐标的
+ * 状态为蛇的身体
+ * 吃完食物之后在生成一个食物
  *
  * 1.范围
  * 2.初始生成一个蛇，随机在棋盘上，纪录蛇的位置，并把相应位置标记
  * 3.随机生成一个要吃的点，除过蛇占领的位置，纪录点，标记相应位置
  * 4.初始蛇要有一个移动方向，设置一下，纪录蛇的移动方向
  * 5.按键控制方向
- * 6.
+ * 6.记录坐标状态， 0: 空状态 1: 食物 2: 蛇的身体
  */
 var width = 20;
 var height = 20;
@@ -16,6 +23,7 @@ var grideWidth = 20;
 var direction = 'right'; // 初始方向  'down':下 left:左 right:右
 var snakeIndexArr = []; // [{x: x, y: y}]
 var speed = 1000; // 单位毫秒
+var data = [];
 
 function createGride() {
     var rn = 0;
@@ -33,6 +41,7 @@ function createGride() {
             div.style.width = grideWidth + 'px';
             div.style.height = grideWidth + 'px';
             gridePanel.appendChild(div);
+
         }
     }
 
@@ -42,6 +51,15 @@ function createGride() {
     gridePanel.style.height = gridePanelHeight + 'px';
 }
 
+// 初始化网格坐标状态
+function initData() {
+    for (var i = 0; i < width; i++ ) {
+        data[i] = [];
+        for (var j = 0; j < height; j++) {
+            data[i][j] = 0;
+        }
+    }
+}
 
 // 生成一个蛇
 function createSnake() {
@@ -107,10 +125,12 @@ function changeColor() {
     var lastPos = null;
     var newPos = {};
     var headIndex = snakeIndexArr.shift();
-    var currentId = getCurrentClass(headIndex);
+    var currentId = getCurrentId(headIndex);
     currentDom = document.getElementById(currentId);
     currentDom.className = 'gride';
     lastPos = snakeIndexArr[snakeIndexArr.length - 1];
+
+    // 检测下一个位置的状态是否是食物，如果是食物就吃
 
     switch (direction) {
         case 'up':
@@ -165,9 +185,9 @@ function changeColor() {
     for (var i = 0; i < snakeIndexArr.length; i++) {
         currentIndex = snakeIndexArr[i];
         console.log(currentIndex);
-        var currentId = getCurrentClass(currentIndex);
+        var currentId = getCurrentId(currentIndex);
         if (currentIndex.x >= width
-            || currentIndex.y >= width
+            || currentIndex.y >= height
             || currentIndex.x < 0
             || currentIndex.y < 0) {
             alert('game over');
@@ -189,7 +209,7 @@ function changeColor() {
  * @param  {array} currentIndex 当前下标对象
  * @return {string} dom元素id
  */
-function getCurrentClass(currentIndex) {
+function getCurrentId(currentIndex) {
     var x = currentIndex.x;
     var y = currentIndex.y;
     var currentX = x < 10 ? '0' + x : x;
@@ -229,15 +249,42 @@ function changeDirection(e) {
     console.log(direction);
 }
 
+/**
+ * 生成贪吃蛇的食物
+ *
+ * @return
+ */
+function createFood() {
+    var x = Math.round(Math.random() * width);
+    var y = Math.round(Math.random() * height);
+    var currentDom = null;
+    var currentId = '';
+    if (data[x][y] === 0) { // 符合要求
+        data[x][y] = 1;
+        x = x < 10 ? '0' + x : x;
+        y = y < 10 ? '0' + y : y;
+        currentId = 'g-' + x + y;
+        currentDom = document.getElementById(currentId);
+        currentDom.className = 'food';
+    }
+    else { // 不符合要求重新生成
+        createFood();
+    }
+}
+
 function init() {
     // 生成一个棋盘
     createGride();
+    // 初始化网格状态
+    initData();
     // 生成一个蛇
     createSnake();
     // 蛇运动
     changeColor();
     // 改变蛇的运动方向
     document.addEventListener('keydown', changeDirection);
+    // 生成食物
+    createFood();
 }
 
 init();
