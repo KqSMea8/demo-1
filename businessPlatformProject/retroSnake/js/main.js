@@ -9,21 +9,25 @@
  * 状态为蛇的身体
  * 吃完食物之后在生成一个食物
  *
+ *
+ * 现在要做的是每次动的时候，去检测他下一个位置的状态
+ *
  * 1.范围
  * 2.初始生成一个蛇，随机在棋盘上，纪录蛇的位置，并把相应位置标记
  * 3.随机生成一个要吃的点，除过蛇占领的位置，纪录点，标记相应位置
  * 4.初始蛇要有一个移动方向，设置一下，纪录蛇的移动方向
  * 5.按键控制方向
- * 6.记录坐标状态， 0: 空状态 1: 食物 2: 蛇的身体
+ * 6.记录坐标状态， 0: 空状态 1: 食物 -2: 蛇的身体
  */
 var width = 20;
 var height = 20;
 var gridePanel = document.getElementById('gride-panel');
 var grideWidth = 20;
 var direction = 'right'; // 初始方向  'down':下 left:左 right:右
-var snakeIndexArr = []; // [{x: x, y: y}]
+var snakeIndexArr = []; // [{x: x, y: y}] 蛇的坐标
 var speed = 1000; // 单位毫秒
-var data = [];
+var data = [];    // 记录坐标状态， 0: 空状态 1: 食物 -2: 蛇的身体
+var timer = null;
 
 function createGride() {
     var rn = 0;
@@ -118,19 +122,81 @@ function moveSnake() {
     snakeIndexArr.push(newPos);
 }
 
+// 检测下一个位置的状态是否是食物，如果是食物就吃
+function detectionFrontFood() {
+    var lastPos = snakeIndexArr[snakeIndexArr.length - 1];
+    var x = 0;
+    var y = 0;
+
+    // 取到最后一个然后预测下一步的状态判断，并且要判断下一步是不是墙，如果是墙就不预测
+    switch (direction) {
+        case 'up':
+            x = lastPos.x;
+            y = lastPos.y - 1;
+            break;
+        case 'down':
+            x = lastPos.x;
+            y = lastPos.y + 1;
+            break;
+        case 'left':
+            x = lastPos.x - 1;
+            y = lastPos.y;
+            break;
+        case 'right':
+            x = lastPos.x + 1;
+            y = lastPos.y;
+            break;
+        default:
+            throw new Error('direction is error');
+    }
+
+    if (x < 0
+        || y < 0
+        || x >= width
+        || y >= height) {
+        return false;
+    }
+    else if (data[x][y] === 1) {
+
+        // 是食物，把当前坐标添加到蛇的身上，
+        // 改变状态，并且生成新的食物
+        data[x][y] = 2;
+        snakeIndexArr.push({
+            x: x,
+            y: y
+        });
+        changeSnakeColor();
+        createFood();
+    }
+}
+
+function changeSnakeColor() {
+    var currentDom = null;
+    var currentId = null;
+    var currentIndex;
+
+    for (var i = 0; i < snakeIndexArr.length; i++) {
+        currentIndex = snakeIndexArr[i];
+        console.log(currentIndex);
+        currentId = getCurrentId(currentIndex);
+        console.log(currentId);
+        currentDom = document.getElementById(currentId);
+        currentDom.className = 'snake';
+    }
+}
+
 // 输入蛇的坐标，改变相应坐标点的颜色
 function changeColor() {
     var currentDom = null;
     var currentId = null;
     var lastPos = null;
     var newPos = {};
-    var headIndex = snakeIndexArr.shift();
-    var currentId = getCurrentId(headIndex);
-    currentDom = document.getElementById(currentId);
-    currentDom.className = 'gride';
+    var headIndex;
+    var currentId;
+
     lastPos = snakeIndexArr[snakeIndexArr.length - 1];
 
-    // 检测下一个位置的状态是否是食物，如果是食物就吃
+    detectionFrontFood();
 
     switch (direction) {
         case 'up':
@@ -153,55 +219,32 @@ function changeColor() {
             throw new Error('direction is error');
     }
 
-    snakeIndexArr.push(newPos);
-
-    // switch (direction) {
-    //     case 'up':
-    //         snakeIndexArr.push({
-    //             x: currentIndex.x,
-    //             y: currentIndex.y - 1
-    //         });
-    //         break;
-    //     case 'down':
-    //         snakeIndexArr.push({
-    //             x: currentIndex.x,
-    //             y: currentIndex.y + 1
-    //         });
-    //         break;
-    //     case 'left':
-    //         snakeIndexArr.push({
-    //             x: currentIndex.x - 1,
-    //             y: currentIndex.y
-    //         });
-    //         break;
-    //     case 'right':
-    //         snakeIndexArr.push({
-    //             x: currentIndex.x + 1,
-    //             y: currentIndex.y
-    //         });
-    //         break;
-    // }
-
-    for (var i = 0; i < snakeIndexArr.length; i++) {
-        currentIndex = snakeIndexArr[i];
-        console.log(currentIndex);
-        var currentId = getCurrentId(currentIndex);
-        if (currentIndex.x >= width
-            || currentIndex.y >= height
-            || currentIndex.x < 0
-            || currentIndex.y < 0) {
-            alert('game over');
-            return false;
-        }
-        console.log(currentId);
-        currentDom = document.getElementById(currentId);
-        currentDom.className = 'snake';
+    // 判断是不是不符合要求,如果坐标不符合要求,不添加到数组中，游戏结束
+    // 减少和增加放一块
+    if (newPos.x >= width
+        || newPos.y >= height
+        || newPos.x < 0
+        || newPos.y < 0) {
+        alert('game over');
+        return false;
     }
 
-    setTimeout(function () {
+    // 去掉最后一个
+    headIndex = snakeIndexArr.shift();
+    currentId = getCurrentId(headIndex);
+    currentDom = document.getElementById(currentId);
+    currentDom.className = 'gride';
+
+    // 增加下一个
+    snakeIndexArr.push(newPos);
+
+    changeSnakeColor();
+
+    timer = setTimeout(function () {
         changeColor();
     }, speed);
 }
+
 
 /**
  * 获取制定下标的dom元素id
