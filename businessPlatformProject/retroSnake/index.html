@@ -4,32 +4,14 @@
     <meta charset="UTF-8">
     <title>贪吃蛇</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <style type="text/css">
-        #gride-panel {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 auto;
-        }
-        .gride,
-        .snake {
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        .gride {
-            background-color: #aaa;
-        }
-        .snake {
-            background-color: #444;
-        }
-        .food {
-            background-color: #222;
-        }
-    </style>
 </head>
 <body>
-    <!-- 直接开始写吧，遇到问题再说 -->
     <div id="gride-panel"></div>
-
+    <div class="operation">
+        <button id="start">开始游戏</button>
+        <button id="pause">暂停游戏</button>
+        <button id="cancel-pause">取消暂停</button>
+    </div>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+#gride-panel {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.gride,
+.snake {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.gride {
+    background-color: #aaa;
+}
+.snake {
+    background-color: #444;
+}
+.food {
+    background-color: #222;
+}
+.operation {
+    text-align: center;
+}

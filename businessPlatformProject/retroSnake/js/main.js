@@ -1,17 +1,4 @@
 /**
- * 现在蛇已经动起来了，然后蛇还差吃东西了，这样就快接近成功了。怎么吃东西呢
- * 先随机生成一个东西，然后检测碰撞，如果头一个的下一个碰到了，就把这个东西的位置增加到已知的
- * 数组长度就行了。关键是怎么生成这个东西，在数组剩下的空间里面随机找一个，这个算法不好。要记录
- * 生剩余的空间，我想到另一个就是我每次随机生成一个坐标，然后去看他的状态是否是已经标记的，如果标记的话
- * 说明这个坐标是蛇的身体，如果不是就把这个东西显示出来。然后蛇每次运动就检测他下一个的状态。先去
- * 生成食物，然后检测他的状态直到是食物位置，然后改变他的状态，改变位置的颜色
- * 蛇动的时候检测当前方向上下一个位置的状态，如果是食物就把这个状态的坐标置入蛇的身体，然后改变这个坐标的
- * 状态为蛇的身体
- * 吃完食物之后在生成一个食物
- *
- *
- * 现在要做的是每次动的时候，去检测他下一个位置的状态
- *
  * 1.范围
  * 2.初始生成一个蛇，随机在棋盘上，纪录蛇的位置，并把相应位置标记
  * 3.随机生成一个要吃的点，除过蛇占领的位置，纪录点，标记相应位置
@@ -22,6 +9,9 @@
 var width = 20;
 var height = 20;
 var gridePanel = document.getElementById('gride-panel');
+var startDom = document.getElementById('start');
+var pauseDom = document.getElementById('pause');
+var cancelPauseDom = document.getElementById('cancel-pause');
 var grideWidth = 20;
 var direction = 'right'; // 初始方向  'down':下 left:左 right:右
 var snakeIndexArr = []; // [{x: x, y: y}] 蛇的坐标
@@ -29,6 +19,10 @@ var speed = 1000; // 单位毫秒
 var data = [];    // 记录坐标状态， 0: 空状态 1: 食物 -2: 蛇的身体
 var timer = null;
 
+/**
+ * 生成网格显示
+ * @return
+ */
 function createGride() {
     var rn = 0;
     var cn = 0;
@@ -72,6 +66,9 @@ function createSnake() {
     var x = Math.floor(Math.random() * width);
     var y = Math.floor(Math.random() * height);
 
+    // 改变蛇坐标状态
+    data[x][y] = 2;
+
     snakeIndexArr.push({
         x,
         y
@@ -84,18 +81,19 @@ function createSnake() {
         x,
         y
     });
+
+    data[x][y] = 2;
 }
 
 /**
- * 蛇运动
+ * 获取蛇下一步运动坐标
  *
  * 要想使蛇运动起来就是改变坐标根据当前的方向然后改变坐标,怎么改变呢，把最后一个删掉，然后添加
  * 到最前面的添加
  *
- * @return {[type]} [description]
+ * @return {Object} 蛇新的位置坐标对象
  */
-function moveSnake() {
-    snakeIndexArr.shift();
+function getSnakeNextPos() {
     var lastPos = snakeIndexArr[snakeIndexArr.length - 1];
     var newPos = {};
     switch (direction) {
@@ -119,7 +117,7 @@ function moveSnake() {
             throw new Error('direction is error');
     }
 
-    snakeIndexArr.push(newPos);
+    return newPos;
 }
 
 // 检测下一个位置的状态是否是食物，如果是食物就吃
@@ -165,11 +163,13 @@ function detectionFrontFood() {
             x: x,
             y: y
         });
+        // 这里没问题
         changeSnakeColor();
         createFood();
     }
 }
 
+// 给蛇的坐标添加颜色
 function changeSnakeColor() {
     var currentDom = null;
     var currentId = null;
@@ -185,8 +185,8 @@ function changeSnakeColor() {
     }
 }
 
-// 输入蛇的坐标，改变相应坐标点的颜色
-function changeColor() {
+// 蛇动起来并吃食物
+function moveSnake() {
     var currentDom = null;
     var currentId = null;
     var lastPos = null;
@@ -194,30 +194,10 @@ function changeColor() {
     var headIndex;
     var currentId;
 
-    lastPos = snakeIndexArr[snakeIndexArr.length - 1];
-
+    // 检测食物
     detectionFrontFood();
 
-    switch (direction) {
-        case 'up':
-            newPos.x = lastPos.x;
-            newPos.y = lastPos.y - 1;
-            break;
-        case 'down':
-            newPos.x = lastPos.x;
-            newPos.y = lastPos.y + 1;
-            break;
-        case 'left':
-            newPos.x = lastPos.x - 1;
-            newPos.y = lastPos.y;
-            break;
-        case 'right':
-            newPos.x = lastPos.x + 1;
-            newPos.y = lastPos.y;
-            break;
-        default:
-            throw new Error('direction is error');
-    }
+    newPos = getSnakeNextPos();
 
     // 判断是不是不符合要求,如果坐标不符合要求,不添加到数组中，游戏结束
     // 减少和增加放一块
@@ -241,7 +221,7 @@ function changeColor() {
     changeSnakeColor();
 
     timer = setTimeout(function () {
-        changeColor();
+        moveSnake();
     }, speed);
 }
 
@@ -315,19 +295,54 @@ function createFood() {
     }
 }
 
+/**
+ * 开始游戏
+ *
+ * @return
+ */
+function startHandler() {
+    // 生成一个蛇并让蛇动起来
+    // 生成一个蛇
+    createSnake();
+    // 蛇运动
+    moveSnake();
+    // 生成食物
+    createFood();
+}
+
+/**
+ * 暂停游戏
+ *
+ * @return
+ */
+function pauseHandler() {
+    // 暂停游戏就是让蛇停止运动，怎么让蛇停止运动，清除定时器
+    clearTimeout(timer);
+}
+
+/**
+ * 取消暂停
+ *
+ * @return
+ */
+function cancelPauseHandler() {
+    // 让蛇运动起来
+    moveSnake();
+}
+
 function init() {
     // 生成一个棋盘
     createGride();
     // 初始化网格状态
     initData();
-    // 生成一个蛇
-    createSnake();
-    // 蛇运动
-    changeColor();
     // 改变蛇的运动方向
     document.addEventListener('keydown', changeDirection);
-    // 生成食物
-    createFood();
+    // 开始游戏
+    startDom.addEventListener('click', startHandler);
+    // 暂定游戏
+    pauseDom.addEventListener('click', pauseHandler);
+    // 取消暂停
+    cancelPauseDom.addEventListener('click', cancelPauseHandler);
 }
 
 init();
