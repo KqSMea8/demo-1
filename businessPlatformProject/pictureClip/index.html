@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片裁剪器</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #sourceImg {
+            border: 1px solid #ccc;
+        }
+        #targetImg {
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+<input type="file" name="image" id="img">
+<canvas id="sourceImg"></canvas>
+<canvas id="targetImg" width="512" height="384"></canvas>
+<script src="js/main.js"></script>
+</body>
+</html>
