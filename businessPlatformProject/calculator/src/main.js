@@ -29,7 +29,9 @@ function calculator() {
 function analyzeExpression(value) {
     // 要考虑运算符的优先级，
     // 括号的匹配
-    //
+    // 暂时想到的就这两个，运算符还有括号匹配进行运算。
+    // 自然表达式要转为与表达式对应的二叉树，然后对二叉树进行前中后缀遍历
+    // 即得到前中后缀表达式
     return value;
 }
 
