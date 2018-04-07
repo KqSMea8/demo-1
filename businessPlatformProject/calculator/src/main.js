@@ -47,26 +47,40 @@ function analyzeExpression(value) {
             output += value[i];
         }
         else {
-
             if (stack.length === 0) { // 栈为空则入栈
                 stack.push(value[i]);
             }
             else {
-                console.log('符号')
                 // 若是符号，则判断其与栈顶元素的优先级，是右括号或者优先级低于栈顶符号
                 // 则栈顶元素依次出栈并输出，并将当前符号符号进栈
-                var topPriority = operatorPriority(stack[stack.length - 1]);
-                var curPriority = operatorPriority(value[i]);
                 var pop = '';
-                while ((curPriority <= topPriority) || (')' === value[i])) {
-                    pop = stack.pop();
-                    if (pop !== '(') {
-                        console.log('pop' + pop);
+                if (stack[stack.length - 1] !== '(') {
+                    var topPriority = operatorPriority(stack[stack.length - 1]);
+                    var curPriority = operatorPriority(value[i]);
+
+                    console.log(stack);
+
+                    while (curPriority <= topPriority && stack.length) {
+                        pop = stack.pop();
+                        console.log('priortity pop' + pop);
                         output += pop;
+                        topPriority = operatorPriority(stack[stack.length - 1]);
                     }
-                    topPriority = operatorPriority(stack[stack.length - 1]);
                 }
-                stack.push(value[i]);
+
+                if (')' === value[i]){
+                    console.log(stack);
+                    pop = stack.pop();
+                    console.log('(pop' + pop);
+                    while (pop !== '(' && stack.length) {
+                        output += pop;
+                        pop = stack.pop();
+                    }
+                }
+
+                if (')' !== value[i]) {
+                    stack.push(value[i]);
+                }
             }
         }
     }
@@ -133,8 +147,6 @@ function operatorPriority(v) {
             return 2;
         case '/':
             return 2;
-        case '(':
-            return 3;
         default:
             return 0;
     }
