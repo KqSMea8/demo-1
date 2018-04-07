@@ -20,6 +20,7 @@ var calc = document.getElementById('calc');
 function calculator() {
     var value = expression.value;
     value = analyzeExpression(value);
+    value = postfixComputed(value);
     result.innerHTML = value;
 }
 
@@ -30,71 +31,97 @@ function calculator() {
  * @return {string}
  */
 function analyzeExpression(value) {
-    /**
-     * 我消化一下，这个思路，其实就是先讲我们的启示就是用户输入的文本作为中缀表达式输入
-     * 然后转为后缀表达式，虽然我知道这个东西，但是我没有明白为什么要这么做
-     * 中缀表达式做的一点就是将我们的括号这个东西给剔除掉了，让我们可以没有括号的情况下
-     * 知道运算的优先级，他是将运算符放到后面了，然后利用后缀表达式进行计算结果
-     * 将中缀运算符转为后缀表达式的过程就是做表达式优先级的拉平过程。这样可以把我们的表达式
-     * 很好的进行应用，然后后缀表达式就只是用来说进行计算就可以。
-     * 这里为什么说就是在将统一运算的优先级作为顺序进行表达，
-     * 下面就开始进行中缀表达式转后缀表达式的应用
-     * 不要本末倒置，程序才是最重要的代码能力才是最重要的
-     */
     var output = '';
     var infix = [];
-    var stack = [];
+    var stack = []; // 初始化一空栈，用来对符号进出栈使用
     var topStack = '';
     value = value.replace(/（/g, '(').replace(/）/g, ')');
     value = value.split('');
     console.log(value);
-    // 现在的问题是如何辨别谁是数字，谁是运算符,其实不用分也可以
-    // 如果不是运算符就拼接起来。然后当作是一个整体
-    // 就是字符串之后,如果
+
+    // 中缀变后缀
     for (var i = 0; i < value.length; i++) {
         // 如果是数字就输出
         if (parseInt(value[i])) {
-            console.log(1);
+            console.log('是数字' + value[i]);
             output += value[i];
         }
         else {
-            // 若是符号，则判断其与栈顶元素的优先级，如果大于栈顶元素优先级则入栈
-            // 否则出栈输出
+
             if (stack.length === 0) { // 栈为空则入栈
                 stack.push(value[i]);
             }
             else {
-                // 优先级怎么判断呢，再做一个变量，用来保存判断当前的优先级
-                // 别人是用一个函数来进行判断的
-                // 如果优先级比栈顶元素小于或者等于的时候就输出
-                // 括号这里怎么考虑呢，左括号肯定最大，进栈，
+                console.log('符号')
+                // 若是符号，则判断其与栈顶元素的优先级，是右括号或者优先级低于栈顶符号
+                // 则栈顶元素依次出栈并输出，并将当前符号符号进栈
                 var topPriority = operatorPriority(stack[stack.length - 1]);
                 var curPriority = operatorPriority(value[i]);
-                if (curPriority <= topPriority) {
-                    while (curPriority <= topPriority) {
-                        var pop = stack.pop();
-                        console.log(pop);
-                        if ((pop !== '(') || (pop !== ')')) {
-                            output += pop;
-                        }
-                        topPriority = operatorPriority(stack[stack.length - 1]);
+                var pop = '';
+                while ((curPriority <= topPriority) || (')' === value[i])) {
+                    pop = stack.pop();
+                    if (pop !== '(') {
+                        console.log('pop' + pop);
+                        output += pop;
                     }
+                    topPriority = operatorPriority(stack[stack.length - 1]);
                 }
-                else {
-                    stack.push(value[i]);
-                }
+                stack.push(value[i]);
             }
         }
     }
+
+    output += stack.reverse().join('');
 
     console.log('中缀表达式变为后缀');
     console.log(stack);
     console.log('output');
     console.log(output);
 
-
-    return value;
+    return output;
 }
+
+// 后缀表达式计算
+function postfixComputed(value) {
+    console.log('value'+ value)
+    value = value.split('');
+    var stack = [];
+    var topOne;
+    var topTwo;
+    var output = '';
+
+    // 从左到右遍历表达式的每个数字和符号，遇到是数字就进栈，遇到是符号就将处于栈顶的两个数字出栈
+    // 进行运算，运算结果出栈，一直到最终获得结果
+    for (var i = 0; i < value.length; i++) {
+        if (!isNaN(value[i])) {
+            stack.push(value[i]);
+        }
+        else {
+            topOne = parseFloat(stack.pop());
+            topTwo = parseFloat(stack.pop());
+            // 判断符号进行计算
+            switch(value[i]) {
+                case '+':
+                    output = topOne + topTwo;
+                    break;
+                case '-':
+                    output = topOne - topTwo;
+                    break;
+                case '*':
+                    output = topOne * topTwo;
+                    break;
+                case '/':
+                    output = topOne / topTwo;
+                    break;
+            }
+            stack.push(output);
+        }
+    }
+
+    return stack.pop();
+}
+
+
 
 function operatorPriority(v) {
     switch (v) {

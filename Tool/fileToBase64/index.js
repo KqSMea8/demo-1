@@ -22,7 +22,7 @@ function base64_file(base64str,file){
     console.log('******** base64 encoded string ********');
 }
 // input
-var base64str = base64_encode('qingtian.mp3');
+var base64str = base64_encode('test.mp3');
 
 // output
 base64_file(base64str,'base64.txt')
