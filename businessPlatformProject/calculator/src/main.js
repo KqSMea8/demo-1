@@ -42,7 +42,7 @@ function analyzeExpression(value) {
     // 中缀变后缀
     for (var i = 0; i < value.length; i++) {
         // 如果是数字就输出
-        if (parseInt(value[i])) {
+        if (!isNaN(value[i])) {
             console.log('是数字' + value[i]);
             output += value[i];
         }
@@ -54,13 +54,13 @@ function analyzeExpression(value) {
                 // 若是符号，则判断其与栈顶元素的优先级，是右括号或者优先级低于栈顶符号
                 // 则栈顶元素依次出栈并输出，并将当前符号符号进栈
                 var pop = '';
+                // 为什么会把左括号出来，不应该，左括号只有右括号出来的时候才出来，这里遇到+号
+                //
                 if (stack[stack.length - 1] !== '(') {
                     var topPriority = operatorPriority(stack[stack.length - 1]);
                     var curPriority = operatorPriority(value[i]);
-
                     console.log(stack);
-
-                    while (curPriority <= topPriority && stack.length) {
+                    while (curPriority < topPriority && stack.length) {
                         pop = stack.pop();
                         console.log('priortity pop' + pop);
                         output += pop;
@@ -71,7 +71,7 @@ function analyzeExpression(value) {
                 if (')' === value[i]){
                     console.log(stack);
                     pop = stack.pop();
-                    console.log('(pop' + pop);
+                    console.log('）pop' + pop);
                     while (pop !== '(' && stack.length) {
                         output += pop;
                         pop = stack.pop();
