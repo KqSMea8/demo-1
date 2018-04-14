@@ -48,6 +48,7 @@ function drawLineMove(e) {
         mainContext.beginPath();
         mainContext.moveTo(oldX, oldY);
         mainContext.lineTo(x, y);
+        mainContext.strokeStyle = lineColor;
         mainContext.stroke();
         oldX = x;
         oldY = y;
