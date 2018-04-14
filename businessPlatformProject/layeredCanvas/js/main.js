@@ -8,8 +8,15 @@
  * 那样的东西感觉很复杂。不过我可以砍需求。一点一点的做。
  */
 var mainCanvas = document.getElementById('main-canvas');
+var mainContext = mainCanvas.getContext('2d');
 var mainCanvasWidth = 600;
 var mainCanvasHeight = 400;
+var bgColor = '#eee';
+var lineColor = 'red';
+var lineWidth = 1;
+var moveFlag = false;
+var oldX = 0;
+var oldY = 0;
 
 /**
  * 第一步要先完成我们鼠标落下和弹起还有需要有一个轨迹的线条出来
@@ -19,18 +26,38 @@ var mainCanvasHeight = 400;
 
 // 记录鼠标位置还有设置当前可以进行滑动
 function drawLineStart(e) {
-
+    moveFlag = true;
 }
 
-function drawLineMove() {
+
+
+function drawLineUp(eq) {
+    moveFlag = false;
+    oldX = 0;
+    oldY = 0;
 }
 
-function drawLineUp() {
+
+function drawLineMove(e) {
+    if (moveFlag) {
+        // 开始绘画
+        var x = e.clientX - mainCanvas.offsetLeft;
+        var y = e.clientY - mainCanvas.offsetTop;
+        oldX = oldX > 0 ? oldX : x;
+        oldY = oldY > 0 ? oldY : y;
+        mainContext.beginPath();
+        mainContext.moveTo(oldX, oldY);
+        mainContext.lineTo(x, y);
+        mainContext.stroke();
+        oldX = x;
+        oldY = y;
+    }
 }
 
 function initMainCanvasSize() {
     mainCanvas.width = mainCanvasWidth;
     mainCanvas.height = mainCanvasHeight;
+    mainCanvas.style.background = bgColor;
 }
 
 function init() {
