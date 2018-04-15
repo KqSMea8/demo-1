@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <title>分层画布</title>
     <style>
-        #main-canvas {
+        #canvas-container {
+            position: relative;
             border: 1px solid #222;
+        }
+        canvas {
+            position: absolute;
         }
     </style>
 </head>
 <body>
 <input type="color">
-<canvas id="main-canvas"></canvas>
+<div id="canvas-container"></div>
 <script src="js/main.js"></script>
 </body>
 </html>

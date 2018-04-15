@@ -7,8 +7,10 @@
  * 难点在于拖动换位置，这个功能很炫，之前一直想探索怎么实现这次刚好就体验一下。本来以为要做一个ps
  * 那样的东西感觉很复杂。不过我可以砍需求。一点一点的做。
  */
-var mainCanvas = document.getElementById('main-canvas');
-var mainContext = mainCanvas.getContext('2d');
+var mainContainer = document.getElementById('canvas-container');
+var index = 0; // 当前canvas数量
+var currentCanvas = null;
+var currentContext = null;
 var mainCanvasWidth = 600;
 var mainCanvasHeight = 400;
 var bgColor = '#eee';
@@ -19,46 +21,52 @@ var oldX = 0;
 var oldY = 0;
 
 /**
- * 第一步要先完成我们鼠标落下和弹起还有需要有一个轨迹的线条出来
- * 检测鼠标按下去然后我们开始记录他的轨迹
- *
+ * 第一步已经完成了。接下来我们需要有一个可以分层的画布。
+ * 没理解这个背景层是做什么的，就是我画的这个区域，然后可以控制我画的线的显示
+ * 哪里出问题了呢，画布已经显示出来了。但是并没有画出来
  */
 
 // 记录鼠标位置还有设置当前可以进行滑动
 function drawLineStart(e) {
     moveFlag = true;
+    var newCanvas = document.createElement('canvas');
+    newCanvas.width = mainCanvasWidth;
+    newCanvas.height = mainCanvasHeight;
+    newCanvas.id = 'canvas-' + index;
+    mainContainer.appendChild(newCanvas);
+    currentCanvas = newCanvas;
+    currentContext = newCanvas.getContext('2d');
+    index++;
 }
 
-
-
-function drawLineUp(eq) {
+function drawLineUp(e) {
     moveFlag = false;
     oldX = 0;
     oldY = 0;
 }
 
-
 function drawLineMove(e) {
     if (moveFlag) {
         // 开始绘画
-        var x = e.clientX - mainCanvas.offsetLeft;
-        var y = e.clientY - mainCanvas.offsetTop;
+        var x = e.clientX - mainContainer.offsetLeft;
+        var y = e.clientY - mainContainer.offsetTop;
+        console.log(x);
         oldX = oldX > 0 ? oldX : x;
         oldY = oldY > 0 ? oldY : y;
-        mainContext.beginPath();
-        mainContext.moveTo(oldX, oldY);
-        mainContext.lineTo(x, y);
-        mainContext.strokeStyle = lineColor;
-        mainContext.stroke();
+        currentContext.beginPath();
+        currentContext.moveTo(oldX, oldY);
+        currentContext.lineTo(x, y);
+        currentContext.strokeStyle = lineColor;
+        currentContext.stroke();
         oldX = x;
         oldY = y;
     }
 }
 
 function initMainCanvasSize() {
-    mainCanvas.width = mainCanvasWidth;
-    mainCanvas.height = mainCanvasHeight;
-    mainCanvas.style.background = bgColor;
+    mainContainer.style.width = mainCanvasWidth + 'px';
+    mainContainer.style.height = mainCanvasHeight + 'px';
+    mainContainer.style.background = bgColor;
 }
 
 function init() {
