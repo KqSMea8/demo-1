@@ -21,7 +21,19 @@
  *     这个在创建层的时候在旁边也需要建立一个相应的控制中心，然后点击控制中心的隐藏还有显示可以控制
  *     对应层的显示和隐藏
  * 2.设置画布的背景色
+ *     这个需求看了一下别人做到，我大概就知道了是要在这个层级显示到上面的时候，然后设置这个
+ *     当前层级的背景色，点击了就看他的id然后控制它的背景色，然后取到输入框的颜色进行设置，这个觉得
+ *     没有什么难度。
  * 3.拖拽控制层的层级
+ *     这个才是真正要学习的东西，进行拖拽。拖拽开始有一些事件是和我们的鼠标事件很类似的然后后面
+ *     有一个拖拽的属性。在这个需求是操作栏可以改变层的上下顺序，从而改变画布显示的层级。
+ *     拖动改变按钮的顺序
+ *     改变画布的层级
+ *     改变按钮的顺序，拖动的时候，如果在一个元素的上边就通通往下移，类似于插入排序
+ *     然后它的位置根据移动元素的多少，和总共元素的多少来进行计算。然后把他的值设置到对应的画布上，
+ *     也就是他原来的index,和现在的index值做一次交换就好了
+ *
+ * https://my.oschina.net/blogshi/blog/219408
  */
 var mainContainer = document.getElementById('canvas-container');
 var layerControl = document.getElementById('canvas-control');
@@ -47,6 +59,7 @@ function createLayer() {
     newCanvas.width = mainCanvasWidth;
     newCanvas.height = mainCanvasHeight;
     newCanvas.id = 'canvas-' + index;
+    newCanvas.style.zIndex = index;
     mainContainer.appendChild(newCanvas);
     currentCanvas = newCanvas;
     currentContext = newCanvas.getContext('2d');
@@ -134,3 +147,25 @@ function init() {
     layerControl.addEventListener('click', addControlDisplay);
 }
 init();
+
+/**
+ * 1.ios 自动循环播放的广告条 类似于京东的轮播图
+ * 实现一个自动循环播放的广告条
+广告条要符合以下要求：
+        1.    广告的条数不固定，为0则隐藏广告位，有几条就展示几条。
+        2.    图片尺寸固定，不需要考虑图片剪裁
+        3.    广告的图片从远端拉取，每拉到一条就展示一条，动态添加。
+        4.    自动循环播放，并且支持手动滑动。
+        5.    带有导航点，点击可以跳转对应广告
+        6.    点击广告位可以有不同的效果：本地跳转，跳转浏览器，弹窗
+
+ 2.复现ANR
+ 任务描述
+
+ 写出不少于3种常见ANR错误的Android代码
+
+ 主线程复现ANR
+ BroadcastReceiver复现ANR
+ Service复现ANR
+ 任务注意事项
+ */
