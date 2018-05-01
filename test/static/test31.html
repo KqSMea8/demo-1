@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #test {
+        display: none;
+    }
+        .iframe {
+            display: none;
+        }
+        .aaa {
+            height: 100px;
+            background: red;
+        }
+        /* https://www.cnblogs.com/dolphinX/p/3464056.html */
+    </style>
+</head>
+<body>
+    <div id="test">
+        <iframe class="iframe" src="http://localhost:8080/intervene.html#/?ispuffer=0"></iframe>
+    </div>
+    <div class="aaa"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+
+        window.addEventListener('message', function(e){
+            var data = e.data;
+            alert(data);
+        },false);
+    </script>
+</body>
+</html>

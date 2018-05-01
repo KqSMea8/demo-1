@@ -14,16 +14,8 @@
  * 好机会。
  *
  *
- * 现在做到的是画布已经出来了。然后也新建了很多的画布。
+ * 现在做到的是画布已经出来了。然后也新建了很多的画布
  *
- *
- * 1.把每个画布都单独拎出来放在旁边进行控制，可以设置他的隐藏
- *     这个在创建层的时候在旁边也需要建立一个相应的控制中心，然后点击控制中心的隐藏还有显示可以控制
- *     对应层的显示和隐藏
- * 2.设置画布的背景色
- *     这个需求看了一下别人做到，我大概就知道了是要在这个层级显示到上面的时候，然后设置这个
- *     当前层级的背景色，点击了就看他的id然后控制它的背景色，然后取到输入框的颜色进行设置，这个觉得
- *     没有什么难度。
  * 3.拖拽控制层的层级
  *     这个才是真正要学习的东西，进行拖拽。拖拽开始有一些事件是和我们的鼠标事件很类似的然后后面
  *     有一个拖拽的属性。在这个需求是操作栏可以改变层的上下顺序，从而改变画布显示的层级。
@@ -32,6 +24,10 @@
  *     改变按钮的顺序，拖动的时候，如果在一个元素的上边就通通往下移，类似于插入排序
  *     然后它的位置根据移动元素的多少，和总共元素的多少来进行计算。然后把他的值设置到对应的画布上，
  *     也就是他原来的index,和现在的index值做一次交换就好了
+ *     现在就是重点解决拖拽的问题，我们可以控制拖拽的层级，鼠标按下去之后开始监听拖拽，
+ *     然后插入到想要的位置，这个就比较难了，我该怎么插入呢，插入的时候看位置，他的距离
+ *     到，距离谁的中心点近就放在谁的旁边，显示看绝对值，然后根据绝对值看是放在上面还是下面
+ *
  *
  * https://my.oschina.net/blogshi/blog/219408
  */
@@ -73,8 +69,58 @@ function createLayer() {
 function createControl() {
     var laryer = document.createElement('div');
     display[index] = 'none';
+    laryer.setAttribute('draggable', true);
     laryer.innerHTML = '<span>' + index + '</span><button id="layer-' + index + '">' + displayToText[display[index]]  + '</button>';
+    laryer.addEventListener('dragstart', dragStart);
+    laryer.addEventListener('dragover', dragOver);
+    laryer.addEventListener('drop', dragLeave);
     layerControl.appendChild(laryer);
+}
+
+// 开始拖拽携带数据
+function dragStart(e) {
+    var text = e.target.innerHTML;
+    e.dataTransfer.setData('text', text);
+    console.log(text);
+}
+
+// 设置可以出发drop事件
+function dragOver(e) {
+    e.preventDefault();
+}
+
+// 接收携带的数据，然后插入到当前元素的前面
+function dragLeave(e) {
+    var target = e.target;
+    // 现在是目标元素可能都是就是或的关系
+
+    if (target.tagName.toLowerCase() === 'button') {
+        target = target.parentNode;
+    }
+
+    console.log(target);
+
+    var text = e.dataTransfer.getData('text');
+    var laryer = document.createElement('div');
+    laryer.setAttribute('draggable', true);
+    laryer.innerHTML = text;
+    laryer.addEventListener('dragstart', dragStart);
+    laryer.addEventListener('drop', dragLeave);
+
+    // 插入之前先删除
+    var spanNum = parseInt(laryer.children[0].innerText);
+    console.log(spanNum);
+    var oldNode = document.getElementById('layer-' + spanNum).parentNode;
+    layerControl.removeChild(oldNode);
+    layerControl.insertBefore(laryer, target);
+}
+
+// 那篇文章的思路是把拖拽的元素的数据带上
+// 基本上拖拽这里就是讲的是数据的获取和设置，然后可拖动的属性怎么设置
+// 这里我要做的就是拖动的时候把数据带上，然后到目标元素放在他的前面就行，
+function dragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
 }
 
 
@@ -100,7 +146,6 @@ function addControlDisplay(e) {
  * 没理解这个背景层是做什么的，就是我画的这个区域，然后可以控制我画的线的显示
  * 哪里出问题了呢，画布已经显示出来了。但是并没有画出来
  */
-
 // 记录鼠标位置还有设置当前可以进行滑动
 function drawLineStart(e) {
     moveFlag = true;
@@ -139,6 +184,11 @@ function initMainCanvasSize() {
     mainContainer.style.background = bgColor;
 }
 
+function dragoverMove(e) {
+    var target = e.target;
+    console.log(target);
+}
+
 function init() {
     initMainCanvasSize();
     mainContainer.addEventListener('mousedown', drawLineStart);
@@ -147,6 +197,11 @@ function init() {
     layerControl.addEventListener('click', addControlDisplay);
 }
 init();
+
+
+
+
+
 
 /**
  * 1.ios 自动循环播放的广告条 类似于京东的轮播图

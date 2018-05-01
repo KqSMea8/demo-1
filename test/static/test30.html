@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = [2, 43, 4];
+
+        function test(arr) {
+            arr[1] = 0;
+            return arr;
+        }
+
+        var b = test(a);
+        console.log(a);
+        console.log(b);
+        console.log(a === b);
+
+    </script>
+</body>
+</html>
