@@ -13,21 +13,15 @@
  * 要今天要把这个分层画布完成。明天还有一大堆的事情，这个学习不能废弃，现在就一个人，正是好好学习的
  * 好机会。
  *
+ * *
+ * 4.拖拽有了，接下来就是控制层级
+ * 拖拽之后他的顺序他的现有位置和index的关系，找到他的现有位置就知道了，这个该怎么设计呢
+ * 现在拖拽有了，就是层级的设计，然后我就要设计这个滑动位置与层级的关系，其实是有两个数据的
+ * 一个是本身标示的位置，一个是他实际位置的标示，其实我只需要做这两个标示的管理和同步就行了
+ * 自身的标志在dom元素里面保存着，然后他和我们的层级关联，然后另外一个数据是目前自己真正的位置
+ * 这个存到自己的属性里面，然后这个控制着z-index的层级，并且不断同步z-index的级别
  *
- * 现在做到的是画布已经出来了。然后也新建了很多的画布
- *
- * 3.拖拽控制层的层级
- *     这个才是真正要学习的东西，进行拖拽。拖拽开始有一些事件是和我们的鼠标事件很类似的然后后面
- *     有一个拖拽的属性。在这个需求是操作栏可以改变层的上下顺序，从而改变画布显示的层级。
- *     拖动改变按钮的顺序
- *     改变画布的层级
- *     改变按钮的顺序，拖动的时候，如果在一个元素的上边就通通往下移，类似于插入排序
- *     然后它的位置根据移动元素的多少，和总共元素的多少来进行计算。然后把他的值设置到对应的画布上，
- *     也就是他原来的index,和现在的index值做一次交换就好了
- *     现在就是重点解决拖拽的问题，我们可以控制拖拽的层级，鼠标按下去之后开始监听拖拽，
- *     然后插入到想要的位置，这个就比较难了，我该怎么插入呢，插入的时候看位置，他的距离
- *     到，距离谁的中心点近就放在谁的旁边，显示看绝对值，然后根据绝对值看是放在上面还是下面
- *
+ * 拖拽的位置是对的，
  *
  * https://my.oschina.net/blogshi/blog/219408
  */
@@ -70,10 +64,13 @@ function createControl() {
     var laryer = document.createElement('div');
     display[index] = 'none';
     laryer.setAttribute('draggable', true);
+    laryer.setAttribute('zIndex', index);
     laryer.innerHTML = '<span>' + index + '</span><button id="layer-' + index + '">' + displayToText[display[index]]  + '</button>';
+
     laryer.addEventListener('dragstart', dragStart);
     laryer.addEventListener('dragover', dragOver);
     laryer.addEventListener('drop', dragLeave);
+
     layerControl.appendChild(laryer);
 }
 
@@ -92,12 +89,15 @@ function dragOver(e) {
 // 接收携带的数据，然后插入到当前元素的前面
 function dragLeave(e) {
     var target = e.target;
-    // 现在是目标元素可能都是就是或的关系
 
+    // 现在是目标元素可能都是就是或的关系
     if (target.tagName.toLowerCase() === 'button') {
         target = target.parentNode;
     }
 
+    var zIndex = parseInt(target.getAttribute('zIndex'), 10);
+
+    console.log('target');
     console.log(target);
 
     var text = e.dataTransfer.getData('text');
@@ -107,12 +107,41 @@ function dragLeave(e) {
     laryer.addEventListener('dragstart', dragStart);
     laryer.addEventListener('drop', dragLeave);
 
-    // 插入之前先删除
+    // 插入之前先删除原元素
     var spanNum = parseInt(laryer.children[0].innerText);
     console.log(spanNum);
+
+    // 删除
     var oldNode = document.getElementById('layer-' + spanNum).parentNode;
     layerControl.removeChild(oldNode);
+
+    // 插入
     layerControl.insertBefore(laryer, target);
+
+    // 把这个元素前面的所有元素的zIndex都要前移,他的属性的zIndex值都要前移
+    let preSbiling = target.previousSibling;
+    let preZIndex = parseInt(target.getAttribute('zIndex'), 10) - 1;
+    console.log('target', target);
+    console.log('preSbiling', preSbiling);
+    while (preSbiling) {
+        preSbiling.setAttribute('zIndex', preZIndex);
+        preSbiling = preSbiling.previousSibling;
+        preZIndex--;
+    }
+
+    // 同步zIndex的值
+    preSbiling = target.previousSibling;
+    while (preSbiling) {
+        // 替换相应层级的zIndex，获取当前元素，然后把当前元素的数字拿到，
+        currentIndex = preSbiling.getAttribute('zIndex');
+
+        spanNum = parseInt(preSbiling.children[0].innerText);
+        console.log(spanNum);
+        oldCanvas = document.getElementById('canvas-' + spanNum);
+        oldCanvas.style.zIndex = currentIndex;
+
+        preSbiling = preSbiling.previousSibling;
+    }
 }
 
 // 那篇文章的思路是把拖拽的元素的数据带上
