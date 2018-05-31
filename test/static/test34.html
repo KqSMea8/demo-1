@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style type="text/css">
+        iframe {
+            width: 100%;
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="http://www.lichenfan.com/#000" id="iframe"></iframe>
+    <script>
+        var ifr = document.getElementById('iframe');
+        var color = ['000', 'ccc', '999', '111', '333', '100', 'd00'];
+        var index = 0;
+        setInterval(function () {
+            index = Math.round(Math.random() * (color.length - 1));
+            ifr.src = 'http://www.lichenfan.com/#' + color[index];
+        }, 2000);
+    </script>
+</body>
+</html>
