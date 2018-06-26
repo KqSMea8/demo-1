@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com/" id="test">范德萨范德萨</a>
+    <script>
+
+
+        // const injectedScript = function () {
+
+        // function awaitPostMessage() {
+        //     var isReactNativePostMessageReady = !!window.originalPostMessage;
+        //     var queue = [];
+        //     var currentPostMessageFn = function store(message) {
+        //         if (queue.length > 100) queue.shift();
+        //         queue.push(message);
+        //     };
+        //     if (!isReactNativePostMessageReady) {
+        //         var originalPostMessage = window.postMessage;
+        //         Object.defineProperty(window, 'postMessage', {
+        //             configurable: true,
+        //             enumerable: true,
+        //             get: function () {
+        //                 return currentPostMessageFn;
+        //             },
+        //             set: function (fn) {
+        //                 currentPostMessageFn = fn;
+        //                 isReactNativePostMessageReady = true;
+        //                 setTimeout(sendQueue, 0);
+        //             }
+        //         });
+        //         window.postMessage.toString = function () {
+        //             return String(originalPostMessage);
+        //         };
+        //     }
+
+        //     function sendQueue() {
+        //         while (queue.length > 0) window.postMessage(queue.shift());
+        //     }
+        // }
+
+
+        // awaitPostMessage(); // Call this only once in your Web Code.
+        // //至此，是为了保证一定会调成功postMessage
+
+        // var originalPostMessage = window.postMessage;
+
+        // var patchedPostMessage = function (message, targetOrigin, transfer) {
+        //     originalPostMessage(message, targetOrigin, transfer);
+        // };
+
+        // patchedPostMessage.toString = function () {
+        //     return String(Object.hasOwnProperty).replace('hasOwnProperty', 'postMessage');
+        // };
+
+        // window.postMessage = patchedPostMessage;
+
+        // let height;
+        // if (document.documentElement.clientHeight > document.body.clientHeight) {
+        //     height = document.documentElement.clientHeight
+        // } else {
+        //     height = document.body.clientHeight
+        // }
+
+        // window.postMessage("height=" + height); //这里是把网页内容高度传给rn，以实现自适应高度
+
+        //以下就是找到所有a标签，并将url传给RN处理
+        var aNodes = document.getElementsByTagName('a');
+
+        for (var i = 0; i < aNodes.length; i++) {
+            aNodes[i].addEventListener('click', function (e) {
+                e.preventDefault();
+            })
+        }
+
+        // };
+    </script>
+</body>
+</html>
+
+
