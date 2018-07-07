@@ -3,4 +3,3 @@ node_modules
 /output
 /mock/templates_c
 *.pem
-config
