@@ -18,7 +18,7 @@ function sendMail() {
     var options = {
         from: '18729377257@163.com',
         to: '731644018@qq.com',
-        subject: '提醒我干什么事情',
+        subject: '提醒我还信用卡',
         text: '提醒我'
     };
 
