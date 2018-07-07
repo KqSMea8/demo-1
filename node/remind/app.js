@@ -2,10 +2,10 @@
  * @file 发送邮件提醒
  * @author 731644018@qq.com
  */
-var nodemailer = require('nodemailer');
-var Config = require('./config');
+const nodemailer = require('nodemailer');
+const Config = require('./config');
 
-var mailTransport = nodemailer.createTransport({
+let mailTransport = nodemailer.createTransport({
     host: 'smtp.163.com',
     secureConnection: true,
     auth: {
@@ -14,17 +14,34 @@ var mailTransport = nodemailer.createTransport({
     },
 });
 
-var options = {
-    from: '18729377257@163.com',
-    to: '731644018@qq.com',
-    subject: '提醒我干什么事情',
-    text: '提醒我'
-};
+function sendMail() {
+    var options = {
+        from: '18729377257@163.com',
+        to: '731644018@qq.com',
+        subject: '提醒我干什么事情',
+        text: '提醒我'
+    };
 
-mailTransport.sendMail(options, function (err, msg) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(msg);
-    }
-});
+    mailTransport.sendMail(options, (err, msg) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(msg);
+        }
+    });
+}
+
+function init() {
+    let creditCardDay = 7;
+    let time = 8 * 60 * 60 * 1000;
+    setInterval(() => {
+        let today = new Date();
+        let month = today.getMonth() + 1;
+        let day = today.getDate();
+       if (day === creditCardDay) {
+            sendMail();
+       }
+    }, time);
+}
+
+init();
