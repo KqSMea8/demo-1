@@ -1,0 +1,9 @@
+@function rem($num) {
+    @return $num / 200 * 1rem;
+}
+@function font($num) {
+    @return $num / 2 * 1px;
+}
+@function pufferRem($num) {
+    @return $num / 100 * 1rem;
+}
