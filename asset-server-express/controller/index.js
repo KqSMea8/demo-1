@@ -1,10 +1,4 @@
 var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123456'
-});
-
 var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -20,7 +14,7 @@ pool.getConnection((err, connection) => {
         return;
     }
 
-    connection.query('SELECT 1 + 1 AS solution',function(err,result){
+    connection.query('SELECT 1 + 1 AS solution',function(err, result){
         connection.release();
         if(err){
             console.log(err);
@@ -28,9 +22,6 @@ pool.getConnection((err, connection) => {
         }
         console.log('The solution is: ', result[0].solution);
     })
-
-    console.log('this is solution is: ', result[0].solution);
 })
 
 module.exports = mysql;
-
