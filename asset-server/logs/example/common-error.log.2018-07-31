@@ -1,0 +1,8 @@
+2018-07-31 23:49:48,575 ERROR 16464 [-/127.0.0.1/-/6ms GET /assetslist] nodejs.TypeError: Cannot set property 'list' of undefined
+    at HomeController.index (/Users/sufubo/code/demo/asset-server/app/controller/home.js:12:23)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+
+pid: 16464
+hostname: B000000126747
+

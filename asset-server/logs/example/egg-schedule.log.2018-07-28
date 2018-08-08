@@ -1,0 +1,14 @@
+2018-07-28 22:59:12,922 INFO 10293 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-07-29 00:00:00.000
+2018-07-28 22:59:12,923 INFO 10293 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-07-29 00:00:01.000
+2018-07-28 22:59:26,638 INFO 10337 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-07-29 00:00:00.000
+2018-07-28 22:59:26,638 INFO 10337 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-07-29 00:00:01.000
+2018-07-29 00:00:00,012 INFO 10337 [153279360001020851176315647] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js triggered, send random by agent
+2018-07-29 00:00:00,018 INFO 10337 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-07-30 00:00:00.000
+2018-07-29 00:00:00,024 INFO 10495 [153279360001020851176315647] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js task received by app
+2018-07-29 00:00:00,026 INFO 10495 [153279360001020851176315647] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2018-07-29 00:00:00,044 INFO 10495 [153279360001020851176315647] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 17ms
+2018-07-29 00:00:01,009 INFO 10495 [153279360100720852173302413] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js task received by app
+2018-07-29 00:00:01,009 INFO 10495 [153279360100720852173302413] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2018-07-29 00:00:01,018 INFO 10495 [153279360100720852173302413] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 9ms
+2018-07-29 00:00:01,008 INFO 10337 [153279360100720852173302413] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js triggered, send random by agent
+2018-07-29 00:00:01,012 INFO 10337 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-07-30 00:00:01.000

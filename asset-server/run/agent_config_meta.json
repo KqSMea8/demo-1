@@ -1,0 +1,283 @@
+{
+  "keys": "/Users/sufubo/code/demo/asset-server/config/config.default.js",
+  "middleware": "/Users/sufubo/code/demo/asset-server/config/config.default.js",
+  "security": {
+    "csrf": {
+      "enable": "/Users/sufubo/code/demo/asset-server/config/config.default.js",
+      "useSession": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "domainWhiteList": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "session": {
+    "maxAge": "/Users/sufubo/code/demo/asset-server/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/sufubo/code/demo/asset-server/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/sufubo/code/demo/asset-server/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/sufubo/code/demo/asset-server/node_modules/egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/sufubo/code/demo/asset-server/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/sufubo/code/demo/asset-server/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/sufubo/code/demo/asset-server/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/sufubo/code/demo/asset-server/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/sufubo/code/demo/asset-server/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/sufubo/code/demo/asset-server/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/sufubo/code/demo/asset-server/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/sufubo/code/demo/asset-server/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/sufubo/code/demo/asset-server/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/sufubo/code/demo/asset-server/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/sufubo/code/demo/asset-server/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/sufubo/code/demo/asset-server/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/sufubo/code/demo/asset-server/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/sufubo/code/demo/asset-server/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/sufubo/code/demo/asset-server/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/sufubo/code/demo/asset-server/node_modules/egg-multipart/config/config.default.js"
+  },
+  "development": {
+    "watchDirs": "/Users/sufubo/code/demo/asset-server/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/sufubo/code/demo/asset-server/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/sufubo/code/demo/asset-server/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/sufubo/code/demo/asset-server/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/sufubo/code/demo/asset-server/node_modules/egg-development/config/config.default.js"
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/sufubo/code/demo/asset-server/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/sufubo/code/demo/asset-server/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/sufubo/code/demo/asset-server/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/sufubo/code/demo/asset-server/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/sufubo/code/demo/asset-server/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/sufubo/code/demo/asset-server/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/sufubo/code/demo/asset-server/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/sufubo/code/demo/asset-server/node_modules/egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/sufubo/code/demo/asset-server/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/sufubo/code/demo/asset-server/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/sufubo/code/demo/asset-server/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/sufubo/code/demo/asset-server/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/sufubo/code/demo/asset-server/node_modules/egg-view/config/config.default.js"
+  },
+  "mysql": {
+    "default": {
+      "database": "/Users/sufubo/code/demo/asset-server/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/Users/sufubo/code/demo/asset-server/node_modules/egg-mysql/config/config.default.js"
+    },
+    "app": "/Users/sufubo/code/demo/asset-server/node_modules/egg-mysql/config/config.default.js",
+    "agent": "/Users/sufubo/code/demo/asset-server/node_modules/egg-mysql/config/config.default.js"
+  },
+  "env": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "name": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "version": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "description": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "private": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "dependencies": {
+      "egg": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "egg-mysql": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "webstorm-disable-index": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "stop": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "dev": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "debug": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "test": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "cov": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "lint": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "ci": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "autod": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "url": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "license": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "strict": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "depth": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "env": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "level": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxAge": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "logging": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "port": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/sufubo/code/demo/asset-server/node_modules/egg/config/config.default.js"
+}

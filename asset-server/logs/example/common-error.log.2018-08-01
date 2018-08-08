@@ -1,0 +1,135 @@
+2018-08-01 00:33:59,720 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 942161ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 02:22:27,203 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 6487007ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 04:10:34,812 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 6486928ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 04:41:03,717 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 1828316ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 06:29:16,625 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 6472478ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 08:17:23,143 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 6486380ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 09:17:25,345 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 3601770ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 09:30:04,262 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 738474ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 09:31:08,708 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 64436ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 09:33:46,827 ERROR 14981 nodejs.ClusterClientNoResponseError: client no response in 136552ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/sufubo/code/demo/asset-server/node_modules/cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
+name: "ClusterClientNoResponseError"
+pid: 14981
+hostname: B000000126747
+
+2018-08-01 23:32:59,880 ERROR 21815 [-/127.0.0.1/-/10ms POST /assets/add] nodejs.TypeError: this.app.mysql.insert is not a function
+    at AssetService.insert (/Users/sufubo/code/demo/asset-server/app/service/index.js:10:45)
+    at HomeController.saveData (/Users/sufubo/code/demo/asset-server/app/controller/home.js:18:33)
+    at Object.callFn (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+
+pid: 21815
+hostname: B000000126747
+
+2018-08-01 23:35:15,119 ERROR 21991 [-/127.0.0.1/-/12ms POST /assets/add] nodejs.TypeError: this.app.mysql.insert is not a function
+    at AssetService.insert (/Users/sufubo/code/demo/asset-server/app/service/index.js:10:45)
+    at HomeController.saveData (/Users/sufubo/code/demo/asset-server/app/controller/home.js:18:33)
+    at Object.callFn (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+
+pid: 21991
+hostname: B000000126747
+
+2018-08-01 23:41:56,625 ERROR 22255 [-/127.0.0.1/-/6ms POST /assets/add] nodejs.TypeError: this.app.mysql.insert is not a function
+    at AssetService.insert (/Users/sufubo/code/demo/asset-server/app/service/index.js:10:45)
+    at HomeController.saveData (/Users/sufubo/code/demo/asset-server/app/controller/home.js:18:33)
+    at Object.callFn (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/sufubo/code/demo/asset-server/node_modules/egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+
+pid: 22255
+hostname: B000000126747
+

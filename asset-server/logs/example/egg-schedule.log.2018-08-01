@@ -1,0 +1,12 @@
+2018-08-01 23:18:27,465 INFO 21319 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-08-02 00:00:00.000
+2018-08-01 23:18:27,465 INFO 21319 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-08-02 00:00:01.000
+2018-08-02 00:00:00,326 INFO 22394 [153313920023034743976043310] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js task received by app
+2018-08-02 00:00:00,367 INFO 22394 [153313920023034743976043310] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2018-08-02 00:00:00,392 INFO 22394 [153313920023034743976043310] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 22ms
+2018-08-02 00:00:00,241 INFO 21319 [153313920023034743976043310] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js triggered, send random by agent
+2018-08-02 00:00:00,372 INFO 21319 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-08-03 00:00:00.000
+2018-08-02 00:00:01,021 INFO 22394 [153313920101434744755674664] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js task received by app
+2018-08-02 00:00:01,021 INFO 22394 [153313920101434744755674664] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2018-08-02 00:00:01,028 INFO 22394 [153313920101434744755674664] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 7ms
+2018-08-02 00:00:01,019 INFO 21319 [153313920101434744755674664] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js triggered, send random by agent
+2018-08-02 00:00:01,022 INFO 21319 [Timer] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-08-03 00:00:01.000

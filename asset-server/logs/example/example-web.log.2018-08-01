@@ -1,0 +1,80 @@
+2018-08-01 23:19:16,536 WARN 21320 [-/127.0.0.1/-/2ms POST /assets/add] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-08-01 23:19:16,540 WARN 21320 [-/127.0.0.1/-/7ms POST /assets/add] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/sufubo/code/demo/asset-server/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/app/extend/context.js:149:17)
+    at csrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/sufubo/code/demo/asset-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/sufubo/code/demo/asset-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 21320
+hostname: B000000126747
+
+2018-08-01 23:19:31,369 WARN 21320 [-/127.0.0.1/-/0ms POST /assets/add] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-08-01 23:19:31,370 WARN 21320 [-/127.0.0.1/-/0ms POST /assets/add] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/sufubo/code/demo/asset-server/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/app/extend/context.js:149:17)
+    at csrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/sufubo/code/demo/asset-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/sufubo/code/demo/asset-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 21320
+hostname: B000000126747
+
+2018-08-01 23:19:45,882 WARN 21320 [-/127.0.0.1/-/0ms POST /assetslist] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-08-01 23:19:45,883 WARN 21320 [-/127.0.0.1/-/1ms POST /assetslist] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/sufubo/code/demo/asset-server/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/app/extend/context.js:149:17)
+    at csrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/sufubo/code/demo/asset-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/sufubo/code/demo/asset-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 21320
+hostname: B000000126747
+
+2018-08-01 23:19:49,541 WARN 21320 [-/127.0.0.1/-/0ms POST /assetslist] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-08-01 23:19:49,541 WARN 21320 [-/127.0.0.1/-/0ms POST /assetslist] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/sufubo/code/demo/asset-server/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/app/extend/context.js:149:17)
+    at csrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/sufubo/code/demo/asset-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/sufubo/code/demo/asset-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 21320
+hostname: B000000126747
+
+2018-08-01 23:21:00,846 WARN 21320 [-/127.0.0.1/-/1ms POST /assets/add] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-08-01 23:21:00,846 WARN 21320 [-/127.0.0.1/-/1ms POST /assets/add] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/sufubo/code/demo/asset-server/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/app/extend/context.js:149:17)
+    at csrf (/Users/sufubo/code/demo/asset-server/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/sufubo/code/demo/asset-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/sufubo/code/demo/asset-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/sufubo/code/demo/asset-server/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 21320
+hostname: B000000126747
+

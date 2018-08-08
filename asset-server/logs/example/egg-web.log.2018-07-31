@@ -1,0 +1,1279 @@
+2018-07-29 00:00:01,020 INFO 10495 [egg-logrotator] app logger reload: got log-reload message
+2018-07-29 10:02:53,522 INFO 20479 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:02:53,565 INFO 20479 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:02:53,565 INFO 20479 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:02:53,626 INFO 20479 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:02:53,628 INFO 20479 [egg-security] use csrf middleware
+2018-07-29 10:02:53,630 INFO 20479 [egg-security] use methodnoallow middleware
+2018-07-29 10:02:53,630 INFO 20479 [egg-security] use noopen middleware
+2018-07-29 10:02:53,631 INFO 20479 [egg-security] use nosniff middleware
+2018-07-29 10:02:53,632 INFO 20479 [egg-security] use xssProtection middleware
+2018-07-29 10:02:53,632 INFO 20479 [egg-security] use xframe middleware
+2018-07-29 10:02:53,633 INFO 20479 [egg-security] use dta middleware
+2018-07-29 10:02:53,633 INFO 20479 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:02:53,650 INFO 20479 [egg:core] dump config after load, 6ms
+2018-07-29 10:02:53,667 INFO 20479 [egg-watcher:app] watcher start success
+2018-07-29 10:02:53,671 INFO 20479 [egg:core] dump config after ready, 2ms
+2018-07-29 10:07:41,760 INFO 20721 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:07:41,807 INFO 20721 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:07:41,807 INFO 20721 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:07:41,878 INFO 20721 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:07:41,881 INFO 20721 [egg-security] use csrf middleware
+2018-07-29 10:07:41,883 INFO 20721 [egg-security] use methodnoallow middleware
+2018-07-29 10:07:41,884 INFO 20721 [egg-security] use noopen middleware
+2018-07-29 10:07:41,885 INFO 20721 [egg-security] use nosniff middleware
+2018-07-29 10:07:41,886 INFO 20721 [egg-security] use xssProtection middleware
+2018-07-29 10:07:41,887 INFO 20721 [egg-security] use xframe middleware
+2018-07-29 10:07:41,887 INFO 20721 [egg-security] use dta middleware
+2018-07-29 10:07:41,887 INFO 20721 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:07:41,901 INFO 20721 [egg:core] dump config after load, 10ms
+2018-07-29 10:07:41,918 INFO 20721 [egg-watcher:app] watcher start success
+2018-07-29 10:07:41,922 INFO 20721 [egg:core] dump config after ready, 2ms
+2018-07-29 10:07:53,281 INFO 20732 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:07:53,332 INFO 20732 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:07:53,332 INFO 20732 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:07:53,463 INFO 20732 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:07:53,468 INFO 20732 [egg-security] use csrf middleware
+2018-07-29 10:07:53,470 INFO 20732 [egg-security] use methodnoallow middleware
+2018-07-29 10:07:53,471 INFO 20732 [egg-security] use noopen middleware
+2018-07-29 10:07:53,471 INFO 20732 [egg-security] use nosniff middleware
+2018-07-29 10:07:53,472 INFO 20732 [egg-security] use xssProtection middleware
+2018-07-29 10:07:53,475 INFO 20732 [egg-security] use xframe middleware
+2018-07-29 10:07:53,476 INFO 20732 [egg-security] use dta middleware
+2018-07-29 10:07:53,476 INFO 20732 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:07:53,493 INFO 20732 [egg:core] dump config after load, 10ms
+2018-07-29 10:07:53,519 INFO 20732 [egg-watcher:app] watcher start success
+2018-07-29 10:07:53,526 INFO 20732 [egg:core] dump config after ready, 5ms
+2018-07-29 10:07:56,547 INFO 20742 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:07:56,580 INFO 20742 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:07:56,580 INFO 20742 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:07:56,628 INFO 20742 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:07:56,631 INFO 20742 [egg-security] use csrf middleware
+2018-07-29 10:07:56,631 INFO 20742 [egg-security] use methodnoallow middleware
+2018-07-29 10:07:56,632 INFO 20742 [egg-security] use noopen middleware
+2018-07-29 10:07:56,632 INFO 20742 [egg-security] use nosniff middleware
+2018-07-29 10:07:56,633 INFO 20742 [egg-security] use xssProtection middleware
+2018-07-29 10:07:56,633 INFO 20742 [egg-security] use xframe middleware
+2018-07-29 10:07:56,634 INFO 20742 [egg-security] use dta middleware
+2018-07-29 10:07:56,634 INFO 20742 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:07:56,646 INFO 20742 [egg:core] dump config after load, 7ms
+2018-07-29 10:07:56,667 INFO 20742 [egg-watcher:app] watcher start success
+2018-07-29 10:07:56,671 INFO 20742 [egg:core] dump config after ready, 3ms
+2018-07-29 10:07:57,072 INFO 20743 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:07:57,102 INFO 20743 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:07:57,102 INFO 20743 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:07:57,161 INFO 20743 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:07:57,163 INFO 20743 [egg-security] use csrf middleware
+2018-07-29 10:07:57,163 INFO 20743 [egg-security] use methodnoallow middleware
+2018-07-29 10:07:57,164 INFO 20743 [egg-security] use noopen middleware
+2018-07-29 10:07:57,164 INFO 20743 [egg-security] use nosniff middleware
+2018-07-29 10:07:57,165 INFO 20743 [egg-security] use xssProtection middleware
+2018-07-29 10:07:57,166 INFO 20743 [egg-security] use xframe middleware
+2018-07-29 10:07:57,166 INFO 20743 [egg-security] use dta middleware
+2018-07-29 10:07:57,166 INFO 20743 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:07:57,174 INFO 20743 [egg:core] dump config after load, 5ms
+2018-07-29 10:07:57,198 INFO 20743 [egg-watcher:app] watcher start success
+2018-07-29 10:07:57,202 INFO 20743 [egg:core] dump config after ready, 3ms
+2018-07-29 10:07:58,017 INFO 20744 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:07:58,048 INFO 20744 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:07:58,048 INFO 20744 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:07:58,088 INFO 20744 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:07:58,090 INFO 20744 [egg-security] use csrf middleware
+2018-07-29 10:07:58,090 INFO 20744 [egg-security] use methodnoallow middleware
+2018-07-29 10:07:58,090 INFO 20744 [egg-security] use noopen middleware
+2018-07-29 10:07:58,091 INFO 20744 [egg-security] use nosniff middleware
+2018-07-29 10:07:58,091 INFO 20744 [egg-security] use xssProtection middleware
+2018-07-29 10:07:58,091 INFO 20744 [egg-security] use xframe middleware
+2018-07-29 10:07:58,092 INFO 20744 [egg-security] use dta middleware
+2018-07-29 10:07:58,092 INFO 20744 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:07:58,098 INFO 20744 [egg:core] dump config after load, 4ms
+2018-07-29 10:07:58,117 INFO 20744 [egg-watcher:app] watcher start success
+2018-07-29 10:07:58,120 INFO 20744 [egg:core] dump config after ready, 2ms
+2018-07-29 10:08:03,799 INFO 20754 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:08:03,837 INFO 20754 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:08:03,837 INFO 20754 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:08:03,892 INFO 20754 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:08:03,896 INFO 20754 [egg-security] use csrf middleware
+2018-07-29 10:08:03,897 INFO 20754 [egg-security] use methodnoallow middleware
+2018-07-29 10:08:03,897 INFO 20754 [egg-security] use noopen middleware
+2018-07-29 10:08:03,898 INFO 20754 [egg-security] use nosniff middleware
+2018-07-29 10:08:03,898 INFO 20754 [egg-security] use xssProtection middleware
+2018-07-29 10:08:03,898 INFO 20754 [egg-security] use xframe middleware
+2018-07-29 10:08:03,899 INFO 20754 [egg-security] use dta middleware
+2018-07-29 10:08:03,899 INFO 20754 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:08:03,908 INFO 20754 [egg:core] dump config after load, 5ms
+2018-07-29 10:08:03,933 INFO 20754 [egg-watcher:app] watcher start success
+2018-07-29 10:08:03,939 INFO 20754 [egg:core] dump config after ready, 4ms
+2018-07-29 10:09:16,292 INFO 20806 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:09:16,324 INFO 20806 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:09:16,324 INFO 20806 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:09:16,373 INFO 20806 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:09:16,375 INFO 20806 [egg-security] use csrf middleware
+2018-07-29 10:09:16,376 INFO 20806 [egg-security] use methodnoallow middleware
+2018-07-29 10:09:16,376 INFO 20806 [egg-security] use noopen middleware
+2018-07-29 10:09:16,376 INFO 20806 [egg-security] use nosniff middleware
+2018-07-29 10:09:16,377 INFO 20806 [egg-security] use xssProtection middleware
+2018-07-29 10:09:16,377 INFO 20806 [egg-security] use xframe middleware
+2018-07-29 10:09:16,377 INFO 20806 [egg-security] use dta middleware
+2018-07-29 10:09:16,377 INFO 20806 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:09:16,397 INFO 20806 [egg:core] dump config after load, 17ms
+2018-07-29 10:09:16,444 INFO 20806 [egg-watcher:app] watcher start success
+2018-07-29 10:09:16,451 INFO 20806 [egg:core] dump config after ready, 4ms
+2018-07-29 10:09:23,220 INFO 20818 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:09:23,258 INFO 20818 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:09:23,258 INFO 20818 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:09:23,309 INFO 20818 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:09:23,311 INFO 20818 [egg-security] use csrf middleware
+2018-07-29 10:09:23,311 INFO 20818 [egg-security] use methodnoallow middleware
+2018-07-29 10:09:23,311 INFO 20818 [egg-security] use noopen middleware
+2018-07-29 10:09:23,312 INFO 20818 [egg-security] use nosniff middleware
+2018-07-29 10:09:23,312 INFO 20818 [egg-security] use xssProtection middleware
+2018-07-29 10:09:23,312 INFO 20818 [egg-security] use xframe middleware
+2018-07-29 10:09:23,312 INFO 20818 [egg-security] use dta middleware
+2018-07-29 10:09:23,312 INFO 20818 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:09:23,319 INFO 20818 [egg:core] dump config after load, 4ms
+2018-07-29 10:09:23,338 INFO 20818 [egg-watcher:app] watcher start success
+2018-07-29 10:09:23,343 INFO 20818 [egg:core] dump config after ready, 3ms
+2018-07-29 10:09:44,102 INFO 20836 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:09:44,134 INFO 20836 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:09:44,134 INFO 20836 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:09:44,189 INFO 20836 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:09:44,191 INFO 20836 [egg-security] use csrf middleware
+2018-07-29 10:09:44,191 INFO 20836 [egg-security] use methodnoallow middleware
+2018-07-29 10:09:44,192 INFO 20836 [egg-security] use noopen middleware
+2018-07-29 10:09:44,192 INFO 20836 [egg-security] use nosniff middleware
+2018-07-29 10:09:44,192 INFO 20836 [egg-security] use xssProtection middleware
+2018-07-29 10:09:44,192 INFO 20836 [egg-security] use xframe middleware
+2018-07-29 10:09:44,193 INFO 20836 [egg-security] use dta middleware
+2018-07-29 10:09:44,193 INFO 20836 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:09:44,200 INFO 20836 [egg:core] dump config after load, 4ms
+2018-07-29 10:09:44,223 INFO 20836 [egg-watcher:app] watcher start success
+2018-07-29 10:09:44,228 INFO 20836 [egg:core] dump config after ready, 4ms
+2018-07-29 10:10:57,394 INFO 20856 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:10:57,427 INFO 20856 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:10:57,427 INFO 20856 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:10:57,473 INFO 20856 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:10:57,475 INFO 20856 [egg-security] use csrf middleware
+2018-07-29 10:10:57,476 INFO 20856 [egg-security] use methodnoallow middleware
+2018-07-29 10:10:57,476 INFO 20856 [egg-security] use noopen middleware
+2018-07-29 10:10:57,476 INFO 20856 [egg-security] use nosniff middleware
+2018-07-29 10:10:57,476 INFO 20856 [egg-security] use xssProtection middleware
+2018-07-29 10:10:57,477 INFO 20856 [egg-security] use xframe middleware
+2018-07-29 10:10:57,477 INFO 20856 [egg-security] use dta middleware
+2018-07-29 10:10:57,477 INFO 20856 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:10:57,485 INFO 20856 [egg:core] dump config after load, 5ms
+2018-07-29 10:10:57,505 INFO 20856 [egg-watcher:app] watcher start success
+2018-07-29 10:10:57,510 INFO 20856 [egg:core] dump config after ready, 3ms
+2018-07-29 10:11:10,109 INFO 20867 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:11:10,154 INFO 20867 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:11:10,154 INFO 20867 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:11:10,236 INFO 20867 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:11:10,239 INFO 20867 [egg-security] use csrf middleware
+2018-07-29 10:11:10,240 INFO 20867 [egg-security] use methodnoallow middleware
+2018-07-29 10:11:10,241 INFO 20867 [egg-security] use noopen middleware
+2018-07-29 10:11:10,242 INFO 20867 [egg-security] use nosniff middleware
+2018-07-29 10:11:10,242 INFO 20867 [egg-security] use xssProtection middleware
+2018-07-29 10:11:10,243 INFO 20867 [egg-security] use xframe middleware
+2018-07-29 10:11:10,243 INFO 20867 [egg-security] use dta middleware
+2018-07-29 10:11:10,243 INFO 20867 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:11:10,253 INFO 20867 [egg:core] dump config after load, 6ms
+2018-07-29 10:11:10,273 INFO 20867 [egg-watcher:app] watcher start success
+2018-07-29 10:11:10,278 INFO 20867 [egg:core] dump config after ready, 3ms
+2018-07-29 10:11:16,733 INFO 20878 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:11:16,773 INFO 20878 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:11:16,773 INFO 20878 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:11:16,882 INFO 20878 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:11:16,886 INFO 20878 [egg-security] use csrf middleware
+2018-07-29 10:11:16,888 INFO 20878 [egg-security] use methodnoallow middleware
+2018-07-29 10:11:16,889 INFO 20878 [egg-security] use noopen middleware
+2018-07-29 10:11:16,890 INFO 20878 [egg-security] use nosniff middleware
+2018-07-29 10:11:16,890 INFO 20878 [egg-security] use xssProtection middleware
+2018-07-29 10:11:16,891 INFO 20878 [egg-security] use xframe middleware
+2018-07-29 10:11:16,895 INFO 20878 [egg-security] use dta middleware
+2018-07-29 10:11:16,895 INFO 20878 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:11:16,931 INFO 20878 [egg:core] dump config after load, 22ms
+2018-07-29 10:11:16,955 INFO 20878 [egg-watcher:app] watcher start success
+2018-07-29 10:11:16,961 INFO 20878 [egg:core] dump config after ready, 4ms
+2018-07-29 10:11:17,464 INFO 20879 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:11:17,501 INFO 20879 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:11:17,501 INFO 20879 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:11:17,547 INFO 20879 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:11:17,549 INFO 20879 [egg-security] use csrf middleware
+2018-07-29 10:11:17,550 INFO 20879 [egg-security] use methodnoallow middleware
+2018-07-29 10:11:17,550 INFO 20879 [egg-security] use noopen middleware
+2018-07-29 10:11:17,550 INFO 20879 [egg-security] use nosniff middleware
+2018-07-29 10:11:17,551 INFO 20879 [egg-security] use xssProtection middleware
+2018-07-29 10:11:17,551 INFO 20879 [egg-security] use xframe middleware
+2018-07-29 10:11:17,551 INFO 20879 [egg-security] use dta middleware
+2018-07-29 10:11:17,551 INFO 20879 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:11:17,558 INFO 20879 [egg:core] dump config after load, 4ms
+2018-07-29 10:11:17,578 INFO 20879 [egg-watcher:app] watcher start success
+2018-07-29 10:11:17,582 INFO 20879 [egg:core] dump config after ready, 3ms
+2018-07-29 10:13:09,568 INFO 20929 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:13:09,603 INFO 20929 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:13:09,603 INFO 20929 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:13:09,653 INFO 20929 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:13:09,655 INFO 20929 [egg-security] use csrf middleware
+2018-07-29 10:13:09,655 INFO 20929 [egg-security] use methodnoallow middleware
+2018-07-29 10:13:09,656 INFO 20929 [egg-security] use noopen middleware
+2018-07-29 10:13:09,656 INFO 20929 [egg-security] use nosniff middleware
+2018-07-29 10:13:09,656 INFO 20929 [egg-security] use xssProtection middleware
+2018-07-29 10:13:09,657 INFO 20929 [egg-security] use xframe middleware
+2018-07-29 10:13:09,657 INFO 20929 [egg-security] use dta middleware
+2018-07-29 10:13:09,657 INFO 20929 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:13:09,664 INFO 20929 [egg:core] dump config after load, 4ms
+2018-07-29 10:13:09,686 INFO 20929 [egg-watcher:app] watcher start success
+2018-07-29 10:13:09,691 INFO 20929 [egg:core] dump config after ready, 3ms
+2018-07-29 10:13:46,490 INFO 20945 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:13:46,520 INFO 20945 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:13:46,520 INFO 20945 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:13:46,559 INFO 20945 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:13:46,561 INFO 20945 [egg-security] use csrf middleware
+2018-07-29 10:13:46,561 INFO 20945 [egg-security] use methodnoallow middleware
+2018-07-29 10:13:46,562 INFO 20945 [egg-security] use noopen middleware
+2018-07-29 10:13:46,562 INFO 20945 [egg-security] use nosniff middleware
+2018-07-29 10:13:46,562 INFO 20945 [egg-security] use xssProtection middleware
+2018-07-29 10:13:46,562 INFO 20945 [egg-security] use xframe middleware
+2018-07-29 10:13:46,563 INFO 20945 [egg-security] use dta middleware
+2018-07-29 10:13:46,563 INFO 20945 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:13:46,568 INFO 20945 [egg:core] dump config after load, 3ms
+2018-07-29 10:13:46,590 INFO 20945 [egg-watcher:app] watcher start success
+2018-07-29 10:13:46,594 INFO 20945 [egg:core] dump config after ready, 3ms
+2018-07-29 10:13:48,170 INFO 20947 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:13:48,202 INFO 20947 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:13:48,202 INFO 20947 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:13:48,247 INFO 20947 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:13:48,248 INFO 20947 [egg-security] use csrf middleware
+2018-07-29 10:13:48,249 INFO 20947 [egg-security] use methodnoallow middleware
+2018-07-29 10:13:48,249 INFO 20947 [egg-security] use noopen middleware
+2018-07-29 10:13:48,250 INFO 20947 [egg-security] use nosniff middleware
+2018-07-29 10:13:48,250 INFO 20947 [egg-security] use xssProtection middleware
+2018-07-29 10:13:48,250 INFO 20947 [egg-security] use xframe middleware
+2018-07-29 10:13:48,250 INFO 20947 [egg-security] use dta middleware
+2018-07-29 10:13:48,250 INFO 20947 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:13:48,257 INFO 20947 [egg:core] dump config after load, 4ms
+2018-07-29 10:13:48,275 INFO 20947 [egg-watcher:app] watcher start success
+2018-07-29 10:13:48,279 INFO 20947 [egg:core] dump config after ready, 2ms
+2018-07-29 10:13:52,887 INFO 20957 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:13:52,917 INFO 20957 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:13:52,918 INFO 20957 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:13:52,965 INFO 20957 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:13:52,967 INFO 20957 [egg-security] use csrf middleware
+2018-07-29 10:13:52,968 INFO 20957 [egg-security] use methodnoallow middleware
+2018-07-29 10:13:52,968 INFO 20957 [egg-security] use noopen middleware
+2018-07-29 10:13:52,968 INFO 20957 [egg-security] use nosniff middleware
+2018-07-29 10:13:52,969 INFO 20957 [egg-security] use xssProtection middleware
+2018-07-29 10:13:52,969 INFO 20957 [egg-security] use xframe middleware
+2018-07-29 10:13:52,970 INFO 20957 [egg-security] use dta middleware
+2018-07-29 10:13:52,970 INFO 20957 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:13:52,976 INFO 20957 [egg:core] dump config after load, 3ms
+2018-07-29 10:13:52,997 INFO 20957 [egg-watcher:app] watcher start success
+2018-07-29 10:13:53,001 INFO 20957 [egg:core] dump config after ready, 3ms
+2018-07-29 10:14:29,165 INFO 20998 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:14:29,197 INFO 20998 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:14:29,197 INFO 20998 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:14:29,248 INFO 20998 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:14:29,250 INFO 20998 [egg-security] use csrf middleware
+2018-07-29 10:14:29,251 INFO 20998 [egg-security] use methodnoallow middleware
+2018-07-29 10:14:29,251 INFO 20998 [egg-security] use noopen middleware
+2018-07-29 10:14:29,252 INFO 20998 [egg-security] use nosniff middleware
+2018-07-29 10:14:29,252 INFO 20998 [egg-security] use xssProtection middleware
+2018-07-29 10:14:29,252 INFO 20998 [egg-security] use xframe middleware
+2018-07-29 10:14:29,252 INFO 20998 [egg-security] use dta middleware
+2018-07-29 10:14:29,252 INFO 20998 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:14:29,259 INFO 20998 [egg:core] dump config after load, 3ms
+2018-07-29 10:14:29,277 INFO 20998 [egg-watcher:app] watcher start success
+2018-07-29 10:14:29,281 INFO 20998 [egg:core] dump config after ready, 3ms
+2018-07-29 10:14:30,730 INFO 20999 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:14:30,764 INFO 20999 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:14:30,764 INFO 20999 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:14:30,811 INFO 20999 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:14:30,813 INFO 20999 [egg-security] use csrf middleware
+2018-07-29 10:14:30,814 INFO 20999 [egg-security] use methodnoallow middleware
+2018-07-29 10:14:30,814 INFO 20999 [egg-security] use noopen middleware
+2018-07-29 10:14:30,815 INFO 20999 [egg-security] use nosniff middleware
+2018-07-29 10:14:30,815 INFO 20999 [egg-security] use xssProtection middleware
+2018-07-29 10:14:30,815 INFO 20999 [egg-security] use xframe middleware
+2018-07-29 10:14:30,815 INFO 20999 [egg-security] use dta middleware
+2018-07-29 10:14:30,815 INFO 20999 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:14:30,823 INFO 20999 [egg:core] dump config after load, 5ms
+2018-07-29 10:14:30,842 INFO 20999 [egg-watcher:app] watcher start success
+2018-07-29 10:14:30,847 INFO 20999 [egg:core] dump config after ready, 3ms
+2018-07-29 10:14:38,835 INFO 21012 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:14:38,876 INFO 21012 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:14:38,876 INFO 21012 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:14:38,934 INFO 21012 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:14:38,936 INFO 21012 [egg-security] use csrf middleware
+2018-07-29 10:14:38,937 INFO 21012 [egg-security] use methodnoallow middleware
+2018-07-29 10:14:38,937 INFO 21012 [egg-security] use noopen middleware
+2018-07-29 10:14:38,937 INFO 21012 [egg-security] use nosniff middleware
+2018-07-29 10:14:38,938 INFO 21012 [egg-security] use xssProtection middleware
+2018-07-29 10:14:38,938 INFO 21012 [egg-security] use xframe middleware
+2018-07-29 10:14:38,938 INFO 21012 [egg-security] use dta middleware
+2018-07-29 10:14:38,938 INFO 21012 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:14:38,951 INFO 21012 [egg:core] dump config after load, 10ms
+2018-07-29 10:14:38,973 INFO 21012 [egg-watcher:app] watcher start success
+2018-07-29 10:14:38,977 INFO 21012 [egg:core] dump config after ready, 2ms
+2018-07-29 10:15:22,785 INFO 21028 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:15:22,817 INFO 21028 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:15:22,817 INFO 21028 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:15:22,861 INFO 21028 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:15:22,863 INFO 21028 [egg-security] use csrf middleware
+2018-07-29 10:15:22,863 INFO 21028 [egg-security] use methodnoallow middleware
+2018-07-29 10:15:22,864 INFO 21028 [egg-security] use noopen middleware
+2018-07-29 10:15:22,864 INFO 21028 [egg-security] use nosniff middleware
+2018-07-29 10:15:22,865 INFO 21028 [egg-security] use xssProtection middleware
+2018-07-29 10:15:22,865 INFO 21028 [egg-security] use xframe middleware
+2018-07-29 10:15:22,865 INFO 21028 [egg-security] use dta middleware
+2018-07-29 10:15:22,865 INFO 21028 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:15:22,871 INFO 21028 [egg:core] dump config after load, 3ms
+2018-07-29 10:15:22,891 INFO 21028 [egg-watcher:app] watcher start success
+2018-07-29 10:15:22,896 INFO 21028 [egg:core] dump config after ready, 3ms
+2018-07-29 10:16:20,085 INFO 21047 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:16:20,119 INFO 21047 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:16:20,119 INFO 21047 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:16:20,164 INFO 21047 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:16:20,166 INFO 21047 [egg-security] use csrf middleware
+2018-07-29 10:16:20,166 INFO 21047 [egg-security] use methodnoallow middleware
+2018-07-29 10:16:20,166 INFO 21047 [egg-security] use noopen middleware
+2018-07-29 10:16:20,167 INFO 21047 [egg-security] use nosniff middleware
+2018-07-29 10:16:20,167 INFO 21047 [egg-security] use xssProtection middleware
+2018-07-29 10:16:20,167 INFO 21047 [egg-security] use xframe middleware
+2018-07-29 10:16:20,168 INFO 21047 [egg-security] use dta middleware
+2018-07-29 10:16:20,168 INFO 21047 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:16:20,175 INFO 21047 [egg:core] dump config after load, 3ms
+2018-07-29 10:16:20,197 INFO 21047 [egg-watcher:app] watcher start success
+2018-07-29 10:16:20,201 INFO 21047 [egg:core] dump config after ready, 3ms
+2018-07-29 10:16:21,060 INFO 21048 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:16:21,090 INFO 21048 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:16:21,090 INFO 21048 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:16:21,136 INFO 21048 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:16:21,138 INFO 21048 [egg-security] use csrf middleware
+2018-07-29 10:16:21,138 INFO 21048 [egg-security] use methodnoallow middleware
+2018-07-29 10:16:21,139 INFO 21048 [egg-security] use noopen middleware
+2018-07-29 10:16:21,139 INFO 21048 [egg-security] use nosniff middleware
+2018-07-29 10:16:21,139 INFO 21048 [egg-security] use xssProtection middleware
+2018-07-29 10:16:21,140 INFO 21048 [egg-security] use xframe middleware
+2018-07-29 10:16:21,140 INFO 21048 [egg-security] use dta middleware
+2018-07-29 10:16:21,140 INFO 21048 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:16:21,147 INFO 21048 [egg:core] dump config after load, 4ms
+2018-07-29 10:16:21,168 INFO 21048 [egg-watcher:app] watcher start success
+2018-07-29 10:16:21,176 INFO 21048 [egg:core] dump config after ready, 6ms
+2018-07-29 10:16:49,846 INFO 21084 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:16:49,910 INFO 21084 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:16:49,910 INFO 21084 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:16:49,976 INFO 21084 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:16:49,978 INFO 21084 [egg-security] use csrf middleware
+2018-07-29 10:16:49,978 INFO 21084 [egg-security] use methodnoallow middleware
+2018-07-29 10:16:49,978 INFO 21084 [egg-security] use noopen middleware
+2018-07-29 10:16:49,979 INFO 21084 [egg-security] use nosniff middleware
+2018-07-29 10:16:49,979 INFO 21084 [egg-security] use xssProtection middleware
+2018-07-29 10:16:49,979 INFO 21084 [egg-security] use xframe middleware
+2018-07-29 10:16:49,979 INFO 21084 [egg-security] use dta middleware
+2018-07-29 10:16:49,980 INFO 21084 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:16:49,988 INFO 21084 [egg:core] dump config after load, 4ms
+2018-07-29 10:16:50,006 INFO 21084 [egg-watcher:app] watcher start success
+2018-07-29 10:16:50,011 INFO 21084 [egg:core] dump config after ready, 3ms
+2018-07-29 10:17:11,808 INFO 21096 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:17:11,838 INFO 21096 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:17:11,838 INFO 21096 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:17:11,880 INFO 21096 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:17:11,882 INFO 21096 [egg-security] use csrf middleware
+2018-07-29 10:17:11,883 INFO 21096 [egg-security] use methodnoallow middleware
+2018-07-29 10:17:11,883 INFO 21096 [egg-security] use noopen middleware
+2018-07-29 10:17:11,883 INFO 21096 [egg-security] use nosniff middleware
+2018-07-29 10:17:11,884 INFO 21096 [egg-security] use xssProtection middleware
+2018-07-29 10:17:11,884 INFO 21096 [egg-security] use xframe middleware
+2018-07-29 10:17:11,884 INFO 21096 [egg-security] use dta middleware
+2018-07-29 10:17:11,884 INFO 21096 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:17:11,891 INFO 21096 [egg:core] dump config after load, 4ms
+2018-07-29 10:17:11,910 INFO 21096 [egg-watcher:app] watcher start success
+2018-07-29 10:17:11,914 INFO 21096 [egg:core] dump config after ready, 3ms
+2018-07-29 10:17:12,853 INFO 21097 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:17:12,884 INFO 21097 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:17:12,884 INFO 21097 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:17:12,928 INFO 21097 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:17:12,930 INFO 21097 [egg-security] use csrf middleware
+2018-07-29 10:17:12,931 INFO 21097 [egg-security] use methodnoallow middleware
+2018-07-29 10:17:12,931 INFO 21097 [egg-security] use noopen middleware
+2018-07-29 10:17:12,931 INFO 21097 [egg-security] use nosniff middleware
+2018-07-29 10:17:12,932 INFO 21097 [egg-security] use xssProtection middleware
+2018-07-29 10:17:12,932 INFO 21097 [egg-security] use xframe middleware
+2018-07-29 10:17:12,932 INFO 21097 [egg-security] use dta middleware
+2018-07-29 10:17:12,932 INFO 21097 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:17:12,939 INFO 21097 [egg:core] dump config after load, 4ms
+2018-07-29 10:17:12,958 INFO 21097 [egg-watcher:app] watcher start success
+2018-07-29 10:17:12,961 INFO 21097 [egg:core] dump config after ready, 2ms
+2018-07-29 10:19:35,425 INFO 21149 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:19:35,455 INFO 21149 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:19:35,455 INFO 21149 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:19:35,497 INFO 21149 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:19:35,499 INFO 21149 [egg-security] use csrf middleware
+2018-07-29 10:19:35,500 INFO 21149 [egg-security] use methodnoallow middleware
+2018-07-29 10:19:35,500 INFO 21149 [egg-security] use noopen middleware
+2018-07-29 10:19:35,500 INFO 21149 [egg-security] use nosniff middleware
+2018-07-29 10:19:35,501 INFO 21149 [egg-security] use xssProtection middleware
+2018-07-29 10:19:35,501 INFO 21149 [egg-security] use xframe middleware
+2018-07-29 10:19:35,501 INFO 21149 [egg-security] use dta middleware
+2018-07-29 10:19:35,501 INFO 21149 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:19:35,509 INFO 21149 [egg:core] dump config after load, 5ms
+2018-07-29 10:19:35,530 INFO 21149 [egg-watcher:app] watcher start success
+2018-07-29 10:19:35,534 INFO 21149 [egg:core] dump config after ready, 3ms
+2018-07-29 10:19:36,071 INFO 21150 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:19:36,102 INFO 21150 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:19:36,102 INFO 21150 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:19:36,144 INFO 21150 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:19:36,146 INFO 21150 [egg-security] use csrf middleware
+2018-07-29 10:19:36,146 INFO 21150 [egg-security] use methodnoallow middleware
+2018-07-29 10:19:36,146 INFO 21150 [egg-security] use noopen middleware
+2018-07-29 10:19:36,147 INFO 21150 [egg-security] use nosniff middleware
+2018-07-29 10:19:36,147 INFO 21150 [egg-security] use xssProtection middleware
+2018-07-29 10:19:36,147 INFO 21150 [egg-security] use xframe middleware
+2018-07-29 10:19:36,147 INFO 21150 [egg-security] use dta middleware
+2018-07-29 10:19:36,147 INFO 21150 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:19:36,154 INFO 21150 [egg:core] dump config after load, 4ms
+2018-07-29 10:19:36,177 INFO 21150 [egg-watcher:app] watcher start success
+2018-07-29 10:19:36,181 INFO 21150 [egg:core] dump config after ready, 2ms
+2018-07-29 10:21:03,706 INFO 21199 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:21:03,748 INFO 21199 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:21:03,748 INFO 21199 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:21:03,814 INFO 21199 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:21:03,817 INFO 21199 [egg-security] use csrf middleware
+2018-07-29 10:21:03,817 INFO 21199 [egg-security] use methodnoallow middleware
+2018-07-29 10:21:03,818 INFO 21199 [egg-security] use noopen middleware
+2018-07-29 10:21:03,819 INFO 21199 [egg-security] use nosniff middleware
+2018-07-29 10:21:03,820 INFO 21199 [egg-security] use xssProtection middleware
+2018-07-29 10:21:03,820 INFO 21199 [egg-security] use xframe middleware
+2018-07-29 10:21:03,821 INFO 21199 [egg-security] use dta middleware
+2018-07-29 10:21:03,821 INFO 21199 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:21:03,828 INFO 21199 [egg:core] dump config after load, 4ms
+2018-07-29 10:21:03,854 INFO 21199 [egg-watcher:app] watcher start success
+2018-07-29 10:21:03,859 INFO 21199 [egg:core] dump config after ready, 3ms
+2018-07-29 10:22:19,375 INFO 21245 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:22:19,419 INFO 21245 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:22:19,419 INFO 21245 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:22:19,509 INFO 21245 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:22:19,511 INFO 21245 [egg-security] use csrf middleware
+2018-07-29 10:22:19,512 INFO 21245 [egg-security] use methodnoallow middleware
+2018-07-29 10:22:19,513 INFO 21245 [egg-security] use noopen middleware
+2018-07-29 10:22:19,514 INFO 21245 [egg-security] use nosniff middleware
+2018-07-29 10:22:19,514 INFO 21245 [egg-security] use xssProtection middleware
+2018-07-29 10:22:19,515 INFO 21245 [egg-security] use xframe middleware
+2018-07-29 10:22:19,515 INFO 21245 [egg-security] use dta middleware
+2018-07-29 10:22:19,515 INFO 21245 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:22:19,524 INFO 21245 [egg:core] dump config after load, 5ms
+2018-07-29 10:22:19,542 INFO 21245 [egg-watcher:app] watcher start success
+2018-07-29 10:22:19,546 INFO 21245 [egg:core] dump config after ready, 3ms
+2018-07-29 10:22:36,861 INFO 21259 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:22:36,913 INFO 21259 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:22:36,913 INFO 21259 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:22:37,010 INFO 21259 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:22:37,013 INFO 21259 [egg-security] use csrf middleware
+2018-07-29 10:22:37,014 INFO 21259 [egg-security] use methodnoallow middleware
+2018-07-29 10:22:37,014 INFO 21259 [egg-security] use noopen middleware
+2018-07-29 10:22:37,016 INFO 21259 [egg-security] use nosniff middleware
+2018-07-29 10:22:37,017 INFO 21259 [egg-security] use xssProtection middleware
+2018-07-29 10:22:37,018 INFO 21259 [egg-security] use xframe middleware
+2018-07-29 10:22:37,018 INFO 21259 [egg-security] use dta middleware
+2018-07-29 10:22:37,018 INFO 21259 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:22:37,028 INFO 21259 [egg:core] dump config after load, 5ms
+2018-07-29 10:22:37,044 INFO 21259 [egg-watcher:app] watcher start success
+2018-07-29 10:22:37,048 INFO 21259 [egg:core] dump config after ready, 3ms
+2018-07-29 10:22:37,510 INFO 21260 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:22:37,545 INFO 21260 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:22:37,545 INFO 21260 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:22:37,596 INFO 21260 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:22:37,598 INFO 21260 [egg-security] use csrf middleware
+2018-07-29 10:22:37,599 INFO 21260 [egg-security] use methodnoallow middleware
+2018-07-29 10:22:37,599 INFO 21260 [egg-security] use noopen middleware
+2018-07-29 10:22:37,599 INFO 21260 [egg-security] use nosniff middleware
+2018-07-29 10:22:37,600 INFO 21260 [egg-security] use xssProtection middleware
+2018-07-29 10:22:37,600 INFO 21260 [egg-security] use xframe middleware
+2018-07-29 10:22:37,601 INFO 21260 [egg-security] use dta middleware
+2018-07-29 10:22:37,601 INFO 21260 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:22:37,607 INFO 21260 [egg:core] dump config after load, 3ms
+2018-07-29 10:22:37,626 INFO 21260 [egg-watcher:app] watcher start success
+2018-07-29 10:22:37,630 INFO 21260 [egg:core] dump config after ready, 3ms
+2018-07-29 10:23:15,514 INFO 21285 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:23:15,559 INFO 21285 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:23:15,559 INFO 21285 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:23:15,607 INFO 21285 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:23:15,612 INFO 21285 [egg-security] use csrf middleware
+2018-07-29 10:23:15,613 INFO 21285 [egg-security] use methodnoallow middleware
+2018-07-29 10:23:15,613 INFO 21285 [egg-security] use noopen middleware
+2018-07-29 10:23:15,614 INFO 21285 [egg-security] use nosniff middleware
+2018-07-29 10:23:15,614 INFO 21285 [egg-security] use xssProtection middleware
+2018-07-29 10:23:15,614 INFO 21285 [egg-security] use xframe middleware
+2018-07-29 10:23:15,615 INFO 21285 [egg-security] use dta middleware
+2018-07-29 10:23:15,615 INFO 21285 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:23:15,623 INFO 21285 [egg:core] dump config after load, 3ms
+2018-07-29 10:23:15,644 INFO 21285 [egg-watcher:app] watcher start success
+2018-07-29 10:23:15,649 INFO 21285 [egg:core] dump config after ready, 3ms
+2018-07-29 10:23:18,593 INFO 21296 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:23:18,624 INFO 21296 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:23:18,625 INFO 21296 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:23:18,667 INFO 21296 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:23:18,670 INFO 21296 [egg-security] use csrf middleware
+2018-07-29 10:23:18,670 INFO 21296 [egg-security] use methodnoallow middleware
+2018-07-29 10:23:18,671 INFO 21296 [egg-security] use noopen middleware
+2018-07-29 10:23:18,671 INFO 21296 [egg-security] use nosniff middleware
+2018-07-29 10:23:18,671 INFO 21296 [egg-security] use xssProtection middleware
+2018-07-29 10:23:18,671 INFO 21296 [egg-security] use xframe middleware
+2018-07-29 10:23:18,672 INFO 21296 [egg-security] use dta middleware
+2018-07-29 10:23:18,672 INFO 21296 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:23:18,678 INFO 21296 [egg:core] dump config after load, 3ms
+2018-07-29 10:23:18,697 INFO 21296 [egg-watcher:app] watcher start success
+2018-07-29 10:23:18,702 INFO 21296 [egg:core] dump config after ready, 3ms
+2018-07-29 10:23:45,726 INFO 21333 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:23:45,761 INFO 21333 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:23:45,761 INFO 21333 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:23:45,808 INFO 21333 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:23:45,810 INFO 21333 [egg-security] use csrf middleware
+2018-07-29 10:23:45,810 INFO 21333 [egg-security] use methodnoallow middleware
+2018-07-29 10:23:45,810 INFO 21333 [egg-security] use noopen middleware
+2018-07-29 10:23:45,811 INFO 21333 [egg-security] use nosniff middleware
+2018-07-29 10:23:45,811 INFO 21333 [egg-security] use xssProtection middleware
+2018-07-29 10:23:45,811 INFO 21333 [egg-security] use xframe middleware
+2018-07-29 10:23:45,811 INFO 21333 [egg-security] use dta middleware
+2018-07-29 10:23:45,811 INFO 21333 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:23:45,818 INFO 21333 [egg:core] dump config after load, 3ms
+2018-07-29 10:23:45,836 INFO 21333 [egg-watcher:app] watcher start success
+2018-07-29 10:23:45,841 INFO 21333 [egg:core] dump config after ready, 3ms
+2018-07-29 10:23:46,311 INFO 21335 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-29 10:23:46,352 INFO 21335 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-29 10:23:46,352 INFO 21335 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-29 10:23:46,400 INFO 21335 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-29 10:23:46,403 INFO 21335 [egg-security] use csrf middleware
+2018-07-29 10:23:46,403 INFO 21335 [egg-security] use methodnoallow middleware
+2018-07-29 10:23:46,403 INFO 21335 [egg-security] use noopen middleware
+2018-07-29 10:23:46,404 INFO 21335 [egg-security] use nosniff middleware
+2018-07-29 10:23:46,404 INFO 21335 [egg-security] use xssProtection middleware
+2018-07-29 10:23:46,405 INFO 21335 [egg-security] use xframe middleware
+2018-07-29 10:23:46,405 INFO 21335 [egg-security] use dta middleware
+2018-07-29 10:23:46,405 INFO 21335 [egg-security] compose 7 middlewares into one security middleware
+2018-07-29 10:23:46,414 INFO 21335 [egg:core] dump config after load, 5ms
+2018-07-29 10:23:46,436 INFO 21335 [egg-watcher:app] watcher start success
+2018-07-29 10:23:46,440 INFO 21335 [egg:core] dump config after ready, 3ms
+2018-07-31 23:14:01,199 INFO 14982 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:14:01,237 INFO 14982 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:14:01,237 INFO 14982 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:14:01,332 INFO 14982 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:14:01,335 INFO 14982 [egg-security] use csrf middleware
+2018-07-31 23:14:01,337 INFO 14982 [egg-security] use methodnoallow middleware
+2018-07-31 23:14:01,338 INFO 14982 [egg-security] use noopen middleware
+2018-07-31 23:14:01,339 INFO 14982 [egg-security] use nosniff middleware
+2018-07-31 23:14:01,340 INFO 14982 [egg-security] use xssProtection middleware
+2018-07-31 23:14:01,341 INFO 14982 [egg-security] use xframe middleware
+2018-07-31 23:14:01,342 INFO 14982 [egg-security] use dta middleware
+2018-07-31 23:14:01,342 INFO 14982 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:14:01,353 INFO 14982 [egg:core] dump config after load, 6ms
+2018-07-31 23:14:01,376 INFO 14982 [egg-watcher:app] watcher start success
+2018-07-31 23:14:01,381 INFO 14982 [egg:core] dump config after ready, 3ms
+2018-07-31 23:15:00,337 INFO 15022 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:15:00,381 INFO 15022 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:15:00,381 INFO 15022 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:15:00,480 INFO 15022 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:15:00,484 INFO 15022 [egg-security] use csrf middleware
+2018-07-31 23:15:00,485 INFO 15022 [egg-security] use methodnoallow middleware
+2018-07-31 23:15:00,485 INFO 15022 [egg-security] use noopen middleware
+2018-07-31 23:15:00,486 INFO 15022 [egg-security] use nosniff middleware
+2018-07-31 23:15:00,486 INFO 15022 [egg-security] use xssProtection middleware
+2018-07-31 23:15:00,487 INFO 15022 [egg-security] use xframe middleware
+2018-07-31 23:15:00,487 INFO 15022 [egg-security] use dta middleware
+2018-07-31 23:15:00,487 INFO 15022 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:15:00,495 INFO 15022 [egg:core] dump config after load, 4ms
+2018-07-31 23:15:00,513 INFO 15022 [egg-watcher:app] watcher start success
+2018-07-31 23:15:00,517 INFO 15022 [egg:core] dump config after ready, 2ms
+2018-07-31 23:15:20,678 INFO 15038 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:15:20,724 INFO 15038 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:15:20,724 INFO 15038 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:15:20,801 INFO 15038 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:15:20,804 INFO 15038 [egg-security] use csrf middleware
+2018-07-31 23:15:20,805 INFO 15038 [egg-security] use methodnoallow middleware
+2018-07-31 23:15:20,806 INFO 15038 [egg-security] use noopen middleware
+2018-07-31 23:15:20,807 INFO 15038 [egg-security] use nosniff middleware
+2018-07-31 23:15:20,808 INFO 15038 [egg-security] use xssProtection middleware
+2018-07-31 23:15:20,809 INFO 15038 [egg-security] use xframe middleware
+2018-07-31 23:15:20,809 INFO 15038 [egg-security] use dta middleware
+2018-07-31 23:15:20,809 INFO 15038 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:15:20,818 INFO 15038 [egg:core] dump config after load, 5ms
+2018-07-31 23:15:20,838 INFO 15038 [egg-watcher:app] watcher start success
+2018-07-31 23:15:20,842 INFO 15038 [egg:core] dump config after ready, 2ms
+2018-07-31 23:15:31,178 INFO 15051 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:15:31,226 INFO 15051 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:15:31,226 INFO 15051 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:15:31,299 INFO 15051 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:15:31,308 INFO 15051 [egg-security] use csrf middleware
+2018-07-31 23:15:31,309 INFO 15051 [egg-security] use methodnoallow middleware
+2018-07-31 23:15:31,309 INFO 15051 [egg-security] use noopen middleware
+2018-07-31 23:15:31,310 INFO 15051 [egg-security] use nosniff middleware
+2018-07-31 23:15:31,311 INFO 15051 [egg-security] use xssProtection middleware
+2018-07-31 23:15:31,311 INFO 15051 [egg-security] use xframe middleware
+2018-07-31 23:15:31,312 INFO 15051 [egg-security] use dta middleware
+2018-07-31 23:15:31,312 INFO 15051 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:15:31,321 INFO 15051 [egg:core] dump config after load, 5ms
+2018-07-31 23:15:31,339 INFO 15051 [egg-watcher:app] watcher start success
+2018-07-31 23:15:31,343 INFO 15051 [egg:core] dump config after ready, 2ms
+2018-07-31 23:15:31,818 INFO 15052 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:15:31,908 INFO 15052 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:15:31,908 INFO 15052 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:15:31,987 INFO 15052 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:15:31,990 INFO 15052 [egg-security] use csrf middleware
+2018-07-31 23:15:31,991 INFO 15052 [egg-security] use methodnoallow middleware
+2018-07-31 23:15:31,991 INFO 15052 [egg-security] use noopen middleware
+2018-07-31 23:15:31,992 INFO 15052 [egg-security] use nosniff middleware
+2018-07-31 23:15:31,992 INFO 15052 [egg-security] use xssProtection middleware
+2018-07-31 23:15:31,993 INFO 15052 [egg-security] use xframe middleware
+2018-07-31 23:15:31,993 INFO 15052 [egg-security] use dta middleware
+2018-07-31 23:15:31,993 INFO 15052 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:15:32,002 INFO 15052 [egg:core] dump config after load, 5ms
+2018-07-31 23:15:32,025 INFO 15052 [egg-watcher:app] watcher start success
+2018-07-31 23:15:32,030 INFO 15052 [egg:core] dump config after ready, 4ms
+2018-07-31 23:20:13,647 INFO 15264 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:13,690 INFO 15264 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:13,690 INFO 15264 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:13,791 INFO 15264 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:13,793 INFO 15264 [egg-security] use csrf middleware
+2018-07-31 23:20:13,795 INFO 15264 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:13,795 INFO 15264 [egg-security] use noopen middleware
+2018-07-31 23:20:13,796 INFO 15264 [egg-security] use nosniff middleware
+2018-07-31 23:20:13,797 INFO 15264 [egg-security] use xssProtection middleware
+2018-07-31 23:20:13,798 INFO 15264 [egg-security] use xframe middleware
+2018-07-31 23:20:13,799 INFO 15264 [egg-security] use dta middleware
+2018-07-31 23:20:13,799 INFO 15264 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:13,810 INFO 15264 [egg:core] dump config after load, 7ms
+2018-07-31 23:20:13,827 INFO 15264 [egg-watcher:app] watcher start success
+2018-07-31 23:20:13,833 INFO 15264 [egg:core] dump config after ready, 4ms
+2018-07-31 23:20:14,486 INFO 15265 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:14,526 INFO 15265 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:14,526 INFO 15265 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:14,593 INFO 15265 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:14,598 INFO 15265 [egg-security] use csrf middleware
+2018-07-31 23:20:14,599 INFO 15265 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:14,599 INFO 15265 [egg-security] use noopen middleware
+2018-07-31 23:20:14,599 INFO 15265 [egg-security] use nosniff middleware
+2018-07-31 23:20:14,600 INFO 15265 [egg-security] use xssProtection middleware
+2018-07-31 23:20:14,600 INFO 15265 [egg-security] use xframe middleware
+2018-07-31 23:20:14,600 INFO 15265 [egg-security] use dta middleware
+2018-07-31 23:20:14,600 INFO 15265 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:14,608 INFO 15265 [egg:core] dump config after load, 4ms
+2018-07-31 23:20:14,629 INFO 15265 [egg-watcher:app] watcher start success
+2018-07-31 23:20:14,633 INFO 15265 [egg:core] dump config after ready, 2ms
+2018-07-31 23:20:15,552 INFO 15267 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:15,588 INFO 15267 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:15,588 INFO 15267 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:15,634 INFO 15267 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:15,637 INFO 15267 [egg-security] use csrf middleware
+2018-07-31 23:20:15,637 INFO 15267 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:15,637 INFO 15267 [egg-security] use noopen middleware
+2018-07-31 23:20:15,638 INFO 15267 [egg-security] use nosniff middleware
+2018-07-31 23:20:15,638 INFO 15267 [egg-security] use xssProtection middleware
+2018-07-31 23:20:15,638 INFO 15267 [egg-security] use xframe middleware
+2018-07-31 23:20:15,638 INFO 15267 [egg-security] use dta middleware
+2018-07-31 23:20:15,638 INFO 15267 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:15,645 INFO 15267 [egg:core] dump config after load, 4ms
+2018-07-31 23:20:15,669 INFO 15267 [egg-watcher:app] watcher start success
+2018-07-31 23:20:15,675 INFO 15267 [egg:core] dump config after ready, 4ms
+2018-07-31 23:20:17,105 INFO 15268 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:17,153 INFO 15268 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:17,153 INFO 15268 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:17,206 INFO 15268 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:17,208 INFO 15268 [egg-security] use csrf middleware
+2018-07-31 23:20:17,209 INFO 15268 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:17,209 INFO 15268 [egg-security] use noopen middleware
+2018-07-31 23:20:17,210 INFO 15268 [egg-security] use nosniff middleware
+2018-07-31 23:20:17,210 INFO 15268 [egg-security] use xssProtection middleware
+2018-07-31 23:20:17,211 INFO 15268 [egg-security] use xframe middleware
+2018-07-31 23:20:17,211 INFO 15268 [egg-security] use dta middleware
+2018-07-31 23:20:17,211 INFO 15268 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:17,219 INFO 15268 [egg:core] dump config after load, 4ms
+2018-07-31 23:20:17,239 INFO 15268 [egg-watcher:app] watcher start success
+2018-07-31 23:20:17,244 INFO 15268 [egg:core] dump config after ready, 4ms
+2018-07-31 23:20:41,133 INFO 15295 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:41,169 INFO 15295 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:41,169 INFO 15295 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:41,221 INFO 15295 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:41,223 INFO 15295 [egg-security] use csrf middleware
+2018-07-31 23:20:41,224 INFO 15295 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:41,224 INFO 15295 [egg-security] use noopen middleware
+2018-07-31 23:20:41,225 INFO 15295 [egg-security] use nosniff middleware
+2018-07-31 23:20:41,225 INFO 15295 [egg-security] use xssProtection middleware
+2018-07-31 23:20:41,225 INFO 15295 [egg-security] use xframe middleware
+2018-07-31 23:20:41,225 INFO 15295 [egg-security] use dta middleware
+2018-07-31 23:20:41,225 INFO 15295 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:41,233 INFO 15295 [egg:core] dump config after load, 5ms
+2018-07-31 23:20:41,257 INFO 15295 [egg-watcher:app] watcher start success
+2018-07-31 23:20:40,492 INFO 15293 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:40,544 INFO 15293 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:40,544 INFO 15293 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:40,635 INFO 15293 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:40,637 INFO 15293 [egg-security] use csrf middleware
+2018-07-31 23:20:40,638 INFO 15293 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:40,639 INFO 15293 [egg-security] use noopen middleware
+2018-07-31 23:20:40,640 INFO 15293 [egg-security] use nosniff middleware
+2018-07-31 23:20:40,641 INFO 15293 [egg-security] use xssProtection middleware
+2018-07-31 23:20:40,641 INFO 15293 [egg-security] use xframe middleware
+2018-07-31 23:20:40,642 INFO 15293 [egg-security] use dta middleware
+2018-07-31 23:20:40,642 INFO 15293 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:40,651 INFO 15293 [egg:core] dump config after load, 5ms
+2018-07-31 23:20:40,672 INFO 15293 [egg-watcher:app] watcher start success
+2018-07-31 23:20:40,675 INFO 15293 [egg:core] dump config after ready, 2ms
+2018-07-31 23:20:41,469 INFO 15296 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:41,561 INFO 15296 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:41,561 INFO 15296 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:41,627 INFO 15296 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:41,629 INFO 15296 [egg-security] use csrf middleware
+2018-07-31 23:20:41,630 INFO 15296 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:41,630 INFO 15296 [egg-security] use noopen middleware
+2018-07-31 23:20:41,630 INFO 15296 [egg-security] use nosniff middleware
+2018-07-31 23:20:41,631 INFO 15296 [egg-security] use xssProtection middleware
+2018-07-31 23:20:41,631 INFO 15296 [egg-security] use xframe middleware
+2018-07-31 23:20:41,631 INFO 15296 [egg-security] use dta middleware
+2018-07-31 23:20:41,631 INFO 15296 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:41,639 INFO 15296 [egg:core] dump config after load, 5ms
+2018-07-31 23:20:41,663 INFO 15296 [egg-watcher:app] watcher start success
+2018-07-31 23:20:41,671 INFO 15296 [egg:core] dump config after ready, 6ms
+2018-07-31 23:20:43,662 INFO 15305 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:43,694 INFO 15305 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:43,694 INFO 15305 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:43,740 INFO 15305 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:43,742 INFO 15305 [egg-security] use csrf middleware
+2018-07-31 23:20:43,742 INFO 15305 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:43,742 INFO 15305 [egg-security] use noopen middleware
+2018-07-31 23:20:43,743 INFO 15305 [egg-security] use nosniff middleware
+2018-07-31 23:20:43,743 INFO 15305 [egg-security] use xssProtection middleware
+2018-07-31 23:20:43,743 INFO 15305 [egg-security] use xframe middleware
+2018-07-31 23:20:43,743 INFO 15305 [egg-security] use dta middleware
+2018-07-31 23:20:43,743 INFO 15305 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:43,751 INFO 15305 [egg:core] dump config after load, 4ms
+2018-07-31 23:20:43,779 INFO 15305 [egg-watcher:app] watcher start success
+2018-07-31 23:20:43,783 INFO 15305 [egg:core] dump config after ready, 2ms
+2018-07-31 23:20:48,705 INFO 15315 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:48,741 INFO 15315 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:48,741 INFO 15315 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:48,789 INFO 15315 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:48,791 INFO 15315 [egg-security] use csrf middleware
+2018-07-31 23:20:48,791 INFO 15315 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:48,792 INFO 15315 [egg-security] use noopen middleware
+2018-07-31 23:20:48,792 INFO 15315 [egg-security] use nosniff middleware
+2018-07-31 23:20:48,792 INFO 15315 [egg-security] use xssProtection middleware
+2018-07-31 23:20:48,793 INFO 15315 [egg-security] use xframe middleware
+2018-07-31 23:20:48,793 INFO 15315 [egg-security] use dta middleware
+2018-07-31 23:20:48,793 INFO 15315 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:48,800 INFO 15315 [egg:core] dump config after load, 4ms
+2018-07-31 23:20:48,819 INFO 15315 [egg-watcher:app] watcher start success
+2018-07-31 23:20:48,824 INFO 15315 [egg:core] dump config after ready, 3ms
+2018-07-31 23:20:50,339 INFO 15317 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:20:50,372 INFO 15317 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:20:50,372 INFO 15317 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:20:50,416 INFO 15317 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:20:50,419 INFO 15317 [egg-security] use csrf middleware
+2018-07-31 23:20:50,420 INFO 15317 [egg-security] use methodnoallow middleware
+2018-07-31 23:20:50,420 INFO 15317 [egg-security] use noopen middleware
+2018-07-31 23:20:50,421 INFO 15317 [egg-security] use nosniff middleware
+2018-07-31 23:20:50,421 INFO 15317 [egg-security] use xssProtection middleware
+2018-07-31 23:20:50,421 INFO 15317 [egg-security] use xframe middleware
+2018-07-31 23:20:50,421 INFO 15317 [egg-security] use dta middleware
+2018-07-31 23:20:50,421 INFO 15317 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:20:50,428 INFO 15317 [egg:core] dump config after load, 4ms
+2018-07-31 23:20:50,448 INFO 15317 [egg-watcher:app] watcher start success
+2018-07-31 23:20:50,452 INFO 15317 [egg:core] dump config after ready, 3ms
+2018-07-31 23:21:02,107 INFO 15330 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:21:02,146 INFO 15330 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:21:02,146 INFO 15330 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:21:02,191 INFO 15330 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:21:02,193 INFO 15330 [egg-security] use csrf middleware
+2018-07-31 23:21:02,193 INFO 15330 [egg-security] use methodnoallow middleware
+2018-07-31 23:21:02,193 INFO 15330 [egg-security] use noopen middleware
+2018-07-31 23:21:02,194 INFO 15330 [egg-security] use nosniff middleware
+2018-07-31 23:21:02,194 INFO 15330 [egg-security] use xssProtection middleware
+2018-07-31 23:21:02,194 INFO 15330 [egg-security] use xframe middleware
+2018-07-31 23:21:02,194 INFO 15330 [egg-security] use dta middleware
+2018-07-31 23:21:02,194 INFO 15330 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:21:02,202 INFO 15330 [egg:core] dump config after load, 5ms
+2018-07-31 23:21:02,219 INFO 15330 [egg-watcher:app] watcher start success
+2018-07-31 23:21:02,223 INFO 15330 [egg:core] dump config after ready, 3ms
+2018-07-31 23:21:03,242 INFO 15332 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:21:03,276 INFO 15332 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:21:03,276 INFO 15332 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:21:03,333 INFO 15332 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:21:03,335 INFO 15332 [egg-security] use csrf middleware
+2018-07-31 23:21:03,335 INFO 15332 [egg-security] use methodnoallow middleware
+2018-07-31 23:21:03,335 INFO 15332 [egg-security] use noopen middleware
+2018-07-31 23:21:03,336 INFO 15332 [egg-security] use nosniff middleware
+2018-07-31 23:21:03,336 INFO 15332 [egg-security] use xssProtection middleware
+2018-07-31 23:21:03,337 INFO 15332 [egg-security] use xframe middleware
+2018-07-31 23:21:03,337 INFO 15332 [egg-security] use dta middleware
+2018-07-31 23:21:03,337 INFO 15332 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:21:03,344 INFO 15332 [egg:core] dump config after load, 3ms
+2018-07-31 23:21:03,364 INFO 15332 [egg-watcher:app] watcher start success
+2018-07-31 23:21:03,368 INFO 15332 [egg:core] dump config after ready, 2ms
+2018-07-31 23:39:58,989 INFO 16051 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:39:59,036 INFO 16051 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:39:59,036 INFO 16051 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:39:59,145 INFO 16051 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:39:59,149 INFO 16051 [egg-security] use csrf middleware
+2018-07-31 23:39:59,150 INFO 16051 [egg-security] use methodnoallow middleware
+2018-07-31 23:39:59,151 INFO 16051 [egg-security] use noopen middleware
+2018-07-31 23:39:59,152 INFO 16051 [egg-security] use nosniff middleware
+2018-07-31 23:39:59,152 INFO 16051 [egg-security] use xssProtection middleware
+2018-07-31 23:39:59,153 INFO 16051 [egg-security] use xframe middleware
+2018-07-31 23:39:59,154 INFO 16051 [egg-security] use dta middleware
+2018-07-31 23:39:59,154 INFO 16051 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:39:59,164 INFO 16051 [egg:core] dump config after load, 6ms
+2018-07-31 23:39:59,184 INFO 16051 [egg-watcher:app] watcher start success
+2018-07-31 23:39:59,189 INFO 16051 [egg:core] dump config after ready, 3ms
+2018-07-31 23:40:25,803 INFO 16078 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:40:25,849 INFO 16078 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:40:25,849 INFO 16078 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:40:25,955 INFO 16078 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:40:25,958 INFO 16078 [egg-security] use csrf middleware
+2018-07-31 23:40:25,959 INFO 16078 [egg-security] use methodnoallow middleware
+2018-07-31 23:40:25,960 INFO 16078 [egg-security] use noopen middleware
+2018-07-31 23:40:25,961 INFO 16078 [egg-security] use nosniff middleware
+2018-07-31 23:40:25,962 INFO 16078 [egg-security] use xssProtection middleware
+2018-07-31 23:40:25,962 INFO 16078 [egg-security] use xframe middleware
+2018-07-31 23:40:25,963 INFO 16078 [egg-security] use dta middleware
+2018-07-31 23:40:25,963 INFO 16078 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:40:25,973 INFO 16078 [egg:core] dump config after load, 6ms
+2018-07-31 23:40:25,989 INFO 16078 [egg-watcher:app] watcher start success
+2018-07-31 23:40:25,993 INFO 16078 [egg:core] dump config after ready, 2ms
+2018-07-31 23:40:47,798 INFO 16100 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:40:47,845 INFO 16100 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:40:47,845 INFO 16100 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:40:47,939 INFO 16100 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:40:47,944 INFO 16100 [egg-security] use csrf middleware
+2018-07-31 23:40:47,945 INFO 16100 [egg-security] use methodnoallow middleware
+2018-07-31 23:40:47,946 INFO 16100 [egg-security] use noopen middleware
+2018-07-31 23:40:47,947 INFO 16100 [egg-security] use nosniff middleware
+2018-07-31 23:40:47,948 INFO 16100 [egg-security] use xssProtection middleware
+2018-07-31 23:40:47,949 INFO 16100 [egg-security] use xframe middleware
+2018-07-31 23:40:47,949 INFO 16100 [egg-security] use dta middleware
+2018-07-31 23:40:47,949 INFO 16100 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:40:47,959 INFO 16100 [egg:core] dump config after load, 6ms
+2018-07-31 23:40:47,978 INFO 16100 [egg-watcher:app] watcher start success
+2018-07-31 23:40:47,983 INFO 16100 [egg:core] dump config after ready, 3ms
+2018-07-31 23:40:59,597 INFO 16120 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:40:59,641 INFO 16120 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:40:59,642 INFO 16120 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:40:59,728 INFO 16120 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:40:59,734 INFO 16120 [egg-security] use csrf middleware
+2018-07-31 23:40:59,735 INFO 16120 [egg-security] use methodnoallow middleware
+2018-07-31 23:40:59,736 INFO 16120 [egg-security] use noopen middleware
+2018-07-31 23:40:59,737 INFO 16120 [egg-security] use nosniff middleware
+2018-07-31 23:40:59,737 INFO 16120 [egg-security] use xssProtection middleware
+2018-07-31 23:40:59,738 INFO 16120 [egg-security] use xframe middleware
+2018-07-31 23:40:59,739 INFO 16120 [egg-security] use dta middleware
+2018-07-31 23:40:59,739 INFO 16120 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:40:59,749 INFO 16120 [egg:core] dump config after load, 6ms
+2018-07-31 23:40:59,775 INFO 16120 [egg-watcher:app] watcher start success
+2018-07-31 23:40:59,781 INFO 16120 [egg:core] dump config after ready, 4ms
+2018-07-31 23:49:10,119 INFO 16436 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:49:10,163 INFO 16436 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:49:10,163 INFO 16436 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:49:10,251 INFO 16436 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:49:10,255 INFO 16436 [egg-security] use csrf middleware
+2018-07-31 23:49:10,256 INFO 16436 [egg-security] use methodnoallow middleware
+2018-07-31 23:49:10,257 INFO 16436 [egg-security] use noopen middleware
+2018-07-31 23:49:10,258 INFO 16436 [egg-security] use nosniff middleware
+2018-07-31 23:49:10,258 INFO 16436 [egg-security] use xssProtection middleware
+2018-07-31 23:49:10,259 INFO 16436 [egg-security] use xframe middleware
+2018-07-31 23:49:10,260 INFO 16436 [egg-security] use dta middleware
+2018-07-31 23:49:10,260 INFO 16436 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:49:10,277 INFO 16436 [egg:core] dump config after load, 7ms
+2018-07-31 23:49:10,310 INFO 16436 [egg-watcher:app] watcher start success
+2018-07-31 23:49:10,318 INFO 16436 [egg:core] dump config after ready, 6ms
+2018-07-31 23:49:38,314 INFO 16452 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:49:38,355 INFO 16452 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:49:38,355 INFO 16452 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:49:38,450 INFO 16452 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:49:38,453 INFO 16452 [egg-security] use csrf middleware
+2018-07-31 23:49:38,453 INFO 16452 [egg-security] use methodnoallow middleware
+2018-07-31 23:49:38,454 INFO 16452 [egg-security] use noopen middleware
+2018-07-31 23:49:38,455 INFO 16452 [egg-security] use nosniff middleware
+2018-07-31 23:49:38,456 INFO 16452 [egg-security] use xssProtection middleware
+2018-07-31 23:49:38,457 INFO 16452 [egg-security] use xframe middleware
+2018-07-31 23:49:38,457 INFO 16452 [egg-security] use dta middleware
+2018-07-31 23:49:38,457 INFO 16452 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:49:38,466 INFO 16452 [egg:core] dump config after load, 5ms
+2018-07-31 23:49:38,483 INFO 16452 [egg-watcher:app] watcher start success
+2018-07-31 23:49:38,487 INFO 16452 [egg:core] dump config after ready, 3ms
+2018-07-31 23:49:42,370 INFO 16463 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:49:42,401 INFO 16463 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:49:42,401 INFO 16463 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:49:42,506 INFO 16463 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:49:42,509 INFO 16463 [egg-security] use csrf middleware
+2018-07-31 23:49:42,510 INFO 16463 [egg-security] use methodnoallow middleware
+2018-07-31 23:49:42,510 INFO 16463 [egg-security] use noopen middleware
+2018-07-31 23:49:42,511 INFO 16463 [egg-security] use nosniff middleware
+2018-07-31 23:49:42,512 INFO 16463 [egg-security] use xssProtection middleware
+2018-07-31 23:49:42,512 INFO 16463 [egg-security] use xframe middleware
+2018-07-31 23:49:42,512 INFO 16463 [egg-security] use dta middleware
+2018-07-31 23:49:42,512 INFO 16463 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:49:42,537 INFO 16463 [egg:core] dump config after load, 20ms
+2018-07-31 23:49:42,579 INFO 16463 [egg-watcher:app] watcher start success
+2018-07-31 23:49:41,775 INFO 16462 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:49:41,810 INFO 16462 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:49:41,810 INFO 16462 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:49:41,886 INFO 16462 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:49:41,888 INFO 16462 [egg-security] use csrf middleware
+2018-07-31 23:49:41,888 INFO 16462 [egg-security] use methodnoallow middleware
+2018-07-31 23:49:41,889 INFO 16462 [egg-security] use noopen middleware
+2018-07-31 23:49:41,889 INFO 16462 [egg-security] use nosniff middleware
+2018-07-31 23:49:41,889 INFO 16462 [egg-security] use xssProtection middleware
+2018-07-31 23:49:41,890 INFO 16462 [egg-security] use xframe middleware
+2018-07-31 23:49:41,890 INFO 16462 [egg-security] use dta middleware
+2018-07-31 23:49:41,890 INFO 16462 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:49:41,897 INFO 16462 [egg:core] dump config after load, 4ms
+2018-07-31 23:49:41,916 INFO 16462 [egg-watcher:app] watcher start success
+2018-07-31 23:49:41,920 INFO 16462 [egg:core] dump config after ready, 3ms
+2018-07-31 23:49:42,925 INFO 16464 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:49:42,962 INFO 16464 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:49:42,962 INFO 16464 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:49:43,012 INFO 16464 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:49:43,015 INFO 16464 [egg-security] use csrf middleware
+2018-07-31 23:49:43,016 INFO 16464 [egg-security] use methodnoallow middleware
+2018-07-31 23:49:43,016 INFO 16464 [egg-security] use noopen middleware
+2018-07-31 23:49:43,016 INFO 16464 [egg-security] use nosniff middleware
+2018-07-31 23:49:43,017 INFO 16464 [egg-security] use xssProtection middleware
+2018-07-31 23:49:43,017 INFO 16464 [egg-security] use xframe middleware
+2018-07-31 23:49:43,017 INFO 16464 [egg-security] use dta middleware
+2018-07-31 23:49:43,017 INFO 16464 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:49:43,025 INFO 16464 [egg:core] dump config after load, 4ms
+2018-07-31 23:49:43,044 INFO 16464 [egg-watcher:app] watcher start success
+2018-07-31 23:49:43,049 INFO 16464 [egg:core] dump config after ready, 3ms
+2018-07-31 23:50:31,715 INFO 16488 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:50:31,758 INFO 16488 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:50:31,758 INFO 16488 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:50:31,871 INFO 16488 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:50:31,874 INFO 16488 [egg-security] use csrf middleware
+2018-07-31 23:50:31,875 INFO 16488 [egg-security] use methodnoallow middleware
+2018-07-31 23:50:31,876 INFO 16488 [egg-security] use noopen middleware
+2018-07-31 23:50:31,878 INFO 16488 [egg-security] use nosniff middleware
+2018-07-31 23:50:31,878 INFO 16488 [egg-security] use xssProtection middleware
+2018-07-31 23:50:31,879 INFO 16488 [egg-security] use xframe middleware
+2018-07-31 23:50:31,879 INFO 16488 [egg-security] use dta middleware
+2018-07-31 23:50:31,879 INFO 16488 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:50:31,891 INFO 16488 [egg:core] dump config after load, 7ms
+2018-07-31 23:50:31,909 INFO 16488 [egg-watcher:app] watcher start success
+2018-07-31 23:50:31,915 INFO 16488 [egg:core] dump config after ready, 4ms
+2018-07-31 23:50:32,364 INFO 16489 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:50:32,395 INFO 16489 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:50:32,395 INFO 16489 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:50:32,436 INFO 16489 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:50:32,438 INFO 16489 [egg-security] use csrf middleware
+2018-07-31 23:50:32,439 INFO 16489 [egg-security] use methodnoallow middleware
+2018-07-31 23:50:32,439 INFO 16489 [egg-security] use noopen middleware
+2018-07-31 23:50:32,440 INFO 16489 [egg-security] use nosniff middleware
+2018-07-31 23:50:32,440 INFO 16489 [egg-security] use xssProtection middleware
+2018-07-31 23:50:32,440 INFO 16489 [egg-security] use xframe middleware
+2018-07-31 23:50:32,440 INFO 16489 [egg-security] use dta middleware
+2018-07-31 23:50:32,440 INFO 16489 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:50:32,447 INFO 16489 [egg:core] dump config after load, 4ms
+2018-07-31 23:50:32,471 INFO 16489 [egg-watcher:app] watcher start success
+2018-07-31 23:50:32,475 INFO 16489 [egg:core] dump config after ready, 2ms
+2018-07-31 23:50:40,140 INFO 16500 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:50:40,176 INFO 16500 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:50:40,176 INFO 16500 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:50:40,229 INFO 16500 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:50:40,231 INFO 16500 [egg-security] use csrf middleware
+2018-07-31 23:50:40,232 INFO 16500 [egg-security] use methodnoallow middleware
+2018-07-31 23:50:40,232 INFO 16500 [egg-security] use noopen middleware
+2018-07-31 23:50:40,233 INFO 16500 [egg-security] use nosniff middleware
+2018-07-31 23:50:40,233 INFO 16500 [egg-security] use xssProtection middleware
+2018-07-31 23:50:40,233 INFO 16500 [egg-security] use xframe middleware
+2018-07-31 23:50:40,234 INFO 16500 [egg-security] use dta middleware
+2018-07-31 23:50:40,234 INFO 16500 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:50:40,241 INFO 16500 [egg:core] dump config after load, 4ms
+2018-07-31 23:50:40,263 INFO 16500 [egg-watcher:app] watcher start success
+2018-07-31 23:50:40,269 INFO 16500 [egg:core] dump config after ready, 4ms
+2018-07-31 23:51:01,456 INFO 16514 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:51:01,495 INFO 16514 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:51:01,495 INFO 16514 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:51:01,549 INFO 16514 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:51:01,551 INFO 16514 [egg-security] use csrf middleware
+2018-07-31 23:51:01,552 INFO 16514 [egg-security] use methodnoallow middleware
+2018-07-31 23:51:01,552 INFO 16514 [egg-security] use noopen middleware
+2018-07-31 23:51:01,553 INFO 16514 [egg-security] use nosniff middleware
+2018-07-31 23:51:01,553 INFO 16514 [egg-security] use xssProtection middleware
+2018-07-31 23:51:01,553 INFO 16514 [egg-security] use xframe middleware
+2018-07-31 23:51:01,553 INFO 16514 [egg-security] use dta middleware
+2018-07-31 23:51:01,553 INFO 16514 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:51:01,561 INFO 16514 [egg:core] dump config after load, 5ms
+2018-07-31 23:51:01,582 INFO 16514 [egg-watcher:app] watcher start success
+2018-07-31 23:51:01,586 INFO 16514 [egg:core] dump config after ready, 2ms
+2018-07-31 23:51:19,976 INFO 16529 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:51:20,024 INFO 16529 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:51:20,024 INFO 16529 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:51:20,122 INFO 16529 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:51:20,125 INFO 16529 [egg-security] use csrf middleware
+2018-07-31 23:51:20,126 INFO 16529 [egg-security] use methodnoallow middleware
+2018-07-31 23:51:20,127 INFO 16529 [egg-security] use noopen middleware
+2018-07-31 23:51:20,128 INFO 16529 [egg-security] use nosniff middleware
+2018-07-31 23:51:20,129 INFO 16529 [egg-security] use xssProtection middleware
+2018-07-31 23:51:20,130 INFO 16529 [egg-security] use xframe middleware
+2018-07-31 23:51:20,130 INFO 16529 [egg-security] use dta middleware
+2018-07-31 23:51:20,130 INFO 16529 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:51:20,139 INFO 16529 [egg:core] dump config after load, 4ms
+2018-07-31 23:51:20,156 INFO 16529 [egg-watcher:app] watcher start success
+2018-07-31 23:51:20,160 INFO 16529 [egg:core] dump config after ready, 3ms
+2018-07-31 23:51:31,025 INFO 16543 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:51:31,098 INFO 16543 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:51:31,098 INFO 16543 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:51:31,318 INFO 16543 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:51:31,324 INFO 16543 [egg-security] use csrf middleware
+2018-07-31 23:51:31,328 INFO 16543 [egg-security] use methodnoallow middleware
+2018-07-31 23:51:31,331 INFO 16543 [egg-security] use noopen middleware
+2018-07-31 23:51:31,332 INFO 16543 [egg-security] use nosniff middleware
+2018-07-31 23:51:31,333 INFO 16543 [egg-security] use xssProtection middleware
+2018-07-31 23:51:31,336 INFO 16543 [egg-security] use xframe middleware
+2018-07-31 23:51:31,337 INFO 16543 [egg-security] use dta middleware
+2018-07-31 23:51:31,337 INFO 16543 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:51:31,349 INFO 16543 [egg:core] dump config after load, 8ms
+2018-07-31 23:51:31,369 INFO 16543 [egg-watcher:app] watcher start success
+2018-07-31 23:51:31,376 INFO 16543 [egg:core] dump config after ready, 5ms
+2018-07-31 23:51:32,279 INFO 16544 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:51:32,344 INFO 16544 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:51:32,344 INFO 16544 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:51:32,411 INFO 16544 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:51:32,413 INFO 16544 [egg-security] use csrf middleware
+2018-07-31 23:51:32,413 INFO 16544 [egg-security] use methodnoallow middleware
+2018-07-31 23:51:32,413 INFO 16544 [egg-security] use noopen middleware
+2018-07-31 23:51:32,414 INFO 16544 [egg-security] use nosniff middleware
+2018-07-31 23:51:32,414 INFO 16544 [egg-security] use xssProtection middleware
+2018-07-31 23:51:32,414 INFO 16544 [egg-security] use xframe middleware
+2018-07-31 23:51:32,415 INFO 16544 [egg-security] use dta middleware
+2018-07-31 23:51:32,415 INFO 16544 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:51:32,423 INFO 16544 [egg:core] dump config after load, 5ms
+2018-07-31 23:51:32,442 INFO 16544 [egg-watcher:app] watcher start success
+2018-07-31 23:51:32,446 INFO 16544 [egg:core] dump config after ready, 3ms
+2018-07-31 23:51:49,899 INFO 16621 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:51:49,934 INFO 16621 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:51:49,934 INFO 16621 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:51:49,981 INFO 16621 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:51:49,983 INFO 16621 [egg-security] use csrf middleware
+2018-07-31 23:51:49,983 INFO 16621 [egg-security] use methodnoallow middleware
+2018-07-31 23:51:49,983 INFO 16621 [egg-security] use noopen middleware
+2018-07-31 23:51:49,984 INFO 16621 [egg-security] use nosniff middleware
+2018-07-31 23:51:49,984 INFO 16621 [egg-security] use xssProtection middleware
+2018-07-31 23:51:49,984 INFO 16621 [egg-security] use xframe middleware
+2018-07-31 23:51:49,984 INFO 16621 [egg-security] use dta middleware
+2018-07-31 23:51:49,984 INFO 16621 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:51:49,991 INFO 16621 [egg:core] dump config after load, 4ms
+2018-07-31 23:51:50,009 INFO 16621 [egg-watcher:app] watcher start success
+2018-07-31 23:51:50,013 INFO 16621 [egg:core] dump config after ready, 2ms
+2018-07-31 23:51:59,302 INFO 16643 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:51:59,345 INFO 16643 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:51:59,345 INFO 16643 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:51:59,399 INFO 16643 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:51:59,402 INFO 16643 [egg-security] use csrf middleware
+2018-07-31 23:51:59,402 INFO 16643 [egg-security] use methodnoallow middleware
+2018-07-31 23:51:59,403 INFO 16643 [egg-security] use noopen middleware
+2018-07-31 23:51:59,403 INFO 16643 [egg-security] use nosniff middleware
+2018-07-31 23:51:59,404 INFO 16643 [egg-security] use xssProtection middleware
+2018-07-31 23:51:59,404 INFO 16643 [egg-security] use xframe middleware
+2018-07-31 23:51:59,404 INFO 16643 [egg-security] use dta middleware
+2018-07-31 23:51:59,404 INFO 16643 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:51:59,411 INFO 16643 [egg:core] dump config after load, 4ms
+2018-07-31 23:51:59,435 INFO 16643 [egg-watcher:app] watcher start success
+2018-07-31 23:51:59,439 INFO 16643 [egg:core] dump config after ready, 2ms
+2018-07-31 23:53:51,053 INFO 16686 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:53:51,105 INFO 16686 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:53:51,105 INFO 16686 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:53:51,215 INFO 16686 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:53:51,218 INFO 16686 [egg-security] use csrf middleware
+2018-07-31 23:53:51,219 INFO 16686 [egg-security] use methodnoallow middleware
+2018-07-31 23:53:51,219 INFO 16686 [egg-security] use noopen middleware
+2018-07-31 23:53:51,221 INFO 16686 [egg-security] use nosniff middleware
+2018-07-31 23:53:51,222 INFO 16686 [egg-security] use xssProtection middleware
+2018-07-31 23:53:51,223 INFO 16686 [egg-security] use xframe middleware
+2018-07-31 23:53:51,223 INFO 16686 [egg-security] use dta middleware
+2018-07-31 23:53:51,223 INFO 16686 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:53:51,235 INFO 16686 [egg:core] dump config after load, 5ms
+2018-07-31 23:53:51,262 INFO 16686 [egg-watcher:app] watcher start success
+2018-07-31 23:53:51,266 INFO 16686 [egg:core] dump config after ready, 3ms
+2018-07-31 23:53:51,725 INFO 16687 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:53:51,762 INFO 16687 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:53:51,762 INFO 16687 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:53:51,806 INFO 16687 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:53:51,808 INFO 16687 [egg-security] use csrf middleware
+2018-07-31 23:53:51,809 INFO 16687 [egg-security] use methodnoallow middleware
+2018-07-31 23:53:51,809 INFO 16687 [egg-security] use noopen middleware
+2018-07-31 23:53:51,809 INFO 16687 [egg-security] use nosniff middleware
+2018-07-31 23:53:51,809 INFO 16687 [egg-security] use xssProtection middleware
+2018-07-31 23:53:51,810 INFO 16687 [egg-security] use xframe middleware
+2018-07-31 23:53:51,810 INFO 16687 [egg-security] use dta middleware
+2018-07-31 23:53:51,810 INFO 16687 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:53:51,817 INFO 16687 [egg:core] dump config after load, 4ms
+2018-07-31 23:53:51,837 INFO 16687 [egg-watcher:app] watcher start success
+2018-07-31 23:53:51,841 INFO 16687 [egg:core] dump config after ready, 3ms
+2018-07-31 23:54:06,691 INFO 16699 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:06,746 INFO 16699 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:06,746 INFO 16699 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:06,895 INFO 16699 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:06,898 INFO 16699 [egg-security] use csrf middleware
+2018-07-31 23:54:06,900 INFO 16699 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:06,901 INFO 16699 [egg-security] use noopen middleware
+2018-07-31 23:54:06,902 INFO 16699 [egg-security] use nosniff middleware
+2018-07-31 23:54:06,903 INFO 16699 [egg-security] use xssProtection middleware
+2018-07-31 23:54:06,904 INFO 16699 [egg-security] use xframe middleware
+2018-07-31 23:54:06,904 INFO 16699 [egg-security] use dta middleware
+2018-07-31 23:54:06,904 INFO 16699 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:06,912 INFO 16699 [egg:core] dump config after load, 4ms
+2018-07-31 23:54:06,932 INFO 16699 [egg-watcher:app] watcher start success
+2018-07-31 23:54:06,936 INFO 16699 [egg:core] dump config after ready, 3ms
+2018-07-31 23:54:09,616 INFO 16710 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:09,647 INFO 16710 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:09,647 INFO 16710 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:09,688 INFO 16710 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:09,690 INFO 16710 [egg-security] use csrf middleware
+2018-07-31 23:54:09,690 INFO 16710 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:09,691 INFO 16710 [egg-security] use noopen middleware
+2018-07-31 23:54:09,691 INFO 16710 [egg-security] use nosniff middleware
+2018-07-31 23:54:09,691 INFO 16710 [egg-security] use xssProtection middleware
+2018-07-31 23:54:09,691 INFO 16710 [egg-security] use xframe middleware
+2018-07-31 23:54:09,692 INFO 16710 [egg-security] use dta middleware
+2018-07-31 23:54:09,692 INFO 16710 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:09,698 INFO 16710 [egg:core] dump config after load, 4ms
+2018-07-31 23:54:09,717 INFO 16710 [egg-watcher:app] watcher start success
+2018-07-31 23:54:09,722 INFO 16710 [egg:core] dump config after ready, 3ms
+2018-07-31 23:54:10,321 INFO 16712 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:10,355 INFO 16712 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:10,355 INFO 16712 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:10,409 INFO 16712 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:10,411 INFO 16712 [egg-security] use csrf middleware
+2018-07-31 23:54:10,412 INFO 16712 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:10,412 INFO 16712 [egg-security] use noopen middleware
+2018-07-31 23:54:10,413 INFO 16712 [egg-security] use nosniff middleware
+2018-07-31 23:54:10,413 INFO 16712 [egg-security] use xssProtection middleware
+2018-07-31 23:54:10,413 INFO 16712 [egg-security] use xframe middleware
+2018-07-31 23:54:10,413 INFO 16712 [egg-security] use dta middleware
+2018-07-31 23:54:10,413 INFO 16712 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:10,421 INFO 16712 [egg:core] dump config after load, 5ms
+2018-07-31 23:54:10,441 INFO 16712 [egg-watcher:app] watcher start success
+2018-07-31 23:54:10,445 INFO 16712 [egg:core] dump config after ready, 2ms
+2018-07-31 23:54:11,090 INFO 16713 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:11,123 INFO 16713 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:11,123 INFO 16713 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:11,166 INFO 16713 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:11,168 INFO 16713 [egg-security] use csrf middleware
+2018-07-31 23:54:11,169 INFO 16713 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:11,169 INFO 16713 [egg-security] use noopen middleware
+2018-07-31 23:54:11,169 INFO 16713 [egg-security] use nosniff middleware
+2018-07-31 23:54:11,169 INFO 16713 [egg-security] use xssProtection middleware
+2018-07-31 23:54:11,170 INFO 16713 [egg-security] use xframe middleware
+2018-07-31 23:54:11,170 INFO 16713 [egg-security] use dta middleware
+2018-07-31 23:54:11,170 INFO 16713 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:11,177 INFO 16713 [egg:core] dump config after load, 4ms
+2018-07-31 23:54:11,197 INFO 16713 [egg-watcher:app] watcher start success
+2018-07-31 23:54:11,201 INFO 16713 [egg:core] dump config after ready, 3ms
+2018-07-31 23:54:12,076 INFO 16715 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:12,125 INFO 16715 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:12,125 INFO 16715 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:12,182 INFO 16715 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:12,184 INFO 16715 [egg-security] use csrf middleware
+2018-07-31 23:54:12,185 INFO 16715 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:12,185 INFO 16715 [egg-security] use noopen middleware
+2018-07-31 23:54:12,185 INFO 16715 [egg-security] use nosniff middleware
+2018-07-31 23:54:12,186 INFO 16715 [egg-security] use xssProtection middleware
+2018-07-31 23:54:12,186 INFO 16715 [egg-security] use xframe middleware
+2018-07-31 23:54:12,186 INFO 16715 [egg-security] use dta middleware
+2018-07-31 23:54:12,186 INFO 16715 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:12,193 INFO 16715 [egg:core] dump config after load, 4ms
+2018-07-31 23:54:12,210 INFO 16715 [egg-watcher:app] watcher start success
+2018-07-31 23:54:12,215 INFO 16715 [egg:core] dump config after ready, 3ms
+2018-07-31 23:54:31,015 INFO 16740 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:31,061 INFO 16740 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:31,061 INFO 16740 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:31,166 INFO 16740 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:31,170 INFO 16740 [egg-security] use csrf middleware
+2018-07-31 23:54:31,171 INFO 16740 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:31,172 INFO 16740 [egg-security] use noopen middleware
+2018-07-31 23:54:31,173 INFO 16740 [egg-security] use nosniff middleware
+2018-07-31 23:54:31,174 INFO 16740 [egg-security] use xssProtection middleware
+2018-07-31 23:54:31,174 INFO 16740 [egg-security] use xframe middleware
+2018-07-31 23:54:31,175 INFO 16740 [egg-security] use dta middleware
+2018-07-31 23:54:31,175 INFO 16740 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:31,183 INFO 16740 [egg:core] dump config after load, 5ms
+2018-07-31 23:54:31,199 INFO 16740 [egg-watcher:app] watcher start success
+2018-07-31 23:54:31,202 INFO 16740 [egg:core] dump config after ready, 2ms
+2018-07-31 23:54:31,619 INFO 16741 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:54:31,653 INFO 16741 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:54:31,653 INFO 16741 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:54:31,696 INFO 16741 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:54:31,698 INFO 16741 [egg-security] use csrf middleware
+2018-07-31 23:54:31,699 INFO 16741 [egg-security] use methodnoallow middleware
+2018-07-31 23:54:31,699 INFO 16741 [egg-security] use noopen middleware
+2018-07-31 23:54:31,699 INFO 16741 [egg-security] use nosniff middleware
+2018-07-31 23:54:31,700 INFO 16741 [egg-security] use xssProtection middleware
+2018-07-31 23:54:31,700 INFO 16741 [egg-security] use xframe middleware
+2018-07-31 23:54:31,700 INFO 16741 [egg-security] use dta middleware
+2018-07-31 23:54:31,700 INFO 16741 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:54:31,706 INFO 16741 [egg:core] dump config after load, 3ms
+2018-07-31 23:54:31,727 INFO 16741 [egg-watcher:app] watcher start success
+2018-07-31 23:54:31,730 INFO 16741 [egg:core] dump config after ready, 2ms
+2018-07-31 23:55:21,704 INFO 16818 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:55:21,768 INFO 16818 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:55:21,768 INFO 16818 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:55:21,913 INFO 16818 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:55:21,919 INFO 16818 [egg-security] use csrf middleware
+2018-07-31 23:55:21,921 INFO 16818 [egg-security] use methodnoallow middleware
+2018-07-31 23:55:21,921 INFO 16818 [egg-security] use noopen middleware
+2018-07-31 23:55:21,922 INFO 16818 [egg-security] use nosniff middleware
+2018-07-31 23:55:21,923 INFO 16818 [egg-security] use xssProtection middleware
+2018-07-31 23:55:21,924 INFO 16818 [egg-security] use xframe middleware
+2018-07-31 23:55:21,924 INFO 16818 [egg-security] use dta middleware
+2018-07-31 23:55:21,924 INFO 16818 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:55:21,935 INFO 16818 [egg:core] dump config after load, 7ms
+2018-07-31 23:55:21,965 INFO 16818 [egg-watcher:app] watcher start success
+2018-07-31 23:55:21,971 INFO 16818 [egg:core] dump config after ready, 3ms
+2018-07-31 23:55:24,008 INFO 16828 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:55:24,051 INFO 16828 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:55:24,051 INFO 16828 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:55:24,101 INFO 16828 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:55:24,103 INFO 16828 [egg-security] use csrf middleware
+2018-07-31 23:55:24,104 INFO 16828 [egg-security] use methodnoallow middleware
+2018-07-31 23:55:24,104 INFO 16828 [egg-security] use noopen middleware
+2018-07-31 23:55:24,105 INFO 16828 [egg-security] use nosniff middleware
+2018-07-31 23:55:24,105 INFO 16828 [egg-security] use xssProtection middleware
+2018-07-31 23:55:24,105 INFO 16828 [egg-security] use xframe middleware
+2018-07-31 23:55:24,105 INFO 16828 [egg-security] use dta middleware
+2018-07-31 23:55:24,105 INFO 16828 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:55:24,114 INFO 16828 [egg:core] dump config after load, 5ms
+2018-07-31 23:55:24,142 INFO 16828 [egg-watcher:app] watcher start success
+2018-07-31 23:55:24,146 INFO 16828 [egg:core] dump config after ready, 3ms
+2018-07-31 23:55:33,463 INFO 16841 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:55:33,503 INFO 16841 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:55:33,503 INFO 16841 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:55:33,616 INFO 16841 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:55:33,619 INFO 16841 [egg-security] use csrf middleware
+2018-07-31 23:55:33,620 INFO 16841 [egg-security] use methodnoallow middleware
+2018-07-31 23:55:33,622 INFO 16841 [egg-security] use noopen middleware
+2018-07-31 23:55:33,623 INFO 16841 [egg-security] use nosniff middleware
+2018-07-31 23:55:33,624 INFO 16841 [egg-security] use xssProtection middleware
+2018-07-31 23:55:33,628 INFO 16841 [egg-security] use xframe middleware
+2018-07-31 23:55:33,628 INFO 16841 [egg-security] use dta middleware
+2018-07-31 23:55:33,629 INFO 16841 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:55:33,637 INFO 16841 [egg:core] dump config after load, 5ms
+2018-07-31 23:55:33,655 INFO 16841 [egg-watcher:app] watcher start success
+2018-07-31 23:55:33,664 INFO 16841 [egg:core] dump config after ready, 7ms
+2018-07-31 23:56:14,371 INFO 16862 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-07-31 23:56:14,415 INFO 16862 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-07-31 23:56:14,415 INFO 16862 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-07-31 23:56:14,514 INFO 16862 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-07-31 23:56:14,517 INFO 16862 [egg-security] use csrf middleware
+2018-07-31 23:56:14,518 INFO 16862 [egg-security] use methodnoallow middleware
+2018-07-31 23:56:14,519 INFO 16862 [egg-security] use noopen middleware
+2018-07-31 23:56:14,520 INFO 16862 [egg-security] use nosniff middleware
+2018-07-31 23:56:14,521 INFO 16862 [egg-security] use xssProtection middleware
+2018-07-31 23:56:14,521 INFO 16862 [egg-security] use xframe middleware
+2018-07-31 23:56:14,522 INFO 16862 [egg-security] use dta middleware
+2018-07-31 23:56:14,522 INFO 16862 [egg-security] compose 7 middlewares into one security middleware
+2018-07-31 23:56:14,535 INFO 16862 [egg:core] dump config after load, 6ms
+2018-07-31 23:56:14,551 INFO 16862 [egg-watcher:app] watcher start success
+2018-07-31 23:56:14,557 INFO 16862 [egg:core] dump config after ready, 4ms
+2018-08-01 00:00:00,197 INFO 16862 [egg-logrotator] clean all log before 31 days
+2018-08-01 00:00:00,198 INFO 16862 [-/127.0.0.1/-/10ms SCHEDULE /__schedule?path=/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-schedule] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 9ms
+2018-08-01 00:00:01,020 INFO 16862 [egg-logrotator] broadcast log-reload
+2018-08-01 00:00:01,021 INFO 16862 [egg-logrotator] rotate files success by DayRotator, files ["/Users/sufubo/code/demo/asset-server/logs/example/common-error.log -> /Users/sufubo/code/demo/asset-server/logs/example/common-error.log.2018-07-31","/Users/sufubo/code/demo/asset-server/logs/example/example-web.log -> /Users/sufubo/code/demo/asset-server/logs/example/example-web.log.2018-07-31","/Users/sufubo/code/demo/asset-server/logs/example/egg-web.log -> /Users/sufubo/code/demo/asset-server/logs/example/egg-web.log.2018-07-31","/Users/sufubo/code/demo/asset-server/logs/example/egg-schedule.log -> /Users/sufubo/code/demo/asset-server/logs/example/egg-schedule.log.2018-07-31","/Users/sufubo/code/demo/asset-server/logs/example/egg-agent.log -> /Users/sufubo/code/demo/asset-server/logs/example/egg-agent.log.2018-07-31"]
+2018-08-01 00:00:01,021 INFO 16862 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-schedule] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 7ms

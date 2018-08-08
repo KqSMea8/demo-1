@@ -1,0 +1,84 @@
+2018-08-02 00:00:01,030 INFO 22394 [egg-logrotator] app logger reload: got log-reload message
+2018-08-02 02:06:53,634 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 02:06:53,649 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 03:33:35,384 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 05:21:52,506 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 05:21:52,511 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 07:09:57,502 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 07:09:58,131 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 08:58:02,943 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 08:58:02,950 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 09:09:22,524 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 09:09:22,531 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 09:11:31,715 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 09:11:31,719 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 09:25:05,620 WARN 22394 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-02 09:25:05,624 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 09:33:44,685 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-02 11:34:22,049 WARN 22394 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-05 15:35:34,723 INFO 13819 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-08-05 15:35:34,759 INFO 13819 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-08-05 15:35:34,759 INFO 13819 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-08-05 15:35:34,829 INFO 13819 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-08-05 15:35:34,831 INFO 13819 [egg-security] use methodnoallow middleware
+2018-08-05 15:35:34,832 INFO 13819 [egg-security] use noopen middleware
+2018-08-05 15:35:34,833 INFO 13819 [egg-security] use nosniff middleware
+2018-08-05 15:35:34,833 INFO 13819 [egg-security] use xssProtection middleware
+2018-08-05 15:35:34,834 INFO 13819 [egg-security] use xframe middleware
+2018-08-05 15:35:34,834 INFO 13819 [egg-security] use dta middleware
+2018-08-05 15:35:34,834 INFO 13819 [egg-security] compose 6 middlewares into one security middleware
+2018-08-05 15:35:34,843 INFO 13819 [egg:core] dump config after load, 3ms
+2018-08-05 15:35:34,864 INFO 13819 [egg-watcher:app] watcher start success
+2018-08-05 15:35:34,869 INFO 13819 [egg:core] dump config after ready, 4ms
+2018-08-05 16:22:01,346 INFO 15077 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-08-05 16:22:01,383 INFO 15077 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-08-05 16:22:01,383 INFO 15077 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-08-05 16:22:01,491 INFO 15077 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-08-05 16:22:01,494 INFO 15077 [egg-security] use methodnoallow middleware
+2018-08-05 16:22:01,494 INFO 15077 [egg-security] use noopen middleware
+2018-08-05 16:22:01,495 INFO 15077 [egg-security] use nosniff middleware
+2018-08-05 16:22:01,496 INFO 15077 [egg-security] use xssProtection middleware
+2018-08-05 16:22:01,497 INFO 15077 [egg-security] use xframe middleware
+2018-08-05 16:22:01,498 INFO 15077 [egg-security] use dta middleware
+2018-08-05 16:22:01,498 INFO 15077 [egg-security] compose 6 middlewares into one security middleware
+2018-08-05 16:22:01,509 INFO 15077 [egg:core] dump config after load, 7ms
+2018-08-05 16:22:01,542 INFO 15077 [egg-watcher:app] watcher start success
+2018-08-05 16:22:01,549 INFO 15077 [egg:core] dump config after ready, 5ms
+2018-08-05 17:17:59,188 WARN 15077 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-05 17:43:33,925 INFO 16520 [egg:logger] init all loggers with options: {"dir":"/Users/sufubo/code/demo/asset-server/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-08-05 17:43:33,968 INFO 16520 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2018-08-05 17:43:33,968 INFO 16520 [egg-schedule]: register schedule /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2018-08-05 17:43:34,059 INFO 16520 [egg-static] starting static serve /public/ -> /Users/sufubo/code/demo/asset-server/app/public
+2018-08-05 17:43:34,063 INFO 16520 [egg-security] use methodnoallow middleware
+2018-08-05 17:43:34,064 INFO 16520 [egg-security] use noopen middleware
+2018-08-05 17:43:34,064 INFO 16520 [egg-security] use nosniff middleware
+2018-08-05 17:43:34,065 INFO 16520 [egg-security] use xssProtection middleware
+2018-08-05 17:43:34,066 INFO 16520 [egg-security] use xframe middleware
+2018-08-05 17:43:34,066 INFO 16520 [egg-security] use dta middleware
+2018-08-05 17:43:34,066 INFO 16520 [egg-security] compose 6 middlewares into one security middleware
+2018-08-05 17:43:34,077 INFO 16520 [egg:core] dump config after load, 6ms
+2018-08-05 17:43:34,095 INFO 16520 [egg-watcher:app] watcher start success
+2018-08-05 17:43:34,099 INFO 16520 [egg:core] dump config after ready, 3ms
+2018-08-05 19:06:53,590 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-05 20:05:19,354 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 00:17:41,593 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 00:17:41,594 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 02:05:50,211 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 02:05:50,218 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 05:41:59,927 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 05:41:59,938 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 07:30:03,910 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 07:30:03,912 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 09:18:08,687 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 09:18:08,697 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 09:19:31,950 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 09:19:31,953 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 09:25:17,937 WARN 16520 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-06 09:25:17,939 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 09:46:19,238 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 09:50:09,176 WARN 16520 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-06 10:16:23,103 INFO 16520 [egg-logrotator] clean all log before 31 days
+2018-08-06 10:16:23,104 INFO 16520 [-/127.0.0.1/-/26ms SCHEDULE /__schedule?path=/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-schedule] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 26ms
+2018-08-06 10:16:24,030 INFO 16520 [egg-logrotator] broadcast log-reload
+2018-08-06 10:16:24,031 INFO 16520 [egg-logrotator] rotate files success by DayRotator, files ["/Users/sufubo/code/demo/asset-server/logs/example/common-error.log -> /Users/sufubo/code/demo/asset-server/logs/example/common-error.log.2018-08-05","/Users/sufubo/code/demo/asset-server/logs/example/example-web.log -> /Users/sufubo/code/demo/asset-server/logs/example/example-web.log.2018-08-05","/Users/sufubo/code/demo/asset-server/logs/example/egg-web.log -> /Users/sufubo/code/demo/asset-server/logs/example/egg-web.log.2018-08-05","/Users/sufubo/code/demo/asset-server/logs/example/egg-schedule.log -> /Users/sufubo/code/demo/asset-server/logs/example/egg-schedule.log.2018-08-05","/Users/sufubo/code/demo/asset-server/logs/example/egg-agent.log -> /Users/sufubo/code/demo/asset-server/logs/example/egg-agent.log.2018-08-05"]
+2018-08-06 10:16:24,031 INFO 16520 [-/127.0.0.1/-/15ms SCHEDULE /__schedule?path=/Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-schedule] /Users/sufubo/code/demo/asset-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 15ms

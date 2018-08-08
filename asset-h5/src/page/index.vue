@@ -11,7 +11,7 @@
         </ul>
         <div class="add-input-container" v-if="addStatus" @keyup.enter="saveMoney">
             <label class="input-item">名称:<input class="input" placeholder="请输入" v-model="optionKey" /></label>
-            <label class="input-item">资产金额:<input class="input" type="number" placeholder="0" v-model="optionValue" />元</label>
+            <label class="input-item">资产金额:<input class="input" type="number" placeholder="0" v-model="optionValue" /></label>
             <button class="save-btn" @click="saveMoney">确定保存资产</button>
         </div>
         <button class="add-btn" @click="addMoney">增加资产</button>
