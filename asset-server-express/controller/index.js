@@ -1,13 +1,3 @@
-var mysql = require('mysql');
-var pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '123456',
-    port: '3306',
-    database: 'mysql',
-    connectionLimit: 10
-});
-
 pool.getConnection((err, connection) => {
     if (err) {
         console.log(err);
