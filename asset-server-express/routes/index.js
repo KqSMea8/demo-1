@@ -8,23 +8,23 @@ router.get('/', function (req, res, next) {
     })
 });
 
-router.get('/assetlist', function (req, res, next) {
+router.get('/asset/assetlist', function (req, res, next) {
     assetsDao.queryAll(req, res, next);
 });
 
-router.get('/asset', function(req, res, next) {
-    assetsDao.query(req, res, next);
+router.get('/asset/asset', function(req, res, next) {
+    assetsDao.queryById(req, res, next);
 });
 
-router.post('/addAsset', function (req, res, next) {
+router.post('/asset/addAsset', function (req, res, next) {
     assetsDao.add(req, res, next);
 });
 
-router.post('/deleteAsset', function(req, res, next) {
+router.post('/asset/deleteAsset', function(req, res, next) {
     assetsDao.delete(req, res, next);
 });
 
-router.post('/updateAsset', function(req, res, next) {
+router.post('/asset/updateAsset', function(req, res, next) {
     assetsDao.update(req, res, next);
 })
 

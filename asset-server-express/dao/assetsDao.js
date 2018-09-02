@@ -51,12 +51,14 @@ module.exports = {
     },
     delete: function(req, res, next) {
         pool.getConnection(function(err, connection) {
-            var id = +req.query.id;
+            console.log('req.body.id');
+            console.log(req.body.id);
+            var id = +req.body.id;
             connection.query($sql.delete, id, function(err, result) {
                 if (result.affectedRows > 0) {
                     result = {
                         status: 0,
-                        msg: '增加成功'
+                        msg: '删除成功'
                     }
                 }
                 else {
@@ -69,20 +71,33 @@ module.exports = {
         });
     },
     update: function(req, res, next) {
-        var param = req.body;
+        let param = req.body;
+        let name = param.name;
+        let value = parseFloat(param.value);
+
+
+        console.log('param');
+        console.log(name);
+        console.log(value);
+        console.log(param.id);
+
         if (param.name == null || param.value == null || param.id == null) {
             jsonnWrite(res, undefined);
             return;
         }
         pool.getConnection(function(err, connection) {
-            connection.query($sql.update, [param.name, param.value, +param.id], function(err, result) {
+            connection.query($sql.update, [name, value, param.id], function(err, result) {
+                if (err) {
+                    console.error(err);
+                }
+
                 if (result.affectedRows > 0) {
                     result = {
                         status: 0,
                         msg: '更新成功'
                     };
 
-                    jsonnWrite(result);
+                    jsonnWrite(res, result);
                 }
                 else {
                     result = {
@@ -101,15 +116,40 @@ module.exports = {
         var id = +req.query.id;
         pool.getConnection(function(err, connection) {
             connection.query($sql.queryById, id, function(err, result) {
-                jsonnWrite(res, result);
+                if (err) {
+                    console.error(err);
+                }
+                else {
+                    result = {
+                        status: 0,
+                        msg: '查询成功',
+                        data: result
+                    }
+                    jsonnWrite(res, result);
+                }
+
                 connection.release();
-            });
+            })
+
         });
     },
     queryAll: function(req, res, next) {
         pool.getConnection(function(err, connection) {
             connection.query($sql.queryAll, function(err, result) {
-                jsonnWrite(res, result);
+                if (err) {
+                    console.error(err);
+                }
+                else {
+                    result = {
+                        status: 0,
+                        msg: '查询成功',
+                        data: {
+                            list: result
+                        }
+                    }
+                    jsonnWrite(res, result);
+                }
+
                 connection.release();
             });
         });
