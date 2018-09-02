@@ -6,9 +6,11 @@ import MintUI from 'mint-ui';
 import App from './page/app';
 import router from './router/index';
 import './utils/base';
+import http from './utils/http';
 
 Vue.config.productionTip = false;
 Vue.use(MintUI);
+Vue.prototype.axios = http;
 
 document.title = '资产管理系统';
 

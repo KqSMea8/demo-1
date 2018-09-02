@@ -5,26 +5,27 @@
             <p class="num">{{totalMoney}}</p>
         </div>
         <ul class="money-detail">
-            <li class="item" v-for="(value, key) in money" :key="key">
-                <span>{{key}}：</span><span>{{value}}元</span>
+            <li class="item" v-for="(item, index) in money" :key="index">
+                <span>{{item.name}}：</span><span>{{item.value}}元</span>
             </li>
         </ul>
         <div class="add-input-container" v-if="addStatus" @keyup.enter="saveMoney">
-            <label class="input-item">名称:<input class="input" placeholder="请输入" v-model="optionKey" /></label>
-            <label class="input-item">资产金额:<input class="input" type="number" placeholder="0" v-model="optionValue" /></label>
+            <label class="input-item">名称:<input class="input" placeholder="请输入" v-model="name" /></label>
+            <label class="input-item">资产金额:<input class="input" type="number" placeholder="0" v-model="value" /></label>
             <button class="save-btn" @click="saveMoney">确定保存资产</button>
         </div>
         <button class="add-btn" @click="addMoney">增加资产</button>
     </div>
 </template>
 <script>
+import Config from '../../utils/config'
 export default {
     data () {
         return {
-            money: {},
+            money: [],
             addStatus: false,
-            optionKey: '',
-            optionValue: 0
+            name: '',
+            value: 0
         }
     },
     watch: {
@@ -33,8 +34,8 @@ export default {
         totalMoney() {
             let sum = 0;
             let money = this.money;
-            for (let key in money) {
-                sum +=  money[key];
+            for (let i = 0; i < money.length; i++) {
+                sum += money[i].value;
             }
             return sum.toFixed(2);
         }
@@ -44,6 +45,7 @@ export default {
     created () {
     },
     mounted () {
+        this.getAllRequestMoney();
     },
     updated() {
     },
@@ -53,8 +55,31 @@ export default {
         },
         saveMoney() {
             let optionValue = parseFloat(this.optionValue, 10);
+            this.addRequestMoney();
             this.$set(this.money, this.optionKey, optionValue);
             this.addStatus = false;
+        },
+        addRequestMoney() {
+            this.axios.post(Config.api.addAsset, {
+                name: this.name,
+                value: this.value
+            }).then((res) => {
+                if (res.status === 0) {
+                }
+                else {
+                    alert(res.msg);
+                }
+            })
+        },
+        getAllRequestMoney() {
+            this.axios.get(Config.api.assetlist).then(res => {
+                if (res.status === 0) {
+                    this.money = res.data.list;
+                }
+                else {
+                    alert(res.msg);
+                }
+            })
         }
     }
 }

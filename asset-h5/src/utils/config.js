@@ -1,10 +1,11 @@
 /**
  * @file 接口配置文件
  */
-let host = window.location.origin + '/';
 
 export default {
     api: {
+        addAsset: '/asset/addAsset',
+        assetlist: '/asset/assetlist'
     },
     link: {
     },
