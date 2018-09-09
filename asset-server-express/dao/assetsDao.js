@@ -39,7 +39,9 @@ module.exports = {
                     result = {
                         status: 0,
                         msg: '增加成功',
-                        id: result.insertId
+                        data: {
+                            id: result.insertId
+                        }
                     }
                 }
 

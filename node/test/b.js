@@ -1,4 +1,3 @@
-var a = require('./a');
-var b = 2;
-
-module.exports = b;
+var b1 = 'b1';
+console.log(require.main === module);
+module.exports = b1;

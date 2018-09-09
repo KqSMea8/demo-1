@@ -1,5 +1,6 @@
-var a = 1;
+var a1 = 'a1';
+var b = require('./b');
+console.log(b);
+module.exports = a1;
 
-console.log(a);
-
-module.exports = a;
+a1 = 'a2';

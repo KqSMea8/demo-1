@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let asyn = new Promise((reslove, reject) => {
+            setTimeout(() => {
+                console.log('reslove', 1);
+                reslove();
+            }, 2000);
+        });
+
+        asyn.then(() => {
+            console.log(1);
+            // new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         console.log('reslove', 2);
+            //         resolve();
+            //     }, 1000);
+            // }).then(() => {
+            //     console.log(2);
+            // })
+        }).then(() => {
+            console.log(2);
+        }).then(() => {
+            console.log(3);
+        })
+    </script>
+</body>
+</html>
