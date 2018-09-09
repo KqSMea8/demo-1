@@ -5,11 +5,17 @@
             <p class="num">{{totalMoney}}</p>
         </div>
         <ul class="money-detail">
-            <li class="item" v-for="(item, index) in money" :key="index">
-                <span>{{item.name}}：</span><span>{{item.value}}元</span>
+            <li class="item" v-for="(item, index) in money" :key="index" data-type="0">
+                <div class="list-item"
+                    @touchstart.capture="touchStart"
+                    @touchend.capture="touchEnd"
+                    @click="skip">
+                    <span>{{item.name}}：</span><span>{{item.value}}元</span>
+                </div>
+                <div class="delete" @click="deleteItem" :data-index="index">删除</div>
             </li>
         </ul>
-        <div class="add-input-container" v-if="addStatus" @keyup.enter="saveMoney">
+        <div class="add-input-container" v-show="addStatus" @keyup.enter="saveMoney">
             <label class="input-item">名称:<input class="input" placeholder="请输入" v-model="name" /></label>
             <label class="input-item">资产金额:<input class="input" type="number" placeholder="0" v-model="value" /></label>
             <button class="save-btn" @click="saveMoney">确定保存资产</button>
@@ -25,7 +31,8 @@ export default {
             money: [],
             addStatus: false,
             name: '',
-            value: 0
+            value: 0,
+            startX: 0
         }
     },
     watch: {
@@ -56,15 +63,19 @@ export default {
         saveMoney() {
             let optionValue = parseFloat(this.optionValue, 10);
             this.addRequestMoney();
-            this.$set(this.money, this.optionKey, optionValue);
             this.addStatus = false;
         },
         addRequestMoney() {
             this.axios.post(Config.api.addAsset, {
                 name: this.name,
                 value: this.value
-            }).then((res) => {
+            }).then(res => {
                 if (res.status === 0) {
+                    this.money.push({
+                        id: res.data.id,
+                        name: this.name,
+                        value: parseFloat(this.value, 10)
+                    });
                 }
                 else {
                     alert(res.msg);
@@ -75,11 +86,75 @@ export default {
             this.axios.get(Config.api.assetlist).then(res => {
                 if (res.status === 0) {
                     this.money = res.data.list;
+                    console.log(this.money);
                 }
                 else {
                     alert(res.msg);
                 }
             })
+        },
+        touchStart() {
+            this.startX = e.touches[0].clientX;
+        },
+        touchEnd(e) {
+            let parentElement = e.currentTarget.parentElement;
+            this.endX = e.changedTouches[0].clientX;
+
+            // 左滑
+            if (parentElement.dataset.type == 0 && this.startX - this.endX > 30) {
+                this.restSlide();
+                parentElement.dataset.type = 1;
+            }
+
+            // 右滑
+            if (parentElement.dataset.type == 1 && this.startX - this.endX < -30) {
+                this.restSlide();
+                parentElement.dataset.type = 0;
+            }
+
+            this.startX = 0;
+            this.endX = 0;
+        },
+        checkSlide() {
+            let listItems = document.querySelectorAll('.list-item');
+            for (let i = 0; i < listItems.length; i++) {
+                if (listItems[i].dataset.type == 1) {
+                    return true;
+                }
+            }
+
+            return false;
+        },
+        restSlide() {
+            let listItems = document.querySelectorAll('.list-item');
+            for (let i = 0; i < listItems.length; i++) {
+                listItems[i].dataset.type = 0;
+            }
+        },
+        skip() {
+            if (this.skipSlide()) {
+                this.restSlide();
+            }
+            else {
+                alert('you click the slide!');
+            }
+        },
+        deleteItem(e) {
+            let index = e.currentTarget.dataset.index;
+            console.log(index);
+            this.restSlide();
+            if (window.confirm()) {
+                this.axios.post(Config.api.deleteasset, {
+                    id: this.money[index].id
+                }).then(res => {
+                    if (res.status === 0) {
+                        this.money.splice(index, 1);
+                    }
+                    else {
+                        alert(res.msg);
+                    }
+                })
+            }
         }
     }
 }

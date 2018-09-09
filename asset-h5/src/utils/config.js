@@ -5,7 +5,8 @@
 export default {
     api: {
         addAsset: '/asset/addAsset',
-        assetlist: '/asset/assetlist'
+        assetlist: '/asset/assetlist',
+        deleteasset: '/asset/deleteAsset'
     },
     link: {
     },
