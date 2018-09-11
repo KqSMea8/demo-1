@@ -11,3 +11,12 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+node_modules
+package-lock.json
+*.iml
+.DS_Store
+.idea
+android/.idea
+android/.externalNativeBuild
+ios/AixApp.xcodeproj/project.xcworkspace/xcuserdata
+
