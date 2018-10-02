@@ -49,3 +49,21 @@ var unsign = function (val, secret) {
     var str = val.slice(0, val.lastIndexOf('.'));
     return sign(str, secret) == val ? str : false;
 }
+
+var handle = function (req, res) {
+    fs.stat(filename, function (err, stat) {
+        var lastModified = stat.mtime.toUTCString();
+        if (lastModified === req.headers['if-modified-since']) {
+            res.writeHead(304, 'Not Modified');
+            res.end();
+        }
+        else {
+            fs.readFile(filename, function (err, file) {
+                var lastModified = stat.mtime.toUTCString();
+                res.setHeader('last-Modified', lastModified);
+                res.writeHead(200, 'ok');
+                res.end(file);
+            })
+        }
+    })
+}
