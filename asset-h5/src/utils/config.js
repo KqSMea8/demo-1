@@ -10,6 +10,7 @@ export default {
     },
     link: {
     },
-    appId: {
+    msg: {
+        delete: '确认删除吗'
     }
 };

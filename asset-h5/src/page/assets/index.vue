@@ -16,8 +16,14 @@
             </li>
         </ul>
         <div class="add-input-container" v-show="addStatus" @keyup.enter="saveMoney">
-            <label class="input-item">名称:<input class="input" placeholder="请输入" v-model="name" /></label>
-            <label class="input-item">资产金额:<input class="input" type="number" placeholder="0" v-model="value" /></label>
+            <div class="input-item">
+                <label class="label" for="name">名称:</label>
+                <input class="input" placeholder="请输入" v-model="name" id="name" />
+            </div>
+            <div class="input-item">
+                <label class="label" for="value">资产金额:</label>
+                <input class="input" type="number" placeholder="0" v-model="value" id="value"/>
+            </div>
             <button class="save-btn" @click="saveMoney">确定保存资产</button>
         </div>
         <button class="add-btn" @click="addMoney">增加资产</button>
@@ -143,7 +149,7 @@ export default {
             let index = e.currentTarget.dataset.index;
             console.log(index);
             this.restSlide();
-            if (window.confirm()) {
+            if (window.confirm(Config.msg.delete)) {
                 this.axios.post(Config.api.deleteasset, {
                     id: this.money[index].id
                 }).then(res => {
@@ -171,40 +177,45 @@ export default {
         display: flex;
         justify-content: space-between;
         font-size: 24px;
+        line-height: 34px;
     }
 }
 .add-input-container {
     display: flex;
     flex-direction: column;
-    margin: 30px 0;
+    margin: rem(50) 0;
     font-size: 24px;
+    line-height: 34px;
     .input-item {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
+        margin-bottom: rem(20);
         input {
+            width: 50%;
+            margin-left: rem(30);
             text-align: right;
             border: none;
             outline: none;
         }
     }
     .save-btn {
-        padding: 10px;
+        padding: rem(20);
         color: #fff;
         background-color: #0077e6;
     }
 }
 .add-btn,
 .save-btn {
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 3px;
+    margin-bottom: rem(20);
+    padding: rem(10);
+    border-radius: rem(4);
     cursor: pointer;
     font-size: 14px;
+    line-height: 24px;
 }
 .add-btn {
     width: 100%;
-    margin-top: 10px;
+    margin-top: rem(20);
     border: 1px solid #0084ff;
     color: #0084ff;
     background-color: #fff;
@@ -212,15 +223,18 @@ export default {
 
 .input {
     font-size: 24px;
+    line-height: 34px;
     border: 1px solid #000;
 }
 .res-container {
     .total-title {
-        margin-top: 10px;
+        margin-top: rem(20);
         font-size: 16px;
+        line-height: 26px;
     }
     .num {
         font-size: 48px;
+        line-height: 58px;
         font-weight: 700;
         color: #1a1a1a;
     }
