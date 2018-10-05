@@ -173,6 +173,7 @@ export default {
     line-height: 1.6;
 }
 .money-detail {
+    margin-top: rem(100);
     .item {
         display: flex;
         justify-content: space-between;
