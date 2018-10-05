@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WebViewAndriod.iml" filepath="$PROJECT_DIR$/WebViewAndriod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webViewAndriod.iml" filepath="$PROJECT_DIR$/webViewAndriod.iml" />
     </modules>
   </component>
 </project>
