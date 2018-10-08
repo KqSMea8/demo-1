@@ -39,5 +39,35 @@ function upload(req, res) {
             handle(req, res);
         };
 
+        if (mime(req) === 'application/json') {
+            parseJSON(req, done);
+        }
+        else if (mime(req) === 'application/xml') {
+            parseXML(req, done);
+        }
+        else if (mime(req) === 'multipart/form-data') {
+            parseMultipart(req, done);
+        }
+    }
+    else {
+        handle(req, res);
     }
 }
+
+var formidable = require('formidable');
+function parseBody(req, res) {
+    if (hasBody(req)) {
+        if (mime(req) === 'multipart/form-data') {
+            var form = new formidable.IncomingForm();
+            form.parse(req, function (err, fields, files) {
+                req.body = fields;
+                req.files = files;
+                handle(req, res);
+            })
+        }
+    }
+    else {
+        handle(req, res);
+    }
+}
+
