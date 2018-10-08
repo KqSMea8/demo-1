@@ -15,7 +15,7 @@
       <mt-picker :slots="addressSlots" @change="onAddressChange" :visible-item-count="5"></mt-picker>
     </div>
     <p class="page-picker-desc">地址: {{ addressProvince }} {{ addressCity }}</p>
-    
+
     <!-- defaultIndex 参数变化 -->
     <div class="page-picker-wrapper">
       <mt-picker :slots="numberSlot" @change="onNumberChange" :visible-item-count="3"></mt-picker>
