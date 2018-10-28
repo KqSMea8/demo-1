@@ -4,8 +4,7 @@ for (var i = 0; i < 100; ++i) {
 lines.push('你好' + i);
 }
 
-Swan.defineApp({
-data: {
+data = {
     playing: false,
     curtime: 0,
     totaltime: 0,
@@ -18,7 +17,7 @@ data: {
     lines: lines
 },
 
-created: function () {
+created = function () {
     var self = this;
     self.togglePlay = self.togglePlay.bind(self);
 
@@ -46,9 +45,9 @@ created: function () {
     // Swan.setInterval(function () {
     //     self.lrcRoll(data);
     // }, 3000)
-},
+}
 
-lrcRoll: function (data) {
+lrcRoll = function (data) {
     var self = this;
 
     //你还要我怎样
@@ -87,10 +86,10 @@ lrcRoll: function (data) {
         lineRect = v;
         check();
     });
-},
+}
 
 // 生成歌词数据
-createdLrcTextArr: function (str) {
+createdLrcTextArr = function (str) {
     var arr = str.split('\n');
     var newArr = [];
     for (var i = 0; i < arr.length; i++) {
@@ -101,10 +100,10 @@ createdLrcTextArr: function (str) {
 
     }
     return newArr;
-},
+}
 
 // 寻找时间对应的歌词
-setLrcIndex: function (str, data) {
+setLrcIndex = function (str, data) {
     var self = this;
 
     // 将时间提取出来
@@ -115,10 +114,10 @@ setLrcIndex: function (str, data) {
     self.data.curLrcIndex = self.binarySearch(targeTime, timeArr);
 
     return self.binarySearch(targeTime, timeArr);
-},
+}
 
 // 根据客户端传来的时间进行查找对应键值
-binarySearch: function (targeTime, timeArr) {
+binarySearch = function (targeTime, timeArr) {
     var start = 0;
     var end = timeArr.length - 1;
     var center = parseInt((end/2), 10);
@@ -130,10 +129,10 @@ binarySearch: function (targeTime, timeArr) {
         }
     }
     return i;
-},
+}
 
 // 获取歌词时间数组，范围为秒
-lrcTimeArr: function (str) {
+lrcTimeArr = function (str) {
     var reg = /\[(.+?)\]/;
     var timeArr = [];
     var arr = str.split('\n');
@@ -156,9 +155,9 @@ lrcTimeArr: function (str) {
     }
 
     return timeArr;
-},
+}
 
-togglePlay: function () {
+togglePlay = function () {
     if (!this.data.playing) {
         this.audio.play("/sdcard/banma.mp3");
         this.data.playing = true;
@@ -167,9 +166,9 @@ togglePlay: function () {
         this.data.playing = false;
     }
     this.update();
-},
+}
 
-handleTime: function (time) {
+handleTime =  function (time) {
     var self = this;
     var secs = Math.round(time / 1000);
     var min = parseInt((secs / 60), 10);
@@ -188,68 +187,4 @@ handleTime: function (time) {
     console.log(min + ':' + sec);
 
     return min + ':' + sec;
-},
-
-render: function () {
-    var self = this;
-    this.data.showFixmeBar = !this.data.showFixmeBar;
-    var curtime = this.handleTime(this.data.curtime);
-    var totaltime = this.handleTime(this.data.totaltime);
-
-    return <view data-from="server" class="no-head music-box">
-
-        <rotationview  style={styles['rotation']}>
-            <text style={styles['rotation-front']}>前面</text>
-            <text style={styles['rotation-back']}>后面</text>
-        </rotationview>
-
-        {/*fixme: for test */}
-            <scrollview ref={(node) => {this.scrollview = node;}} class="words-box" style={styles['words-box']}>
-                {
-                    this.data.LrcTextArr ? this.data.LrcTextArr.map((val, index) => {
-                        return <text ref={(node) => self["line" + index] = node} style={index === this.data.curLrcIndex ? extend({}, {color: '#ffff00'}, styles['common-lrc'])  : extend({}, styles['curLrc'], styles['common-lrc'])}>
-                            {val}
-                        </text>
-                    }) : null
-                }
-            </scrollview>
-
-        <view>
-            <view class="progress-bar" style={extend({}, styles['progress-bar'], {
-                width: this.data.position
-            })}></view>
-
-            <view class="play" style={styles['play']}>
-                <view>
-                    <view></view>
-                    <view>
-                        <text class="show-words text" style={styles['show-words']}>
-                            <span>词</span>
-                        </text>
-                    </view>
-                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505302818959&di=cca8da517829f6b988f59601ea5a68be&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F6ba37465c8198845aaff35fede78f6feef116523.jpg" />
-                </view>
-                <text style={styles['play-time']}>{curtime}/{totaltime}</text>
-                <view style={styles['play-btn-wrapper']} ontap={this.togglePlay}>
-                    {
-                        this.data.playing ? <svg style={styles['play-btn']} content={`<svg t="1505103801992" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1548" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" fill="#ffffff" class="play-btn">
-                            <defs></defs>
-                            <path d="M342.823949 64.644299c-23.185049 0-41.995463 18.797112-41.995463 41.995463L300.828486 918.553413c0 23.198352 18.810415 41.995463 41.995463 41.995463s41.995463-18.797112 41.995463-41.995463L384.819412 106.639762C384.819412 83.441411 366.008998 64.644299 342.823949 64.644299z"
-                            p-id="1549"></path>
-                            <path d="M678.787654 64.644299c-23.185049 0-41.995463 18.797112-41.995463 41.995463L636.792191 918.553413c0 23.198352 18.810415 41.995463 41.995463 41.995463s41.995463-18.797112 41.995463-41.995463L720.783117 106.639762C720.783117 83.441411 701.972703 64.644299 678.787654 64.644299z"
-                            p-id="1550"></path>
-                        </svg>`}>
-                        </svg> : null
-                    }
-                    {
-                        this.data.playing ? null : <svg style={styles['play-btn']} content={`<svg t="1505103585888" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1868" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" fill="#ffffff" class="play-btn">
-                                <defs></defs>
-                                <path d="M860.672 443.6992L361.7792 125.44C251.904 55.296 256 167.6288 256 167.6288v662.016s-1.9456 107.008 91.2896 47.5648l517.12-329.9328c0.0512 0 82.7392-48.4352-3.7376-103.5776z" p-id="1869"></path>
-                            </svg>`}>
-                        </svg>
-                    }
-                </view>
-            </view>
-        </view>
-    </view>
 }
