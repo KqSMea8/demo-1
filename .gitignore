@@ -19,4 +19,4 @@ package-lock.json
 android/.idea
 android/.externalNativeBuild
 ios/AixApp.xcodeproj/project.xcworkspace/xcuserdata
-
+dist
