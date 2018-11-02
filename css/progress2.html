@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+            box-sizing: border-box;
+        }
+        .box{
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            width: 320px;
+            height: 44px;
+            background-color: white;
+            color: #00a0e9;
+            border: 1px solid #00a0e9;
+        }
+        .process{
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background: #00a0e9;
+            color: white;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .process-text{
+            position: absolute;
+            left: 160px;
+            top: 50%;
+            font-size: 12px;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="process()">
+        <div class="process" id="process">
+            <span class="process-text">点击开始</span>
+        </div>
+        <span class="process-text">点击开始</span>
+    </div>
+
+    <script>
+        process();
+            function process() {
+                var t = 1;
+                var max = 320;
+                var progress = document.getElementById("process");
+                var process_texts = document.getElementsByClassName("process-text");
+                progress.style.width = 30 + "px";
+                // var interval = setInterval(function () {
+                //     if (t == max) {
+                //         clearInterval(interval);
+                //         for (var i in process_texts){
+                //             process_texts[i].innerHTML = '完成'
+                //         }
+                //     } else {
+                //         progress.style.width = t + "px";
+                //         for (var i in process_texts){
+                //             process_texts[i].innerHTML = '进度' + (t / max * 100).toFixed(2) + "%"
+                //         }
+                //         t++;
+                //     }
+                // }, 100)
+            }
+        </script>
+</body>
+</html>
