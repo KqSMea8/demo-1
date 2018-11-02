@@ -17,7 +17,6 @@ fs.readdir('./file', (err, files) => {
             if (err) {
                 throw err;
             }
-            console.log(`data is: ${data}`);
             let suffix = crypto.createHash('md5').update(data).digest('hex').slice(0, 6);
             console.log(`suffix: ${suffix}`);
             let valueArr = value.split('.');
