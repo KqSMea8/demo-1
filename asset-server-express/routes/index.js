@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var assetsDao = require('../dao/assetsDao');
+let express = require('express');
+let router = express.Router();
+let assetsDao = require('../dao/assetsDao');
 
 router.get('/', function (req, res, next) {
     res.render('index', {

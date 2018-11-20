@@ -1,10 +1,10 @@
-var mysql = require('mysql');
-var $conf = require('../conf/db');
-var $sql = require('./assetsSqlMapping');
+let mysql = require('mysql');
+let $conf = require('../conf/db');
+let $sql = require('./assetsSqlMapping');
 
-var pool = mysql.createPool($conf.mysql);
-
-var jsonnWrite = function(res, ret) {
+let pool = mysql.createPool($conf.mysql);
+    
+let jsonnWrite = function(res, ret) {
     if (typeof ret === 'undefined') {
         res.json({
             status: 1,
@@ -20,11 +20,11 @@ module.exports = {
     add: function (req, res, next) {
         pool.getConnection(function(err, connection) {
 
-            var param = req.body;
+            let param = req.body;
             console.log('param', param);
 
-            var name = param.name;
-            var value = parseInt(param.value);
+            let name = param.name;
+            let value = parseInt(param.value);
             console.log(name);
             console.log(value);
 
@@ -55,7 +55,7 @@ module.exports = {
         pool.getConnection(function(err, connection) {
             console.log('req.body.id');
             console.log(req.body.id);
-            var id = +req.body.id;
+            let id = +req.body.id;
             connection.query($sql.delete, id, function(err, result) {
                 if (result.affectedRows > 0) {
                     result = {
@@ -115,7 +115,7 @@ module.exports = {
         });
     },
     queryById: function(req, res, next) {
-        var id = +req.query.id;
+        let id = +req.query.id;
         pool.getConnection(function(err, connection) {
             connection.query($sql.queryById, id, function(err, result) {
                 if (err) {
