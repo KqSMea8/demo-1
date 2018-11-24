@@ -3,5 +3,7 @@
 
 let user = {
     insert: 'insert into user(id, name, password) value(0, ?, ?);',
-    update: ''
-}
+    select: "select * from user where name = ?"
+};
+
+module.exports = user;
