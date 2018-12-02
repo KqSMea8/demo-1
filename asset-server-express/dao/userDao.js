@@ -25,17 +25,17 @@ module.exports = {
 
             connection.query($sql.insert, [name, password], function(err, result) {
                 if (err) {
+                    console.log('err');
                     console.log(err.message);
                 }
-                console.log(result.insertId);
-                console.log(result);
-                console.log(err);
-                if (result) {
-                    result = {
-                        status: 0,
-                        msg: '增加成功',
-                        data: {
-                            id: result.insertId
+                else {
+                    if (result) {
+                        result = {
+                            status: 0,
+                            msg: '增加成功',
+                            data: {
+                                id: result.insertId
+                            }
                         }
                     }
                 }
@@ -50,25 +50,33 @@ module.exports = {
         pool.getConnection(function(err, connection) {
             let param = req.body;
             let name = param.name;
-            let pwd = param.pwd;
+            let password = param.password;
 
             connection.query($sql.select, [name], function(err, result) {
                 if (err) {
                     console.log(err.message);
 
-                }
-                console.log(result.insertId);
-                console.log(result);
-                console.log(err);
-                if (result) {
-                    result = {
-                        status: 0,
-                        msg: '查询成功',
-                        data: {
-                            name: result.name
+                } else if (result) {
+                    let res = result[0];
+                    if (res.password === password) {
+                        result = {
+                            status: 0,
+                            msg: '查询成功',
+                            data: {
+                                name: res.name
+                            }
                         }
                     }
+                    else {
+                        result = {
+                            status: 1,
+                            msg: '查询失败，密码不正确',
+                            data: {}
+                        }
+                    }
+                    console.log('result', result);
                 }
+
                 jsonnWrite(res, result);
                 connection.release();
             });
