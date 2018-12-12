@@ -6,27 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        .parent {   
-            background-color: red;
-        }
-        .top {
-            height: 20px;
-        }
-        .child {
-            height: 100px;
-            margin-top: 10px;
-            background: #fff;
-        }
+        
     </style>
 </head>
 <body>
-    <div class="parent">
-        <div class="top"></div>
-        <div class="child"></div>
-    </div>
+    <script>
+        var t1 = performance.now();
+    </script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script>
+        function test () {
+            console.log('1');
+        }
+        test();
+        var t2 = performance.now();
+        console.log(t2 - t1);
+    </script>
 </body>
 </html>
