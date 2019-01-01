@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session')
 var logger = require('morgan');
 
 var assetRouter = require('./routes/asset');
@@ -14,6 +15,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(session({secret: 'keyboard cat', cookie: {maxAge: 60000}}));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
