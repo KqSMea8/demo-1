@@ -104,6 +104,9 @@ module.exports = {
                                 name: result.name
                             }
                         }
+
+                        req.session.name = req.body.name; 
+                        res.cookie("user", {name: name}, {maxAge: 600000});
                     }
                     else {
                         result = {

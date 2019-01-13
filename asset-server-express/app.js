@@ -15,16 +15,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(session({secret: 'keyboard cat', cookie: {maxAge: 60000}}));
+app.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: false, 
+    cookie: {
+        maxAge: 1000 * 60 * 3 
+    }
+}));
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({
-    extended: false
-}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
