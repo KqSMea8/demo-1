@@ -14,6 +14,16 @@ export default new Router({
             path: '/',
             name: 'Index',
             component: Index
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: resolve => require(['@/page/assets/register'], resolve)
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: resolve => require(['@/page/assets/login'], resolve)
         }
     ]
 });

@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 let mysql = require('mysql');
 let $conf = require('../conf/db');
 let $sql = require('./userSqlMapping');
@@ -16,34 +17,69 @@ let jsonnWrite = function(res, ret) {
     }
 }
 
+function getMD5Password(content) {
+    var md5 = crypto.createHash('md5');
+    md5.update(content);
+    var d = md5.digest('hex'); 
+    return d;
+}
+
 module.exports = {
     add: function (req, res, next) {
         pool.getConnection(function(err, connection) {
+            if (err) {
+                console.log(err.message);
+            }
+
             let param = req.body;
             let name = param.name;
             let password = param.password;
-
-            connection.query($sql.insert, [name, password], function(err, result) {
+            
+            connection.query($sql.select, [name], (err, result) => {
                 if (err) {
-                    console.log('err');
                     console.log(err.message);
-                }
-                else {
-                    if (result) {
-                        result = {
-                            status: 0,
-                            msg: '增加成功',
-                            data: {
-                                id: result.insertId
+                } 
+                else if (result) {
+                    result = result[0];
+                    console.log('result', result);
+                    if (result.name === name) {
+                        jsonnWrite(res, {
+                            status: 1,
+                            msg: '用户名重复',
+                            data: {}
+                        });
+
+                        connection.release();
+
+                    } else {
+                        password = getMD5Password(password);
+                        connection.query($sql.insert, [name, password], (err, result) => {
+                            if (err) {
+                                console.log(err.message);
                             }
-                        }
+                            else {
+                                if (result) {
+                                    req.session.name = name;
+                                    req.session.loggedIn = 1;      
+                                    result = {
+                                        status: 0,
+                                        msg: '增加成功',
+                                        data: {
+                                            id: result.insertId
+                                        }
+                                    }
+                                }
+                            }
+            
+                            jsonnWrite(res, result);
+
+                            connection.release();
+                        });
                     }
                 }
-
-                jsonnWrite(res, result);
-
-                connection.release();
             });
+
+            
         });
     },
     login: function (req, res, next) {
@@ -52,20 +88,25 @@ module.exports = {
             let name = param.name;
             let password = param.password;
 
-            connection.query($sql.select, [name], function(err, result) {
+            password = getMD5Password(password);
+
+            connection.query($sql.select, [name], (err, result) => {
                 if (err) {
                     console.log(err.message);
-
                 } else if (result) {
-                    let res = result[0];
-                    if (res.password === password) {
+                    let result = result[0];
+                    console.log('result', result);
+                    if (result.password === password) {
                         result = {
                             status: 0,
                             msg: '查询成功',
                             data: {
-                                name: res.name
+                                name: result.name
                             }
                         }
+
+                        req.session.name = req.body.name; 
+                        res.cookie("user", {name: name}, {maxAge: 600000});
                     }
                     else {
                         result = {
@@ -74,7 +115,6 @@ module.exports = {
                             data: {}
                         }
                     }
-                    console.log('result', result);
                 }
 
                 jsonnWrite(res, result);
