@@ -5,72 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-
-    </style>
 </head>
 <body>
-    <input type="file" id="choose" accept="image/*">
-    <canvas id="canvas"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <script>
-        var fileChooser = document.getElementById('choose');
-        var maxSize = 200 * 1024;
-        fileChooser.onchange = function () {
-            var file = this.files[0];
-            var reader = new FileReader();
-            var orientation;
-
-            EXIF.getData(file, function () {
-                orientation = EXIF.getTag(this, 'Orientation');
-                console.log(orientation); // 只有图片是旋转状态的才可以拿到值，不然就是undefined
-                alert(orientation);
-            })
-
-            reader.onload = function () {
-                var result = this.result;
-                var img = new Image();
-                img.onload = function () {
-                    compress(img);
-                }
-                img.src = result;
-
-                // document.body.appendChild(img);
-
-
-                // if (result.length < maxSize) {
-                //     imgUpload(result);
-                // }
-                // else {
-                //     var data = compress(img);
-                //     imgUpload(data);
-                // }
-            }
-
-            reader.readAsDataURL(file);
-        }
-
-        var canvas = document.getElementById("canvas");
-        var context = canvas.getContext('2d');
-
-        function compress(img) {
-            if (orientation === 6) {
-                console.log(img)
-                document.body.appendChild(img);
-                canvas.width = img.width;
-                canvas.height = img.height;
-                context.rotate(180*Math.PI/180);
-                context.drawImage(img, 0, 0, -img.width, -img.height);
-
-                var data = canvas.toDataURL('image/jpeg', 0.2);
-
-                return data;
-            }
-        }
-
-        function imgUpload(data) {
-            console.log('上传文件data', data, data.length);
-        }
+        let a = 1;
+        const b = 2;
+        console.log(a);
+        console.log(b);
+        a = 3;
+        b = 4;
+        console.log(a);
+        console.log(b);
     </script>
 </body>
 </html>
