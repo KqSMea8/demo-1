@@ -4,7 +4,7 @@ module.exports = {
         user: 'root',
         password: '12345678',
         port: '3306',
-        database: 'assets',
+        database: 'asset',
         connectionLimit: 10
     }
 }

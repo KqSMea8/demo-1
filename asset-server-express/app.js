@@ -18,9 +18,9 @@ app.set('view engine', 'pug');
 app.use(session({
     secret: 'keyboard cat',
     resave: true,
-    saveUninitialized: false, 
+    saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 3 
+        maxAge: 1000 * 60 * 3
     }
 }));
 app.use(bodyParser.urlencoded({

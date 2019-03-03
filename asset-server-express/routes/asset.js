@@ -28,5 +28,4 @@ router.post('/asset/updateAsset', function(req, res, next) {
     assetsDao.update(req, res, next);
 });
 
-
 module.exports = router;
