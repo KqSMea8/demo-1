@@ -20,7 +20,7 @@ let jsonnWrite = function(res, ret) {
 function getMD5Password(content) {
     var md5 = crypto.createHash('md5');
     md5.update(content);
-    var d = md5.digest('hex'); 
+    var d = md5.digest('hex');
     return d;
 }
 
@@ -34,15 +34,14 @@ module.exports = {
             let param = req.body;
             let name = param.name;
             let password = param.password;
-            
+
             connection.query($sql.select, [name], (err, result) => {
                 if (err) {
                     console.log(err.message);
-                } 
+                }
                 else if (result) {
                     result = result[0];
-                    console.log('result', result);
-                    if (result.name === name) {
+                    if (result && result.name === name) {
                         jsonnWrite(res, {
                             status: 1,
                             msg: '用户名重复',
@@ -53,6 +52,7 @@ module.exports = {
 
                     } else {
                         password = getMD5Password(password);
+                        console.log(password, password);
                         connection.query($sql.insert, [name, password], (err, result) => {
                             if (err) {
                                 console.log(err.message);
@@ -60,7 +60,7 @@ module.exports = {
                             else {
                                 if (result) {
                                     req.session.name = name;
-                                    req.session.loggedIn = 1;      
+                                    req.session.loggedIn = 1;
                                     result = {
                                         status: 0,
                                         msg: '增加成功',
@@ -70,7 +70,7 @@ module.exports = {
                                     }
                                 }
                             }
-            
+
                             jsonnWrite(res, result);
 
                             connection.release();
@@ -79,7 +79,7 @@ module.exports = {
                 }
             });
 
-            
+
         });
     },
     login: function (req, res, next) {
@@ -95,8 +95,7 @@ module.exports = {
                     console.log(err.message);
                 } else if (result) {
                     let result = result[0];
-                    console.log('result', result);
-                    if (result.password === password) {
+                    if (result && result.password === password) {
                         result = {
                             status: 0,
                             msg: '查询成功',
@@ -105,11 +104,11 @@ module.exports = {
                             }
                         }
 
-                        req.session.name = req.body.name; 
+                        req.session.name = req.body.name;
                         res.cookie("user", {name: name}, {maxAge: 600000});
                     }
                     else {
-                        result = {
+                        let result = {
                             status: 1,
                             msg: '查询失败，密码不正确',
                             data: {}
