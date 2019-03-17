@@ -39,20 +39,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res, next) {
-    // if (req.cookie.isFirst || req.session.isFirst) {
-    //     res.send('再次欢迎访问');
-    //     console.log(req.cookies);
-    // }
-    // else {
-        req.session.isFirst = 1;
-        res.cookie('isFirst', 1, {maxAge: 60 * 1000});
-        res.send('欢迎第一次访问');
-    // }
-
-    next();
-});
-
 app.use('/', assetRouter);
 app.use('/', userRouter);
 
