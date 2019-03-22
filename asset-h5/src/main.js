@@ -12,7 +12,7 @@ Vue.config.productionTip = false;
 Vue.use(MintUI);
 Vue.prototype.axios = http;
 
-document.title = '资产管理系统';
+document.title = '资本记录';
 
 new Vue({
     el: '#app',
