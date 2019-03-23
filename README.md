@@ -1,6 +1,27 @@
 # 一些工具
-- 移动端浏览器调试工具
-- 聊天室页面
+## addFileMd5Suffix 
+给文件添加后缀名
+## asset-h5
+资产管理前端
+## asset-server-express
+资产管理后端nodejs
+## books
+书籍练习
+## browserPlugin
+浏览器插件
+## businessPlatformProject
+百度前端学院商业平台练习项目
+## crawler
+爬虫
+## css
+css练习
+## designPattern
+设计模式练习
+## 
+## chat
+聊天室页面tab切换练习
+移动端浏览器调试工具
+
 - 爬虫
 - css布局
 - 练习代码
