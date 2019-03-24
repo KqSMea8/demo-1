@@ -2,7 +2,6 @@ const crypto = require('crypto');
 let mysql = require('mysql');
 let $conf = require('../conf/db');
 let $sql = require('./userSqlMapping');
-
 let pool = mysql.createPool($conf.mysql);
 
 let jsonnWrite = function(res, ret) {
@@ -106,9 +105,10 @@ module.exports = {
                             }
                         }
 
-                        req.session.user = req.body.name;
+                        req.session.user = name;
                         req.session.isLogin = true;
-                        
+                        res.cookie('user', name);
+                        res.cookie('isLogin', 'true');
                     }
                     else {
                         let result = {
@@ -134,5 +134,21 @@ module.exports = {
             }
             jsonnWrite(res, result);
         })
+    },
+    queryByName: function (name) {
+        return new Promise((resolve, reject) => {
+            pool.getConnection((err, connection) => {
+                connection.query($sql.select, name, (err, result) => {
+                    if (err) {
+                        console.error(err);
+                        reject(false);
+                    }
+                    else {
+                        resolve(true)
+                    }
+                    connection.release();
+                })
+            });
+        });
     }
 }

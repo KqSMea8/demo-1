@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let assetsDao = require('../dao/assetsDao');
+let userDao = require('../dao/userDao');
 
 router.get('/', function (req, res, next) {
     let findPattern = {name: "default"};
@@ -10,13 +11,13 @@ router.get('/', function (req, res, next) {
         sessionUser = "default";
 
     //解析cookie获取cookieUser，略去
-    // let cookieObj = {};
-    // cookie.forEach(cookie => {
-    //     let parts = cookie.split('=');
-    //     cookieObj[parts[0].trim()] = parts[1].trim();
-    // });
+    let cookieObj = {};
+    cookie.forEach(cookie => {
+        let parts = cookie.split('=');
+        cookieObj[parts[0].trim()] = parts[1].trim();
+    });
 
-    // cookieUser = cookieObj.user;
+    cookieUser = cookieObj.user;
 
     if(req.session && req.session.user){
         sessionUser = req.session.user;
@@ -32,11 +33,18 @@ router.get('/', function (req, res, next) {
     }
 
     // 查询数据库逻辑，略去
-
-    res.render('index', {
-        title: 'express'
+    userDao.queryByName(sessionUser).then(isUserExit => {
+        if (isUserExit) {
+            res.render('index', {
+                title: '用户已登录'
+            });
+        }
+        else {
+            res.render('index', {
+                title: '用户未登录'
+            });
+        }
     });
-
 });
 
 router.get('/asset/assetlist', function (req, res, next) {

@@ -138,8 +138,7 @@ module.exports = {
     queryAll: function(req, res, next) {
         // 检查登录态是否登录
         console.log('req.session.name', req.session.name);
-        
-
+    
         pool.getConnection(function(err, connection) {
             connection.query($sql.queryAll, function(err, result) {
                 if (err) {
