@@ -2,6 +2,7 @@
     "watch": [
         "dao/**",
         "routes/**",
+        "middlewares/**",
         "app.js"
     ]
 }

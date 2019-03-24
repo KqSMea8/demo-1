@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var logger = require('morgan');
 var redisStore = require('connect-redis')(session);
-
+var auth = require('./middlewares/auth');
 var assetRouter = require('./routes/asset');
 var userRouter = require('./routes/user');
 
@@ -41,6 +41,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(auth.auth);
 app.use('/', assetRouter);
 app.use('/', userRouter);
 
