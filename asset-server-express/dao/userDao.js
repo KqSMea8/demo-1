@@ -1,8 +1,8 @@
 const crypto = require('crypto');
-let mysql = require('mysql');
-let $conf = require('../conf/db');
-let $sql = require('./userSqlMapping');
-let pool = mysql.createPool($conf.mysql);
+const mysql = require('mysql');
+const $conf = require('../conf/db');
+const $sql = require('./userSqlMapping');
+const pool = mysql.createPool($conf.mysql);
 
 let jsonnWrite = function(res, ret) {
     if (typeof ret === 'undefined') {
@@ -116,6 +116,10 @@ module.exports = {
                             msg: '查询失败，密码不正确',
                             data: {}
                         }
+                        req.session.user = name;
+                        req.session.isLogin = false;
+                        res.cookie('user', name);
+                        res.cookie('isLogin', 'false');
                     }
                 }
 

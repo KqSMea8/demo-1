@@ -131,28 +131,26 @@ module.exports = {
     },
     queryAll: function(req, res, next) {
         // 使用用户名解析用户uid
-        console.log('req.session.user', req.session.user);
-        // userDao.queryByName(req.session.user).then(user => {
-        //     console.log(user);
-        // });
-        
-        pool.getConnection(function(err, connection) {
-            connection.query($sql.queryAll, function(err, result) {
-                if (err) {
-                    console.error(err);
-                }
-                else {
-                    result = {
-                        status: 0,
-                        msg: '查询成功',
-                        data: {
-                            list: result
-                        }
+        userDao.queryByName(req.session.user).then(user => {
+            let uid = user[0].id;
+            pool.getConnection(function(err, connection) {
+                connection.query($sql.queryAll, uid, function(err, result) {
+                    if (err) {
+                        console.error(err);
                     }
-                    jsonnWrite(res, result);
-                }
-
-                connection.release();
+                    else {
+                        result = {
+                            status: 0,
+                            msg: '查询成功',
+                            data: {
+                                list: result
+                            }
+                        }
+                        jsonnWrite(res, result);
+                    }
+    
+                    connection.release();
+                });
             });
         });
     }

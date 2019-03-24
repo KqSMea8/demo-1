@@ -34,7 +34,6 @@ function auth(req, res, next) {
     // 查询数据库逻辑
     userDao.queryByName(sessionUser).then(isUserExit => {
         if (isUserExit) {
-            console.log('isUserExit', isUserExit)
             next();
         }
         else {
