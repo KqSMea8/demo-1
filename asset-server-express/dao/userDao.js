@@ -141,10 +141,13 @@ module.exports = {
                 connection.query($sql.select, name, (err, result) => {
                     if (err) {
                         console.error(err);
-                        reject(false);
+                        resolve(false);
+                    }
+                    else if (result.length) {
+                        resolve(true)
                     }
                     else {
-                        resolve(true)
+                        resolve(false);
                     }
                     connection.release();
                 })

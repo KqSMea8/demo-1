@@ -29,9 +29,12 @@ function auth(req, res, next) {
         res.cookie('isLogin', 'false');
     }
 
+    console.log('sessionUser', sessionUser);
+    
     // 查询数据库逻辑
     userDao.queryByName(sessionUser).then(isUserExit => {
         if (isUserExit) {
+            console.log('isUserExit', isUserExit)
             next();
         }
         else {
@@ -40,7 +43,7 @@ function auth(req, res, next) {
                 msg: '用户不存在'
             });
         }
-    });
+    })
 }
 
 module.exports = {

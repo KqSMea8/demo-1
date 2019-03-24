@@ -1,7 +1,9 @@
 let express = require('express');
 let router = express.Router();
 let assetsDao = require('../dao/assetsDao');
-let userDao = require('../dao/userDao');
+var auth = require('../middlewares/auth');
+
+router.all(auth.auth);
 
 router.get('/', function (req, res, next) {
     res.render('index', {
