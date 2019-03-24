@@ -17,11 +17,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(session({
+    // name: 'id', 默认connect.sid
     secret: 'keyboard cat',
     resave: true,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 3
+        user: 'default',
+        maxAge: 14 * 24 * 60 * 60 * 1000
     },
     // store: new redisStore({
     //     host: '127.0.0.1',

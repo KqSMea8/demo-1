@@ -94,7 +94,9 @@ module.exports = {
                 if (err) {
                     console.log(err.message);
                 } else if (result) {
-                    let result = result[0];
+                    result = result[0];
+                    console.log('result')
+                    
                     if (result && result.password === password) {
                         result = {
                             status: 0,
@@ -104,8 +106,9 @@ module.exports = {
                             }
                         }
 
-                        req.session.name = req.body.name;
-                        res.cookie("user", {name: name}, {maxAge: 600000});
+                        req.session.user = req.body.name;
+                        req.session.isLogin = true;
+                        
                     }
                     else {
                         let result = {
@@ -119,6 +122,17 @@ module.exports = {
                 jsonnWrite(res, result);
                 connection.release();
             });
+        })
+    },
+    logout: function (req, res, next) {
+        req.session.destroy(function () {
+            res.clearCookie('user', {});
+            let result = {
+                status: 0,
+                msg: '登出成功',
+                data: {}
+            }
+            jsonnWrite(res, result);
         })
     }
 }
