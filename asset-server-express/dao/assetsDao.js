@@ -1,7 +1,7 @@
 let mysql = require('mysql');
 let $conf = require('../conf/db');
 let $sql = require('./assetsSqlMapping');
-
+let userDao = require('./userDao');
 let pool = mysql.createPool($conf.mysql);
     
 let jsonnWrite = function(res, ret) {
@@ -77,12 +77,6 @@ module.exports = {
         let name = param.name;
         let value = parseFloat(param.value);
 
-
-        console.log('param');
-        console.log(name);
-        console.log(value);
-        console.log(param.id);
-
         if (param.name == null || param.value == null || param.id == null) {
             jsonnWrite(res, undefined);
             return;
@@ -136,9 +130,12 @@ module.exports = {
         });
     },
     queryAll: function(req, res, next) {
-        // 检查登录态是否登录
+        // 使用用户名解析用户uid
         console.log('req.session.user', req.session.user);
-
+        // userDao.queryByName(req.session.user).then(user => {
+        //     console.log(user);
+        // });
+        
         pool.getConnection(function(err, connection) {
             connection.query($sql.queryAll, function(err, result) {
                 if (err) {

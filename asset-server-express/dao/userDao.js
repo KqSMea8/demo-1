@@ -111,7 +111,7 @@ module.exports = {
                         res.cookie('isLogin', 'true');
                     }
                     else {
-                        let result = {
+                        result = {
                             status: 1,
                             msg: '查询失败，密码不正确',
                             data: {}
@@ -144,7 +144,7 @@ module.exports = {
                         resolve(false);
                     }
                     else if (result.length) {
-                        resolve(true)
+                        resolve(result)
                     }
                     else {
                         resolve(false);

@@ -40,8 +40,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', assetRouter);
-app.use('/', userRouter);
+app.use('/asset/', assetRouter);
+app.use('/user/', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
