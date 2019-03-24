@@ -4,9 +4,9 @@
 
 export default {
     api: {
-        addAsset: '/asset/addAsset',
+        addAsset: '/asset/add',
         assetlist: '/asset/assetlist',
-        deleteasset: '/asset/deleteAsset'
+        deleteasset: '/asset/delete'
     },
     link: {
     },
