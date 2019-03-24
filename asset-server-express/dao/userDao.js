@@ -147,15 +147,24 @@ module.exports = {
                         console.error(err);
                         resolve(false);
                     }
-                    else if (result.length) {
-                        resolve(result)
-                    }
                     else {
-                        resolve(false);
+                        resolve(result)
                     }
                     connection.release();
                 })
             });
+        });
+    },
+    getUid: function (name) {
+        return new Promise((resolve, reject) => {
+            this.queryByName(name).then(result => {
+                if (result.length) {
+                    resolve(result[0].id);
+                }
+                else {
+                    reject();
+                }
+            })
         });
     }
 }

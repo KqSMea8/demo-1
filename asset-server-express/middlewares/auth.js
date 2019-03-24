@@ -28,12 +28,10 @@ function auth(req, res, next) {
         res.clearCookie('user', {});
         res.cookie('isLogin', 'false');
     }
-
-    console.log('sessionUser', sessionUser);
     
     // 查询数据库逻辑
-    userDao.queryByName(sessionUser).then(isUserExit => {
-        if (isUserExit) {
+    userDao.queryByName(sessionUser).then(result => {
+        if (result.length) {
             next();
         }
         else {

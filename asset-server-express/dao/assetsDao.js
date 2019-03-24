@@ -19,36 +19,45 @@ let jsonnWrite = function(res, ret) {
 module.exports = {
     add: function (req, res, next) {
         pool.getConnection(function(err, connection) {
-
+            // 参数校验格式非空
             let param = req.body;
-            console.log('param', param);
-
             let name = param.name;
             let value = parseInt(param.value);
             console.log(name);
             console.log(value);
-
-            connection.query($sql.insert, [name, value], function(err, result) {
-                if (err) {
-                    console.log(err.message);
-                }
-                console.log(result.insertId);
-                console.log(result);
-                console.log(err);
-                if (result) {
-                    result = {
-                        status: 0,
-                        msg: '增加成功',
-                        data: {
-                            id: result.insertId
+            if (name && value) {
+                userDao.getUid(req.session.user).then(uid => {
+                    console.log('uid', uid);
+                    connection.query($sql.insert, [name, value, uid], function(err, result) {
+                        if (err) {
+                            console.log(err.message);
                         }
-                    }
-                }
-
-                jsonnWrite(res, result);
-
-                connection.release();
-            });
+                        console.log(result.insertId);
+                        console.log(result);
+                        console.log(err);
+                        if (result) {
+                            result = {
+                                status: 0,
+                                msg: '增加成功',
+                                data: {
+                                    id: result.insertId
+                                }
+                            };
+                        }
+        
+                        jsonnWrite(res, result);
+                        connection.release();
+                    });
+                }).catch(() => {
+                    let result = {
+                        status: 2,
+                        msg: '增加失败',
+                        data: {}
+                    };
+                    jsonnWrite(res, result);
+                    connection.release();
+                });
+            }
         });
     },
     delete: function(req, res, next) {
@@ -131,8 +140,8 @@ module.exports = {
     },
     queryAll: function(req, res, next) {
         // 使用用户名解析用户uid
-        userDao.queryByName(req.session.user).then(user => {
-            let uid = user[0].id;
+        userDao.getUid(req.session.user).then(uid => {
+            // let uid = user[0].id;
             pool.getConnection(function(err, connection) {
                 connection.query($sql.queryAll, uid, function(err, result) {
                     if (err) {

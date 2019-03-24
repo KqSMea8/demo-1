@@ -21,15 +21,15 @@ router.get('/asset', function (req, res, next) {
     assetsDao.queryById(req, res, next);
 });
 
-router.post('/addAsset', function (req, res, next) {
+router.post('/add', function (req, res, next) {
     assetsDao.add(req, res, next);
 });
 
-router.post('/deleteAsset', function (req, res, next) {
+router.post('/delete', function (req, res, next) {
     assetsDao.delete(req, res, next);
 });
 
-router.post('/updateAsset', function (req, res, next) {
+router.post('/update', function (req, res, next) {
     assetsDao.update(req, res, next);
 });
 
