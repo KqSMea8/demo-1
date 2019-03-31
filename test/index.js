@@ -1,5 +1,9 @@
-var moment = require('moment');
-var a = moment();
-var b = a.add(1, 'd');
-console.log('a', a);
-console.log('b', b);
+export default {
+    name: 'functional-button',
+    functional: true,
+    render(createElement, {data, children}) {
+        return createElement('button', data, children);
+    }
+}
+
+createElement('button', data, ['hello', ...children]);
