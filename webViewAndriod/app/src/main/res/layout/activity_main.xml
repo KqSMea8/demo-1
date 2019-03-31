@@ -41,7 +41,7 @@
             android:layout_toRightOf="@id/btn_back"
             android:gravity="center"
             android:singleLine="true"
-            android:text="小猪新闻"
+            android:text="百度"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
