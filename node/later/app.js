@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const articles = [{title: 'example'}];
 const bodyParser = require('body-parser');
+const Article = require('./models/db').Article;
 
 app.set('port', process.env.PORT || 3000);
 
@@ -9,7 +10,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/articles', (req, res, next) => {
-    res.send(articles);
+    Article.all((err, articles) => {
+        if (err) {
+            return next(err);
+        }
+        res.send(articles);
+    })
+    // res.send(articles);
 });
 
 app.post('/articles', (req, res, next) => {
