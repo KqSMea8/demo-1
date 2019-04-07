@@ -3,6 +3,8 @@ const app = express();
 const articles = [{title: 'example'}];
 const bodyParser = require('body-parser');
 const Article = require('./models/db').Article;
+const read = require('node-readability');
+const url = 'http://www.manning.com/cantelon2';
 
 app.set('port', process.env.PORT || 3000);
 
@@ -16,26 +18,53 @@ app.get('/articles', (req, res, next) => {
         }
         res.send(articles);
     })
-    // res.send(articles);
 });
 
 app.post('/articles', (req, res, next) => {
-    const article = {title: req.body.title};
-    articles.push(article);
-    res.send(article);
+    const url = req.body.url;
+
+    read(url, (err, result) => {
+        if (err || !result) {
+            res.status(500).send('Error downloading article');
+        }
+
+        Article.create(
+            {
+                title: result.title,
+                content: result.content
+            },
+            (err, article) => {
+                if (err) {
+                    return next(err);
+                }
+
+                res.send('ok');
+            }
+        )
+    });
 });
 
 app.get('/articles/:id', (req, res, next) => {
     const id = req.params.id;
     console.log('fetching: ', id);
-    res.send(articles[id]);
+    Article.find(id, (err, article) => {
+        if (err) {
+            return next(err);
+        }
+        res.send(article);
+    })
 });
 
 app.delete('/articels/:id', (req, res, next) => {
     const id = req.params.id;
     console.log('deleting:', id);
-    delete articles[id];
-    res.send({message: 'deleted'});
+    Article.delete(id, (err) => {
+        if (err) {
+            return next(err);
+        }
+
+        res.send({message: 'Deleted'});
+    })
 })
 
 app.listen(app.get('port'), () => {
