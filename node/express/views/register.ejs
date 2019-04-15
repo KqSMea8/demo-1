@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <form action="/register" method='post'>
+        <p>
+            <input type="text" name='user[name]' placeholder="Username">
+        </p>
+        <input type="password" name='user[pass]' placeholder="Password">
+        <p>
+            <input type="submit" value='Sign up'>
+        </p>
+    </form>
+    <% if (locals.message) { %>
+        <% message.forEach((message) => { %>
+            <p class="<%= message.type %>"><%= message.string %></p>
+        <% }() %>
+        <% removeMessages() %>
+    <% } %>
+</body>
+</html>

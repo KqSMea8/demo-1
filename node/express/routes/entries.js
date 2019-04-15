@@ -19,6 +19,18 @@ exports.submit = (req, res, next) => {
     const data = req.body.entry;
     const user = req.locals.user;
     const username = user ? user.name : null;
+    if (!data.title) {
+        res.error('Title is required');
+        res.redirect('back');
+        return;
+    }
+
+    if (data.title.length < 4) {
+        res.error('Titlee must be longer than 4 characters');
+        res.redirect('back');
+        return;
+    }
+    
     const entry = new Entry({
         username: username,
         title: data.title,
