@@ -1,8 +1,11 @@
 package com.jay.webviewdemo1;
 
+import android.app.AlertDialog;
+import android.app.Notification;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -34,12 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_top = (Button) findViewById(R.id.btn_top);
         btn_refresh = (Button) findViewById(R.id.btn_refresh);
         wView = (WebView) findViewById(R.id.wView);
+        wView.getSettings().setJavaScriptEnabled(true);
 
         btn_back.setOnClickListener(this);
         btn_refresh.setOnClickListener(this);
         btn_top.setOnClickListener(this);
 
-        wView.loadUrl("http://www.baidu.com");
+//      wView.loadUrl("http://www.baidu.com");
+        wView.loadUrl("http://cp01-ps-dev196-sufubo.epc.baidu.com:8082/smarthome/test.html");
         wView.setWebChromeClient(new WebChromeClient() {
             //这里设置获取到的网站title
             @Override
@@ -47,6 +52,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 super.onReceivedTitle(view, title);
                 txt_title.setText(title);
             }
+
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+//                Log.i("MainActivity", "onJsAlert url=" + url + ";message=" + message);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                builder.setTitle("提示").setMessage(message).setPositiveButton("确定", null
+                );
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                result.confirm();
+//                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+//                result.confirm();
+                return true;
+            }
+
+//            @Override
+//            public boolean onJsAlert(WebView view,String url, String message,  JsResult result) {
+//                new AlertDialog.Builder(WebViewDemo.this).
+//                setTitle("Alert").setMessage(message).setPositiveButton("OK",
+//                new DialogInterface.OnClickListener() {
+////                    @Override
+////                    public void onClick(DialogInterface arg0, int arg1) {
+////                        //TODO
+////                    }
+//                }).create().show();
+//                result.confirm();
+//                return super.onJsConfirm(view, url, message, result);
+//            }
         });
 
 
@@ -90,4 +123,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+//    @Override
+//    public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+//        final NoticeDialog dialog = new NoticeDialog(EnjoyWingActivity.this, "", message, "确认");
+//        dialog.show();
+//
+//        dialog.setNoticeListener(new NoticeDialog.NoticeListener() {
+//            public void doConfirm() {
+//                dialog.dismiss();
+//            }
+//            public  void doCancel() {
+//                dialog.dismiss();
+//            }
+//        });
+//
+//        return true;
+//    }
+
+
 }

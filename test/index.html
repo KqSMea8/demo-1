@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .test {
+
+        }
+    </style>
 </head>
+
 <body>
     <script>
-        let a = 1;
-        const b = 2;
-        console.log(a);
-        console.log(b);
-        a = 3;
-        b = 4;
-        console.log(a);
-        console.log(b);
+        var singleNumber = function(nums) {
+            let result = nums[0];
+            for(let i = 1;i<nums.length;i++){
+                result^=nums[i];
+            }
+            return result;
+        };
+        singleNumber([4,1,2,1,2]);
     </script>
 </body>
+
 </html>
